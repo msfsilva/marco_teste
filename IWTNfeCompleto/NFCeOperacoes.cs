@@ -154,7 +154,7 @@ namespace IWTNFCompleto
         }
 
         /// <summary>
-        /// Gera o conteúdo completo da URL para o QR Code da NFC-e, seguindo o layout da versão 3.
+        /// Gera o conteúdo completo da URL para o QR Code da NFC-e, seguindo o layout da versão 3 da NT 2025.001.
         /// </summary>
         /// <param name="notaEnviar">O objeto contendo todos os dados da nota fiscal.</param>
         /// <param name="offline">Indica se a nota está sendo emitida em modo de contingência offline.</param>
@@ -163,19 +163,15 @@ namespace IWTNFCompleto
         internal static string GerarConteudoQrCode(NotaEnviar notaEnviar, bool offline, X509Certificate2 certificado)
         {
             string chaveNfe = notaEnviar.NfTnfe.infNFe.Id.Substring(3);
-            string versaoQrCode = "3"; // Versão 3 fixa
+            string versaoQrCode = "3"; // Conforme NT 2025.001
             string tpAmb = notaEnviar.NfTnfe.infNFe.ide.tpAmbLegado == TAmbLegado.Producao ? "1" : "2";
             string enderecoConsulta = GetEnderecoConsulta(notaEnviar);
 
+            string parametros;
+
             if (offline)
             {
-                // --- MODO OFFLINE (CONTINGÊNCIA) ---
-                // Requer assinatura digital dos parâmetros
-                if (certificado == null)
-                {
-                    throw new ArgumentNullException(nameof(certificado), "O certificado digital é obrigatório para gerar o QR Code em modo de contingência (offline).");
-                }
-
+                // --- MODO OFFLINE (CONTINGÊNCIA) - VERSÃO 3 ---
                 string diaEmissao = DateTime.Parse(notaEnviar.NfTnfe.infNFe.ide.dhEmi).Day.ToString("D2");
                 string valorNf = notaEnviar.NfTnfe.infNFe.total.ICMSTot.vNF;
 
@@ -184,7 +180,6 @@ namespace IWTNFCompleto
 
                 if (notaEnviar.NfTnfe.infNFe.dest != null && !string.IsNullOrWhiteSpace(notaEnviar.NfTnfe.infNFe.dest.Item))
                 {
-                    // Valida o tipo de documento (CPF ou CNPJ) pelo tamanho
                     if (notaEnviar.NfTnfe.infNFe.dest.Item.Length == 11)
                     {
                         tipoDocDest = "1"; // CPF
@@ -197,24 +192,23 @@ namespace IWTNFCompleto
                     }
                 }
 
-                // Monta a string de parâmetros para assinar, separados por /
-                string parametrosParaAssinar = $"{chaveNfe}/{versaoQrCode}/{tpAmb}/{diaEmissao}/{valorNf}/{tipoDocDest}/{docDest}";
+                // Parâmetros para assinar, separados por pipe
+                string parametrosParaAssinar = $"{chaveNfe}|{versaoQrCode}|{tpAmb}|{diaEmissao}|{valorNf}|{tipoDocDest}|{docDest}";
 
-                // Assina os parâmetros com a chave privada do certificado
+                // Assinatura digital dos parâmetros
                 string assinatura = AssinarDados(parametrosParaAssinar, certificado);
 
-                // Monta a URL final com a assinatura
-                return $"{enderecoConsulta}?p={parametrosParaAssinar}{assinatura}";
+                // Monta a string de parâmetros final
+                parametros = $"{parametrosParaAssinar}|{assinatura}";
             }
             else
             {
-                // --- MODO ONLINE ---
-                // URL simplificada, sem assinatura
-                string parametrosOnline = $"{chaveNfe}/{versaoQrCode}/{tpAmb}";
-
-                // Monta a URL final
-                return $"{enderecoConsulta}?p={parametrosOnline}";
+                // --- MODO ONLINE - VERSÃO 3 ---
+                parametros = $"{chaveNfe}|{versaoQrCode}|{tpAmb}";
             }
+
+            // Retorna a URL completa
+            return $"{enderecoConsulta}?p={parametros}";
         }
 
         internal static string GetEnderecoConsulta(NotaEnviar notaEnviar)
@@ -371,7 +365,7 @@ namespace IWTNFCompleto
                 //Assina a nota antes de gerar o QR Code pois o QR depdende da tag da assinatura
                 notaEnviar.Xml = assinaNfe(notaEnviar.NfTnfe, certificado);
 
-                XmlSerializer serializer = new XmlSerializer(typeof(TNFe));
+                XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
                 notaEnviar.NfTnfe = (TNFe) serializer.Deserialize(new XmlNodeReader(notaEnviar.Xml));
 
                 notaEnviar.NfTnfe.infNFeSupl = new TNFeInfNFeSupl()
@@ -555,7 +549,7 @@ namespace IWTNFCompleto
 
         private static XmlDocument assinaNfe(TNFe notaAssinar, X509Certificate2 certificado)
         {
-            XmlSerializer serializer = new XmlSerializer(typeof(TNFe));
+            XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             Utf8StringWriter builder = new Utf8StringWriter();
             XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
             XmlWriter xmlWriter;
@@ -878,7 +872,7 @@ namespace IWTNFCompleto
                     notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, true,certificado);
 
 
-                    XmlSerializer serializer = new XmlSerializer(typeof(TNFe));
+                    XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
                     Utf8StringWriter builder = new Utf8StringWriter();
                     XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
                     XmlWriter xmlWriter;
@@ -953,7 +947,7 @@ namespace IWTNFCompleto
             notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, false,certificado);
 
 
-            XmlSerializer serializer = new XmlSerializer(typeof(TNFe));
+            XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             Utf8StringWriter builder = new Utf8StringWriter();
             XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
             XmlWriter xmlWriter;

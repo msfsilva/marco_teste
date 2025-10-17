@@ -2895,7 +2895,7 @@ namespace IWTNFCompleto
                 throw new Exception("A nota fiscal com a chave " + protNFe.infProt.chNFe + " não está no status correto");
             }
 
-            XmlSerializer serializer = new XmlSerializer(typeof(TNFe));
+            XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             XmlDocument docNF = new XmlDocument();
             docNF.LoadXml(nfeEmitida.Xml);
             TNFe nota = (TNFe)serializer.Deserialize(new XmlNodeReader(docNF));
