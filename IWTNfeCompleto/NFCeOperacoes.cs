@@ -370,7 +370,8 @@ namespace IWTNFCompleto
 
                 notaEnviar.NfTnfe.infNFeSupl = new TNFeInfNFeSupl()
                 {
-                    qrCode = NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false,certificado)
+                    qrCode = NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false,certificado),
+                    UrlChave = GetEnderecoConsulta(notaEnviar)
 
                 };
 
@@ -575,7 +576,7 @@ namespace IWTNFCompleto
         /// </summary>
         /// <param name="dados">A string de dados a ser assinada.</param>
         /// <param name="certificado">O certificado digital contendo a chave privada.</param>
-        /// <returns>A assinatura digital formatada como uma string hexadecimal minúscula.</returns>
+        /// <returns>A assinatura digital formatada como uma string Base64.</returns>
         private static string AssinarDados(string dados, X509Certificate2 certificado)
         {
             if (!certificado.HasPrivateKey)
@@ -583,17 +584,17 @@ namespace IWTNFCompleto
                 throw new CryptographicException("O certificado não contém uma chave privada ou a chave não é exportável.");
             }
 
-            // Para compatibilidade com .NET 4.5.2, usamos a propriedade PrivateKey
-            // e fazemos o cast para RSACryptoServiceProvider.
-            var rsa = (RSACryptoServiceProvider) certificado.PrivateKey;
+            // No .NET Framework 4.5.2, é necessário fazer o cast da chave privada para o provedor de serviço específico.
+            var rsa = (System.Security.Cryptography.RSACryptoServiceProvider) certificado.PrivateKey;
 
+            // Converte os dados para um array de bytes
             var dadosBytes = Encoding.UTF8.GetBytes(dados);
 
-            // O método SignData recebe o nome do algoritmo de hash como uma string.
+            // Assina os dados usando o algoritmo SHA1
             var signatureBytes = rsa.SignData(dadosBytes, "SHA1");
 
-            // Converte o resultado da assinatura para uma string hexadecimal minúscula
-            return BitConverter.ToString(signatureBytes).Replace("-", "").ToLower();
+            // Retorna a assinatura no formato Base64, conforme exigido pelo manual
+            return Convert.ToBase64String(signatureBytes);
         }
 
         internal static RetornoNFe EnviarLote(NfeCompletoLoteClass loteEnviar, TCodUfIBGELegado ufEmitente, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
