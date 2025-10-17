@@ -848,7 +848,7 @@ namespace IWTNFCompleto
                 {
                     nota.NfPrincipal.FormaEmissao = FormaEmissaoNFe.ContingenciaScan;
 
-                    XmlSerializer serializerV3 = new XmlSerializer(typeof(TNFe));
+                    XmlSerializer serializerV3 = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
                     XmlDocument docNF = new XmlDocument();
                     docNF.LoadXml(nota.Xml);
                     TNFe nfe = (TNFe)serializerV3.Deserialize(new XmlNodeReader(docNF));
@@ -926,8 +926,8 @@ namespace IWTNFCompleto
 
         private static void AtualizarQrCodeTransmissaoContingencia(NfeCompletoNotaClass nota, IWTPostgreNpgsqlCommand command, X509Certificate2 certificado)
         {
-            
-            XmlSerializer serializerV3 = new XmlSerializer(typeof(TNFe));
+
+            XmlSerializer serializerV3 = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             XmlDocument docNF = new XmlDocument();
             docNF.LoadXml(nota.Xml);
             TNFe nfe = (TNFe)serializerV3.Deserialize(new XmlNodeReader(docNF));

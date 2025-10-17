@@ -116,15 +116,18 @@ namespace IWTNFCompleto
             DateTime dataEmissao = DateTime.Parse(notaEnviar.infNFe.ide.dhEmi, CultureInfo.InvariantCulture, DateTimeStyles.AssumeLocal);
             string modelo = notaEnviar.infNFe.ide.mod.ToString().Replace("Item", "");
 
+
+            string codigoUF = notaEnviar.infNFe.ide.cUF.ToString().Replace("Item", "");
+
             string chaveAcessoNfSemDigito =
-                       Convert.ToInt32(notaEnviar.infNFe.ide.cUF).ToString() +
-                       dataEmissao.ToString("yyMM") +
-                       notaEnviar.infNFe.emit.Item.PadLeft(14, '0') +
-                       modelo +
-                       notaEnviar.infNFe.ide.serie.PadLeft(3, '0') +
-                       notaEnviar.infNFe.ide.nNF.PadLeft(9, '0') +
-                       notaEnviar.infNFe.ide.tpEmis.GetXmlEnumAttributeValueFromEnum() +
-                       notaEnviar.infNFe.ide.cNF;
+                codigoUF +
+                dataEmissao.ToString("yyMM") +
+                notaEnviar.infNFe.emit.Item.PadLeft(14, '0') +
+                modelo +
+                notaEnviar.infNFe.ide.serie.PadLeft(3, '0') +
+                notaEnviar.infNFe.ide.nNF.PadLeft(9, '0') +
+                notaEnviar.infNFe.ide.tpEmis.GetXmlEnumAttributeValueFromEnum() +
+                notaEnviar.infNFe.ide.cNF;
 
             int digitoNfe = FuncoesAuxiliares.DigitoModulo11(chaveAcessoNfSemDigito);
 

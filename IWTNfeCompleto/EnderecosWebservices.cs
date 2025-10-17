@@ -1018,23 +1018,22 @@ namespace IWTNFCompleto
             #region NFCe
 
             // --- AMBIENTE DE HOMOLOGAÇÃO ---
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeRetRecepcao, TCodUfIBGELegado.PE, "4.00", TMod.Item65), "https://nfehomolog.sefaz.pe.gov.br/nfe-service/services/NFeRetAutorizacao4                                ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeInutilizacao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4?wsdl                                          ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeConsultaProtocolo, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4?wsdl                                     ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeStatusServico, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeStatusServico4?wsdl                                         ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeConsultaCadastro, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4?wsdl                                      ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.RecepcaoEvento, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl                                        ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4?wsdl                                           ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeRetRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4?wsdl                                        ".Trim());
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeAutorizacao4?wsdl");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeRetRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeRetAutorizacao4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeConsultaProtocolo, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeConsultaProtocolo4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeInutilizacao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeInutilizacao4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeStatusServico, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeStatusServico4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.RecepcaoEvento, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/NFeRecepcaoEvento4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Homologacao, ServicoNFe.NfeConsultaCadastro, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://homologacao.nfce.sefa.pr.gov.br/nfce/CadConsultaCadastro4");
 
             // --- AMBIENTE DE PRODUÇÃO ---
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeInutilizacao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/NFeInutilizacao4?wsdl                                             ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeConsultaProtocolo, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/NFeConsultaProtocolo4?wsdl                                        ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeStatusServico, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/NFeStatusServico4?wsdl                                            ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeConsultaCadastro, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/CadConsultaCadastro4?wsdl                                         ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.RecepcaoEvento, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/NFeRecepcaoEvento4?wsdl                                           ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/NFeAutorizacao4?wsdl                                              ".Trim());
-            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeRetRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfe.sefa.pr.gov.br/nfe/NFeRetAutorizacao4?wsdl	                                          ".Trim());
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65),    "https://nfce.sefa.pr.gov.br/nfce/NFeAutorizacao4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeRetRecepcao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfce.sefa.pr.gov.br/nfce/NFeRetAutorizacao4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeConsultaProtocolo, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfce.sefa.pr.gov.br/nfce/NFeConsultaProtocolo4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeInutilizacao, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfce.sefa.pr.gov.br/nfce/NFeInutilizacao4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeStatusServico, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfce.sefa.pr.gov.br/nfce/NFeStatusServico4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.RecepcaoEvento, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfce.sefa.pr.gov.br/nfce/NFeRecepcaoEvento4");
+            _enderecos.Add(new EnderecoWebserviceKey(TAmbLegado.Producao, ServicoNFe.NfeConsultaCadastro, TCodUfIBGELegado.PR, "4.00", TMod.Item65), "https://nfce.sefa.pr.gov.br/nfce/CadConsultaCadastro4");
 
 
             #endregion
