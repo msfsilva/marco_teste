@@ -51,6 +51,8 @@ namespace IWTNFCompleto
         public bool SuprimirRetornosRejeicao { get; protected set; }
 
         private string _connectionString;
+        private readonly string _csc;
+        private readonly string _idCsc;
         private IImpressoraTermicaFactory _factoryImpressora;
         private string _enderecoImpressora;
         private int _larguraPapel;
@@ -61,7 +63,8 @@ namespace IWTNFCompleto
             string certificado,
              string ufEmitente, 
             string cnpjTransmissor, 
-            string connectionString, 
+            string connectionString,
+            string csc, string idCSC,
             AcsUsuarioClass usuarioAtual, 
             DadosSalvarEnviarNfe dadosSalvarEnviarNfe,
             Semaphore semaforoEmissaoNf
@@ -74,6 +77,8 @@ namespace IWTNFCompleto
             _usuarioAtual = usuarioAtual;
             _dadosSalvarEnviarNfe = dadosSalvarEnviarNfe;
             _connectionString = connectionString;
+            _csc = csc;
+            _idCsc = idCSC;
 
             caminhoLogFinalErroSuprimido = AppDomain.CurrentDomain.BaseDirectory + "\\LogEnvioFinalErroSuprimido.txt";
 
@@ -271,6 +276,8 @@ namespace IWTNFCompleto
                                 _certificado,
                                 singleConnection,
                                 _cnpjTransmissor,
+                                _csc, 
+                                _idCsc,
                                 _usuarioAtual,
                                 null,
                                 out notaRetornada);
@@ -347,6 +354,8 @@ namespace IWTNFCompleto
                                 _certificado,
                                 singleConnection,
                                 _cnpjTransmissor,
+                                _csc,
+                                _idCsc,
                                 _usuarioAtual,
                                 null
                                 );

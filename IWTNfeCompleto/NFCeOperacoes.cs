@@ -153,58 +153,105 @@ namespace IWTNFCompleto
 
         }
 
+        // Dentro do arquivo IWTNfeCompleto/NFCeOperacoes.cs
+
         /// <summary>
-        /// Gera o conteúdo completo da URL para o QR Code da NFC-e, seguindo o layout da versão 3 da NT 2025.001.
+        /// Gera o conteúdo completo da URL para o QR Code da NFC-e, tratando a diferença entre o PR (versão 2.0) e outras UFs (versão 3.0).
         /// </summary>
         /// <param name="notaEnviar">O objeto contendo todos os dados da nota fiscal.</param>
         /// <param name="offline">Indica se a nota está sendo emitida em modo de contingência offline.</param>
         /// <param name="certificado">O certificado digital do emitente, obrigatório para emissão offline.</param>
         /// <returns>A string completa da URL do QR Code.</returns>
-        internal static string GerarConteudoQrCode(NotaEnviar notaEnviar, bool offline, X509Certificate2 certificado)
+        internal static string GerarConteudoQrCode(NotaEnviar notaEnviar, bool offline, X509Certificate2 certificado, string csc, string idCSC)
         {
             string chaveNfe = notaEnviar.NfTnfe.infNFe.Id.Substring(3);
-            string versaoQrCode = "3"; // Conforme NT 2025.001
             string tpAmb = notaEnviar.NfTnfe.infNFe.ide.tpAmbLegado == TAmbLegado.Producao ? "1" : "2";
             string enderecoConsulta = GetEnderecoConsulta(notaEnviar);
 
             string parametros;
 
-            if (offline)
+            // VERIFICA SE A UF É O PARANÁ
+            if (notaEnviar.NfTnfe.infNFe.ide.cUFLegado == TCodUfIBGELegado.PR)
             {
-                // --- MODO OFFLINE (CONTINGÊNCIA) - VERSÃO 3 ---
-                string diaEmissao = DateTime.Parse(notaEnviar.NfTnfe.infNFe.ide.dhEmi).Day.ToString("D2");
-                string valorNf = notaEnviar.NfTnfe.infNFe.total.ICMSTot.vNF;
+                // --- LÓGICA PARA O PARANÁ (VERSÃO 2.0) ---
 
-                string tipoDocDest = "";
-                string docDest = "";
+                // Você precisará obter o CSC e seu ID. Substitua os valores abaixo pela forma como você armazena/obtém esses dados.
+                // Exemplo: buscando de um banco de dados ou arquivo de configuração.
 
-                if (notaEnviar.NfTnfe.infNFe.dest != null && !string.IsNullOrWhiteSpace(notaEnviar.NfTnfe.infNFe.dest.Item))
+                if (string.IsNullOrEmpty(csc) || string.IsNullOrEmpty(idCSC))
                 {
-                    if (notaEnviar.NfTnfe.infNFe.dest.Item.Length == 11)
-                    {
-                        tipoDocDest = "1"; // CPF
-                        docDest = notaEnviar.NfTnfe.infNFe.dest.Item;
-                    }
-                    else if (notaEnviar.NfTnfe.infNFe.dest.Item.Length == 14)
-                    {
-                        tipoDocDest = "2"; // CNPJ
-                        docDest = notaEnviar.NfTnfe.infNFe.dest.Item;
-                    }
+                    throw new Exception("CSC e ID do CSC são obrigatórios para emissão no Paraná.");
                 }
 
-                // Parâmetros para assinar, separados por pipe
-                string parametrosParaAssinar = $"{chaveNfe}|{versaoQrCode}|{tpAmb}|{diaEmissao}|{valorNf}|{tipoDocDest}|{docDest}";
+                if (offline)
+                {
+                    // Lógica para contingência offline (v2.0)
+                    string diaEmissao = DateTime.Parse(notaEnviar.NfTnfe.infNFe.ide.dhEmi).Day.ToString("D2");
+                    string valorNf = notaEnviar.NfTnfe.infNFe.total.ICMSTot.vNF;
 
-                // Assinatura digital dos parâmetros
-                string assinatura = AssinarDados(parametrosParaAssinar, certificado);
+                    // O DigestValue já está no XML da nota, pegue-o de lá.
+                    string digestValueBase64 = Convert.ToBase64String(notaEnviar.NfTnfe.Signature.SignedInfo.Reference.DigestValue);
+                    string digestValueHex = BitConverter.ToString(Convert.FromBase64String(digestValueBase64)).Replace("-", "").ToLower();
 
-                // Monta a string de parâmetros final
-                parametros = $"{parametrosParaAssinar}|{assinatura}";
+                    string parametrosParaHash = $"{chaveNfe}|2|{tpAmb}|{diaEmissao}|{valorNf}|{digestValueHex}|{idCSC}";
+
+                    using (SHA1Managed sha1 = new SHA1Managed())
+                    {
+                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + csc));
+                        var hashHex = new StringBuilder(hash.Length * 2);
+                        foreach (byte b in hash)
+                        {
+                            hashHex.Append(b.ToString("x2"));
+                        }
+                        string codigoHash = hashHex.ToString();
+                        parametros = $"{chaveNfe}|2|{tpAmb}|{diaEmissao}|{valorNf}|{digestValueHex}|{idCSC}|{codigoHash}";
+                    }
+                }
+                else
+                {
+                    // Lógica para emissão online (v2.0)
+                    string parametrosParaHash = $"{chaveNfe}|2|{tpAmb}|{idCSC}";
+
+                    using (SHA1Managed sha1 = new SHA1Managed())
+                    {
+                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + csc));
+                        var hashHex = new StringBuilder(hash.Length * 2);
+                        foreach (byte b in hash)
+                        {
+                            hashHex.Append(b.ToString("x2"));
+                        }
+                        string codigoHash = hashHex.ToString();
+                        parametros = $"{chaveNfe}|2|{tpAmb}|{idCSC}|{codigoHash}";
+                    }
+                }
             }
             else
             {
-                // --- MODO ONLINE - VERSÃO 3 ---
-                parametros = $"{chaveNfe}|{versaoQrCode}|{tpAmb}";
+                // --- LÓGICA PARA OUTRAS UFs (VERSÃO 3.0 - SEU CÓDIGO ATUAL) ---
+                string versaoQrCode = "3"; // Conforme NT 2025.001
+
+                if (offline)
+                {
+                    string diaEmissao = DateTime.Parse(notaEnviar.NfTnfe.infNFe.ide.dhEmi).Day.ToString("D2");
+                    string valorNf = notaEnviar.NfTnfe.infNFe.total.ICMSTot.vNF;
+
+                    string tipoDocDest = "";
+                    string docDest = "";
+
+                    if (notaEnviar.NfTnfe.infNFe.dest != null && !string.IsNullOrWhiteSpace(notaEnviar.NfTnfe.infNFe.dest.Item))
+                    {
+                        if (notaEnviar.NfTnfe.infNFe.dest.Item.Length == 11) { tipoDocDest = "1"; docDest = notaEnviar.NfTnfe.infNFe.dest.Item; }
+                        else if (notaEnviar.NfTnfe.infNFe.dest.Item.Length == 14) { tipoDocDest = "2"; docDest = notaEnviar.NfTnfe.infNFe.dest.Item; }
+                    }
+
+                    string parametrosParaAssinar = $"{chaveNfe}|{versaoQrCode}|{tpAmb}|{diaEmissao}|{valorNf}|{tipoDocDest}|{docDest}";
+                    string assinatura = AssinarDados(parametrosParaAssinar, certificado);
+                    parametros = $"{parametrosParaAssinar}|{assinatura}";
+                }
+                else
+                {
+                    parametros = $"{chaveNfe}|{versaoQrCode}|{tpAmb}";
+                }
             }
 
             // Retorna a URL completa
@@ -240,7 +287,7 @@ namespace IWTNFCompleto
                             return "http://webas.sefaz.pi.gov.br/nfceweb/consultarNFCe.jsf";
                             break;
                         case TUfEmi.PR:
-                            return "http://www.dfeportal.fazenda.pr.gov.br/dfe-portal/rest/servico/consultaNFCe";
+                            return "http://www.fazenda.pr.gov.br/nfce/qrcode";
                             break;
                         case TUfEmi.RN:
                             return "http://nfce.set.rn.gov.br/consultarNFCe.aspx";
@@ -278,7 +325,7 @@ namespace IWTNFCompleto
                             return "http://webas.sefaz.pi.gov.br/nfceweb-homologacao/consultarNFCe.jsf";
                             break;
                         case TUfEmi.PR:
-                            return "http://www.dfeportal.fazenda.pr.gov.br/dfe-portal/rest/servico/consultaNFCe";
+                            return "http://www.fazenda.pr.gov.br/nfce/qrcode";
                             break;
                         case TUfEmi.RN:
                             return "http://nfce.set.rn.gov.br/consultarNFCe.aspx";
@@ -308,7 +355,7 @@ namespace IWTNFCompleto
             }
         }
 
-        internal static LoteEnviar CriaLote(NotaEnviar notaEnviar, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
+        internal static LoteEnviar CriaLote(NotaEnviar notaEnviar, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, string csc, string idCSC, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
         {
             
             IWTPostgreNpgsqlCommand command = null;
@@ -370,7 +417,7 @@ namespace IWTNFCompleto
 
                 notaEnviar.NfTnfe.infNFeSupl = new TNFeInfNFeSupl()
                 {
-                    qrCode = NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false,certificado),
+                    qrCode = NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false,certificado,csc, idCSC),
                     UrlChave = GetEnderecoConsulta(notaEnviar)
 
                 };
@@ -390,6 +437,7 @@ namespace IWTNFCompleto
 
                 XmlDocument xmlNfe = new XmlDocument();
                 xmlNfe.LoadXml(builder.ToString());
+
 
                 notaEnviar.Xml = xmlNfe;
 
@@ -597,7 +645,7 @@ namespace IWTNFCompleto
             return Convert.ToBase64String(signatureBytes);
         }
 
-        internal static RetornoNFe EnviarLote(NfeCompletoLoteClass loteEnviar, TCodUfIBGELegado ufEmitente, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
+        internal static RetornoNFe EnviarLote(NfeCompletoLoteClass loteEnviar, TCodUfIBGELegado ufEmitente, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, string csc, string idCSC, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
         {
             IWTPostgreNpgsqlCommand command = null;
             try
@@ -643,7 +691,7 @@ namespace IWTNFCompleto
                     if (loteEnviar.Scan)
                     {
 
-                       AtualizarQrCodeTransmissaoContingencia(notaLoteEnviar,command,certificado);
+                       AtualizarQrCodeTransmissaoContingencia(notaLoteEnviar,command,certificado, csc, idCSC);
                     }
 
                     XmlDocument xmlNota = new XmlDocument();
@@ -683,7 +731,7 @@ namespace IWTNFCompleto
                 {
                     if (!loteEnviar.Scan)
                     {
-                        MudaLoteContingencia(loteEnviar, command, certificado, usuarioAtual);
+                        MudaLoteContingencia(loteEnviar, command, certificado, usuarioAtual, csc, idCSC);
                     }
 
                     loteEnviar.Retry = true;
@@ -809,7 +857,7 @@ namespace IWTNFCompleto
             }
         }
 
-        private static void MudaLoteContingencia(NfeCompletoLoteClass lote, IWTPostgreNpgsqlCommand command, X509Certificate2 certificado, AcsUsuarioClass usuario)
+        private static void MudaLoteContingencia(NfeCompletoLoteClass lote, IWTPostgreNpgsqlCommand command, X509Certificate2 certificado, AcsUsuarioClass usuario, string csc, string idCSC)
         {
             try
             {
@@ -870,7 +918,7 @@ namespace IWTNFCompleto
                         NfTnfe = nfe,
                         Xml = docNF
                     };
-                    notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, true,certificado);
+                    notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, true,certificado, csc, idCSC);
 
 
                     XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
@@ -924,7 +972,7 @@ namespace IWTNFCompleto
             }
         }
 
-        private static void AtualizarQrCodeTransmissaoContingencia(NfeCompletoNotaClass nota, IWTPostgreNpgsqlCommand command, X509Certificate2 certificado)
+        private static void AtualizarQrCodeTransmissaoContingencia(NfeCompletoNotaClass nota, IWTPostgreNpgsqlCommand command, X509Certificate2 certificado, string csc, string idCSC)
         {
 
             XmlSerializer serializerV3 = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
@@ -945,7 +993,7 @@ namespace IWTNFCompleto
                 NfTnfe = nfe,
                 Xml = docNF
             };
-            notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, false,certificado);
+            notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, false,certificado, csc, idCSC);
 
 
             XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });

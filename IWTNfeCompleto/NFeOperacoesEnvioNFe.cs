@@ -135,7 +135,7 @@ namespace IWTNFCompleto
             notaEnviar.infNFe.Id = "NFe" + chaveAcessoNfSemDigito + "" + digitoNfe; 
         }
 
-        internal static LoteEnviar EnviaNfeInterno(NfPrincipalClass nota, TCodUfIBGELegado ufEmitente, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm, out RetornoNFe notaRetornada)
+        internal static LoteEnviar EnviaNfeInterno(NfPrincipalClass nota, TCodUfIBGELegado ufEmitente, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, string csc, string idCSC, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm, out RetornoNFe notaRetornada)
         {
 
             string numeroNota = "";
@@ -2453,7 +2453,7 @@ namespace IWTNFCompleto
                         break;
                     case TMod.Item65:
                         notaRetornada = null;
-                        return NFCeOperacoes.CriaLote(notaCompleta, Ambiente, serialCertificado, conn, cnpjTransmissor, usuarioAtual, waitForm);
+                        return NFCeOperacoes.CriaLote(notaCompleta, Ambiente, serialCertificado, conn, cnpjTransmissor,csc, idCSC, usuarioAtual, waitForm);
                         break;
                     default:
                         throw new ArgumentOutOfRangeException();
