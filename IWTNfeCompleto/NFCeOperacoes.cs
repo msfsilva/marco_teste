@@ -35,6 +35,7 @@ using IWTPostgreNpgsql;
 using Npgsql;
 using NpgsqlTypes;
 
+
 namespace IWTNFCompleto
 {
     public static class NFCeOperacoes
@@ -197,7 +198,7 @@ namespace IWTNFCompleto
 
                     using (SHA1Managed sha1 = new SHA1Managed())
                     {
-                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + csc));
+                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + "|" + csc));
                         var hashHex = new StringBuilder(hash.Length * 2);
                         foreach (byte b in hash)
                         {
@@ -214,7 +215,7 @@ namespace IWTNFCompleto
 
                     using (SHA1Managed sha1 = new SHA1Managed())
                     {
-                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + csc));
+                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + "|" + csc));
                         var hashHex = new StringBuilder(hash.Length * 2);
                         foreach (byte b in hash)
                         {
@@ -417,10 +418,11 @@ namespace IWTNFCompleto
 
                 notaEnviar.NfTnfe.infNFeSupl = new TNFeInfNFeSupl()
                 {
-                    qrCode = NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false,certificado,csc, idCSC),
-                    UrlChave = GetEnderecoConsulta(notaEnviar)
+                    qrCode = "<![CDATA[" + NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false, certificado, csc, idCSC) + "]]>",
+                    UrlChave = "<![CDATA[http://www.fazenda.pr.gov.br]]>"
 
                 };
+
 
              
                 Utf8StringWriter builder = new Utf8StringWriter();
@@ -665,7 +667,7 @@ namespace IWTNFCompleto
                 {
                     idLote = loteEnviar.NumeroLote.ToString(),
                     versao = NFeOperacoes.versaoLayout,
-                    indSincLegado = TEnviNFeIndSincLegado.Assincrono
+                    indSincLegado = TEnviNFeIndSincLegado.Sincrono
                 };
 
              
@@ -701,10 +703,11 @@ namespace IWTNFCompleto
 
                 string urlWebservice = EnderecosWebservices.GetEndereco(ufEmitente, NFeOperacoes.versaoLayout, Ambiente, ServicoNFe.NfeRecepcao, false, TMod.Item65);
 
-                NFeAutorizacao4 client = new NFeAutorizacao4()
-                {
-                    Timeout = NFeOperacoes.timeoutPadrao,
-                    Url = urlWebservice
+                NFCeServices.NFeAutorizacao4 client = new NFCeServices.NFeAutorizacao4()
+                { 
+                    Url = urlWebservice,
+                    Timeout = NFeOperacoes.timeoutPadrao
+
                 };
 
 
