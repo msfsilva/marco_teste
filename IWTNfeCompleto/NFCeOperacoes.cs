@@ -418,15 +418,15 @@ namespace IWTNFCompleto
 
                 notaEnviar.NfTnfe.infNFeSupl = new TNFeInfNFeSupl()
                 {
-                    qrCode = "<![CDATA[" + NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false, certificado, csc, idCSC) + "]]>",
-                    UrlChave = "<![CDATA[http://www.fazenda.pr.gov.br]]>"
+                    qrCode = NFCeOperacoes.GerarConteudoQrCode(notaEnviar, false,certificado,csc, idCSC),
+                    UrlChave = GetEnderecoConsulta(notaEnviar)
 
                 };
 
 
              
                 Utf8StringWriter builder = new Utf8StringWriter();
-                XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
+                XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = false };
                 XmlWriter xmlWriter;
 
                 XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
@@ -602,7 +602,7 @@ namespace IWTNFCompleto
         {
             XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             Utf8StringWriter builder = new Utf8StringWriter();
-            XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
+            XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = false };
             XmlWriter xmlWriter;
 
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
@@ -675,7 +675,7 @@ namespace IWTNFCompleto
 
                 XmlSerializer serializer = new XmlSerializer(typeof (TEnviNFe));
                 Utf8StringWriter builder = new Utf8StringWriter();
-                XmlWriterSettings settings = new XmlWriterSettings {OmitXmlDeclaration = false, Indent = true, ConformanceLevel = ConformanceLevel.Auto};
+                XmlWriterSettings settings = new XmlWriterSettings {OmitXmlDeclaration = false, Indent = false, ConformanceLevel = ConformanceLevel.Auto};
                 XmlWriter xmlWriter = XmlWriter.Create(builder, settings);
 
                 XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
@@ -926,7 +926,7 @@ namespace IWTNFCompleto
 
                     XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
                     Utf8StringWriter builder = new Utf8StringWriter();
-                    XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
+                    XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = false };
                     XmlWriter xmlWriter;
 
                     XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
@@ -1001,7 +1001,7 @@ namespace IWTNFCompleto
 
             XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             Utf8StringWriter builder = new Utf8StringWriter();
-            XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = true };
+            XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = false };
             XmlWriter xmlWriter;
 
             XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();

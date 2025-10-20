@@ -2544,7 +2544,7 @@ namespace IWTNFCompleto
 
                     XmlSerializer serializer = new XmlSerializer(typeof (TNFe));
                     Utf8StringWriter builder = new Utf8StringWriter();
-                    XmlWriterSettings settings = new XmlWriterSettings {OmitXmlDeclaration = false, Indent = true};
+                    XmlWriterSettings settings = new XmlWriterSettings {OmitXmlDeclaration = false, Indent = false};
                     XmlWriter xmlWriter;
 
                     XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
@@ -2687,7 +2687,7 @@ namespace IWTNFCompleto
                     settings = new XmlWriterSettings
                     {
                         OmitXmlDeclaration = false,
-                        Indent = true,
+                        Indent = false,
                         ConformanceLevel = ConformanceLevel.Auto
                     };
                     xmlWriter = XmlWriter.Create(builder, settings);
