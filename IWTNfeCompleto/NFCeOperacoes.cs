@@ -19,6 +19,7 @@ using System.Xml.Serialization;
 using BibliotecaValidacoes;
 using IWTDotNetLib.ComplexLoginModule;
 using Configurations;
+using CrystalDecisions.CrystalReports.SCREventLog;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
 using iTextSharp.text.pdf.qrcode;
@@ -61,7 +62,7 @@ namespace IWTNFCompleto
                 throw new Exception("A nota fiscal com a chave " + protNFe.infProt.chNFe + " não está no status correto");
             }
 
-            XmlSerializer serializer = new XmlSerializer(typeof (TNFe));
+            XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
             XmlDocument docNF = new XmlDocument();
             docNF.LoadXml(nfeEmitida.Xml);
             TNFe nota = (TNFe) serializer.Deserialize(new XmlNodeReader(docNF));
@@ -167,7 +168,7 @@ namespace IWTNFCompleto
         {
             string chaveNfe = notaEnviar.NfTnfe.infNFe.Id.Substring(3);
             string tpAmb = notaEnviar.NfTnfe.infNFe.ide.tpAmbLegado == TAmbLegado.Producao ? "1" : "2";
-            string enderecoConsulta = GetEnderecoConsulta(notaEnviar);
+             string enderecoConsulta = GetNfceQrCodeUrl(notaEnviar.NfTnfe.infNFe.ide.cUFLegado, notaEnviar.NfTnfe.infNFe.ide.tpAmbLegado); // trocar pelo endereço pra colocar no qrcode
 
             string parametros;
 
@@ -186,41 +187,63 @@ namespace IWTNFCompleto
 
                 if (offline)
                 {
-                    // Lógica para contingência offline (v2.0)
+
+                    // --- LÓGICA CORRETA para QR Code v2.0 OFFLINE ---
+
+                    // 1. Verificar se realmente é o tipo de emissão offline da NFC-e
+                    if (notaEnviar.NfTnfe.infNFe.ide.TpEmisLegado != TNFeInfNFeIdeTpEmisLegado.ContingenciaOffLineNFCe)
+                    {
+                        throw new Exception("Tipo de emissão inválido para QR Code offline v2.0: " + notaEnviar.NfTnfe.infNFe.ide.tpEmis);
+                    }
+
+                    // 2. Serializar o objeto TNFe PARA CALCULAR O HASH (sem a assinatura!)
+                    //    Garante que estamos usando o XML correto para o hash.
+                    XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
+
+                    Utf8StringWriter builder = new Utf8StringWriter();
+                    XmlWriterSettings settings = new XmlWriterSettings { OmitXmlDeclaration = false, Indent = false, ConformanceLevel = ConformanceLevel.Auto }; // Indent = false é importante
+                    XmlWriter xmlWriter = XmlWriter.Create(builder, settings);
+                    XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
+                    namespaces.Add("", "http://www.portalfiscal.inf.br/nfe");
+
+                    // IMPORTANTE: Serializa o objeto ANTES de qualquer tentativa de assinatura
+                    serializer.Serialize(xmlWriter, notaEnviar.NfTnfe, namespaces);
+                    string xmlParaHash = builder.ToString();
+
+                    // 3. Calcular o Digest Value como o hash SHA-1 do XML serializado
+                    //    Presume que FuncoesAuxiliares.CalcularHashSHA1 retorna o hash em hexadecimal minúsculo.
+                    //    Se retornar em Base64 ou bytes, ajuste a conversão.
+                    string digestValueHex = FuncoesAuxiliares.CalcularHashSHA1(xmlParaHash);
+
+                    // 4. Montar a string de parâmetros específica do QR Code v2.0 OFFLINE
                     string diaEmissao = DateTime.Parse(notaEnviar.NfTnfe.infNFe.ide.dhEmi).Day.ToString("D2");
                     string valorNf = notaEnviar.NfTnfe.infNFe.total.ICMSTot.vNF;
 
-                    // O DigestValue já está no XML da nota, pegue-o de lá.
-                    string digestValueBase64 = Convert.ToBase64String(notaEnviar.NfTnfe.Signature.SignedInfo.Reference.DigestValue);
-                    string digestValueHex = BitConverter.ToString(Convert.FromBase64String(digestValueBase64)).Replace("-", "").ToLower();
-
+                    // String antes do Hash final (formato: chave|versao|ambiente|dia|valor|digest|idCSC)
                     string parametrosParaHash = $"{chaveNfe}|2|{tpAmb}|{diaEmissao}|{valorNf}|{digestValueHex}|{idCSC}";
 
-                    using (SHA1Managed sha1 = new SHA1Managed())
-                    {
-                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + "|" + csc));
-                        var hashHex = new StringBuilder(hash.Length * 2);
-                        foreach (byte b in hash)
-                        {
-                            hashHex.Append(b.ToString("x2"));
-                        }
-                        string codigoHash = hashHex.ToString();
-                        parametros = $"{chaveNfe}|2|{tpAmb}|{diaEmissao}|{valorNf}|{digestValueHex}|{idCSC}|{codigoHash}";
-                    }
+                    // 5. Calcular o Hash Final (SHA-1) com o CSC
+                    string sha1TextoQrComSCS = FuncoesAuxiliares.CalcularHashSHA1(parametrosParaHash + csc);
+
+                    // 6. Montar a string final do QR Code v2.0 OFFLINE
+                    //    Formato: URL?p=chave|versao|ambiente|dia|valor|digest|idCSC|hashCSC
+
+                    parametros = $"{parametrosParaHash}|{sha1TextoQrComSCS}";
                 }
                 else
                 {
                     // Lógica para emissão online (v2.0)
-                    string parametrosParaHash = $"{chaveNfe}|2|{tpAmb}|{idCSC}";
+                    string parametrosParaHash = $"{chaveNfe}|2|{tpAmb}|{idCSC}" + csc;
 
                     using (SHA1Managed sha1 = new SHA1Managed())
                     {
-                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash + "|" + csc));
+                        var hash = sha1.ComputeHash(Encoding.UTF8.GetBytes(parametrosParaHash));
                         var hashHex = new StringBuilder(hash.Length * 2);
                         foreach (byte b in hash)
                         {
                             hashHex.Append(b.ToString("x2"));
                         }
+
                         string codigoHash = hashHex.ToString();
                         parametros = $"{chaveNfe}|2|{tpAmb}|{idCSC}|{codigoHash}";
                     }
@@ -259,104 +282,164 @@ namespace IWTNFCompleto
             return $"{enderecoConsulta}?p={parametros}";
         }
 
+        /// <summary>
+        /// **NOVA FUNÇÃO**
+        /// Retorna a URL base para a montagem do QR Code da NFC-e para um determinado estado e ambiente.
+        /// Fonte: https://nfce.encat.org/desenvolvedor/qrcode/
+        /// </summary>
+        /// <param name="uf">O código IBGE do estado (UF).</param>
+        /// <param name="ambiente">O ambiente de destino (Produção ou Homologação).</param>
+        /// <returns>A URL para o QR Code como uma string. Retorna string vazia se a UF não emitir NFC-e ou não for encontrada.</returns>
+        public static string GetNfceQrCodeUrl(TCodUfIBGELegado uf, TAmbLegado ambiente)
+        {
+            bool isProducao = ambiente == TAmbLegado.Producao;
+
+            switch (uf)
+            {
+                case TCodUfIBGELegado.AC: return "http://www.sefaznet.ac.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.AL: return "http://nfce.sefaz.al.gov.br/QRCode/consultarNFCe.jsp";
+                case TCodUfIBGELegado.AP: return "https://www.sefaz.ap.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.AM: return isProducao ? "http://sistemas.sefaz.am.gov.br/nfceweb/consultarNFCe.do" : "http://homnfce.sefaz.am.gov.br/nfceweb/consultarNFCe.do";
+                case TCodUfIBGELegado.BA: return isProducao ? "http://nfe.sefaz.ba.gov.br/servicos/nfce/qrcode.aspx" : "http://hnfe.sefaz.ba.gov.br/servicos/nfce/qrcode.aspx";
+                case TCodUfIBGELegado.CE: return isProducao ? "http://nfce.sefaz.ce.gov.br/pages/ShowNFCe.html" : "http://nfceh.sefaz.ce.gov.br/pages/ShowNFCe.html";
+                case TCodUfIBGELegado.DF: return "http://dec.fazenda.df.gov.br/ConsultarNFCe.aspx";
+                case TCodUfIBGELegado.ES: return isProducao ? "http://app.sefaz.es.gov.br/QRCode/consultarNFCe.aspx" : "http://homologacao.sefaz.es.gov.br/QRCode/consultarNFCe.aspx";
+                case TCodUfIBGELegado.GO: return isProducao ? "http://nfe.sefaz.go.gov.br/nfeweb/sites/nfce/danfeNFCe" : "http://homolog.sefaz.go.gov.br/nfeweb/sites/nfce/danfeNFCe";
+                case TCodUfIBGELegado.MA: return isProducao ? "http://www.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp" : "http://www.hom.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp";
+                case TCodUfIBGELegado.MT: return isProducao ? "http://www.sefaz.mt.gov.br/nfce/consultanfce" : "http://homologacao.sefaz.mt.gov.br/nfce/consultanfce";
+                case TCodUfIBGELegado.MS: return "http://www.dfe.ms.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.MG: return "https://portalsped.fazenda.mg.gov.br/portalnfce/sistema/qrcode.xhtml";
+                case TCodUfIBGELegado.PA: return "https://www.sefa.pa.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.PB: return isProducao ? "http://www.receita.pb.gov.br/nfce/qrcode" : "http://www.receita.pb.gov.br/nfcehom/qrcode";
+                case TCodUfIBGELegado.PR: return "http://www.fazenda.pr.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.PE: return isProducao ? "http://nfce.sefaz.pe.gov.br/nfce/consulta" : "http://nfcehomolog.sefaz.pe.gov.br/nfce/consulta";
+                case TCodUfIBGELegado.PI: return "http://www.sefaz.pi.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.RJ: return "http://www4.fazenda.rj.gov.br/consultaNFCe/QRCode";
+                case TCodUfIBGELegado.RN: return isProducao ? "http://nfce.set.rn.gov.br/consultarNFCe.aspx" : "http://hom.nfce.set.rn.gov.br/consultarNFCe.aspx";
+                case TCodUfIBGELegado.RS: return isProducao ? "https://www.sefaz.rs.gov.br/nfce/consulta" : "https://www.sefaz.rs.gov.br/nfce/consulta-d";
+                case TCodUfIBGELegado.RO: return "http://www.sefin.ro.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.RR: return isProducao ? "https://www.sefaz.rr.gov.br/nfce/servlet/qrcode" : "http://200.174.9.67/nfce/servlet/qrcode";
+                case TCodUfIBGELegado.SP: return isProducao ? "https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx" : "https://homologacao.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx";
+                case TCodUfIBGELegado.SE: return isProducao ? "http://www.nfce.se.gov.br/nfce/qrcode" : "http://www.hom.nfce.se.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.TO: return isProducao ? "http://www.sefaz.to.gov.br/nfce/qrcode" : "http://hom.sefaz.to.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.SC: return string.Empty; // SC não usa NFC-e
+                default: return string.Empty;
+            }
+        }
+
         internal static string GetEnderecoConsulta(NotaEnviar notaEnviar)
         {
-            return GetEnderecoConsulta(notaEnviar.NfTnfe.infNFe.ide.tpAmbLegado, notaEnviar.NfTnfe.infNFe.emit.enderEmit.UF);
+            return GetEnderecoConsulta(notaEnviar.NfTnfe.infNFe.ide.cUFLegado, notaEnviar.NfTnfe.infNFe.ide.tpAmbLegado);
         }
 
-        internal static string GetEnderecoConsulta(TAmbLegado ambiente, TUfEmi uf)
+        /// Fornece métodos para obter URLs de serviços da NFC-e.
+        /// </summary>
+        /// <summary>
+        /// Retorna a URL de consulta pública do QR Code da NFC-e para um determinado estado e ambiente.
+        /// </summary>
+        /// <param name="uf">O código IBGE do estado (UF).</param>
+        /// <param name="ambiente">O ambiente de destino (Produção ou Homologação).</param>
+        /// <returns>A URL de consulta como uma string. Retorna string vazia se a UF não emitir NFC-e ou não for encontrada.</returns>
+        public static string GetEnderecoConsulta(TCodUfIBGELegado uf, TAmbLegado ambiente)
         {
-            try
-            {
-                if (ambiente == TAmbLegado.Producao)
-                {
-                    switch (uf)
-                    {
-                        case TUfEmi.AC:
-                            return "http://www.sefaznet.ac.gov.br/nfe";
-                            break;
-                        case TUfEmi.AM:
-                            return "http://sistemas.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp";
-                            break;
-                        case TUfEmi.MA:
-                            return "http://www.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp";
-                            break;
-                        case TUfEmi.MT:
-                            return "http://www.sefaz.mt.gov.br/nfce/consultanfce";
-                            break;
-                        case TUfEmi.PI:
-                            return "http://webas.sefaz.pi.gov.br/nfceweb/consultarNFCe.jsf";
-                            break;
-                        case TUfEmi.PR:
-                            return "http://www.fazenda.pr.gov.br/nfce/qrcode";
-                            break;
-                        case TUfEmi.RN:
-                            return "http://nfce.set.rn.gov.br/consultarNFCe.aspx";
-                            break;
-                        case TUfEmi.RS:
-                            return "https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx";
-                            break;
-                        case TUfEmi.SE:
-                            return "http://www.nfce.se.gov.br/portal/consultarNFCe.jsp";
-                            break;
-                        case TUfEmi.SP:
-                            return "https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx";
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
-                }
-                else
-                {
-                    switch (uf)
-                    {
-                        case TUfEmi.AC:
-                            return "http://hml.sefaznet.ac.gov.br/nfce";
-                            break;
-                        case TUfEmi.AM:
-                            return "http://homnfce.sefaz.am.gov.br/nfceweb/consultarNFCe.jsp";
-                            break;
-                        case TUfEmi.MA:
-                            return "http://www.hom.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp";
-                            break;
-                        case TUfEmi.MT:
-                            return "http://homologacao.sefaz.mt.gov.br/nfce/consultanfce";
-                            break;
-                        case TUfEmi.PI:
-                            return "http://webas.sefaz.pi.gov.br/nfceweb-homologacao/consultarNFCe.jsf";
-                            break;
-                        case TUfEmi.PR:
-                            return "http://www.fazenda.pr.gov.br/nfce/qrcode";
-                            break;
-                        case TUfEmi.RN:
-                            return "http://nfce.set.rn.gov.br/consultarNFCe.aspx";
-                            break;
-                        case TUfEmi.RS:
-                            return "https://www.sefaz.rs.gov.br/NFCE/NFCE-COM.aspx";
-                            break;
-                        case TUfEmi.SE:
-                            return "http://www.hom.nfe.se.gov.br/portal/consultarNFCe.jsp";
-                            break;
-                        case TUfEmi.SP:
-                            return "https://www.homologacao.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx";
-                            break;
-                        default:
-                            throw new ArgumentOutOfRangeException();
-                    }
+            bool isProducao = ambiente == TAmbLegado.Producao;
 
-                }
-            }
-            catch (ExcecaoTratada)
+            switch (uf)
             {
-                throw;
-            }
-            catch (Exception e)
-            {
-                throw new Exception("Erro inesperado ao identificar o endereço para consulta da NFC-e .\r\n" + e.Message, e);
+                case TCodUfIBGELegado.AC:
+                    return "http://www.sefaznet.ac.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.AL:
+                    return "http://nfce.sefaz.al.gov.br/QRCode/consultarNFCe.jsp";
+                case TCodUfIBGELegado.AP:
+                    return "https://www.sefaz.ap.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.AM:
+                    return isProducao
+                        ? "http://sistemas.sefaz.am.gov.br/nfceweb/consultarNFCe.do"
+                        : "http://homnfce.sefaz.am.gov.br/nfceweb/consultarNFCe.do";
+                case TCodUfIBGELegado.BA:
+                    return isProducao
+                        ? "http://nfe.sefaz.ba.gov.br/servicos/nfce/qrcode.aspx"
+                        : "http://hnfe.sefaz.ba.gov.br/servicos/nfce/qrcode.aspx";
+                case TCodUfIBGELegado.CE:
+                    return isProducao
+                        ? "http://nfce.sefaz.ce.gov.br/pages/ShowNFCe.html"
+                        : "http://nfceh.sefaz.ce.gov.br/pages/ShowNFCe.html";
+                case TCodUfIBGELegado.DF:
+                    return "http://dec.fazenda.df.gov.br/ConsultarNFCe.aspx";
+                case TCodUfIBGELegado.ES:
+                    return isProducao
+                        ? "http://app.sefaz.es.gov.br/QRCode/consultarNFCe.aspx"
+                        : "http://homologacao.sefaz.es.gov.br/QRCode/consultarNFCe.aspx";
+                case TCodUfIBGELegado.GO:
+                    return isProducao
+                        ? "http://nfe.sefaz.go.gov.br/nfeweb/sites/nfce/danfeNFCe"
+                        : "http://homolog.sefaz.go.gov.br/nfeweb/sites/nfce/danfeNFCe";
+                case TCodUfIBGELegado.MA:
+                    return isProducao
+                        ? "http://www.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp"
+                        : "http://www.hom.nfce.sefaz.ma.gov.br/portal/consultarNFCe.jsp";
+                case TCodUfIBGELegado.MT:
+                    return isProducao
+                        ? "http://www.sefaz.mt.gov.br/nfce/consultanfce"
+                        : "http://homologacao.sefaz.mt.gov.br/nfce/consultanfce";
+                case TCodUfIBGELegado.MS:
+                    return "http://www.dfe.ms.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.MG:
+                    return "https://portalsped.fazenda.mg.gov.br/portalnfce/sistema/qrcode.xhtml";
+                case TCodUfIBGELegado.PA:
+                    return "https://www.sefa.pa.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.PB:
+                    return isProducao
+                        ? "http://www.receita.pb.gov.br/nfce/qrcode"
+                        : "http://www.receita.pb.gov.br/nfcehom/qrcode";
+                case TCodUfIBGELegado.PR:
+                    return "http://www.fazenda.pr.gov.br/nfce/consulta";
+                case TCodUfIBGELegado.PE:
+                    return isProducao
+                        ? "http://nfce.sefaz.pe.gov.br/nfce/consulta"
+                        : "http://nfcehomolog.sefaz.pe.gov.br/nfce/consulta";
+                case TCodUfIBGELegado.PI:
+                    return "http://www.sefaz.pi.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.RJ:
+                    return "http://www4.fazenda.rj.gov.br/consultaNFCe/QRCode";
+                case TCodUfIBGELegado.RN:
+                    return isProducao
+                        ? "http://nfce.set.rn.gov.br/consultarNFCe.aspx"
+                        : "http://hom.nfce.set.rn.gov.br/consultarNFCe.aspx";
+                case TCodUfIBGELegado.RS:
+                    return isProducao
+                        ? "https://www.sefaz.rs.gov.br/nfce/consulta"
+                        : "https://www.sefaz.rs.gov.br/nfce/consulta-d";
+                case TCodUfIBGELegado.RO:
+                    return "http://www.sefin.ro.gov.br/nfce/qrcode.jsp";
+                case TCodUfIBGELegado.RR:
+                    return isProducao
+                        ? "https://www.sefaz.rr.gov.br/nfce/servlet/qrcode"
+                        : "http://200.174.9.67/nfce/servlet/qrcode";
+                case TCodUfIBGELegado.SP:
+                    return isProducao
+                        ? "https://www.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx"
+                        : "https://homologacao.nfce.fazenda.sp.gov.br/NFCeConsultaPublica/Paginas/ConsultaQRCode.aspx";
+                case TCodUfIBGELegado.SE:
+                    return isProducao
+                        ? "http://www.nfce.se.gov.br/nfce/qrcode"
+                        : "http://www.hom.nfce.se.gov.br/nfce/qrcode";
+                case TCodUfIBGELegado.TO:
+                    return isProducao
+                        ? "http://www.sefaz.to.gov.br/nfce/qrcode"
+                        : "http://hom.sefaz.to.gov.br/nfce/qrcode";
+
+                // Santa Catarina não utiliza o modelo NFC-e.
+                case TCodUfIBGELegado.SC:
+                    return string.Empty;
+
+                default:
+                    return string.Empty;
             }
         }
+    
 
-        internal static LoteEnviar CriaLote(NotaEnviar notaEnviar, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, string csc, string idCSC, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
+    internal static LoteEnviar CriaLote(NotaEnviar notaEnviar, TAmbLegado Ambiente, string serialCertificado, IWTPostgreNpgsqlConnection conn, string cnpjTransmissor, string csc, string idCSC, AcsUsuarioClass usuarioAtual, ComunicacaoWaitForm waitForm)
         {
             
             IWTPostgreNpgsqlCommand command = null;
@@ -388,7 +471,44 @@ namespace IWTNFCompleto
                 loteAtual.NumeroLoteInterno = (Convert.ToInt32(command.ExecuteScalar())) + 1;
                 //Assinar as NFes que serão enviadas
 
-             
+
+                // Trata infAdic
+                if (notaEnviar.NfTnfe.infNFe.infAdic == null || 
+                    (string.IsNullOrEmpty(notaEnviar.NfTnfe.infNFe.infAdic.infCpl) &&
+                     (notaEnviar.NfTnfe.infNFe.infAdic.obsCont == null || notaEnviar.NfTnfe.infNFe.infAdic.obsCont.Count == 0)))
+                {
+                    notaEnviar.NfTnfe.infNFe.infAdic = null; // Não serializa a tag
+                }
+
+                // Trata retTrib dentro de total
+                if (notaEnviar.NfTnfe.infNFe.total?.retTrib != null)
+                {
+                    // Verifica se retTrib está vazio (sem propriedades preenchidas)
+                    var retTrib = notaEnviar.NfTnfe.infNFe.total.retTrib;
+
+                    // Assumindo que retTrib tem propriedades como vRetPIS, vRetCOFINS, etc.
+                    // Se todas estiverem nulas ou zeradas, remove o objeto
+                    bool isRetTribEmpty = true;
+
+                    // Use reflection para verificar se todas as propriedades são nulas/zero
+                    var properties = retTrib.GetType().GetProperties();
+                    foreach (var prop in properties)
+                    {
+                        var value = prop.GetValue(retTrib);
+                        if (value != null && !value.Equals(0m) && !value.Equals(0.0m) && !string.IsNullOrEmpty(value.ToString()))
+                        {
+                            isRetTribEmpty = false;
+                            break;
+                        }
+                    }
+
+                    if (isRetTribEmpty)
+                    {
+                        notaEnviar.NfTnfe.infNFe.total.retTrib = null; // Não serializa a tag
+                    }
+                }
+
+
 
 
                 NfeCompletoLoteClass lote = new NfeCompletoLoteClass(usuarioAtual, conn)
@@ -670,18 +790,41 @@ namespace IWTNFCompleto
                     indSincLegado = TEnviNFeIndSincLegado.Sincrono
                 };
 
-             
 
 
-                XmlSerializer serializer = new XmlSerializer(typeof (TEnviNFe));
+                XmlAttributeOverrides overrides = new XmlAttributeOverrides();
+
+                // Override para a classe TEnviNFe
+                XmlAttributes attrs = new XmlAttributes();
+                XmlRootAttribute root = new XmlRootAttribute("enviNFe");
+                root.Namespace = "http://www.portalfiscal.inf.br/nfe";
+                attrs.XmlRoot = root;
+                overrides.Add(typeof(TEnviNFe), attrs);
+
+                // Override para as propriedades filhas (remove namespace)
+                //XmlAttributes attrsIdLote = new XmlAttributes();
+                //attrsIdLote.XmlElements.Add(new XmlElementAttribute("idLote") { Namespace = "" });
+                //overrides.Add(typeof(TEnviNFe), "idLote", attrsIdLote);
+
+                //XmlAttributes attrsIndSinc = new XmlAttributes();
+                //attrsIndSinc.XmlElements.Add(new XmlElementAttribute("indSinc") { Namespace = "" });
+                //overrides.Add(typeof(TEnviNFe), "indSinc", attrsIndSinc);
+
+                //XmlAttributes attrsNFe = new XmlAttributes();
+                //attrsNFe.XmlElements.Add(new XmlElementAttribute("NFe") { Namespace = "" });
+                //overrides.Add(typeof(TEnviNFe), "NFe", attrsNFe);
+
+
+
+                XmlSerializer serializer = new XmlSerializer(typeof (TEnviNFe), overrides);
                 Utf8StringWriter builder = new Utf8StringWriter();
                 XmlWriterSettings settings = new XmlWriterSettings {OmitXmlDeclaration = false, Indent = false, ConformanceLevel = ConformanceLevel.Auto};
-                XmlWriter xmlWriter = XmlWriter.Create(builder, settings);
-
-                XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
-                namespaces.Add("", "http://www.portalfiscal.inf.br/nfe");
-
-                serializer.Serialize(xmlWriter, objetoEnvio, namespaces);
+                using (XmlWriter xmlWriter = XmlWriter.Create(builder, settings))
+                {
+                    XmlSerializerNamespaces namespaces = new XmlSerializerNamespaces();
+                    namespaces.Add("", "http://www.portalfiscal.inf.br/nfe");
+                    serializer.Serialize(xmlWriter, objetoEnvio, namespaces);
+                }
 
                 XmlDocument xmlConsulta = new XmlDocument();
                 xmlConsulta.LoadXml(builder.ToString());
@@ -703,7 +846,7 @@ namespace IWTNFCompleto
 
                 string urlWebservice = EnderecosWebservices.GetEndereco(ufEmitente, NFeOperacoes.versaoLayout, Ambiente, ServicoNFe.NfeRecepcao, false, TMod.Item65);
 
-                NFCeServices.NFeAutorizacao4 client = new NFCeServices.NFeAutorizacao4()
+                NFeAutorizacao4 client = new NFeAutorizacao4()
                 { 
                     Url = urlWebservice,
                     Timeout = NFeOperacoes.timeoutPadrao
@@ -725,6 +868,34 @@ namespace IWTNFCompleto
                 TRetEnviNFe resultatoCompleto = null;
                 try
                 {
+
+                    // >>>>>> ADICIONE ESTAS LINHAS AQUI <<<<
+                    string xmlCompleto = xmlConsulta.OuterXml;
+
+                    // Salva o XML enviado para análise
+                    string pastaTemp = @"C:\temp\nfce_logs";
+                    if (!System.IO.Directory.Exists(pastaTemp))
+                        System.IO.Directory.CreateDirectory(pastaTemp);
+
+                    string nomeArquivo = $"xml_enviado_{DateTime.Now:yyyyMMdd_HHmmss}.xml";
+                    System.IO.File.WriteAllText(System.IO.Path.Combine(pastaTemp, nomeArquivo), xmlCompleto);
+
+                    // Log também em formato legível (com quebras de linha)
+                    XmlDocument docFormatado = new XmlDocument();
+                    docFormatado.LoadXml(xmlCompleto);
+                    using (var stringWriter = new System.IO.StringWriter())
+                    using (var xmlTextWriter = XmlWriter.Create(stringWriter, new XmlWriterSettings { Indent = true }))
+                    {
+                        docFormatado.WriteTo(xmlTextWriter);
+                        xmlTextWriter.Flush();
+                        System.IO.File.WriteAllText(
+                            System.IO.Path.Combine(pastaTemp, nomeArquivo.Replace(".xml", "_formatado.xml")),
+                            stringWriter.GetStringBuilder().ToString()
+                        );
+                    }
+                    // >>>>>> FIM DAS LINHAS ADICIONADAS <<<<
+
+
                     XmlNode resultadoProcessamento = client.nfeAutorizacaoLote(xmlConsulta);
 
                     serializer = new XmlSerializer(typeof(TRetEnviNFe));
@@ -996,7 +1167,7 @@ namespace IWTNFCompleto
                 NfTnfe = nfe,
                 Xml = docNF
             };
-            notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, false,certificado, csc, idCSC);
+            notaEnviar.NfTnfe.infNFeSupl.qrCode = GerarConteudoQrCode(notaEnviar, true,certificado, csc, idCSC);
 
 
             XmlSerializer serializer = new XmlSerializer(typeof(TNFe), new XmlRootAttribute("NFe") { Namespace = "http://www.portalfiscal.inf.br/nfe" });
