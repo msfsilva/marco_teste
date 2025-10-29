@@ -1,0 +1,1199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A4ABF38-1B5F-4AC3-A25C-CF53581969B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibliotecaEntidades</RootNamespace>
+    <AssemblyName>BibliotecaEntidades</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib, Version=1.0.0.15, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BibliotecaComunicacaoGAD">
+      <HintPath>..\..\..\Recursos.C#.DLLs\BibliotecaComunicacaoGAD.dll</HintPath>
+    </Reference>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.6.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\Portable.BouncyCastle.1.8.6\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Configurations, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CSScriptLibrary">
+      <HintPath>..\BibliotecaConfigurador\cs-script\Lib\Bin\NET 4.0\CSScriptLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DBProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\DBProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.2.0.246, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\SharpZipLib.1.2.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\Recursos.C#.DLLs\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTCustomControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTDotNetLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTDotNetLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTFunctions, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTLog">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTLog.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTNF">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTNF\IWTNF.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTNFCompleto">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTNFeCompleto\IWTNFCompleto.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTNFCompleto.BibliotecaDatasets">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTNFeCompleto\IWTNFCompleto.BibliotecaDatasets.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTNFCompleto.BibliotecaEntidades, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTNFeCompleto\IWTNFCompleto.BibliotecaEntidades.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTPostgreNpgsql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTPostgreNpgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\NPOI.2.5.2\lib\net45\NPOI.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\NPOI.2.5.2\lib\net45\NPOI.OOXML.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\NPOI.2.5.2\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.5.2.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\..\..\MQA\packages\NPOI.2.5.2\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Jumper.c#.app.Easi\packages\ZXing.Net.0.16.9\lib\net45\zxing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\..\..\Jumper.c#.app.Easi\packages\ZXing.Net.0.16.9\lib\net45\zxing.presentation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AcabamentoBaseClass.cs" />
+    <Compile Include="Base\AgrupadorContaBaseClass.cs" />
+    <Compile Include="Base\AgrupadorMaterialBaseClass.cs" />
+    <Compile Include="Base\AgrupadorOpBaseClass.cs" />
+    <Compile Include="Base\AgrupadorPostoTrabalhoBaseClass.cs" />
+    <Compile Include="Base\AliquotaFundoCombatePobrezaBaseClass.cs" />
+    <Compile Include="Base\AplicacaoClienteBaseClass.cs" />
+    <Compile Include="Base\AtendimentoBaseClass.cs" />
+    <Compile Include="Base\BudgetBaseClass.cs" />
+    <Compile Include="Base\BudgetLinhaBaseClass.cs" />
+    <Compile Include="Base\BufferEmailAnexoBaseClass.cs" />
+    <Compile Include="Base\BufferEmailBaseClass.cs" />
+    <Compile Include="Base\CentroCustoLucroBaseClass.cs" />
+    <Compile Include="Base\ChangeItemBaseClass.cs" />
+    <Compile Include="Base\CidadeBaseClass.cs" />
+    <Compile Include="Base\ClassificacaoProduto2BaseClass.cs" />
+    <Compile Include="Base\ClassificacaoProdutoBaseClass.cs" />
+    <Compile Include="Base\ClassificacaoServicoBaseClass.cs" />
+    <Compile Include="Base\CliEassaIdentificaClienteBaseClass.cs" />
+    <Compile Include="Base\ClienteBaseClass.cs" />
+    <Compile Include="Base\ClienteContatoBaseClass.cs" />
+    <Compile Include="Base\CobBoletoBaseClass.cs" />
+    <Compile Include="Base\CobBoletoHistoricoBaseClass.cs" />
+    <Compile Include="Base\CobBoletoInstrucoesBaseClass.cs" />
+    <Compile Include="Base\CobBoletoRetornoBaseClass.cs" />
+    <Compile Include="Base\CobRemessaBaseClass.cs" />
+    <Compile Include="Base\CobRetornoBaseClass.cs" />
+    <Compile Include="Base\CodigoBarraBaseClass.cs" />
+    <Compile Include="Base\CompradorBaseClass.cs" />
+    <Compile Include="Base\ConciliacaoBancariaBaseClass.cs" />
+    <Compile Include="Base\ConferenciaCncBaseClass.cs" />
+    <Compile Include="Base\ConfiguracaoClienteBaseClass.cs" />
+    <Compile Include="Base\ContaBancariaBaseClass.cs" />
+    <Compile Include="Base\ContaPagarBaseClass.cs" />
+    <Compile Include="Base\ContaReceberBaseClass.cs" />
+    <Compile Include="Base\ContaReceberBoletoBaseClass.cs" />
+    <Compile Include="Base\ContaRecorrenteBaseClass.cs" />
+    <Compile Include="Base\ContratoFornecimentoBaseClass.cs" />
+    <Compile Include="Base\CredorDevedorBaseClass.cs" />
+    <Compile Include="Base\DashboardPedidosBaseClass.cs" />
+    <Compile Include="Base\DeclaracaoImportacaoAdicaoBaseClass.cs" />
+    <Compile Include="Base\DeclaracaoImportacaoAdicaoItemBaseClass.cs" />
+    <Compile Include="Base\DeclaracaoImportacaoBaseClass.cs" />
+    <Compile Include="Base\DimensaoBaseClass.cs" />
+    <Compile Include="Base\DivergenciaPrecoBaseClass.cs" />
+    <Compile Include="Base\DivisaoLoteBaseClass.cs" />
+    <Compile Include="Base\DocumentoCopiaBaseClass.cs" />
+    <Compile Include="Base\DocumentoFiscalBaseClass.cs" />
+    <Compile Include="Base\DocumentoFiscalDestinoBaseClass.cs" />
+    <Compile Include="Base\DocumentoFiscalTipoBaseClass.cs" />
+    <Compile Include="Base\DocumentoTipoBaseClass.cs" />
+    <Compile Include="Base\DocumentoTipoFamiliaBaseClass.cs" />
+    <Compile Include="Base\EmbalagemBaseClass.cs" />
+    <Compile Include="Base\EmbarqueBaseClass.cs" />
+    <Compile Include="Base\EmissorCertificadoBaseClass.cs" />
+    <Compile Include="Base\Enuns.cs" />
+    <Compile Include="Base\EpiBaseClass.cs" />
+    <Compile Include="Base\EpiCaBaseClass.cs" />
+    <Compile Include="Base\EpiFornecedorBaseClass.cs" />
+    <Compile Include="Base\EstadoBaseClass.cs" />
+    <Compile Include="Base\EstoqueBaseClass.cs" />
+    <Compile Include="Base\EstoqueCorredorBaseClass.cs" />
+    <Compile Include="Base\EstoqueGavetaBaseClass.cs" />
+    <Compile Include="Base\EstoqueGavetaItemBaseClass.cs" />
+    <Compile Include="Base\EstoqueHistoricoValorBaseClass.cs" />
+    <Compile Include="Base\EstoqueItemHistoricoBaseClass.cs" />
+    <Compile Include="Base\EstoqueMovimentacaoBaseClass.cs" />
+    <Compile Include="Base\EstoquePrateleiraBaseClass.cs" />
+    <Compile Include="Base\FamiliaClienteBaseClass.cs" />
+    <Compile Include="Base\FamiliaDocumentoBaseClass.cs" />
+    <Compile Include="Base\FamiliaMaterialBaseClass.cs" />
+    <Compile Include="Base\FamiliaRecursoBaseClass.cs" />
+    <Compile Include="Base\FomularioRetiradaManualEstoqueBaseClass.cs" />
+    <Compile Include="Base\FormaPagamentoBaseClass.cs" />
+    <Compile Include="Base\FornecedorBaseClass.cs" />
+    <Compile Include="Base\FornecedorContatoBaseClass.cs" />
+    <Compile Include="Base\FuncaoBaseClass.cs" />
+    <Compile Include="Base\FuncaoEpiBaseClass.cs" />
+    <Compile Include="Base\FuncionarioBaseClass.cs" />
+    <Compile Include="Base\FuncionarioDocumentoBaseClass.cs" />
+    <Compile Include="Base\FuncionarioEpiBaseClass.cs" />
+    <Compile Include="Base\FuncionarioFuncaoBaseClass.cs" />
+    <Compile Include="Base\GadPedidosUploadBaseClass.cs" />
+    <Compile Include="Base\HistoricoCarteiraBaseClass.cs" />
+    <Compile Include="Base\HistoricoCompraEpiBaseClass.cs" />
+    <Compile Include="Base\HistoricoCompraMaterialBaseClass.cs" />
+    <Compile Include="Base\HistoricoCompraProdutoBaseClass.cs" />
+    <Compile Include="Base\KanbanAcionamentoBaseClass.cs" />
+    <Compile Include="Base\KitTipoKitBaseClass.cs" />
+    <Compile Include="Base\LancamentoBaseClass.cs" />
+    <Compile Include="Base\LeadtimeItensBaseClass.cs" />
+    <Compile Include="Base\LiberacaoDocumentoBaseClass.cs" />
+    <Compile Include="Base\LocalDesembaracoAduaneiroBaseClass.cs" />
+    <Compile Include="Base\LocalFabricacaoBaseClass.cs" />
+    <Compile Include="Base\LogConferenciaPrecoBaseClass.cs" />
+    <Compile Include="Base\LogConfiguracaoAutomaticaPedidosBaseClass.cs" />
+    <Compile Include="Base\LogEventosBaseClass.cs" />
+    <Compile Include="Base\LoteBaseClass.cs" />
+    <Compile Include="Base\LoteSolicitacaoCompraBaseClass.cs" />
+    <Compile Include="Base\MarcaBaseClass.cs" />
+    <Compile Include="Base\MaterialBaseClass.cs" />
+    <Compile Include="Base\MaterialFiscalBaseClass.cs" />
+    <Compile Include="Base\MaterialFornecedorBaseClass.cs" />
+    <Compile Include="Base\MeioPagamentoBaseClass.cs" />
+    <Compile Include="Base\MilkrunHistoryBaseClass.cs" />
+    <Compile Include="Base\MiniFabricaBaseClass.cs" />
+    <Compile Include="Base\ModeloEtiquetaExpedicaoBaseClass.cs" />
+    <Compile Include="Base\ModeloFiscalIcmsBaseClass.cs" />
+    <Compile Include="Base\ModeloFiscalIcmsEstadoBaseClass.cs" />
+    <Compile Include="Base\MotivoAlteracaoQtdOpBaseClass.cs" />
+    <Compile Include="Base\MovimentoCaixaBaseClass.cs" />
+    <Compile Include="Base\NcmBaseClass.cs" />
+    <Compile Include="Base\NcmBeneficioFiscalBaseClass.cs" />
+    <Compile Include="Base\NfDependeBaseClass.cs" />
+    <Compile Include="Base\NivelAprovacaoComprasBaseClass.cs" />
+    <Compile Include="Base\NotaFiscalEntradaBaseClass.cs" />
+    <Compile Include="Base\NotaFiscalEntradaLinhaBaseClass.cs" />
+    <Compile Include="Base\NotificacaoDesvioBaseClass.cs" />
+    <Compile Include="Base\ObservacaoAdicionalNfeBaseClass.cs" />
+    <Compile Include="Base\OperacaoBaseClass.cs" />
+    <Compile Include="Base\OperacaoCompletaBaseClass.cs" />
+    <Compile Include="Base\OperacaoCompletaIcmsAliquotaBaseClass.cs" />
+    <Compile Include="Base\OrcamentoCompraBaseClass.cs" />
+    <Compile Include="Base\OrcamentoCompraItemBaseClass.cs" />
+    <Compile Include="Base\OrcamentoConfiguradoBaseClass.cs" />
+    <Compile Include="Base\OrcamentoItemBaseClass.cs" />
+    <Compile Include="Base\OrcamentoItemVariavelBaseClass.cs" />
+    <Compile Include="Base\OrcamentoKitBaseClass.cs" />
+    <Compile Include="Base\OrcamentoVariavelBaseClass.cs" />
+    <Compile Include="Base\OrdemCompraAprovacaoBaseClass.cs" />
+    <Compile Include="Base\OrdemCompraBaseClass.cs" />
+    <Compile Include="Base\OrdemCompraDocumentoEnviadoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoDiferencaBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoDocumentoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoDocumentoOpBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoEnvioTerceirosBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoEnvioTerceirosCancelamentoSaldoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoEnvioTerceirosCancSaldoRecebBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoEnvioTerceirosRecebimentoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoEstoqueBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoGrupoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoHistoricoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoMaterialBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoPedidoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoPostoTrabalhoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoPostoTrabalhoProducaoBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoPostoTrabalhoProducaoLoteBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoProdutoComponenteBaseClass.cs" />
+    <Compile Include="Base\OrdemProducaoRecursoBaseClass.cs" />
+    <Compile Include="Base\OrderItemBaseClass.cs" />
+    <Compile Include="Base\OrderItemEtiquetaBaseClass.cs" />
+    <Compile Include="Base\OrderItemEtiquetaConferenciaBaseClass.cs" />
+    <Compile Include="Base\OrderItemEtiquetaConferenciaNfBaseClass.cs" />
+    <Compile Include="Base\OrderItemEtiquetaConferenciaVolumesBaseClass.cs" />
+    <Compile Include="Base\OrderVariablesBaseClass.cs" />
+    <Compile Include="Base\PackingListBaseClass.cs" />
+    <Compile Include="Base\PadraoAsBaseClass.cs" />
+    <Compile Include="Base\PaisBaseClass.cs" />
+    <Compile Include="Base\PalletBaseClass.cs" />
+    <Compile Include="Base\PedidoClassificacaoBaseClass.cs" />
+    <Compile Include="Base\PedidoDocumentoBaseClass.cs" />
+    <Compile Include="Base\PedidoItemBaseClass.cs" />
+    <Compile Include="Base\PedidoItemConfiguradoMaterialBaseClass.cs" />
+    <Compile Include="Base\PedidoItemFeedbackBaseClass.cs" />
+    <Compile Include="Base\PedidoItemFeedbackSecundarioBaseClass.cs" />
+    <Compile Include="Base\PedidoItemHistoricoAlteracoesBaseClass.cs" />
+    <Compile Include="Base\PedidoItemLoteClienteBaseClass.cs" />
+    <Compile Include="Base\PedidoItemQualidadeBaseClass.cs" />
+    <Compile Include="Base\PedidoItemVariavelBaseClass.cs" />
+    <Compile Include="Base\PedidoItemVolumeBaseClass.cs" />
+    <Compile Include="Base\PedidoKitBaseClass.cs" />
+    <Compile Include="Base\PedidoRejeitadoBaseClass.cs" />
+    <Compile Include="Base\PedidosAbertosBaseClass.cs" />
+    <Compile Include="Base\PedidoVariavelBaseClass.cs" />
+    <Compile Include="Base\PlanoCorteBaseClass.cs" />
+    <Compile Include="Base\PlanoCorteItemBaseClass.cs" />
+    <Compile Include="Base\PlanoCorteItemOpBaseClass.cs" />
+    <Compile Include="Base\PlanoCorteItemPedidoBaseClass.cs" />
+    <Compile Include="Base\PostoTrabalhoBaseClass.cs" />
+    <Compile Include="Base\ProdutoAcabamentoBaseClass.cs" />
+    <Compile Include="Base\ProdutoBaseClass.cs" />
+    <Compile Include="Base\ProdutoBloqueioQualidadeBaseClass.cs" />
+    <Compile Include="Base\ProdutoDocumentoTipoBaseClass.cs" />
+    <Compile Include="Base\ProdutoEstruturaInconsistenciaBaseClass.cs" />
+    <Compile Include="Base\ProdutoEstruturaLockBaseClass.cs" />
+    <Compile Include="Base\ProdutoFiscalBaseClass.cs" />
+    <Compile Include="Base\ProdutoFornecedorBaseClass.cs" />
+    <Compile Include="Base\ProdutoKBaseClass.cs" />
+    <Compile Include="Base\ProdutoKEtiquetaBaseClass.cs" />
+    <Compile Include="Base\ProdutoKProdutoBaseClass.cs" />
+    <Compile Include="Base\ProdutoMaterialBaseClass.cs" />
+    <Compile Include="Base\ProdutoPaiFilhoBaseClass.cs" />
+    <Compile Include="Base\ProdutoPermissaoVendaPeriodosBaseClass.cs" />
+    <Compile Include="Base\ProdutoPostoTrabalhoBaseClass.cs" />
+    <Compile Include="Base\ProdutoPrecoBaseClass.cs" />
+    <Compile Include="Base\ProdutoRecursoBaseClass.cs" />
+    <Compile Include="Base\ProdutoRevisaoBaseClass.cs" />
+    <Compile Include="Base\ProgramacaoBaseClass.cs" />
+    <Compile Include="Base\RecursoBaseClass.cs" />
+    <Compile Include="Base\RepresentanteBaseClass.cs" />
+    <Compile Include="Base\ServicoBaseClass.cs" />
+    <Compile Include="Base\SincronizacaoSdcBaseClass.cs" />
+    <Compile Include="Base\SolicitacaoCompraBaseClass.cs" />
+    <Compile Include="Base\SolicitacaoCompraFeedbackBaseClass.cs" />
+    <Compile Include="Base\SolicitacaoCompraPedidoBaseClass.cs" />
+    <Compile Include="Base\StatusBaseClass.cs" />
+    <Compile Include="Base\TabelaPrecoItemVariavelBaseClass.cs" />
+    <Compile Include="Base\TipoDefeitoBaseClass.cs" />
+    <Compile Include="Base\TipoKitBaseClass.cs" />
+    <Compile Include="Base\TipoNotificacaoDesvioBaseClass.cs" />
+    <Compile Include="Base\TipoPagamentoBaseClass.cs" />
+    <Compile Include="Base\TransferenciaBancariaBaseClass.cs" />
+    <Compile Include="Base\TransporteBaseClass.cs" />
+    <Compile Include="Base\UnidadeMedidaBaseClass.cs" />
+    <Compile Include="Base\VariavelBaseClass.cs" />
+    <Compile Include="Base\VendedorBaseClass.cs" />
+    <Compile Include="ClassesAuxiliares\Ambiente.cs" />
+    <Compile Include="ClassesAuxiliares\ApiEasiFinanceiroNovo.cs" />
+    <Compile Include="ClassesAuxiliares\ConfiguraConexaoGad.cs" />
+    <Compile Include="ClassesAuxiliares\EmitenteClass.cs" />
+    <Compile Include="ClassesAuxiliares\EnumModoControleComissao.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\EstoqueEstruturaCorredor.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\EstoqueEstruturaPrateleira.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\EstoqueEstruturaPrincipal.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\EstoqueEstruturaGaveta.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\EstoqueGavetaItemBaixaClass.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\SubEstoque.cs" />
+    <Compile Include="ClassesAuxiliares\FaturamentoRemessaDto.cs" />
+    <Compile Include="ClassesAuxiliares\ICarregarDocumentosImpressaoOp.cs" />
+    <Compile Include="ClassesAuxiliares\InclusaoPedidoNota.cs" />
+    <Compile Include="ClassesAuxiliares\LogoClienteClass.cs" />
+    <Compile Include="ClassesAuxiliares\NotaFiscalEntradaFuncoesAuxiliares.cs" />
+    <Compile Include="ClassesAuxiliares\NotaFiscalFuncoesAuxiliares.cs" />
+    <Compile Include="ClassesAuxiliares\PedidoOrcamentoEnum.cs" />
+    <Compile Include="ClassesAuxiliares\SincronizarCadastrosSdcClass.cs" />
+    <Compile Include="ClassesAuxiliares\TipoEmissaoNFe.cs" />
+    <Compile Include="ClassesAuxiliares\CustomizacoesClienteFactory.cs" />
+    <Compile Include="ClassesAuxiliares\TipoItemEstrutura.cs" />
+    <Compile Include="ComplementoEtiquetaGadForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComplementoEtiquetaGadForm.Designer.cs">
+      <DependentUpon>ComplementoEtiquetaGadForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entidades\AcabamentoClass.cs" />
+    <Compile Include="Entidades\AgrupadorContaClass.cs" />
+    <Compile Include="Entidades\AgrupadorMaterialClass.cs" />
+    <Compile Include="Entidades\AgrupadorOpClass.cs" />
+    <Compile Include="Entidades\AgrupadorPostoTrabalhoClass.cs" />
+    <Compile Include="Entidades\AliquotaFundoCombatePobrezaClass.cs" />
+    <Compile Include="Entidades\AplicacaoClienteClass.cs" />
+    <Compile Include="Entidades\AtendimentoClass.cs" />
+    <Compile Include="Entidades\BudgetClass.cs" />
+    <Compile Include="Entidades\BudgetLinhaClass.cs" />
+    <Compile Include="Entidades\BufferEmailAnexoClass.cs" />
+    <Compile Include="Entidades\BufferEmailClass.cs" />
+    <Compile Include="Entidades\CentroCustoLucroClass.cs" />
+    <Compile Include="Entidades\ChangeItemClass.cs" />
+    <Compile Include="Entidades\CidadeClass.cs" />
+    <Compile Include="Entidades\ClassificacaoProduto2Class.cs" />
+    <Compile Include="Entidades\ClassificacaoProdutoClass.cs" />
+    <Compile Include="Entidades\ClassificacaoServicoClass.cs" />
+    <Compile Include="Entidades\CliEassaIdentificaClienteClass.cs" />
+    <Compile Include="Entidades\ClienteClass.cs" />
+    <Compile Include="Entidades\ClienteContatoClass.cs" />
+    <Compile Include="Entidades\CobBoletoClass.cs" />
+    <Compile Include="Entidades\CobBoletoHistoricoClass.cs" />
+    <Compile Include="Entidades\CobBoletoInstrucoesClass.cs" />
+    <Compile Include="Entidades\CobBoletoRetornoClass.cs" />
+    <Compile Include="Entidades\CobRemessaClass.cs" />
+    <Compile Include="Entidades\CobRetornoClass.cs" />
+    <Compile Include="Entidades\CodigoBarraClass.cs" />
+    <Compile Include="Entidades\CompradorClass.cs" />
+    <Compile Include="Entidades\ConciliacaoBancariaClass.cs" />
+    <Compile Include="Entidades\ConferenciaCncClass.cs" />
+    <Compile Include="Entidades\ConfiguracaoClienteClass.cs" />
+    <Compile Include="Entidades\ContaBancariaClass.cs" />
+    <Compile Include="Entidades\ContaPagarClass.cs" />
+    <Compile Include="Entidades\ContaReceberBoletoClass.cs" />
+    <Compile Include="Entidades\ContaReceberClass.cs" />
+    <Compile Include="Entidades\ContaRecorrenteClass.cs" />
+    <Compile Include="Entidades\ContratoFornecimentoClass.cs" />
+    <Compile Include="Entidades\CredorDevedorClass.cs" />
+    <Compile Include="Entidades\DashboardPedidosClass.cs" />
+    <Compile Include="Entidades\DeclaracaoImportacaoAdicaoClass.cs" />
+    <Compile Include="Entidades\DeclaracaoImportacaoAdicaoItemClass.cs" />
+    <Compile Include="Entidades\DeclaracaoImportacaoClass.cs" />
+    <Compile Include="Entidades\DimensaoClass.cs" />
+    <Compile Include="Entidades\DivergenciaPrecoClass.cs" />
+    <Compile Include="Entidades\DivisaoLoteClass.cs" />
+    <Compile Include="Entidades\DocumentoCopiaClass.cs" />
+    <Compile Include="Entidades\DocumentoFiscalClass.cs" />
+    <Compile Include="Entidades\DocumentoFiscalDestinoClass.cs" />
+    <Compile Include="Entidades\DocumentoFiscalTipoClass.cs" />
+    <Compile Include="Entidades\DocumentoTipoClass.cs" />
+    <Compile Include="Entidades\DocumentoTipoFamiliaClass.cs" />
+    <Compile Include="Entidades\EmbalagemClass.cs" />
+    <Compile Include="Entidades\EmbarqueClass.cs" />
+    <Compile Include="Entidades\EmissorCertificadoClass.cs" />
+    <Compile Include="Entidades\EpiCaClass.cs" />
+    <Compile Include="Entidades\EpiClass.cs" />
+    <Compile Include="Entidades\EpiFornecedorClass.cs" />
+    <Compile Include="Entidades\EstadoClass.cs" />
+    <Compile Include="Entidades\EstoqueClass.cs" />
+    <Compile Include="Entidades\EstoqueCorredorClass.cs" />
+    <Compile Include="Entidades\EstoqueGavetaClass.cs" />
+    <Compile Include="Entidades\EstoqueGavetaItemClass.cs" />
+    <Compile Include="Entidades\EstoqueHistoricoValorClass.cs" />
+    <Compile Include="Entidades\EstoqueItemHistoricoClass.cs" />
+    <Compile Include="Entidades\EstoqueMovimentacaoClass.cs" />
+    <Compile Include="Entidades\EstoquePrateleiraClass.cs" />
+    <Compile Include="Entidades\FamiliaClienteClass.cs" />
+    <Compile Include="Entidades\FamiliaDocumentoClass.cs" />
+    <Compile Include="Entidades\FamiliaMaterialClass.cs" />
+    <Compile Include="Entidades\FamiliaRecursoClass.cs" />
+    <Compile Include="Entidades\FomularioRetiradaManualEstoqueClass.cs" />
+    <Compile Include="Entidades\FormaPagamentoClass.cs" />
+    <Compile Include="Entidades\FornecedorClass.cs" />
+    <Compile Include="Entidades\FornecedorContatoClass.cs" />
+    <Compile Include="Entidades\FuncaoClass.cs" />
+    <Compile Include="Entidades\FuncaoEpiClass.cs" />
+    <Compile Include="Entidades\FuncionarioClass.cs" />
+    <Compile Include="Entidades\FuncionarioDocumentoClass.cs" />
+    <Compile Include="Entidades\FuncionarioEpiClass.cs" />
+    <Compile Include="Entidades\FuncionarioFuncaoClass.cs" />
+    <Compile Include="Entidades\GadPedidosUploadClass.cs" />
+    <Compile Include="Entidades\HistoricoCarteiraClass.cs" />
+    <Compile Include="Entidades\HistoricoCompraEpiClass.cs" />
+    <Compile Include="Entidades\HistoricoCompraMaterialClass.cs" />
+    <Compile Include="Entidades\HistoricoCompraProdutoClass.cs" />
+    <Compile Include="Entidades\KanbanAcionamentoClass.cs" />
+    <Compile Include="Entidades\KitTipoKitClass.cs" />
+    <Compile Include="Entidades\LancamentoClass.cs" />
+    <Compile Include="Entidades\LeadtimeItensClass.cs" />
+    <Compile Include="Entidades\LiberacaoDocumentoClass.cs" />
+    <Compile Include="Entidades\LocalDesembaracoAduaneiroClass.cs" />
+    <Compile Include="Entidades\LocalFabricacaoClass.cs" />
+    <Compile Include="Entidades\LogConferenciaPrecoClass.cs" />
+    <Compile Include="Entidades\LogConfiguracaoAutomaticaPedidosClass.cs" />
+    <Compile Include="Entidades\LogEventosClass.cs" />
+    <Compile Include="Entidades\LoteClass.cs" />
+    <Compile Include="Entidades\LoteSolicitacaoCompraClass.cs" />
+    <Compile Include="Entidades\MarcaClass.cs" />
+    <Compile Include="Entidades\MaterialClass.cs" />
+    <Compile Include="Entidades\MaterialFiscalClass.cs" />
+    <Compile Include="Entidades\MaterialFornecedorClass.cs" />
+    <Compile Include="Entidades\MeioPagamentoClass.cs" />
+    <Compile Include="Entidades\MilkrunHistoryClass.cs" />
+    <Compile Include="Entidades\MiniFabricaClass.cs" />
+    <Compile Include="Entidades\ModeloEtiquetaExpedicaoClass.cs" />
+    <Compile Include="Entidades\ModeloFiscalIcmsClass.cs" />
+    <Compile Include="Entidades\ModeloFiscalIcmsEstadoClass.cs" />
+    <Compile Include="Entidades\MotivoAlteracaoQtdOpClass.cs" />
+    <Compile Include="Entidades\MovimentoCaixaClass.cs" />
+    <Compile Include="Entidades\NcmBeneficioFiscalClass.cs" />
+    <Compile Include="Entidades\NcmClass.cs" />
+    <Compile Include="Entidades\NfDependeClass.cs" />
+    <Compile Include="Entidades\NivelAprovacaoComprasClass.cs" />
+    <Compile Include="Entidades\NotaFiscalEntradaClass.cs" />
+    <Compile Include="Entidades\NotaFiscalEntradaLinhaClass.cs" />
+    <Compile Include="Entidades\NotificacaoDesvioClass.cs" />
+    <Compile Include="Entidades\ObservacaoAdicionalNfeClass.cs" />
+    <Compile Include="Entidades\OperacaoClass.cs" />
+    <Compile Include="Entidades\OperacaoCompletaClass.cs" />
+    <Compile Include="Entidades\OperacaoCompletaIcmsAliquotaClass.cs" />
+    <Compile Include="Entidades\OrcamentoCompraClass.cs" />
+    <Compile Include="Entidades\OrcamentoCompraItemClass.cs" />
+    <Compile Include="Entidades\OrcamentoConfiguradoClass.cs" />
+    <Compile Include="Entidades\OrcamentoItemClass.cs" />
+    <Compile Include="Entidades\OrcamentoItemVariavelClass.cs" />
+    <Compile Include="Entidades\OrcamentoKitClass.cs" />
+    <Compile Include="Entidades\OrcamentoVariavelClass.cs" />
+    <Compile Include="Entidades\OrdemCompraAprovacaoClass.cs" />
+    <Compile Include="Entidades\OrdemCompraClass.cs" />
+    <Compile Include="Entidades\OrdemCompraDocumentoEnviadoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoDiferencaClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoDocumentoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoDocumentoOpClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoEnvioTerceirosCancelamentoSaldoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoEnvioTerceirosCancSaldoRecebClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoEnvioTerceirosClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoEnvioTerceirosRecebimentoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoEstoqueClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoGrupoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoHistoricoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoMaterialClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoPedidoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoPostoTrabalhoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoPostoTrabalhoProducaoClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoPostoTrabalhoProducaoLoteClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoProdutoComponenteClass.cs" />
+    <Compile Include="Entidades\OrdemProducaoRecursoClass.cs" />
+    <Compile Include="Entidades\OrderItemClass.cs" />
+    <Compile Include="Entidades\OrderItemEtiquetaClass.cs" />
+    <Compile Include="Entidades\OrderItemEtiquetaConferenciaClass.cs" />
+    <Compile Include="Entidades\OrderItemEtiquetaConferenciaNfClass.cs" />
+    <Compile Include="Entidades\OrderItemEtiquetaConferenciaVolumesClass.cs" />
+    <Compile Include="Entidades\OrderVariablesClass.cs" />
+    <Compile Include="Entidades\PackingListClass.cs" />
+    <Compile Include="Entidades\PadraoAsClass.cs" />
+    <Compile Include="Entidades\PaisClass.cs" />
+    <Compile Include="Entidades\PalletClass.cs" />
+    <Compile Include="Entidades\PedidoClassificacaoClass.cs" />
+    <Compile Include="Entidades\PedidoDocumentoClass.cs" />
+    <Compile Include="Entidades\PedidoItemClass.cs" />
+    <Compile Include="Entidades\PedidoItemConfiguradoMaterialClass.cs" />
+    <Compile Include="Entidades\PedidoItemFeedbackClass.cs" />
+    <Compile Include="Entidades\PedidoItemFeedbackSecundarioClass.cs" />
+    <Compile Include="Entidades\PedidoItemHistoricoAlteracoesClass.cs" />
+    <Compile Include="Entidades\PedidoItemLoteClienteClass.cs" />
+    <Compile Include="Entidades\PedidoItemQualidadeClass.cs" />
+    <Compile Include="Entidades\PedidoItemVariavelClass.cs" />
+    <Compile Include="Entidades\PedidoItemVolumeClass.cs" />
+    <Compile Include="Entidades\PedidoKitClass.cs" />
+    <Compile Include="Entidades\PedidoRejeitadoClass.cs" />
+    <Compile Include="Entidades\PedidosAbertosClass.cs" />
+    <Compile Include="Entidades\PedidoVariavelClass.cs" />
+    <Compile Include="Entidades\PlanoCorteClass.cs" />
+    <Compile Include="Entidades\PlanoCorteItemClass.cs" />
+    <Compile Include="Entidades\PlanoCorteItemOpClass.cs" />
+    <Compile Include="Entidades\PlanoCorteItemPedidoClass.cs" />
+    <Compile Include="Entidades\PostoTrabalhoClass.cs" />
+    <Compile Include="Entidades\ProdutoAcabamentoClass.cs" />
+    <Compile Include="Entidades\ProdutoBloqueioQualidadeClass.cs" />
+    <Compile Include="Entidades\ProdutoClass.cs" />
+    <Compile Include="Entidades\ProdutoDocumentoTipoClass.cs" />
+    <Compile Include="Entidades\ProdutoEstruturaInconsistenciaClass.cs" />
+    <Compile Include="Entidades\ProdutoEstruturaLockClass.cs" />
+    <Compile Include="Entidades\ProdutoFiscalClass.cs" />
+    <Compile Include="Entidades\ProdutoFornecedorClass.cs" />
+    <Compile Include="Entidades\ProdutoKClass.cs" />
+    <Compile Include="Entidades\ProdutoKEtiquetaClass.cs" />
+    <Compile Include="Entidades\ProdutoKProdutoClass.cs" />
+    <Compile Include="Entidades\ProdutoMaterialClass.cs" />
+    <Compile Include="Entidades\ProdutoPaiFilhoClass.cs" />
+    <Compile Include="Entidades\ProdutoPermissaoVendaPeriodosClass.cs" />
+    <Compile Include="Entidades\ProdutoPostoTrabalhoClass.cs" />
+    <Compile Include="ClassesAuxiliares\ProdutoPostoTrabalhoClassComparer.cs" />
+    <Compile Include="Entidades\ProdutoPrecoClass.cs" />
+    <Compile Include="Entidades\ProdutoRecursoClass.cs" />
+    <Compile Include="Entidades\ProdutoRevisaoClass.cs" />
+    <Compile Include="Entidades\ProgramacaoClass.cs" />
+    <Compile Include="Entidades\RecursoClass.cs" />
+    <Compile Include="Entidades\RepresentanteClass.cs" />
+    <Compile Include="Entidades\ServicoClass.cs" />
+    <Compile Include="Entidades\SincronizacaoSdcClass.cs" />
+    <Compile Include="Entidades\SolicitacaoCompraClass.cs" />
+    <Compile Include="Entidades\SolicitacaoCompraFeedbackClass.cs" />
+    <Compile Include="Entidades\SolicitacaoCompraPedidoClass.cs" />
+    <Compile Include="Entidades\StatusClass.cs" />
+    <Compile Include="Entidades\TabelaPrecoItemVariavelClass.cs" />
+    <Compile Include="ClassesAuxiliares\EstruturaEstoque\TipoConteudoEstoque.cs" />
+    <Compile Include="Entidades\TipoDefeitoClass.cs" />
+    <Compile Include="Entidades\TipoKitClass.cs" />
+    <Compile Include="Entidades\TipoNotificacaoDesvioClass.cs" />
+    <Compile Include="Entidades\TipoPagamentoClass.cs" />
+    <Compile Include="Entidades\TransferenciaBancariaClass.cs" />
+    <Compile Include="Entidades\TransporteClass.cs" />
+    <Compile Include="Entidades\UnidadeMedidaClass.cs" />
+    <Compile Include="Entidades\VariavelClass.cs" />
+    <Compile Include="Entidades\VendedorClass.cs" />
+    <Compile Include="Operacoes\AtualizacaoPreco\AtualizacaoPrecoMassaClass.cs" />
+    <Compile Include="Operacoes\CalculoPreco\CalculoPrecoClass.cs" />
+    <Compile Include="Operacoes\CalculoPreco\CalculoPrecoRunnerClass.cs" />
+    <Compile Include="Operacoes\CalculoPreco\DivergenciasForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\CalculoPreco\DivergenciasForm.Designer.cs">
+      <DependentUpon>DivergenciasForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\CalculoPreco\LogCalculoPrecoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\CalculoPreco\LogCalculoPrecoListForm.Designer.cs">
+      <DependentUpon>LogCalculoPrecoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\CalculoPreco\SimuladorCalculoPrecoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\CalculoPreco\SimuladorCalculoPrecoForm.Designer.cs">
+      <DependentUpon>SimuladorCalculoPrecoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\Compras\NecessidadeCompra.cs" />
+    <Compile Include="Operacoes\Compras\OrdemCompraClass.cs" />
+    <Compile Include="Operacoes\Compras\SolicitacaoCompraClass.cs" />
+    <Compile Include="Operacoes\Configurador\Configurador.cs" />
+    <Compile Include="Operacoes\Configurador\ConfiguradorEASI.cs" />
+    <Compile Include="Operacoes\Configurador\ConfiguradorEASIFactory.cs" />
+    <Compile Include="Operacoes\Configurador\ConfiguradorRunnerClass.cs" />
+    <Compile Include="Operacoes\Configurador\ConfiguradorStatusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\Configurador\ConfiguradorStatusForm.Designer.cs">
+      <DependentUpon>ConfiguradorStatusForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\Configurador\EstruturaProdutoConfigurador.cs" />
+    <Compile Include="Operacoes\Configurador\IConfiguradorEASI.cs" />
+    <Compile Include="Operacoes\Configurador\IConfiguradorEASIFactory.cs" />
+    <Compile Include="Operacoes\Configurador\IIwtConfRegras.cs" />
+    <Compile Include="Operacoes\Configurador\OrcamentosConfiguradorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\Configurador\OrcamentosConfiguradorForm.Designer.cs">
+      <DependentUpon>OrcamentosConfiguradorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\Configurador\PedidoConfigurado.cs" />
+    <Compile Include="Operacoes\Configurador\PedidoDocumentoConfigurador.cs" />
+    <Compile Include="Operacoes\Configurador\testeclass.cs" />
+    <Compile Include="Operacoes\Configurador\Variavel.cs" />
+    <Compile Include="Operacoes\EnvioEmail\AvisoNotaEmitidaClass.cs" />
+    <Compile Include="Operacoes\EnvioEmail\EnvioEmailClass.cs" />
+    <Compile Include="Operacoes\EnvioEmail\ServidorEmailClass.cs" />
+    <Compile Include="Operacoes\Estoque\CadEstoqueMovimentacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\Estoque\CadEstoqueMovimentacaoForm.Designer.cs">
+      <DependentUpon>CadEstoqueMovimentacaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\Estoque\EnviaItemEstoqueForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\Estoque\EnviaItemEstoqueForm.Designer.cs">
+      <DependentUpon>EnviaItemEstoqueForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\Estoque\EstoqueMovimentacao.cs" />
+    <Compile Include="Operacoes\Estoque\InventarioListaReport.cs">
+      <DependentUpon>InventarioListaReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\Estoque\InventarioReport.cs">
+      <DependentUpon>InventarioReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\Estoque\InventarioReportClass.cs" />
+    <Compile Include="Operacoes\GerenciamentoKb\CalculaSugestaoKBClass.cs" />
+    <Compile Include="Operacoes\GerenciamentoKb\SugestaoKBClass.cs" />
+    <Compile Include="Operacoes\NFe\CargaTributosDto.cs" />
+    <Compile Include="Operacoes\NFe\DadosFiscaisItemDto.cs" />
+    <Compile Include="Operacoes\OrdemProducao\AutorizacaoQualidadeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\AutorizacaoQualidadeForm.Designer.cs">
+      <DependentUpon>AutorizacaoQualidadeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\CancelamentoOPForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\CancelamentoOPForm.Designer.cs">
+      <DependentUpon>CancelamentoOPForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\EstoqueDisponivelClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\EstoqueDisponivelClassKey.cs" />
+    <Compile Include="Operacoes\OrdemProducao\GeradorOpAgrupadorClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\GeradorOpAvulsa.cs" />
+    <Compile Include="Operacoes\OrdemProducao\IdsUpdate.cs" />
+    <Compile Include="Operacoes\OrdemProducao\IOrdemProducaoFactory.cs" />
+    <Compile Include="Operacoes\Compras\LoteClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\JustificarQtdMaiorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\JustificarQtdMaiorForm.Designer.cs">
+      <DependentUpon>JustificarQtdMaiorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\JustificarQtdMenorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\JustificarQtdMenorForm.Designer.cs">
+      <DependentUpon>JustificarQtdMenorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpErrosReport.cs">
+      <DependentUpon>OpErrosReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpErrosReportFormForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpErrosReportFormForm.Designer.cs">
+      <DependentUpon>OpErrosReportFormForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpRecursoUploadFormularioForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpRecursoUploadFormularioForm.Designer.cs">
+      <DependentUpon>OpRecursoUploadFormularioForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpReport.cs">
+      <DependentUpon>OpReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpReportDataSet.cs">
+      <DependentUpon>OpReportDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OpReportDataSet.Designer.cs">
+      <DependentUpon>OpReportDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducao.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoComparer.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoDiferencaClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoDocumentoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoErroDocumentoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoErroDocumentoCopiaClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoEstoqueClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoFactory.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoGeradorClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoGrupo.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoGrupoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoHistoricoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoKeyClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoMaterialClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoOc.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoPedidoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoPostoTrabalhoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoPostoTrabalhoComparer.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoPostoTrabalhoProducaoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoPostoTrabalhoProducaoLoteClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoProdutoComponenteClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\OrdemProducaoRecursoClass.cs" />
+    <Compile Include="Operacoes\OrdemProducao\PostoTrabalhoComparer.cs" />
+    <Compile Include="Operacoes\VisualizacaoNf\NfeReportClass.cs" />
+    <Compile Include="Operacoes\VisualizacaoNf\NFeVisualizacaoImpostosReport.cs">
+      <DependentUpon>NFeVisualizacaoImpostosReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\VisualizacaoNf\NFeVisualizacaoReport.cs">
+      <DependentUpon>NFeVisualizacaoReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\VisualizacaoNf\VisualNFeDataSet1.Designer.cs">
+      <DependentUpon>VisualNFeDataSet.xsd</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Operacoes\VisualizacaoNf\VisualNFeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Operacoes\VisualizacaoNf\VisualNFeForm.designer.cs">
+      <DependentUpon>VisualNFeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Operacoes\VisualizacaoNf\VisualNFeReport1.cs">
+      <DependentUpon>VisualNFeReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\BaixaEstoqueConsumoReport.cs" />
+    <Compile Include="Relatorios\BaixaEstoqueConsumoReport1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaixaEstoqueConsumoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\EstoqueGavetaReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EstoqueGavetaReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\EstoqueGavetaReportClass.cs" />
+    <Compile Include="Relatorios\EtiquetaPostoTrabalhoReport.cs">
+      <DependentUpon>EtiquetaPostoTrabalhoReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\EtiquetaPostoTrabalhoReportClass.cs" />
+    <Compile Include="Relatorios\FomularioRetiradaManualEstoqueEtqReport.cs">
+      <DependentUpon>FomularioRetiradaManualEstoqueEtqReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\FomularioRetiradaManualEstoqueReport.cs">
+      <DependentUpon>FomularioRetiradaManualEstoqueReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\FomularioRetiradaManualEstoqueReportClass.cs" />
+    <Compile Include="Relatorios\ClienteFornecedorReportClass.cs" />
+    <Compile Include="Relatorios\ClientesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ClientesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\DocumentoCopiaReport.cs">
+      <DependentUpon>DocumentoCopiaReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Relatorios\DocumentoCopiaReportClass.cs" />
+    <Compile Include="Relatorios\EpiVencidoReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EpiVencidoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\EpiVencidoReportClass.cs" />
+    <Compile Include="Relatorios\FornecedoresReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FornecedoresReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\OrdemProducaoMateriaisReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OrdemProducaoMateriaisReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\OrdemProducaoMateriaisReportClass.cs" />
+    <Compile Include="Relatorios\PedidosPendentesReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PedidosPendentesReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\PedidosPendentesReportClass.cs" />
+    <Compile Include="Relatorios\PlanoCorteLocalMaterialReportClass.cs" />
+    <Compile Include="Relatorios\PlanoCorteReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PlanoCorteReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\PlanoCorteReportClass.cs" />
+    <Compile Include="Relatorios\PlanoCorteReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCompletoEstoqueReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RelatorioCompletoEstoqueReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RelatorioCompletoEstoqueReportClass.cs" />
+    <Compile Include="Relatorios\ResumoEPIReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResumoEPIReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\ResumoEPIReportClass.cs" />
+    <Compile Include="Relatorios\RetiradaEpiFuncionarioReportClass.cs" />
+    <Compile Include="Relatorios\RetiradaEpiReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetiradaEpiReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Relatorios\RetiradaEpiReportClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Relatorios\RetiradaEpiSubReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RetiradaEpiSubReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="SDC\ApiSimuladorCompras.cs" />
+    <Compile Include="SDC\Auxiliares\Http.cs" />
+    <Compile Include="SDC\Auxiliares\ProxyHelper.cs" />
+    <Compile Include="SDC\dto\AtualizarDataUltimoRecebimentoProdutoFornecedorDto.cs" />
+    <Compile Include="SDC\dto\ConsumirOrdemCompraDto.cs" />
+    <Compile Include="SDC\dto\CriarSolicitacaoCompraDto.cs" />
+    <Compile Include="SDC\dto\DadosScOnAlterarStatusDto.cs" />
+    <Compile Include="SDC\dto\ErrorClass.cs" />
+    <Compile Include="SDC\dto\ExcluirDto.cs" />
+    <Compile Include="SDC\dto\FornecedorDto.cs" />
+    <Compile Include="SDC\dto\ISimuladorDto.cs" />
+    <Compile Include="SDC\dto\LoginUserDto.cs" />
+    <Compile Include="SDC\dto\OrdemCompraDto.cs" />
+    <Compile Include="SDC\dto\OrdemCompraSaidaDto.cs" />
+    <Compile Include="SDC\dto\ProdutoDto.cs" />
+    <Compile Include="SDC\dto\ProdutoFornecedorDto.cs" />
+    <Compile Include="SDC\dto\SolicitacaoCompraDto.cs" />
+    <Compile Include="SDC\dto\TokenResponseDto.cs" />
+    <Compile Include="SDC\dto\UnidadeMedidaDto.cs" />
+    <Compile Include="SDC\excecoes\ServerErrorException.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibiliotecaGerenciamentoKB\BibliotecaGerenciamentoKB.csproj">
+      <Project>{DE8AD29D-7663-41D7-8A53-DEE5D07F9E10}</Project>
+      <Name>BibliotecaGerenciamentoKB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaControleRevisao\BibliotecaControleRevisao.csproj">
+      <Project>{CEF666CA-7E4D-4A42-A74D-41FD46867B76}</Project>
+      <Name>BibliotecaControleRevisao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaTributos\BibliotecaTributos.csproj">
+      <Project>{AEA4F775-CB27-4F27-8DD7-83549FBCE8F4}</Project>
+      <Name>BibliotecaTributos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProjectConstants\ProjectConstants.csproj">
+      <Project>{7B4AE061-9DC7-45CF-8BC7-21B864049529}</Project>
+      <Name>ProjectConstants</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ComplementoEtiquetaGadForm.resx">
+      <DependentUpon>ComplementoEtiquetaGadForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\CalculoPreco\DivergenciasForm.resx">
+      <DependentUpon>DivergenciasForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\CalculoPreco\LogCalculoPrecoListForm.resx">
+      <DependentUpon>LogCalculoPrecoListForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\CalculoPreco\SimuladorCalculoPrecoForm.resx">
+      <DependentUpon>SimuladorCalculoPrecoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\Configurador\ConfiguradorStatusForm.resx">
+      <DependentUpon>ConfiguradorStatusForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\Configurador\OrcamentosConfiguradorForm.resx">
+      <DependentUpon>OrcamentosConfiguradorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\Estoque\CadEstoqueMovimentacaoForm.resx">
+      <DependentUpon>CadEstoqueMovimentacaoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\Estoque\EnviaItemEstoqueForm.resx">
+      <DependentUpon>EnviaItemEstoqueForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\Estoque\InventarioListaReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventarioListaReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\Estoque\InventarioReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>InventarioReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\AutorizacaoQualidadeForm.resx">
+      <DependentUpon>AutorizacaoQualidadeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\CancelamentoOPForm.resx">
+      <DependentUpon>CancelamentoOPForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\JustificarQtdMaiorForm.resx">
+      <DependentUpon>JustificarQtdMaiorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\JustificarQtdMenorForm.resx">
+      <DependentUpon>JustificarQtdMenorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\OpErrosReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OpErrosReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\OpErrosReportFormForm.resx">
+      <DependentUpon>OpErrosReportFormForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\OpRecursoUploadFormularioForm.resx">
+      <DependentUpon>OpRecursoUploadFormularioForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\OrdemProducao\OpReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OpReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\VisualizacaoNf\NFeVisualizacaoImpostosReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NFeVisualizacaoImpostosReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\VisualizacaoNf\NFeVisualizacaoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NFeVisualizacaoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\VisualizacaoNf\VisualNFeForm.resx">
+      <DependentUpon>VisualNFeForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Operacoes\VisualizacaoNf\VisualNFeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>VisualNFeReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\BaixaEstoqueConsumoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BaixaEstoqueConsumoReport1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\EstoqueGavetaReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EstoqueGavetaReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\EtiquetaPostoTrabalhoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EtiquetaPostoTrabalhoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FomularioRetiradaManualEstoqueEtqReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FomularioRetiradaManualEstoqueEtqReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FomularioRetiradaManualEstoqueReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FomularioRetiradaManualEstoqueReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ClientesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ClientesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\DocumentoCopiaReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>DocumentoCopiaReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\EpiVencidoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EpiVencidoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\FornecedoresReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FornecedoresReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\OrdemProducaoMateriaisReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>OrdemProducaoMateriaisReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\PedidosPendentesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PedidosPendentesReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\PlanoCorteReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PlanoCorteReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RelatorioCompletoEstoqueReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RelatorioCompletoEstoqueReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\ResumoEPIReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ResumoEPIReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RetiradaEpiReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RetiradaEpiReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatorios\RetiradaEpiSubReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RetiradaEpiSubReport.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Operacoes\OrdemProducao\OpReportDataSet.xsc">
+      <DependentUpon>OpReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Operacoes\OrdemProducao\OpReportDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OpReportDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Operacoes\OrdemProducao\OpReportDataSet.xss">
+      <DependentUpon>OpReportDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Operacoes\VisualizacaoNf\VisualNFeDataSet.xsc">
+      <DependentUpon>VisualNFeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Operacoes\VisualizacaoNf\VisualNFeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VisualNFeDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Operacoes\VisualizacaoNf\VisualNFeDataSet.xss">
+      <DependentUpon>VisualNFeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DllInscE32.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

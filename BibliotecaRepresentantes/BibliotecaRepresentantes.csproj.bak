@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{583B5EE2-7D76-4725-9320-A86F09DD070F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibliotecaRepresentantes</RootNamespace>
+    <AssemblyName>BibliotecaRepresentantes</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BibliotecaEmail">
+      <HintPath>..\..\DLL\BibliotecaEmail.dll</HintPath>
+    </Reference>
+    <Reference Include="Configurations, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DBProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\DBProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="IWTCustomControls, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTDotNetLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTDotNetLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTFunctions, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTPostgreNpgsql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTPostgreNpgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Security, Version=4.0.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\..\..\EASIModulosPadrao\packages\Npgsql.2.2.7\lib\net40\Mono.Security.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Npgsql, Version=2.2.7.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\..\..\EASIModulosPadrao\packages\Npgsql.2.2.7\lib\net40\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EnviaEmailRelatorioComissoesClass.cs" />
+    <Compile Include="GerarComissoeRepresentantesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerarComissoeRepresentantesForm.Designer.cs">
+      <DependentUpon>GerarComissoeRepresentantesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComissaoGerada.cs" />
+    <Compile Include="ComissaoGeradaKey.cs" />
+    <Compile Include="ComissaoOperacoesClass.cs" />
+    <Compile Include="RepresentanteComissaoReport.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RepresentanteComissaoReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RepresentanteComissaoReportSorterClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ComissaoReportDataSource.cs" />
+    <Compile Include="RepresentanteComissaoReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RepresentanteComissaoReportForm.Designer.cs">
+      <DependentUpon>RepresentanteComissaoReportForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaCentroCusto\BibliotecaCentroCusto.csproj">
+      <Project>{7BB6EEC1-2BCB-4E62-9B6E-2CFB42F97645}</Project>
+      <Name>BibliotecaCentroCusto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
+      <Project>{0A4ABF38-1B5F-4AC3-A25C-CF53581969B5}</Project>
+      <Name>BibliotecaEntidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="GerarComissoeRepresentantesForm.resx">
+      <DependentUpon>GerarComissoeRepresentantesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepresentanteComissaoReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RepresentanteComissaoReport.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RepresentanteComissaoReportForm.resx">
+      <DependentUpon>RepresentanteComissaoReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

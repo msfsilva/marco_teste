@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="RastreabilidadeOPReportDataSet" targetNamespace="http://tempuri.org/RastreabilidadeOPReportDataSet.xsd" xmlns:mstns="http://tempuri.org/RastreabilidadeOPReportDataSet.xsd" xmlns="http://tempuri.org/RastreabilidadeOPReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="RastreabilidadeOPReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="RastreabilidadeOPReportDataSet" msprop:Generator_UserDSName="RastreabilidadeOPReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="rastreabilidade" msprop:Generator_UserTableName="rastreabilidade" msprop:Generator_RowEvArgName="rastreabilidadeRowChangeEvent" msprop:Generator_TableVarName="tablerastreabilidade" msprop:Generator_TablePropName="rastreabilidade" msprop:Generator_RowDeletingName="rastreabilidadeRowDeleting" msprop:Generator_RowChangingName="rastreabilidadeRowChanging" msprop:Generator_RowDeletedName="rastreabilidadeRowDeleted" msprop:Generator_RowEvHandlerName="rastreabilidadeRowChangeEventHandler" msprop:Generator_TableClassName="rastreabilidadeDataTable" msprop:Generator_RowChangedName="rastreabilidadeRowChanged" msprop:Generator_RowClassName="rastreabilidadeRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="opp_order_number" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopp_order_number" msprop:Generator_ColumnPropNameInRow="opp_order_number" msprop:Generator_ColumnPropNameInTable="opp_order_numberColumn" msprop:Generator_UserColumnName="opp_order_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_order_pos" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopp_order_pos" msprop:Generator_ColumnPropNameInRow="opp_order_pos" msprop:Generator_ColumnPropNameInTable="opp_order_posColumn" msprop:Generator_UserColumnName="opp_order_pos" type="xs:int" minOccurs="0" />
+              <xs:element name="id_ordem_producao" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="opp_quantidade" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopp_quantidade" msprop:Generator_ColumnPropNameInRow="opp_quantidade" msprop:Generator_ColumnPropNameInTable="opp_quantidadeColumn" msprop:Generator_UserColumnName="opp_quantidade" type="xs:double" minOccurs="0" />
+              <xs:element name="opt_posto_codigo" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_posto_codigo" msprop:Generator_ColumnPropNameInRow="opt_posto_codigo" msprop:Generator_ColumnPropNameInTable="opt_posto_codigoColumn" msprop:Generator_UserColumnName="opt_posto_codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_posto_nome" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_posto_nome" msprop:Generator_ColumnPropNameInRow="opt_posto_nome" msprop:Generator_ColumnPropNameInTable="opt_posto_nomeColumn" msprop:Generator_UserColumnName="opt_posto_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_posto_operacao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_posto_operacao" msprop:Generator_ColumnPropNameInRow="opt_posto_operacao" msprop:Generator_ColumnPropNameInTable="opt_posto_operacaoColumn" msprop:Generator_UserColumnName="opt_posto_operacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_operador_tempo_1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_operador_tempo_1" msprop:Generator_ColumnPropNameInRow="opt_operador_tempo_1" msprop:Generator_ColumnPropNameInTable="opt_operador_tempo_1Column" msprop:Generator_UserColumnName="opt_operador_tempo_1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_tempo1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_tempo1" msprop:Generator_ColumnPropNameInRow="opt_tempo1" msprop:Generator_ColumnPropNameInTable="opt_tempo1Column" msprop:Generator_UserColumnName="opt_tempo1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opt_operador_tempo_2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_operador_tempo_2" msprop:Generator_ColumnPropNameInRow="opt_operador_tempo_2" msprop:Generator_ColumnPropNameInTable="opt_operador_tempo_2Column" msprop:Generator_UserColumnName="opt_operador_tempo_2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_tempo2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_tempo2" msprop:Generator_ColumnPropNameInRow="opt_tempo2" msprop:Generator_ColumnPropNameInTable="opt_tempo2Column" msprop:Generator_UserColumnName="opt_tempo2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opt_operador_tempo_3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_operador_tempo_3" msprop:Generator_ColumnPropNameInRow="opt_operador_tempo_3" msprop:Generator_ColumnPropNameInTable="opt_operador_tempo_3Column" msprop:Generator_UserColumnName="opt_operador_tempo_3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_tempo3" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_tempo3" msprop:Generator_ColumnPropNameInRow="opt_tempo3" msprop:Generator_ColumnPropNameInTable="opt_tempo3Column" msprop:Generator_UserColumnName="opt_tempo3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pos_rastreamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpos_rastreamento" msprop:Generator_ColumnPropNameInRow="pos_rastreamento" msprop:Generator_ColumnPropNameInTable="pos_rastreamentoColumn" msprop:Generator_UserColumnName="pos_rastreamento" type="xs:string" minOccurs="0" />
+              <xs:element name="pos_acompanhamento" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpos_acompanhamento" msprop:Generator_ColumnPropNameInRow="pos_acompanhamento" msprop:Generator_ColumnPropNameInTable="pos_acompanhamentoColumn" msprop:Generator_UserColumnName="pos_acompanhamento" type="xs:string" minOccurs="0" />
+              <xs:element name="opt_quantidade_entrada" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_quantidade_entrada" msprop:Generator_ColumnPropNameInRow="opt_quantidade_entrada" msprop:Generator_ColumnPropNameInTable="opt_quantidade_entradaColumn" msprop:Generator_UserColumnName="opt_quantidade_entrada" type="xs:double" minOccurs="0" />
+              <xs:element name="opt_quantidade_saida" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_quantidade_saida" msprop:Generator_ColumnPropNameInRow="opt_quantidade_saida" msprop:Generator_ColumnPropNameInTable="opt_quantidade_saidaColumn" msprop:Generator_UserColumnName="opt_quantidade_saida" type="xs:double" minOccurs="0" />
+              <xs:element name="orp_data" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnorp_data" msprop:Generator_ColumnPropNameInRow="orp_data" msprop:Generator_ColumnPropNameInTable="orp_dataColumn" msprop:Generator_UserColumnName="orp_data" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="orp_situacao" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnorp_situacao" msprop:Generator_ColumnPropNameInRow="orp_situacao" msprop:Generator_ColumnPropNameInTable="orp_situacaoColumn" msprop:Generator_UserColumnName="orp_situacao" type="xs:string" minOccurs="0" />
+              <xs:element name="opt_sequencia" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnopt_sequencia" msprop:Generator_ColumnPropNameInRow="opt_sequencia" msprop:Generator_ColumnPropNameInTable="opt_sequenciaColumn" msprop:Generator_UserColumnName="opt_sequencia" type="xs:int" minOccurs="0" />
+              <xs:element name="pos_acompanhamento_original" msprop:Generator_ColumnVarNameInTable="columnpos_acompanhamento_original" msprop:Generator_ColumnPropNameInRow="pos_acompanhamento_original" msprop:Generator_ColumnPropNameInTable="pos_acompanhamento_originalColumn" msprop:Generator_UserColumnName="pos_acompanhamento_original" type="xs:short" minOccurs="0" />
+              <xs:element name="pos_rastreamento_original" msprop:Generator_ColumnVarNameInTable="columnpos_rastreamento_original" msprop:Generator_ColumnPropNameInRow="pos_rastreamento_original" msprop:Generator_ColumnPropNameInTable="pos_rastreamento_originalColumn" msprop:Generator_UserColumnName="pos_rastreamento_original" type="xs:int" minOccurs="0" />
+              <xs:element name="oc_pos" msprop:Generator_ColumnVarNameInTable="columnoc_pos" msprop:Generator_ColumnPropNameInRow="oc_pos" msprop:Generator_ColumnPropNameInTable="oc_posColumn" msprop:Generator_UserColumnName="oc_pos" type="xs:string" minOccurs="0" />
+              <xs:element name="pro_codigo" msprop:Generator_ColumnVarNameInTable="columnpro_codigo" msprop:Generator_ColumnPropNameInRow="pro_codigo" msprop:Generator_ColumnPropNameInTable="pro_codigoColumn" msprop:Generator_UserColumnName="pro_codigo" type="xs:string" minOccurs="0" />
+              <xs:element name="leadtime" msprop:Generator_ColumnVarNameInTable="columnleadtime" msprop:Generator_ColumnPropNameInRow="leadtime" msprop:Generator_ColumnPropNameInTable="leadtimeColumn" msprop:Generator_UserColumnName="leadtime" type="xs:string" minOccurs="0" />
+              <xs:element name="idOrdemProducaoPostoTrabalho" msprop:Generator_ColumnVarNameInTable="columnidOrdemProducaoPostoTrabalho" msprop:Generator_ColumnPropNameInRow="idOrdemProducaoPostoTrabalho" msprop:Generator_ColumnPropNameInTable="idOrdemProducaoPostoTrabalhoColumn" msprop:Generator_UserColumnName="idOrdemProducaoPostoTrabalho" type="xs:int" minOccurs="0" />
+              <xs:element name="pro_descricao" msprop:Generator_ColumnVarNameInTable="columnpro_descricao" msprop:Generator_ColumnPropNameInRow="pro_descricao" msprop:Generator_ColumnPropNameInTable="pro_descricaoColumn" msprop:Generator_UserColumnName="pro_descricao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="op_historico" msprop:Generator_UserTableName="op_historico" msprop:Generator_RowEvArgName="op_historicoRowChangeEvent" msprop:Generator_TableVarName="tableop_historico" msprop:Generator_TablePropName="op_historico" msprop:Generator_RowDeletingName="op_historicoRowDeleting" msprop:Generator_RowChangingName="op_historicoRowChanging" msprop:Generator_RowDeletedName="op_historicoRowDeleted" msprop:Generator_RowEvHandlerName="op_historicoRowChangeEventHandler" msprop:Generator_TableClassName="op_historicoDataTable" msprop:Generator_RowChangedName="op_historicoRowChanged" msprop:Generator_RowClassName="op_historicoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:long" minOccurs="0" />
+              <xs:element name="data_hora" msprop:Generator_ColumnVarNameInTable="columndata_hora" msprop:Generator_ColumnPropNameInRow="data_hora" msprop:Generator_ColumnPropNameInTable="data_horaColumn" msprop:Generator_UserColumnName="data_hora" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="historico" msprop:Generator_ColumnVarNameInTable="columnhistorico" msprop:Generator_ColumnPropNameInRow="historico" msprop:Generator_ColumnPropNameInTable="historicoColumn" msprop:Generator_UserColumnName="historico" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="documento" msprop:Generator_UserTableName="documento" msprop:Generator_RowEvArgName="documentoRowChangeEvent" msprop:Generator_TableVarName="tabledocumento" msprop:Generator_TablePropName="documento" msprop:Generator_RowDeletingName="documentoRowDeleting" msprop:Generator_RowChangingName="documentoRowChanging" msprop:Generator_RowDeletedName="documentoRowDeleted" msprop:Generator_RowEvHandlerName="documentoRowChangeEventHandler" msprop:Generator_TableClassName="documentoDataTable" msprop:Generator_RowChangedName="documentoRowChanged" msprop:Generator_RowClassName="documentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:long" minOccurs="0" />
+              <xs:element name="documento" msprop:Generator_ColumnVarNameInTable="columndocumento" msprop:Generator_ColumnPropNameInRow="documento" msprop:Generator_ColumnPropNameInTable="documentoColumn" msprop:Generator_UserColumnName="documento" type="xs:string" minOccurs="0" />
+              <xs:element name="copia" msprop:Generator_ColumnVarNameInTable="columncopia" msprop:Generator_ColumnPropNameInRow="copia" msprop:Generator_ColumnPropNameInTable="copiaColumn" msprop:Generator_UserColumnName="copia" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="posto_trabalho_producao" msprop:Generator_UserTableName="posto_trabalho_producao" msprop:Generator_RowEvArgName="posto_trabalho_producaoRowChangeEvent" msprop:Generator_TableVarName="tableposto_trabalho_producao" msprop:Generator_TablePropName="posto_trabalho_producao" msprop:Generator_RowDeletingName="posto_trabalho_producaoRowDeleting" msprop:Generator_RowChangingName="posto_trabalho_producaoRowChanging" msprop:Generator_RowDeletedName="posto_trabalho_producaoRowDeleted" msprop:Generator_RowEvHandlerName="posto_trabalho_producaoRowChangeEventHandler" msprop:Generator_TableClassName="posto_trabalho_producaoDataTable" msprop:Generator_RowChangedName="posto_trabalho_producaoRowChanged" msprop:Generator_RowClassName="posto_trabalho_producaoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="idOrdemProducaoPostoTrabalho" msprop:Generator_ColumnVarNameInTable="columnidOrdemProducaoPostoTrabalho" msprop:Generator_ColumnPropNameInRow="idOrdemProducaoPostoTrabalho" msprop:Generator_ColumnPropNameInTable="idOrdemProducaoPostoTrabalhoColumn" msprop:Generator_UserColumnName="idOrdemProducaoPostoTrabalho" type="xs:long" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_UserColumnName="quantidade" type="xs:double" minOccurs="0" />
+              <xs:element name="data_hora" msprop:Generator_ColumnVarNameInTable="columndata_hora" msprop:Generator_ColumnPropNameInRow="data_hora" msprop:Generator_ColumnPropNameInTable="data_horaColumn" msprop:Generator_UserColumnName="data_hora" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

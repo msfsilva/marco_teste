@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EtiquetaInternaDataSet" targetNamespace="http://tempuri.org/EtiquetaInternaCDataSet.xsd" xmlns:mstns="http://tempuri.org/EtiquetaInternaCDataSet.xsd" xmlns="http://tempuri.org/EtiquetaInternaCDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EtiquetaInternaDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EtiquetaInternaDataSet" msprop:Generator_UserDSName="EtiquetaInternaDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="EtiquetaInternaC" msprop:Generator_UserTableName="EtiquetaInternaC" msprop:Generator_RowEvArgName="EtiquetaInternaCRowChangeEvent" msprop:Generator_TableVarName="tableEtiquetaInternaC" msprop:Generator_TablePropName="EtiquetaInternaC" msprop:Generator_RowDeletingName="EtiquetaInternaCRowDeleting" msprop:Generator_RowChangingName="EtiquetaInternaCRowChanging" msprop:Generator_RowDeletedName="EtiquetaInternaCRowDeleted" msprop:Generator_RowEvHandlerName="EtiquetaInternaCRowChangeEventHandler" msprop:Generator_TableClassName="EtiquetaInternaCDataTable" msprop:Generator_RowChangedName="EtiquetaInternaCRowChanged" msprop:Generator_RowClassName="EtiquetaInternaCRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="order_number" msprop:Generator_ColumnVarNameInTable="columnorder_number" msprop:Generator_ColumnPropNameInRow="order_number" msprop:Generator_ColumnPropNameInTable="order_numberColumn" msprop:Generator_UserColumnName="order_number" type="xs:string" minOccurs="0" />
+              <xs:element name="order_pos" msprop:Generator_ColumnVarNameInTable="columnorder_pos" msprop:Generator_ColumnPropNameInRow="order_pos" msprop:Generator_ColumnPropNameInTable="order_posColumn" msprop:Generator_UserColumnName="order_pos" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_item" msprop:Generator_ColumnVarNameInTable="columncodigo_item" msprop:Generator_ColumnPropNameInRow="codigo_item" msprop:Generator_ColumnPropNameInTable="codigo_itemColumn" msprop:Generator_UserColumnName="codigo_item" type="xs:string" minOccurs="0" />
+              <xs:element name="desc_item" msprop:Generator_ColumnVarNameInTable="columndesc_item" msprop:Generator_ColumnPropNameInRow="desc_item" msprop:Generator_ColumnPropNameInTable="desc_itemColumn" msprop:Generator_UserColumnName="desc_item" type="xs:string" minOccurs="0" />
+              <xs:element name="medida_item" msprop:Generator_ColumnVarNameInTable="columnmedida_item" msprop:Generator_ColumnPropNameInRow="medida_item" msprop:Generator_ColumnPropNameInTable="medida_itemColumn" msprop:Generator_UserColumnName="medida_item" type="xs:string" minOccurs="0" />
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="semana" msprop:Generator_ColumnVarNameInTable="columnsemana" msprop:Generator_ColumnPropNameInRow="semana" msprop:Generator_ColumnPropNameInTable="semanaColumn" msprop:Generator_UserColumnName="semana" type="xs:string" minOccurs="0" />
+              <xs:element name="cnc" msprop:Generator_ColumnVarNameInTable="columncnc" msprop:Generator_ColumnPropNameInRow="cnc" msprop:Generator_ColumnPropNameInTable="cncColumn" msprop:Generator_UserColumnName="cnc" type="xs:string" minOccurs="0" />
+              <xs:element name="coordenada_x" msprop:Generator_ColumnVarNameInTable="columncoordenada_x" msprop:Generator_ColumnPropNameInRow="coordenada_x" msprop:Generator_ColumnPropNameInTable="coordenada_xColumn" msprop:Generator_UserColumnName="coordenada_x" type="xs:string" minOccurs="0" />
+              <xs:element name="coordenada_y" msprop:Generator_ColumnVarNameInTable="columncoordenada_y" msprop:Generator_ColumnPropNameInRow="coordenada_y" msprop:Generator_ColumnPropNameInTable="coordenada_yColumn" msprop:Generator_UserColumnName="coordenada_y" type="xs:string" minOccurs="0" />
+              <xs:element name="sequencial" msprop:Generator_ColumnVarNameInTable="columnsequencial" msprop:Generator_ColumnPropNameInRow="sequencial" msprop:Generator_ColumnPropNameInTable="sequencialColumn" msprop:Generator_UserColumnName="sequencial" type="xs:string" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="cliente" msprop:Generator_ColumnVarNameInTable="columncliente" msprop:Generator_ColumnPropNameInRow="cliente" msprop:Generator_ColumnPropNameInTable="clienteColumn" msprop:Generator_UserColumnName="cliente" type="xs:string" minOccurs="0" />
+              <xs:element name="ops" msprop:Generator_ColumnVarNameInTable="columnops" msprop:Generator_ColumnPropNameInRow="ops" msprop:Generator_ColumnPropNameInTable="opsColumn" msprop:Generator_UserColumnName="ops" type="xs:string" minOccurs="0" />
+              <xs:element name="logoEmpresa" msprop:Generator_ColumnVarNameInTable="columnlogoEmpresa" msprop:Generator_ColumnPropNameInRow="logoEmpresa" msprop:Generator_ColumnPropNameInTable="logoEmpresaColumn" msprop:Generator_UserColumnName="logoEmpresa" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="unidade_medida" msprop:Generator_ColumnVarNameInTable="columnunidade_medida" msprop:Generator_ColumnPropNameInRow="unidade_medida" msprop:Generator_ColumnPropNameInTable="unidade_medidaColumn" msprop:Generator_UserColumnName="unidade_medida" type="xs:string" minOccurs="0" />
+              <xs:element name="quantidade_por_etiqueta" msprop:Generator_ColumnVarNameInTable="columnquantidade_por_etiqueta" msprop:Generator_ColumnPropNameInRow="quantidade_por_etiqueta" msprop:Generator_ColumnPropNameInTable="quantidade_por_etiquetaColumn" msprop:Generator_UserColumnName="quantidade_por_etiqueta" type="xs:double" minOccurs="0" />
+              <xs:element name="qrcode" msprop:Generator_ColumnVarNameInTable="columnqrcode" msprop:Generator_ColumnPropNameInRow="qrcode" msprop:Generator_ColumnPropNameInTable="qrcodeColumn" msprop:Generator_UserColumnName="qrcode" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="EtiquetaInternaK" msprop:Generator_UserTableName="EtiquetaInternaK" msprop:Generator_RowEvArgName="EtiquetaInternaKRowChangeEvent" msprop:Generator_TableVarName="tableEtiquetaInternaK" msprop:Generator_TablePropName="EtiquetaInternaK" msprop:Generator_RowDeletingName="EtiquetaInternaKRowDeleting" msprop:Generator_RowChangingName="EtiquetaInternaKRowChanging" msprop:Generator_RowDeletedName="EtiquetaInternaKRowDeleted" msprop:Generator_RowEvHandlerName="EtiquetaInternaKRowChangeEventHandler" msprop:Generator_TableClassName="EtiquetaInternaKDataTable" msprop:Generator_RowChangedName="EtiquetaInternaKRowChanged" msprop:Generator_RowClassName="EtiquetaInternaKRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_item" msprop:Generator_ColumnVarNameInTable="columncodigo_item" msprop:Generator_ColumnPropNameInRow="codigo_item" msprop:Generator_ColumnPropNameInTable="codigo_itemColumn" msprop:Generator_UserColumnName="codigo_item" type="xs:string" minOccurs="0" />
+              <xs:element name="desc_item" msprop:Generator_ColumnVarNameInTable="columndesc_item" msprop:Generator_ColumnPropNameInRow="desc_item" msprop:Generator_ColumnPropNameInTable="desc_itemColumn" msprop:Generator_UserColumnName="desc_item" type="xs:string" minOccurs="0" />
+              <xs:element name="medida_item" msprop:Generator_ColumnVarNameInTable="columnmedida_item" msprop:Generator_ColumnPropNameInRow="medida_item" msprop:Generator_ColumnPropNameInTable="medida_itemColumn" msprop:Generator_UserColumnName="medida_item" type="xs:string" minOccurs="0" />
+              <xs:element name="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" msprop:Generator_UserColumnName="barcode" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="desenho" msprop:Generator_ColumnVarNameInTable="columndesenho" msprop:Generator_ColumnPropNameInRow="desenho" msprop:Generator_ColumnPropNameInTable="desenhoColumn" msprop:Generator_UserColumnName="desenho" type="xs:string" minOccurs="0" />
+              <xs:element name="qtd_por_etiqueta" msprop:Generator_ColumnVarNameInTable="columnqtd_por_etiqueta" msprop:Generator_ColumnPropNameInRow="qtd_por_etiqueta" msprop:Generator_ColumnPropNameInTable="qtd_por_etiquetaColumn" msprop:Generator_UserColumnName="qtd_por_etiqueta" type="xs:double" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="nEtiqueta" msprop:Generator_ColumnVarNameInTable="columnnEtiqueta" msprop:Generator_ColumnPropNameInRow="nEtiqueta" msprop:Generator_ColumnPropNameInTable="nEtiquetaColumn" msprop:Generator_UserColumnName="nEtiqueta" type="xs:int" minOccurs="0" />
+              <xs:element name="nTotalEtiquetas" msprop:Generator_ColumnVarNameInTable="columnnTotalEtiquetas" msprop:Generator_ColumnPropNameInRow="nTotalEtiquetas" msprop:Generator_ColumnPropNameInTable="nTotalEtiquetasColumn" msprop:Generator_UserColumnName="nTotalEtiquetas" type="xs:int" minOccurs="0" />
+              <xs:element name="logoEmpresa" msprop:Generator_ColumnVarNameInTable="columnlogoEmpresa" msprop:Generator_ColumnPropNameInRow="logoEmpresa" msprop:Generator_ColumnPropNameInTable="logoEmpresaColumn" msprop:Generator_UserColumnName="logoEmpresa" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

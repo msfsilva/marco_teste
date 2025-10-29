@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="MaterialAuxDataSet" targetNamespace="http://tempuri.org/MaterialAuxDataSet.xsd" xmlns:mstns="http://tempuri.org/MaterialAuxDataSet.xsd" xmlns="http://tempuri.org/MaterialAuxDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="MaterialAuxDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="MaterialAuxDataSet" msprop:Generator_UserDSName="MaterialAuxDataSet" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="material_auxiliar" msprop:Generator_UserTableName="material_auxiliar" msprop:Generator_RowDeletedName="material_auxiliarRowDeleted" msprop:Generator_TableClassName="material_auxiliarDataTable" msprop:Generator_RowChangedName="material_auxiliarRowChanged" msprop:Generator_RowClassName="material_auxiliarRow" msprop:Generator_RowChangingName="material_auxiliarRowChanging" msprop:Generator_RowEvArgName="material_auxiliarRowChangeEvent" msprop:Generator_RowEvHandlerName="material_auxiliarRowChangeEventHandler" msprop:Generator_TablePropName="material_auxiliar" msprop:Generator_TableVarName="tablematerial_auxiliar" msprop:Generator_RowDeletingName="material_auxiliarRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_acabamento_superficial" msprop:Generator_UserColumnName="id_acabamento_superficial" msprop:Generator_ColumnPropNameInRow="id_acabamento_superficial" msprop:Generator_ColumnVarNameInTable="columnid_acabamento_superficial" msprop:Generator_ColumnPropNameInTable="id_acabamento_superficialColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="acs_norma" msprop:Generator_UserColumnName="acs_norma" msprop:Generator_ColumnPropNameInRow="acs_norma" msprop:Generator_ColumnVarNameInTable="columnacs_norma" msprop:Generator_ColumnPropNameInTable="acs_normaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="acs_descricao_tecnica" msprop:Generator_UserColumnName="acs_descricao_tecnica" msprop:Generator_ColumnPropNameInRow="acs_descricao_tecnica" msprop:Generator_ColumnVarNameInTable="columnacs_descricao_tecnica" msprop:Generator_ColumnPropNameInTable="acs_descricao_tecnicaColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="acs_obs" msprop:Generator_UserColumnName="acs_obs" msprop:Generator_ColumnPropNameInRow="acs_obs" msprop:Generator_ColumnVarNameInTable="columnacs_obs" msprop:Generator_ColumnPropNameInTable="acs_obsColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

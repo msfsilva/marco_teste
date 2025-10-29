@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<xs:schema id="EtiquetaPalletDataSet" targetNamespace="http://tempuri.org/EtiquetaPalletDataSet.xsd" xmlns:mstns="http://tempuri.org/EtiquetaPalletDataSet.xsd" xmlns="http://tempuri.org/EtiquetaPalletDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EtiquetaPalletDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_DataSetName="EtiquetaPalletDataSet" msprop:Generator_UserDSName="EtiquetaPalletDataSet" msprop:EnableTableAdapterManager="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Pallet" msprop:Generator_UserTableName="Pallet" msprop:Generator_RowDeletedName="PalletRowDeleted" msprop:Generator_TableClassName="PalletDataTable" msprop:Generator_RowChangedName="PalletRowChanged" msprop:Generator_RowClassName="PalletRow" msprop:Generator_RowChangingName="PalletRowChanging" msprop:Generator_RowEvArgName="PalletRowChangeEvent" msprop:Generator_RowEvHandlerName="PalletRowChangeEventHandler" msprop:Generator_TablePropName="Pallet" msprop:Generator_TableVarName="tablePallet" msprop:Generator_RowDeletingName="PalletRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="numero" msprop:Generator_UserColumnName="numero" msprop:Generator_ColumnPropNameInRow="numero" msprop:Generator_ColumnVarNameInTable="columnnumero" msprop:Generator_ColumnPropNameInTable="numeroColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="barcode" msprop:Generator_UserColumnName="barcode" msprop:Generator_ColumnPropNameInRow="barcode" msprop:Generator_ColumnVarNameInTable="columnbarcode" msprop:Generator_ColumnPropNameInTable="barcodeColumn" type="xs:base64Binary" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

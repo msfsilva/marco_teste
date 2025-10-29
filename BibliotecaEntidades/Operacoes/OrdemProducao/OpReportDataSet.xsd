@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="OpReportDataSet" targetNamespace="http://tempuri.org/OpReportDataSet.xsd" xmlns:mstns="http://tempuri.org/OpReportDataSet.xsd" xmlns="http://tempuri.org/OpReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="ConnectionString" IsAppSettingsProperty="true" Modifier="Assembly" Name="ConnectionString (Settings)" PropertyReference="ApplicationSettings.BibliotecaEntidades.Properties.Settings.GlobalReference.Default.ConnectionString" Provider="System.Data.Odbc" />
+        </Connections>
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="OpReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="OpReportDataSet" msprop:Generator_UserDSName="OpReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ordem_producao_posto_trabalho" msprop:Generator_UserTableName="ordem_producao_posto_trabalho" msprop:Generator_RowEvArgName="ordem_producao_posto_trabalhoRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_posto_trabalho" msprop:Generator_TablePropName="ordem_producao_posto_trabalho" msprop:Generator_RowDeletingName="ordem_producao_posto_trabalhoRowDeleting" msprop:Generator_RowChangingName="ordem_producao_posto_trabalhoRowChanging" msprop:Generator_RowDeletedName="ordem_producao_posto_trabalhoRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producao_posto_trabalhoRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producao_posto_trabalhoDataTable" msprop:Generator_RowChangedName="ordem_producao_posto_trabalhoRowChanged" msprop:Generator_RowClassName="ordem_producao_posto_trabalhoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao_posto_trabalho" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao_posto_trabalho" msprop:Generator_ColumnPropNameInRow="id_ordem_producao_posto_trabalho" msprop:Generator_ColumnPropNameInTable="id_ordem_producao_posto_trabalhoColumn" msprop:Generator_UserColumnName="id_ordem_producao_posto_trabalho" type="xs:int" />
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" minOccurs="0" />
+              <xs:element name="id_posto_trabalho" msprop:Generator_ColumnVarNameInTable="columnid_posto_trabalho" msprop:Generator_ColumnPropNameInRow="id_posto_trabalho" msprop:Generator_ColumnPropNameInTable="id_posto_trabalhoColumn" msprop:Generator_UserColumnName="id_posto_trabalho" type="xs:int" minOccurs="0" />
+              <xs:element name="opt_posto_codigo" msprop:Generator_ColumnVarNameInTable="columnopt_posto_codigo" msprop:Generator_ColumnPropNameInRow="opt_posto_codigo" msprop:Generator_ColumnPropNameInTable="opt_posto_codigoColumn" msprop:Generator_UserColumnName="opt_posto_codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_posto_nome" msprop:Generator_ColumnVarNameInTable="columnopt_posto_nome" msprop:Generator_ColumnPropNameInRow="opt_posto_nome" msprop:Generator_ColumnPropNameInTable="opt_posto_nomeColumn" msprop:Generator_UserColumnName="opt_posto_nome" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_posto_operacao" msprop:Generator_ColumnVarNameInTable="columnopt_posto_operacao" msprop:Generator_ColumnPropNameInRow="opt_posto_operacao" msprop:Generator_ColumnPropNameInTable="opt_posto_operacaoColumn" msprop:Generator_UserColumnName="opt_posto_operacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opt_operador" msprop:Generator_ColumnVarNameInTable="columnopt_operador" msprop:Generator_ColumnPropNameInRow="opt_operador" msprop:Generator_ColumnPropNameInTable="opt_operadorColumn" msprop:Generator_UserColumnName="opt_operador" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_acs_usuario" msprop:Generator_ColumnVarNameInTable="columnid_acs_usuario" msprop:Generator_ColumnPropNameInRow="id_acs_usuario" msprop:Generator_ColumnPropNameInTable="id_acs_usuarioColumn" msprop:Generator_UserColumnName="id_acs_usuario" type="xs:int" minOccurs="0" />
+              <xs:element name="opt_tempo1" msprop:Generator_ColumnVarNameInTable="columnopt_tempo1" msprop:Generator_ColumnPropNameInRow="opt_tempo1" msprop:Generator_ColumnPropNameInTable="opt_tempo1Column" msprop:Generator_UserColumnName="opt_tempo1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opt_tempo2" msprop:Generator_ColumnVarNameInTable="columnopt_tempo2" msprop:Generator_ColumnPropNameInRow="opt_tempo2" msprop:Generator_ColumnPropNameInTable="opt_tempo2Column" msprop:Generator_UserColumnName="opt_tempo2" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opt_tempo3" msprop:Generator_ColumnVarNameInTable="columnopt_tempo3" msprop:Generator_ColumnPropNameInRow="opt_tempo3" msprop:Generator_ColumnPropNameInTable="opt_tempo3Column" msprop:Generator_UserColumnName="opt_tempo3" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opt_tempo4" msprop:Generator_ColumnVarNameInTable="columnopt_tempo4" msprop:Generator_ColumnPropNameInRow="opt_tempo4" msprop:Generator_ColumnPropNameInTable="opt_tempo4Column" msprop:Generator_UserColumnName="opt_tempo4" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opt_quantidade_entrada" msprop:Generator_ColumnVarNameInTable="columnopt_quantidade_entrada" msprop:Generator_ColumnPropNameInRow="opt_quantidade_entrada" msprop:Generator_ColumnPropNameInTable="opt_quantidade_entradaColumn" msprop:Generator_UserColumnName="opt_quantidade_entrada" type="xs:double" minOccurs="0" />
+              <xs:element name="opt_quantidade_saida" msprop:Generator_ColumnVarNameInTable="columnopt_quantidade_saida" msprop:Generator_ColumnPropNameInRow="opt_quantidade_saida" msprop:Generator_ColumnPropNameInTable="opt_quantidade_saidaColumn" msprop:Generator_UserColumnName="opt_quantidade_saida" type="xs:double" minOccurs="0" />
+              <xs:element name="opt_sequencia" msprop:Generator_ColumnVarNameInTable="columnopt_sequencia" msprop:Generator_ColumnPropNameInRow="opt_sequencia" msprop:Generator_ColumnPropNameInTable="opt_sequenciaColumn" msprop:Generator_UserColumnName="opt_sequencia" type="xs:int" />
+              <xs:element name="opt_tempo_setup" msprop:Generator_ColumnVarNameInTable="columnopt_tempo_setup" msprop:Generator_ColumnPropNameInRow="opt_tempo_setup" msprop:Generator_ColumnPropNameInTable="opt_tempo_setupColumn" msprop:Generator_UserColumnName="opt_tempo_setup" type="xs:double" minOccurs="0" />
+              <xs:element name="opt_tempo_producao" msprop:Generator_ColumnVarNameInTable="columnopt_tempo_producao" msprop:Generator_ColumnPropNameInRow="opt_tempo_producao" msprop:Generator_ColumnPropNameInTable="opt_tempo_producaoColumn" msprop:Generator_UserColumnName="opt_tempo_producao" type="xs:double" minOccurs="0" />
+              <xs:element name="pos_rastreamento" msprop:Generator_ColumnVarNameInTable="columnpos_rastreamento" msprop:Generator_ColumnPropNameInRow="pos_rastreamento" msprop:Generator_ColumnPropNameInTable="pos_rastreamentoColumn" msprop:Generator_UserColumnName="pos_rastreamento" type="xs:boolean" />
+              <xs:element name="pos_acompanhamento" msprop:Generator_ColumnVarNameInTable="columnpos_acompanhamento" msprop:Generator_ColumnPropNameInRow="pos_acompanhamento" msprop:Generator_ColumnPropNameInTable="pos_acompanhamentoColumn" msprop:Generator_UserColumnName="pos_acompanhamento" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_material" msprop:Generator_UserTableName="ordem_producao_material" msprop:Generator_RowEvArgName="ordem_producao_materialRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_material" msprop:Generator_TablePropName="ordem_producao_material" msprop:Generator_RowDeletingName="ordem_producao_materialRowDeleting" msprop:Generator_RowChangingName="ordem_producao_materialRowChanging" msprop:Generator_RowDeletedName="ordem_producao_materialRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producao_materialRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producao_materialDataTable" msprop:Generator_RowChangedName="ordem_producao_materialRowChanged" msprop:Generator_RowClassName="ordem_producao_materialRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao_material" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao_material" msprop:Generator_ColumnPropNameInRow="id_ordem_producao_material" msprop:Generator_ColumnPropNameInTable="id_ordem_producao_materialColumn" msprop:Generator_UserColumnName="id_ordem_producao_material" type="xs:int" />
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="id_material" msprop:Generator_ColumnVarNameInTable="columnid_material" msprop:Generator_ColumnPropNameInRow="id_material" msprop:Generator_ColumnPropNameInTable="id_materialColumn" msprop:Generator_UserColumnName="id_material" type="xs:int" />
+              <xs:element name="opm_quantidade" msprop:Generator_ColumnVarNameInTable="columnopm_quantidade" msprop:Generator_ColumnPropNameInRow="opm_quantidade" msprop:Generator_ColumnPropNameInTable="opm_quantidadeColumn" msprop:Generator_UserColumnName="opm_quantidade" type="xs:double" />
+              <xs:element name="opm_material_descricao" msprop:Generator_ColumnVarNameInTable="columnopm_material_descricao" msprop:Generator_ColumnPropNameInRow="opm_material_descricao" msprop:Generator_ColumnPropNameInTable="opm_material_descricaoColumn" msprop:Generator_UserColumnName="opm_material_descricao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opm_material_unidade_medida" msprop:Generator_ColumnVarNameInTable="columnopm_material_unidade_medida" msprop:Generator_ColumnPropNameInRow="opm_material_unidade_medida" msprop:Generator_ColumnPropNameInTable="opm_material_unidade_medidaColumn" msprop:Generator_UserColumnName="opm_material_unidade_medida">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opm_material_medida" msprop:Generator_ColumnVarNameInTable="columnopm_material_medida" msprop:Generator_ColumnPropNameInRow="opm_material_medida" msprop:Generator_ColumnPropNameInTable="opm_material_medidaColumn" msprop:Generator_UserColumnName="opm_material_medida" type="xs:double" />
+              <xs:element name="opm_material_medida_largura" msprop:Generator_ColumnVarNameInTable="columnopm_material_medida_largura" msprop:Generator_ColumnPropNameInRow="opm_material_medida_largura" msprop:Generator_ColumnPropNameInTable="opm_material_medida_larguraColumn" msprop:Generator_UserColumnName="opm_material_medida_largura" type="xs:double" />
+              <xs:element name="opm_material_medida_comprimento" msprop:Generator_ColumnVarNameInTable="columnopm_material_medida_comprimento" msprop:Generator_ColumnPropNameInRow="opm_material_medida_comprimento" msprop:Generator_ColumnPropNameInTable="opm_material_medida_comprimentoColumn" msprop:Generator_UserColumnName="opm_material_medida_comprimento" type="xs:double" />
+              <xs:element name="opm_material_tipo_acabamento" msprop:Generator_ColumnVarNameInTable="columnopm_material_tipo_acabamento" msprop:Generator_ColumnPropNameInRow="opm_material_tipo_acabamento" msprop:Generator_ColumnPropNameInTable="opm_material_tipo_acabamentoColumn" msprop:Generator_UserColumnName="opm_material_tipo_acabamento">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opm_material_codigo" msprop:Generator_ColumnVarNameInTable="columnopm_material_codigo" msprop:Generator_ColumnPropNameInRow="opm_material_codigo" msprop:Generator_ColumnPropNameInTable="opm_material_codigoColumn" msprop:Generator_UserColumnName="opm_material_codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="material_familia" msprop:Generator_ColumnVarNameInTable="columnmaterial_familia" msprop:Generator_ColumnPropNameInRow="material_familia" msprop:Generator_ColumnPropNameInTable="material_familiaColumn" msprop:Generator_UserColumnName="material_familia" type="xs:string" minOccurs="0" />
+              <xs:element name="suprimir_qtd_unitaria" msprop:Generator_ColumnVarNameInTable="columnsuprimir_qtd_unitaria" msprop:Generator_ColumnPropNameInRow="suprimir_qtd_unitaria" msprop:Generator_ColumnPropNameInTable="suprimir_qtd_unitariaColumn" msprop:Generator_UserColumnName="suprimir_qtd_unitaria" type="xs:boolean" default="false" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_documento" msprop:Generator_UserTableName="ordem_producao_documento" msprop:Generator_RowEvArgName="ordem_producao_documentoRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_documento" msprop:Generator_TablePropName="ordem_producao_documento" msprop:Generator_RowDeletingName="ordem_producao_documentoRowDeleting" msprop:Generator_RowChangingName="ordem_producao_documentoRowChanging" msprop:Generator_RowDeletedName="ordem_producao_documentoRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producao_documentoRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producao_documentoDataTable" msprop:Generator_RowChangedName="ordem_producao_documentoRowChanged" msprop:Generator_RowClassName="ordem_producao_documentoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao_documento" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao_documento" msprop:Generator_ColumnPropNameInRow="id_ordem_producao_documento" msprop:Generator_ColumnPropNameInTable="id_ordem_producao_documentoColumn" msprop:Generator_UserColumnName="id_ordem_producao_documento" type="xs:int" />
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="id_documento" msprop:Generator_ColumnVarNameInTable="columnid_documento" msprop:Generator_ColumnPropNameInRow="id_documento" msprop:Generator_ColumnPropNameInTable="id_documentoColumn" msprop:Generator_UserColumnName="id_documento" type="xs:int" />
+              <xs:element name="id_documento_tipo" msprop:Generator_ColumnVarNameInTable="columnid_documento_tipo" msprop:Generator_ColumnPropNameInRow="id_documento_tipo" msprop:Generator_ColumnPropNameInTable="id_documento_tipoColumn" msprop:Generator_UserColumnName="id_documento_tipo" type="xs:int" />
+              <xs:element name="opd_documento_descricao" msprop:Generator_ColumnVarNameInTable="columnopd_documento_descricao" msprop:Generator_ColumnPropNameInRow="opd_documento_descricao" msprop:Generator_ColumnPropNameInTable="opd_documento_descricaoColumn" msprop:Generator_UserColumnName="opd_documento_descricao">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_copia" msprop:Generator_ColumnVarNameInTable="columnopd_documento_copia" msprop:Generator_ColumnPropNameInRow="opd_documento_copia" msprop:Generator_ColumnPropNameInTable="opd_documento_copiaColumn" msprop:Generator_UserColumnName="opd_documento_copia">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_tipo_codigo" msprop:Generator_ColumnVarNameInTable="columnopd_documento_tipo_codigo" msprop:Generator_ColumnPropNameInRow="opd_documento_tipo_codigo" msprop:Generator_ColumnPropNameInTable="opd_documento_tipo_codigoColumn" msprop:Generator_UserColumnName="opd_documento_tipo_codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_tipo_tipo" msprop:Generator_ColumnVarNameInTable="columnopd_documento_tipo_tipo" msprop:Generator_ColumnPropNameInRow="opd_documento_tipo_tipo" msprop:Generator_ColumnPropNameInTable="opd_documento_tipo_tipoColumn" msprop:Generator_UserColumnName="opd_documento_tipo_tipo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_tipo_revisao" msprop:Generator_ColumnVarNameInTable="columnopd_documento_tipo_revisao" msprop:Generator_ColumnPropNameInRow="opd_documento_tipo_revisao" msprop:Generator_ColumnPropNameInTable="opd_documento_tipo_revisaoColumn" msprop:Generator_UserColumnName="opd_documento_tipo_revisao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_l1" msprop:Generator_ColumnVarNameInTable="columnopd_documento_l1" msprop:Generator_ColumnPropNameInRow="opd_documento_l1" msprop:Generator_ColumnPropNameInTable="opd_documento_l1Column" msprop:Generator_UserColumnName="opd_documento_l1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_l2" msprop:Generator_ColumnVarNameInTable="columnopd_documento_l2" msprop:Generator_ColumnPropNameInRow="opd_documento_l2" msprop:Generator_ColumnPropNameInTable="opd_documento_l2Column" msprop:Generator_UserColumnName="opd_documento_l2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_l3" msprop:Generator_ColumnVarNameInTable="columnopd_documento_l3" msprop:Generator_ColumnPropNameInRow="opd_documento_l3" msprop:Generator_ColumnPropNameInTable="opd_documento_l3Column" msprop:Generator_UserColumnName="opd_documento_l3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opd_documento_l4" msprop:Generator_ColumnVarNameInTable="columnopd_documento_l4" msprop:Generator_ColumnPropNameInRow="opd_documento_l4" msprop:Generator_ColumnPropNameInTable="opd_documento_l4Column" msprop:Generator_UserColumnName="opd_documento_l4" type="xs:string" minOccurs="0" />
+              <xs:element name="ultima_utilizacao_documento" msprop:Generator_ColumnVarNameInTable="columnultima_utilizacao_documento" msprop:Generator_ColumnPropNameInRow="ultima_utilizacao_documento" msprop:Generator_ColumnPropNameInTable="ultima_utilizacao_documentoColumn" msprop:Generator_UserColumnName="ultima_utilizacao_documento" type="xs:string" minOccurs="0" />
+              <xs:element name="aviso" msprop:Generator_ColumnVarNameInTable="columnaviso" msprop:Generator_ColumnPropNameInRow="aviso" msprop:Generator_ColumnPropNameInTable="avisoColumn" msprop:Generator_UserColumnName="aviso" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_recurso" msprop:Generator_UserTableName="ordem_producao_recurso" msprop:Generator_RowEvArgName="ordem_producao_recursoRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_recurso" msprop:Generator_TablePropName="ordem_producao_recurso" msprop:Generator_RowDeletingName="ordem_producao_recursoRowDeleting" msprop:Generator_RowChangingName="ordem_producao_recursoRowChanging" msprop:Generator_RowDeletedName="ordem_producao_recursoRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producao_recursoRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producao_recursoDataTable" msprop:Generator_RowChangedName="ordem_producao_recursoRowChanged" msprop:Generator_RowClassName="ordem_producao_recursoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao_recurso" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao_recurso" msprop:Generator_ColumnPropNameInRow="id_ordem_producao_recurso" msprop:Generator_ColumnPropNameInTable="id_ordem_producao_recursoColumn" msprop:Generator_UserColumnName="id_ordem_producao_recurso" type="xs:int" />
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="id_recurso" msprop:Generator_ColumnVarNameInTable="columnid_recurso" msprop:Generator_ColumnPropNameInRow="id_recurso" msprop:Generator_ColumnPropNameInTable="id_recursoColumn" msprop:Generator_UserColumnName="id_recurso" type="xs:int" />
+              <xs:element name="opr_recurso_codigo" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_codigo" msprop:Generator_ColumnPropNameInRow="opr_recurso_codigo" msprop:Generator_ColumnPropNameInTable="opr_recurso_codigoColumn" msprop:Generator_UserColumnName="opr_recurso_codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_recurso_nome" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_nome" msprop:Generator_ColumnPropNameInRow="opr_recurso_nome" msprop:Generator_ColumnPropNameInTable="opr_recurso_nomeColumn" msprop:Generator_UserColumnName="opr_recurso_nome">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_posto_trabalho_codigo" msprop:Generator_ColumnVarNameInTable="columnopr_posto_trabalho_codigo" msprop:Generator_ColumnPropNameInRow="opr_posto_trabalho_codigo" msprop:Generator_ColumnPropNameInTable="opr_posto_trabalho_codigoColumn" msprop:Generator_UserColumnName="opr_posto_trabalho_codigo">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_posto_trabalho" msprop:Generator_ColumnVarNameInTable="columnid_posto_trabalho" msprop:Generator_ColumnPropNameInRow="id_posto_trabalho" msprop:Generator_ColumnPropNameInTable="id_posto_trabalhoColumn" msprop:Generator_UserColumnName="id_posto_trabalho" type="xs:int" />
+              <xs:element name="opr_recurso_revisao" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_revisao" msprop:Generator_ColumnPropNameInRow="opr_recurso_revisao" msprop:Generator_ColumnPropNameInTable="opr_recurso_revisaoColumn" msprop:Generator_UserColumnName="opr_recurso_revisao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_recurso_familia" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_familia" msprop:Generator_ColumnPropNameInRow="opr_recurso_familia" msprop:Generator_ColumnPropNameInTable="opr_recurso_familiaColumn" msprop:Generator_UserColumnName="opr_recurso_familia" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_recurso_loc1" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_loc1" msprop:Generator_ColumnPropNameInRow="opr_recurso_loc1" msprop:Generator_ColumnPropNameInTable="opr_recurso_loc1Column" msprop:Generator_UserColumnName="opr_recurso_loc1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_recurso_loc2" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_loc2" msprop:Generator_ColumnPropNameInRow="opr_recurso_loc2" msprop:Generator_ColumnPropNameInTable="opr_recurso_loc2Column" msprop:Generator_UserColumnName="opr_recurso_loc2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_recurso_loc3" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_loc3" msprop:Generator_ColumnPropNameInRow="opr_recurso_loc3" msprop:Generator_ColumnPropNameInTable="opr_recurso_loc3Column" msprop:Generator_UserColumnName="opr_recurso_loc3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opr_recurso_hierarquia" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_hierarquia" msprop:Generator_ColumnPropNameInRow="opr_recurso_hierarquia" msprop:Generator_ColumnPropNameInTable="opr_recurso_hierarquiaColumn" msprop:Generator_UserColumnName="opr_recurso_hierarquia" type="xs:int" />
+              <xs:element name="opr_recurso_loc4" msprop:Generator_ColumnVarNameInTable="columnopr_recurso_loc4" msprop:Generator_ColumnPropNameInRow="opr_recurso_loc4" msprop:Generator_ColumnPropNameInTable="opr_recurso_loc4Column" msprop:Generator_UserColumnName="opr_recurso_loc4" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao" msprop:Generator_UserTableName="ordem_producao" msprop:Generator_RowEvArgName="ordem_producaoRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao" msprop:Generator_TablePropName="ordem_producao" msprop:Generator_RowDeletingName="ordem_producaoRowDeleting" msprop:Generator_RowChangingName="ordem_producaoRowChanging" msprop:Generator_RowDeletedName="ordem_producaoRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producaoRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producaoDataTable" msprop:Generator_RowChangedName="ordem_producaoRowChanged" msprop:Generator_RowClassName="ordem_producaoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="orp_quantidade" msprop:Generator_ColumnVarNameInTable="columnorp_quantidade" msprop:Generator_ColumnPropNameInRow="orp_quantidade" msprop:Generator_ColumnPropNameInTable="orp_quantidadeColumn" msprop:Generator_UserColumnName="orp_quantidade" type="xs:double" />
+              <xs:element name="orp_data" msprop:Generator_ColumnVarNameInTable="columnorp_data" msprop:Generator_ColumnPropNameInRow="orp_data" msprop:Generator_ColumnPropNameInTable="orp_dataColumn" msprop:Generator_UserColumnName="orp_data" type="xs:dateTime" />
+              <xs:element name="orp_situacao" msprop:Generator_ColumnVarNameInTable="columnorp_situacao" msprop:Generator_ColumnPropNameInRow="orp_situacao" msprop:Generator_ColumnPropNameInTable="orp_situacaoColumn" msprop:Generator_UserColumnName="orp_situacao" type="xs:short" minOccurs="0" />
+              <xs:element name="orp_produto_descricao" msprop:Generator_ColumnVarNameInTable="columnorp_produto_descricao" msprop:Generator_ColumnPropNameInRow="orp_produto_descricao" msprop:Generator_ColumnPropNameInTable="orp_produto_descricaoColumn" msprop:Generator_UserColumnName="orp_produto_descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="orp_produto_codigo" msprop:Generator_ColumnVarNameInTable="columnorp_produto_codigo" msprop:Generator_ColumnPropNameInRow="orp_produto_codigo" msprop:Generator_ColumnPropNameInTable="orp_produto_codigoColumn" msprop:Generator_UserColumnName="orp_produto_codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="orp_tipo_documento" msprop:Generator_ColumnVarNameInTable="columnorp_tipo_documento" msprop:Generator_ColumnPropNameInRow="orp_tipo_documento" msprop:Generator_ColumnPropNameInTable="orp_tipo_documentoColumn" msprop:Generator_UserColumnName="orp_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="orp_numero_documento" msprop:Generator_ColumnVarNameInTable="columnorp_numero_documento" msprop:Generator_ColumnPropNameInRow="orp_numero_documento" msprop:Generator_ColumnPropNameInTable="orp_numero_documentoColumn" msprop:Generator_UserColumnName="orp_numero_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="orp_revisao_documento" msprop:Generator_ColumnVarNameInTable="columnorp_revisao_documento" msprop:Generator_ColumnPropNameInRow="orp_revisao_documento" msprop:Generator_ColumnPropNameInTable="orp_revisao_documentoColumn" msprop:Generator_UserColumnName="orp_revisao_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="orp_dimensao" msprop:Generator_ColumnVarNameInTable="columnorp_dimensao" msprop:Generator_ColumnPropNameInRow="orp_dimensao" msprop:Generator_ColumnPropNameInTable="orp_dimensaoColumn" msprop:Generator_UserColumnName="orp_dimensao" type="xs:string" minOccurs="0" />
+              <xs:element name="id_produto" msprop:Generator_ColumnVarNameInTable="columnid_produto" msprop:Generator_ColumnPropNameInRow="id_produto" msprop:Generator_ColumnPropNameInTable="id_produtoColumn" msprop:Generator_UserColumnName="id_produto" type="xs:int" />
+              <xs:element name="orp_quantidade_estoque" msprop:Generator_ColumnVarNameInTable="columnorp_quantidade_estoque" msprop:Generator_ColumnPropNameInRow="orp_quantidade_estoque" msprop:Generator_ColumnPropNameInTable="orp_quantidade_estoqueColumn" msprop:Generator_UserColumnName="orp_quantidade_estoque" type="xs:double" />
+              <xs:element name="orp_quantidade_pedido" msprop:Generator_ColumnVarNameInTable="columnorp_quantidade_pedido" msprop:Generator_ColumnPropNameInRow="orp_quantidade_pedido" msprop:Generator_ColumnPropNameInTable="orp_quantidade_pedidoColumn" msprop:Generator_UserColumnName="orp_quantidade_pedido" type="xs:double" />
+              <xs:element name="id_ordem_producao_barcode" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao_barcode" msprop:Generator_ColumnPropNameInRow="id_ordem_producao_barcode" msprop:Generator_ColumnPropNameInTable="id_ordem_producao_barcodeColumn" msprop:Generator_UserColumnName="id_ordem_producao_barcode" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="produto_acabamento" msprop:Generator_ColumnVarNameInTable="columnproduto_acabamento" msprop:Generator_ColumnPropNameInRow="produto_acabamento" msprop:Generator_ColumnPropNameInTable="produto_acabamentoColumn" msprop:Generator_UserColumnName="produto_acabamento" type="xs:string" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="orp_data_reimpressao" msprop:Generator_ColumnVarNameInTable="columnorp_data_reimpressao" msprop:Generator_ColumnPropNameInRow="orp_data_reimpressao" msprop:Generator_ColumnPropNameInTable="orp_data_reimpressaoColumn" msprop:Generator_UserColumnName="orp_data_reimpressao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="usuario_reimpressao" msprop:Generator_ColumnVarNameInTable="columnusuario_reimpressao" msprop:Generator_ColumnPropNameInRow="usuario_reimpressao" msprop:Generator_ColumnPropNameInTable="usuario_reimpressaoColumn" msprop:Generator_UserColumnName="usuario_reimpressao" type="xs:string" minOccurs="0" />
+              <xs:element name="usuario_impressao" msprop:Generator_ColumnVarNameInTable="columnusuario_impressao" msprop:Generator_ColumnPropNameInRow="usuario_impressao" msprop:Generator_ColumnPropNameInTable="usuario_impressaoColumn" msprop:Generator_UserColumnName="usuario_impressao" type="xs:string" minOccurs="0" />
+              <xs:element name="orp_data_impressao" msprop:Generator_ColumnVarNameInTable="columnorp_data_impressao" msprop:Generator_ColumnPropNameInRow="orp_data_impressao" msprop:Generator_ColumnPropNameInTable="orp_data_impressaoColumn" msprop:Generator_UserColumnName="orp_data_impressao" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="data_armazenagem" msprop:Generator_ColumnVarNameInTable="columndata_armazenagem" msprop:Generator_ColumnPropNameInRow="data_armazenagem" msprop:Generator_ColumnPropNameInTable="data_armazenagemColumn" msprop:Generator_UserColumnName="data_armazenagem" type="xs:string" minOccurs="0" />
+              <xs:element name="orp_agrupador_op" msprop:Generator_ColumnVarNameInTable="columnorp_agrupador_op" msprop:Generator_ColumnPropNameInRow="orp_agrupador_op" msprop:Generator_ColumnPropNameInTable="orp_agrupador_opColumn" msprop:Generator_UserColumnName="orp_agrupador_op" type="xs:string" minOccurs="0" />
+              <xs:element name="lote_economico" msprop:Generator_ColumnVarNameInTable="columnlote_economico" msprop:Generator_ColumnPropNameInRow="lote_economico" msprop:Generator_ColumnPropNameInTable="lote_economicoColumn" msprop:Generator_UserColumnName="lote_economico" type="xs:double" minOccurs="0" />
+              <xs:element name="local_fabricacao" msprop:Generator_ColumnVarNameInTable="columnlocal_fabricacao" msprop:Generator_ColumnPropNameInRow="local_fabricacao" msprop:Generator_ColumnPropNameInTable="local_fabricacaoColumn" msprop:Generator_UserColumnName="local_fabricacao" type="xs:string" minOccurs="0" />
+              <xs:element name="versao_estrutura_produto" msprop:Generator_ColumnVarNameInTable="columnversao_estrutura_produto" msprop:Generator_ColumnPropNameInRow="versao_estrutura_produto" msprop:Generator_ColumnPropNameInTable="versao_estrutura_produtoColumn" msprop:Generator_UserColumnName="versao_estrutura_produto" type="xs:int" minOccurs="0" />
+              <xs:element name="orp_rastreamento_material" msprop:Generator_ColumnVarNameInTable="columnorp_rastreamento_material" msprop:Generator_ColumnPropNameInRow="orp_rastreamento_material" msprop:Generator_ColumnPropNameInTable="orp_rastreamento_materialColumn" msprop:Generator_UserColumnName="orp_rastreamento_material" type="xs:short" minOccurs="0" />
+              <xs:element name="orp_imprime_ops_relacionadas" msprop:Generator_ColumnVarNameInTable="columnorp_imprime_ops_relacionadas" msprop:Generator_ColumnPropNameInRow="orp_imprime_ops_relacionadas" msprop:Generator_ColumnPropNameInTable="orp_imprime_ops_relacionadasColumn" msprop:Generator_UserColumnName="orp_imprime_ops_relacionadas" type="xs:boolean" default="false" />
+              <xs:element name="orp_qtd_extra" msprop:Generator_ColumnVarNameInTable="columnorp_qtd_extra" msprop:Generator_ColumnPropNameInRow="orp_qtd_extra" msprop:Generator_ColumnPropNameInTable="orp_qtd_extraColumn" msprop:Generator_UserColumnName="orp_qtd_extra" type="xs:double" default="0" />
+              <xs:element name="orp_quantidade_texto" msprop:Generator_ColumnVarNameInTable="columnorp_quantidade_texto" msprop:Generator_ColumnPropNameInRow="orp_quantidade_texto" msprop:Generator_ColumnPropNameInTable="orp_quantidade_textoColumn" msprop:Generator_UserColumnName="orp_quantidade_texto" type="xs:string" minOccurs="0" />
+              <xs:element name="orp_quantidade_estoque_texto" msprop:Generator_ColumnVarNameInTable="columnorp_quantidade_estoque_texto" msprop:Generator_ColumnPropNameInRow="orp_quantidade_estoque_texto" msprop:Generator_ColumnPropNameInTable="orp_quantidade_estoque_textoColumn" msprop:Generator_UserColumnName="orp_quantidade_estoque_texto" type="xs:string" minOccurs="0" />
+              <xs:element name="orp_quantidade_pedido_texto" msprop:Generator_ColumnVarNameInTable="columnorp_quantidade_pedido_texto" msprop:Generator_ColumnPropNameInRow="orp_quantidade_pedido_texto" msprop:Generator_ColumnPropNameInTable="orp_quantidade_pedido_textoColumn" msprop:Generator_UserColumnName="orp_quantidade_pedido_texto" type="xs:string" minOccurs="0" />
+              <xs:element name="orp_qtd_extra_texto" msprop:Generator_ColumnVarNameInTable="columnorp_qtd_extra_texto" msprop:Generator_ColumnPropNameInRow="orp_qtd_extra_texto" msprop:Generator_ColumnPropNameInTable="orp_qtd_extra_textoColumn" msprop:Generator_UserColumnName="orp_qtd_extra_texto" type="xs:string" minOccurs="0" />
+              <xs:element name="unidade_medida" msprop:Generator_ColumnVarNameInTable="columnunidade_medida" msprop:Generator_ColumnPropNameInRow="unidade_medida" msprop:Generator_ColumnPropNameInTable="unidade_medidaColumn" msprop:Generator_UserColumnName="unidade_medida" type="xs:string" minOccurs="0" />
+              <xs:element name="imprimir_documento_direto" msprop:Generator_ColumnVarNameInTable="columnimprimir_documento_direto" msprop:Generator_ColumnPropNameInRow="imprimir_documento_direto" msprop:Generator_ColumnPropNameInTable="imprimir_documento_diretoColumn" msprop:Generator_UserColumnName="imprimir_documento_direto" type="xs:boolean" default="false" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_estoque" msprop:Generator_UserTableName="ordem_producao_estoque" msprop:Generator_RowEvArgName="ordem_producao_estoqueRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_estoque" msprop:Generator_TablePropName="ordem_producao_estoque" msprop:Generator_RowDeletingName="ordem_producao_estoqueRowDeleting" msprop:Generator_RowChangingName="ordem_producao_estoqueRowChanging" msprop:Generator_RowDeletedName="ordem_producao_estoqueRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producao_estoqueRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producao_estoqueDataTable" msprop:Generator_RowChangedName="ordem_producao_estoqueRowChanged" msprop:Generator_RowClassName="ordem_producao_estoqueRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="ope_quantidade_total" msprop:Generator_ColumnVarNameInTable="columnope_quantidade_total" msprop:Generator_ColumnPropNameInRow="ope_quantidade_total" msprop:Generator_ColumnPropNameInTable="ope_quantidade_totalColumn" msprop:Generator_UserColumnName="ope_quantidade_total" type="xs:double" />
+              <xs:element name="ope_estoque_caminho" msprop:Generator_ColumnVarNameInTable="columnope_estoque_caminho" msprop:Generator_ColumnPropNameInRow="ope_estoque_caminho" msprop:Generator_ColumnPropNameInTable="ope_estoque_caminhoColumn" msprop:Generator_UserColumnName="ope_estoque_caminho" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_pedido" msprop:Generator_UserTableName="ordem_producao_pedido" msprop:Generator_RowEvArgName="ordem_producao_pedidoRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_pedido" msprop:Generator_TablePropName="ordem_producao_pedido" msprop:Generator_RowDeletingName="ordem_producao_pedidoRowDeleting" msprop:Generator_RowChangingName="ordem_producao_pedidoRowChanging" msprop:Generator_RowDeletedName="ordem_producao_pedidoRowDeleted" msprop:Generator_RowEvHandlerName="ordem_producao_pedidoRowChangeEventHandler" msprop:Generator_TableClassName="ordem_producao_pedidoDataTable" msprop:Generator_RowChangedName="ordem_producao_pedidoRowChanged" msprop:Generator_RowClassName="ordem_producao_pedidoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao_pedido" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao_pedido" msprop:Generator_ColumnPropNameInRow="id_ordem_producao_pedido" msprop:Generator_ColumnPropNameInTable="id_ordem_producao_pedidoColumn" msprop:Generator_UserColumnName="id_ordem_producao_pedido" type="xs:int" />
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" minOccurs="0" />
+              <xs:element name="opp_produto_codigo" msprop:Generator_ColumnVarNameInTable="columnopp_produto_codigo" msprop:Generator_ColumnPropNameInRow="opp_produto_codigo" msprop:Generator_ColumnPropNameInTable="opp_produto_codigoColumn" msprop:Generator_UserColumnName="opp_produto_codigo" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_produto_descricao" msprop:Generator_ColumnVarNameInTable="columnopp_produto_descricao" msprop:Generator_ColumnPropNameInRow="opp_produto_descricao" msprop:Generator_ColumnPropNameInTable="opp_produto_descricaoColumn" msprop:Generator_UserColumnName="opp_produto_descricao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_order_number" msprop:Generator_ColumnVarNameInTable="columnopp_order_number" msprop:Generator_ColumnPropNameInRow="opp_order_number" msprop:Generator_ColumnPropNameInTable="opp_order_numberColumn" msprop:Generator_UserColumnName="opp_order_number" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_order_pos" msprop:Generator_ColumnVarNameInTable="columnopp_order_pos" msprop:Generator_ColumnPropNameInRow="opp_order_pos" msprop:Generator_ColumnPropNameInTable="opp_order_posColumn" msprop:Generator_UserColumnName="opp_order_pos" type="xs:int" minOccurs="0" />
+              <xs:element name="opp_variavel_1" msprop:Generator_ColumnVarNameInTable="columnopp_variavel_1" msprop:Generator_ColumnPropNameInRow="opp_variavel_1" msprop:Generator_ColumnPropNameInTable="opp_variavel_1Column" msprop:Generator_UserColumnName="opp_variavel_1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_valor_variavel_1" msprop:Generator_ColumnVarNameInTable="columnopp_valor_variavel_1" msprop:Generator_ColumnPropNameInRow="opp_valor_variavel_1" msprop:Generator_ColumnPropNameInTable="opp_valor_variavel_1Column" msprop:Generator_UserColumnName="opp_valor_variavel_1" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_variavel_2" msprop:Generator_ColumnVarNameInTable="columnopp_variavel_2" msprop:Generator_ColumnPropNameInRow="opp_variavel_2" msprop:Generator_ColumnPropNameInTable="opp_variavel_2Column" msprop:Generator_UserColumnName="opp_variavel_2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_valor_variavel_2" msprop:Generator_ColumnVarNameInTable="columnopp_valor_variavel_2" msprop:Generator_ColumnPropNameInRow="opp_valor_variavel_2" msprop:Generator_ColumnPropNameInTable="opp_valor_variavel_2Column" msprop:Generator_UserColumnName="opp_valor_variavel_2" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_variavel_3" msprop:Generator_ColumnVarNameInTable="columnopp_variavel_3" msprop:Generator_ColumnPropNameInRow="opp_variavel_3" msprop:Generator_ColumnPropNameInTable="opp_variavel_3Column" msprop:Generator_UserColumnName="opp_variavel_3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_valor_variavel_3" msprop:Generator_ColumnVarNameInTable="columnopp_valor_variavel_3" msprop:Generator_ColumnPropNameInRow="opp_valor_variavel_3" msprop:Generator_ColumnPropNameInTable="opp_valor_variavel_3Column" msprop:Generator_UserColumnName="opp_valor_variavel_3" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_variavel_4" msprop:Generator_ColumnVarNameInTable="columnopp_variavel_4" msprop:Generator_ColumnPropNameInRow="opp_variavel_4" msprop:Generator_ColumnPropNameInTable="opp_variavel_4Column" msprop:Generator_UserColumnName="opp_variavel_4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_valor_variavel_4" msprop:Generator_ColumnVarNameInTable="columnopp_valor_variavel_4" msprop:Generator_ColumnPropNameInRow="opp_valor_variavel_4" msprop:Generator_ColumnPropNameInTable="opp_valor_variavel_4Column" msprop:Generator_UserColumnName="opp_valor_variavel_4" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_quantidade" msprop:Generator_ColumnVarNameInTable="columnopp_quantidade" msprop:Generator_ColumnPropNameInRow="opp_quantidade" msprop:Generator_ColumnPropNameInTable="opp_quantidadeColumn" msprop:Generator_UserColumnName="opp_quantidade" type="xs:double" minOccurs="0" />
+              <xs:element name="opp_tipo_documento" msprop:Generator_ColumnVarNameInTable="columnopp_tipo_documento" msprop:Generator_ColumnPropNameInRow="opp_tipo_documento" msprop:Generator_ColumnPropNameInTable="opp_tipo_documentoColumn" msprop:Generator_UserColumnName="opp_tipo_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_numero_documento" msprop:Generator_ColumnVarNameInTable="columnopp_numero_documento" msprop:Generator_ColumnPropNameInRow="opp_numero_documento" msprop:Generator_ColumnPropNameInTable="opp_numero_documentoColumn" msprop:Generator_UserColumnName="opp_numero_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_saf" msprop:Generator_ColumnVarNameInTable="columnopp_saf" msprop:Generator_ColumnPropNameInRow="opp_saf" msprop:Generator_ColumnPropNameInTable="opp_safColumn" msprop:Generator_UserColumnName="opp_saf" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_cnc" msprop:Generator_ColumnVarNameInTable="columnopp_cnc" msprop:Generator_ColumnPropNameInRow="opp_cnc" msprop:Generator_ColumnPropNameInTable="opp_cncColumn" msprop:Generator_UserColumnName="opp_cnc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_tipo_ligacao" msprop:Generator_ColumnVarNameInTable="columnopp_tipo_ligacao" msprop:Generator_ColumnPropNameInRow="opp_tipo_ligacao" msprop:Generator_ColumnPropNameInTable="opp_tipo_ligacaoColumn" msprop:Generator_UserColumnName="opp_tipo_ligacao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_produto_codigo_pai" msprop:Generator_ColumnVarNameInTable="columnopp_produto_codigo_pai" msprop:Generator_ColumnPropNameInRow="opp_produto_codigo_pai" msprop:Generator_ColumnPropNameInTable="opp_produto_codigo_paiColumn" msprop:Generator_UserColumnName="opp_produto_codigo_pai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_cliente" msprop:Generator_ColumnVarNameInTable="columnopp_cliente" msprop:Generator_ColumnPropNameInRow="opp_cliente" msprop:Generator_ColumnPropNameInTable="opp_clienteColumn" msprop:Generator_UserColumnName="opp_cliente" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_semana_entrega" msprop:Generator_ColumnVarNameInTable="columnopp_semana_entrega" msprop:Generator_ColumnPropNameInRow="opp_semana_entrega" msprop:Generator_ColumnPropNameInTable="opp_semana_entregaColumn" msprop:Generator_UserColumnName="opp_semana_entrega" type="xs:int" minOccurs="0" />
+              <xs:element name="opp_revisao_documento" msprop:Generator_ColumnVarNameInTable="columnopp_revisao_documento" msprop:Generator_ColumnPropNameInRow="opp_revisao_documento" msprop:Generator_ColumnPropNameInTable="opp_revisao_documentoColumn" msprop:Generator_UserColumnName="opp_revisao_documento" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_dimensao" msprop:Generator_ColumnVarNameInTable="columnopp_dimensao" msprop:Generator_ColumnPropNameInRow="opp_dimensao" msprop:Generator_ColumnPropNameInTable="opp_dimensaoColumn" msprop:Generator_UserColumnName="opp_dimensao" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_order_item_etiqueta" msprop:Generator_ColumnVarNameInTable="columnid_order_item_etiqueta" msprop:Generator_ColumnPropNameInRow="id_order_item_etiqueta" msprop:Generator_ColumnPropNameInTable="id_order_item_etiquetaColumn" msprop:Generator_UserColumnName="id_order_item_etiqueta" type="xs:int" minOccurs="0" />
+              <xs:element name="opp_produto_acabamento_pai" msprop:Generator_ColumnVarNameInTable="columnopp_produto_acabamento_pai" msprop:Generator_ColumnPropNameInRow="opp_produto_acabamento_pai" msprop:Generator_ColumnPropNameInTable="opp_produto_acabamento_paiColumn" msprop:Generator_UserColumnName="opp_produto_acabamento_pai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="opp_produto_descricao_pai" msprop:Generator_ColumnVarNameInTable="columnopp_produto_descricao_pai" msprop:Generator_ColumnPropNameInRow="opp_produto_descricao_pai" msprop:Generator_ColumnPropNameInTable="opp_produto_descricao_paiColumn" msprop:Generator_UserColumnName="opp_produto_descricao_pai" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status_atual_pedido" msprop:Generator_ColumnVarNameInTable="columnstatus_atual_pedido" msprop:Generator_ColumnPropNameInRow="status_atual_pedido" msprop:Generator_ColumnPropNameInTable="status_atual_pedidoColumn" msprop:Generator_UserColumnName="status_atual_pedido" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="data_entrega_atual_pedido" msprop:Generator_ColumnVarNameInTable="columndata_entrega_atual_pedido" msprop:Generator_ColumnPropNameInRow="data_entrega_atual_pedido" msprop:Generator_ColumnPropNameInTable="data_entrega_atual_pedidoColumn" msprop:Generator_UserColumnName="data_entrega_atual_pedido" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="opp_unidade_medida_pai" msprop:Generator_ColumnVarNameInTable="columnopp_unidade_medida_pai" msprop:Generator_ColumnPropNameInRow="opp_unidade_medida_pai" msprop:Generator_ColumnPropNameInTable="opp_unidade_medida_paiColumn" msprop:Generator_UserColumnName="opp_unidade_medida_pai" type="xs:string" minOccurs="0" />
+              <xs:element name="opp_quantidade_string" msprop:Generator_ColumnVarNameInTable="columnopp_quantidade_string" msprop:Generator_ColumnPropNameInRow="opp_quantidade_string" msprop:Generator_ColumnPropNameInTable="opp_quantidade_stringColumn" msprop:Generator_UserColumnName="opp_quantidade_string" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_relacionadas" msprop:Generator_TableClassName="ordem_producao_relacionadasDataTable" msprop:Generator_RowEvArgName="ordem_producao_relacionadasRowChangeEvent" msprop:Generator_TableVarName="tableordem_producao_relacionadas" msprop:Generator_TablePropName="ordem_producao_relacionadas" msprop:Generator_RowDeletingName="ordem_producao_relacionadasRowDeleting" msprop:Generator_RowChangingName="ordem_producao_relacionadasRowChanging" msprop:Generator_RowDeletedName="ordem_producao_relacionadasRowDeleted" msprop:Generator_RowClassName="ordem_producao_relacionadasRow" msprop:Generator_RowEvHandlerName="ordem_producao_relacionadasRowChangeEventHandler" msprop:Generator_RowChangedName="ordem_producao_relacionadasRowChanged" msprop:Generator_UserTableName="ordem_producao_relacionadas">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="numero_op_relacionada" msprop:Generator_ColumnVarNameInTable="columnnumero_op_relacionada" msprop:Generator_ColumnPropNameInRow="numero_op_relacionada" msprop:Generator_ColumnPropNameInTable="numero_op_relacionadaColumn" msprop:Generator_UserColumnName="numero_op_relacionada" type="xs:int" minOccurs="0" />
+              <xs:element name="codigo_item" msprop:Generator_ColumnVarNameInTable="columncodigo_item" msprop:Generator_ColumnPropNameInRow="codigo_item" msprop:Generator_ColumnPropNameInTable="codigo_itemColumn" msprop:Generator_UserColumnName="codigo_item" type="xs:string" minOccurs="0" />
+              <xs:element name="descricao_item" msprop:Generator_ColumnVarNameInTable="columndescricao_item" msprop:Generator_ColumnPropNameInRow="descricao_item" msprop:Generator_ColumnPropNameInTable="descricao_itemColumn" msprop:Generator_UserColumnName="descricao_item" type="xs:string" minOccurs="0" />
+              <xs:element name="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_UserColumnName="quantidade" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_produto_componente" msprop:Generator_TableClassName="ordem_producao_produto_componenteDataTable" msprop:Generator_TableVarName="tableordem_producao_produto_componente" msprop:Generator_RowChangedName="ordem_producao_produto_componenteRowChanged" msprop:Generator_TablePropName="ordem_producao_produto_componente" msprop:Generator_RowDeletingName="ordem_producao_produto_componenteRowDeleting" msprop:Generator_RowChangingName="ordem_producao_produto_componenteRowChanging" msprop:Generator_RowEvHandlerName="ordem_producao_produto_componenteRowChangeEventHandler" msprop:Generator_RowDeletedName="ordem_producao_produto_componenteRowDeleted" msprop:Generator_RowClassName="ordem_producao_produto_componenteRow" msprop:Generator_UserTableName="ordem_producao_produto_componente" msprop:Generator_RowEvArgName="ordem_producao_produto_componenteRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="produto_codigo" msprop:Generator_ColumnVarNameInTable="columnproduto_codigo" msprop:Generator_ColumnPropNameInRow="produto_codigo" msprop:Generator_ColumnPropNameInTable="produto_codigoColumn" msprop:Generator_UserColumnName="produto_codigo" type="xs:string" />
+              <xs:element name="produto_descricao" msprop:Generator_ColumnVarNameInTable="columnproduto_descricao" msprop:Generator_ColumnPropNameInRow="produto_descricao" msprop:Generator_ColumnPropNameInTable="produto_descricaoColumn" msprop:Generator_UserColumnName="produto_descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="quantidade" msprop:Generator_ColumnVarNameInTable="columnquantidade" msprop:Generator_ColumnPropNameInRow="quantidade" msprop:Generator_ColumnPropNameInTable="quantidadeColumn" msprop:Generator_UserColumnName="quantidade" type="xs:double" />
+              <xs:element name="dimensao" msprop:Generator_ColumnVarNameInTable="columndimensao" msprop:Generator_ColumnPropNameInRow="dimensao" msprop:Generator_ColumnPropNameInTable="dimensaoColumn" msprop:Generator_UserColumnName="dimensao" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ordem_producao_documento_imprimir" msprop:Generator_TableClassName="ordem_producao_documento_imprimirDataTable" msprop:Generator_TableVarName="tableordem_producao_documento_imprimir" msprop:Generator_RowChangedName="ordem_producao_documento_imprimirRowChanged" msprop:Generator_TablePropName="ordem_producao_documento_imprimir" msprop:Generator_RowDeletingName="ordem_producao_documento_imprimirRowDeleting" msprop:Generator_RowChangingName="ordem_producao_documento_imprimirRowChanging" msprop:Generator_RowEvHandlerName="ordem_producao_documento_imprimirRowChangeEventHandler" msprop:Generator_RowDeletedName="ordem_producao_documento_imprimirRowDeleted" msprop:Generator_RowClassName="ordem_producao_documento_imprimirRow" msprop:Generator_UserTableName="ordem_producao_documento_imprimir" msprop:Generator_RowEvArgName="ordem_producao_documento_imprimirRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id_ordem_producao" msprop:Generator_ColumnVarNameInTable="columnid_ordem_producao" msprop:Generator_ColumnPropNameInRow="id_ordem_producao" msprop:Generator_ColumnPropNameInTable="id_ordem_producaoColumn" msprop:Generator_UserColumnName="id_ordem_producao" type="xs:int" />
+              <xs:element name="documento_dados" msprop:Generator_ColumnVarNameInTable="columndocumento_dados" msprop:Generator_ColumnPropNameInRow="documento_dados" msprop:Generator_ColumnPropNameInTable="documento_dadosColumn" msprop:Generator_UserColumnName="documento_dados" type="xs:base64Binary" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ordem_producao_posto_trabalho" />
+      <xs:field xpath="mstns:id_ordem_producao_posto_trabalho" />
+    </xs:unique>
+    <xs:unique name="ordem_producao_material_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ordem_producao_material" />
+      <xs:field xpath="mstns:id_ordem_producao_material" />
+    </xs:unique>
+    <xs:unique name="ordem_producao_documento_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ordem_producao_documento" />
+      <xs:field xpath="mstns:id_ordem_producao_documento" />
+    </xs:unique>
+    <xs:unique name="ordem_producao_recurso_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ordem_producao_recurso" />
+      <xs:field xpath="mstns:id_ordem_producao_recurso" />
+    </xs:unique>
+    <xs:unique name="ordem_producao_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ordem_producao" />
+      <xs:field xpath="mstns:id_ordem_producao" />
+    </xs:unique>
+    <xs:unique name="ordem_producao_pedido_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:ordem_producao_pedido" />
+      <xs:field xpath="mstns:id_ordem_producao_pedido" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

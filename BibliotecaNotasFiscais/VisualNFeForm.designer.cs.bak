@@ -1,0 +1,118 @@
+﻿namespace BibliotecaNotasFiscais
+{
+    partial class VisualNFeForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            this.btnRecusar = new System.Windows.Forms.Button();
+            this.btnAceitar = new System.Windows.Forms.Button();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.crystalReportViewer1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.btnRecusar);
+            this.splitContainer1.Panel2.Controls.Add(this.btnAceitar);
+            this.splitContainer1.Size = new System.Drawing.Size(802, 499);
+            this.splitContainer1.SplitterDistance = 435;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.SelectionFormula = "";
+            this.crystalReportViewer1.Size = new System.Drawing.Size(802, 435);
+            this.crystalReportViewer1.TabIndex = 0;
+            this.crystalReportViewer1.ViewTimeSelectionFormula = "";
+            // 
+            // btnRecusar
+            // 
+            this.btnRecusar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnRecusar.Location = new System.Drawing.Point(12, 10);
+            this.btnRecusar.Name = "btnRecusar";
+            this.btnRecusar.Size = new System.Drawing.Size(75, 37);
+            this.btnRecusar.TabIndex = 2;
+            this.btnRecusar.Text = "Recusar";
+            this.btnRecusar.UseVisualStyleBackColor = true;
+            this.btnRecusar.Click += new System.EventHandler(this.btnRecusar_Click);
+            // 
+            // btnAceitar
+            // 
+            this.btnAceitar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAceitar.Location = new System.Drawing.Point(715, 10);
+            this.btnAceitar.Name = "btnAceitar";
+            this.btnAceitar.Size = new System.Drawing.Size(75, 37);
+            this.btnAceitar.TabIndex = 0;
+            this.btnAceitar.Text = "Aceitar";
+            this.btnAceitar.UseVisualStyleBackColor = true;
+            this.btnAceitar.Click += new System.EventHandler(this.btnAceitar_Click);
+            // 
+            // VisualNFeForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(802, 499);
+            this.Controls.Add(this.splitContainer1);
+            this.Name = "VisualNFeForm";
+            this.Text = "Visualização da NFe";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            this.splitContainer1.ResumeLayout(false);
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.Button btnRecusar;
+        private System.Windows.Forms.Button btnAceitar;
+    }
+}

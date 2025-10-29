@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="EtiquetaCompraRepetitivaReportDataSet" targetNamespace="http://tempuri.org/EtiquetaCompraRepetitivaReportDataSet.xsd" xmlns:mstns="http://tempuri.org/EtiquetaCompraRepetitivaReportDataSet.xsd" xmlns="http://tempuri.org/EtiquetaCompraRepetitivaReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="EtiquetaCompraRepetitivaReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="EtiquetaCompraRepetitivaReportDataSet" msprop:Generator_UserDSName="EtiquetaCompraRepetitivaReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="etiqueta" msprop:Generator_TableClassName="etiquetaDataTable" msprop:Generator_TableVarName="tableetiqueta" msprop:Generator_TablePropName="etiqueta" msprop:Generator_RowDeletingName="etiquetaRowDeleting" msprop:Generator_UserTableName="etiqueta" msprop:Generator_RowChangingName="etiquetaRowChanging" msprop:Generator_RowEvHandlerName="etiquetaRowChangeEventHandler" msprop:Generator_RowDeletedName="etiquetaRowDeleted" msprop:Generator_RowEvArgName="etiquetaRowChangeEvent" msprop:Generator_RowChangedName="etiquetaRowChanged" msprop:Generator_RowClassName="etiquetaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="item" msprop:Generator_ColumnVarNameInTable="columnitem" msprop:Generator_ColumnPropNameInRow="item" msprop:Generator_ColumnPropNameInTable="itemColumn" msprop:Generator_UserColumnName="item" type="xs:string" minOccurs="0" />
+              <xs:element name="descricao" msprop:Generator_ColumnVarNameInTable="columndescricao" msprop:Generator_ColumnPropNameInRow="descricao" msprop:Generator_ColumnPropNameInTable="descricaoColumn" msprop:Generator_UserColumnName="descricao" type="xs:string" minOccurs="0" />
+              <xs:element name="acabamento" msprop:Generator_ColumnVarNameInTable="columnacabamento" msprop:Generator_ColumnPropNameInRow="acabamento" msprop:Generator_ColumnPropNameInTable="acabamentoColumn" msprop:Generator_UserColumnName="acabamento" type="xs:string" minOccurs="0" />
+              <xs:element name="estoque_uso_verde" msprop:Generator_ColumnVarNameInTable="columnestoque_uso_verde" msprop:Generator_ColumnPropNameInRow="estoque_uso_verde" msprop:Generator_ColumnPropNameInTable="estoque_uso_verdeColumn" msprop:Generator_UserColumnName="estoque_uso_verde" type="xs:double" minOccurs="0" />
+              <xs:element name="estoque_compra_verde" msprop:Generator_ColumnVarNameInTable="columnestoque_compra_verde" msprop:Generator_ColumnPropNameInRow="estoque_compra_verde" msprop:Generator_ColumnPropNameInTable="estoque_compra_verdeColumn" msprop:Generator_UserColumnName="estoque_compra_verde" type="xs:double" minOccurs="0" />
+              <xs:element name="unidade_uso" msprop:Generator_ColumnVarNameInTable="columnunidade_uso" msprop:Generator_ColumnPropNameInRow="unidade_uso" msprop:Generator_ColumnPropNameInTable="unidade_usoColumn" msprop:Generator_UserColumnName="unidade_uso" type="xs:string" minOccurs="0" />
+              <xs:element name="unidade_compra" msprop:Generator_ColumnVarNameInTable="columnunidade_compra" msprop:Generator_ColumnPropNameInRow="unidade_compra" msprop:Generator_ColumnPropNameInTable="unidade_compraColumn" msprop:Generator_UserColumnName="unidade_compra" type="xs:string" minOccurs="0" />
+              <xs:element name="local_estoque" msprop:Generator_ColumnVarNameInTable="columnlocal_estoque" msprop:Generator_ColumnPropNameInRow="local_estoque" msprop:Generator_ColumnPropNameInTable="local_estoqueColumn" msprop:Generator_UserColumnName="local_estoque" type="xs:string" minOccurs="0" />
+              <xs:element name="usuario" msprop:Generator_ColumnVarNameInTable="columnusuario" msprop:Generator_ColumnPropNameInRow="usuario" msprop:Generator_ColumnPropNameInTable="usuarioColumn" msprop:Generator_UserColumnName="usuario" type="xs:string" minOccurs="0" />
+              <xs:element name="codigo_barra" msprop:Generator_ColumnVarNameInTable="columncodigo_barra" msprop:Generator_ColumnPropNameInRow="codigo_barra" msprop:Generator_ColumnPropNameInTable="codigo_barraColumn" msprop:Generator_UserColumnName="codigo_barra" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="tipo_etiqueta" msprop:Generator_ColumnVarNameInTable="columntipo_etiqueta" msprop:Generator_ColumnPropNameInRow="tipo_etiqueta" msprop:Generator_ColumnPropNameInTable="tipo_etiquetaColumn" msprop:Generator_UserColumnName="tipo_etiqueta" type="xs:string" minOccurs="0" />
+              <xs:element name="dimensao" msprop:Generator_ColumnVarNameInTable="columndimensao" msprop:Generator_ColumnPropNameInRow="dimensao" msprop:Generator_ColumnPropNameInTable="dimensaoColumn" msprop:Generator_UserColumnName="dimensao" type="xs:string" minOccurs="0" />
+              <xs:element name="estoque_uso_amarelo" msprop:Generator_ColumnVarNameInTable="columnestoque_uso_amarelo" msprop:Generator_ColumnPropNameInRow="estoque_uso_amarelo" msprop:Generator_ColumnPropNameInTable="estoque_uso_amareloColumn" msprop:Generator_UserColumnName="estoque_uso_amarelo" type="xs:double" minOccurs="0" />
+              <xs:element name="estoque_compra_amarelo" msprop:Generator_ColumnVarNameInTable="columnestoque_compra_amarelo" msprop:Generator_ColumnPropNameInRow="estoque_compra_amarelo" msprop:Generator_ColumnPropNameInTable="estoque_compra_amareloColumn" msprop:Generator_UserColumnName="estoque_compra_amarelo" type="xs:double" minOccurs="0" />
+              <xs:element name="estoque_uso_vermelho" msprop:Generator_ColumnVarNameInTable="columnestoque_uso_vermelho" msprop:Generator_ColumnPropNameInRow="estoque_uso_vermelho" msprop:Generator_ColumnPropNameInTable="estoque_uso_vermelhoColumn" msprop:Generator_UserColumnName="estoque_uso_vermelho" type="xs:double" minOccurs="0" />
+              <xs:element name="estoque_compra_vermelho" msprop:Generator_ColumnVarNameInTable="columnestoque_compra_vermelho" msprop:Generator_ColumnPropNameInRow="estoque_compra_vermelho" msprop:Generator_ColumnPropNameInTable="estoque_compra_vermelhoColumn" msprop:Generator_UserColumnName="estoque_compra_vermelho" type="xs:double" minOccurs="0" />
+              <xs:element name="qtd_produzir" msprop:Generator_ColumnVarNameInTable="columnqtd_produzir" msprop:Generator_ColumnPropNameInRow="qtd_produzir" msprop:Generator_ColumnPropNameInTable="qtd_produzirColumn" msprop:Generator_UserColumnName="qtd_produzir" type="xs:double" minOccurs="0" />
+              <xs:element name="numero_etiqueta" msprop:Generator_ColumnVarNameInTable="columnnumero_etiqueta" msprop:Generator_ColumnPropNameInRow="numero_etiqueta" msprop:Generator_ColumnPropNameInTable="numero_etiquetaColumn" msprop:Generator_UserColumnName="numero_etiqueta" type="xs:string" minOccurs="0" />
+              <xs:element name="manufaturado" msprop:Generator_ColumnVarNameInTable="columnmanufaturado" msprop:Generator_ColumnPropNameInRow="manufaturado" msprop:Generator_ColumnPropNameInTable="manufaturadoColumn" msprop:Generator_UserColumnName="manufaturado" type="xs:boolean" default="false" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

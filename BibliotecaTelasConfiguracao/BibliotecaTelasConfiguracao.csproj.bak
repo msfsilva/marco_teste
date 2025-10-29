@@ -1,0 +1,149 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A7FA56D5-B6FF-4DF7-869D-C9AB5CE3EAAA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibliotecaTelasConfiguracao</RootNamespace>
+    <AssemblyName>BibliotecaTelasConfiguracao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Configurations">
+      <HintPath>..\..\..\Recursos.C#.DLLs\Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTCustomControls">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTCustomControls.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTDotNetLib">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTDotNetLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTFunctions">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTNFCompleto">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTNFeCompleto\IWTNFCompleto.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTPostgreNpgsql">
+      <HintPath>..\..\..\Recursos.C#.DLLs\IWTPostgreNpgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="ProjectConstants">
+      <HintPath>..\..\DLL\ProjectConstants.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutomacaoConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AutomacaoConfigurationForm.Designer.cs">
+      <DependentUpon>AutomacaoConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ProducaoConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProducaoConfigurationForm.designer.cs">
+      <DependentUpon>ProducaoConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PCPConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PCPConfigurationForm.Designer.cs">
+      <DependentUpon>PCPConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GerencialConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GerencialConfigurationForm.Designer.cs">
+      <DependentUpon>GerencialConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FinanceiroConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinanceiroConfigurationForm.Designer.cs">
+      <DependentUpon>FinanceiroConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ExpedicaoConfigurationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpedicaoConfigurationForm.designer.cs">
+      <DependentUpon>ExpedicaoConfigurationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AutomacaoConfigurationForm.resx">
+      <DependentUpon>AutomacaoConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProducaoConfigurationForm.resx">
+      <DependentUpon>ProducaoConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PCPConfigurationForm.resx">
+      <DependentUpon>PCPConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GerencialConfigurationForm.resx">
+      <DependentUpon>GerencialConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinanceiroConfigurationForm.resx">
+      <DependentUpon>FinanceiroConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpedicaoConfigurationForm.resx">
+      <DependentUpon>ExpedicaoConfigurationForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecaCentroCusto\BibliotecaCentroCusto.csproj">
+      <Project>{7BB6EEC1-2BCB-4E62-9B6E-2CFB42F97645}</Project>
+      <Name>BibliotecaCentroCusto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecaEntidades\BibliotecaEntidades.csproj">
+      <Project>{0A4ABF38-1B5F-4AC3-A25C-CF53581969B5}</Project>
+      <Name>BibliotecaEntidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

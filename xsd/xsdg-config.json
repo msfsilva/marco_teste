@@ -1,6 +1,0 @@
-﻿{
-  "Namespace": "IWTNFCompleto.BibliotecaDatasets.v4_0",
-  "OutputFolder": ".\BibliotecasDatasets\novo",
-  "GenerateSeparateFiles": true,
-  "CollectionType": "System.Collections.Generic.List"
-}

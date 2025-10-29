@@ -1,0 +1,279 @@
+﻿using System.Windows.Forms;
+
+namespace BibliotecaQualidade
+{
+    partial class RastreabilidadeReportForm
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RastreabilidadeReportForm));
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.cmbCliente = new IWTDotNetLib.IWTMultiColumnComboBox(this.components);
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnCarregar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtPos = new System.Windows.Forms.MaskedTextBox();
+            this.txtOc = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
+            this.toolStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // splitContainer1
+            // 
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer1.Panel1
+            // 
+            this.splitContainer1.Panel1.Controls.Add(this.cmbCliente);
+            this.splitContainer1.Panel1.Controls.Add(this.label3);
+            this.splitContainer1.Panel1.Controls.Add(this.btnCarregar);
+            this.splitContainer1.Panel1.Controls.Add(this.label2);
+            this.splitContainer1.Panel1.Controls.Add(this.txtPos);
+            this.splitContainer1.Panel1.Controls.Add(this.txtOc);
+            this.splitContainer1.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer1.Panel2
+            // 
+            this.splitContainer1.Panel2.Controls.Add(this.splitContainer2);
+            this.splitContainer1.Size = new System.Drawing.Size(624, 526);
+            this.splitContainer1.SplitterDistance = 65;
+            this.splitContainer1.TabIndex = 0;
+            // 
+            // cmbCliente
+            // 
+            this.cmbCliente.BindingField = null;
+            this.cmbCliente.ColumnsToDisplay = null;
+            this.cmbCliente.DropDownHeight = 1;
+            this.cmbCliente.Enabled = false;
+            this.cmbCliente.FormattingEnabled = true;
+            this.cmbCliente.IntegralHeight = false;
+            this.cmbCliente.Location = new System.Drawing.Point(291, 23);
+            this.cmbCliente.Name = "cmbCliente";
+            this.cmbCliente.SelectedRow = null;
+            this.cmbCliente.Size = new System.Drawing.Size(197, 21);
+            this.cmbCliente.TabIndex = 5;
+            this.cmbCliente.Table = null;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(246, 26);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Cliente";
+            // 
+            // btnCarregar
+            // 
+            this.btnCarregar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCarregar.Location = new System.Drawing.Point(537, 21);
+            this.btnCarregar.Name = "btnCarregar";
+            this.btnCarregar.Size = new System.Drawing.Size(75, 23);
+            this.btnCarregar.TabIndex = 2;
+            this.btnCarregar.Text = "Carregar";
+            this.btnCarregar.UseVisualStyleBackColor = true;
+            this.btnCarregar.Click += new System.EventHandler(this.btnCarregar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(136, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(12, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "/";
+            // 
+            // txtPos
+            // 
+            this.txtPos.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtPos.Location = new System.Drawing.Point(154, 23);
+            this.txtPos.Mask = "999";
+            this.txtPos.Name = "txtPos";
+            this.txtPos.Size = new System.Drawing.Size(49, 20);
+            this.txtPos.TabIndex = 1;
+            this.txtPos.Leave += new System.EventHandler(this.txtPos_Leave);
+            // 
+            // txtOc
+            // 
+            this.txtOc.CutCopyMaskFormat = System.Windows.Forms.MaskFormat.ExcludePromptAndLiterals;
+            this.txtOc.Location = new System.Drawing.Point(52, 23);
+            this.txtOc.Mask = "AAAAAAAAAA";
+            this.txtOc.Name = "txtOc";
+            this.txtOc.Size = new System.Drawing.Size(79, 20);
+            this.txtOc.TabIndex = 0;
+            this.txtOc.Leave += new System.EventHandler(this.txtOc_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 26);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Pedido";
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.FixedPanel = System.Windows.Forms.FixedPanel.Panel1;
+            this.splitContainer2.Location = new System.Drawing.Point(0, 0);
+            this.splitContainer2.Name = "splitContainer2";
+            this.splitContainer2.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.toolStrip1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.crystalReportViewer1);
+            this.splitContainer2.Size = new System.Drawing.Size(624, 457);
+            this.splitContainer2.SplitterDistance = 25;
+            this.splitContainer2.TabIndex = 2;
+            // 
+            // toolStrip1
+            // 
+            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripButton1,
+            this.toolStripSeparator1,
+            this.toolStripButton2,
+            this.toolStripSeparator2});
+            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip1.Name = "toolStrip1";
+            this.toolStrip1.Size = new System.Drawing.Size(624, 25);
+            this.toolStrip1.TabIndex = 2;
+            this.toolStrip1.Text = "Conferência";
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(75, 22);
+            this.toolStripButton1.Text = "Conferência";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton2
+            // 
+            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
+            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton2.Name = "toolStripButton2";
+            this.toolStripButton2.Size = new System.Drawing.Size(119, 22);
+            this.toolStripButton2.Text = "Ordens de Produção";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // crystalReportViewer1
+            // 
+            this.crystalReportViewer1.ActiveViewIndex = -1;
+            this.crystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.crystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.crystalReportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.crystalReportViewer1.Location = new System.Drawing.Point(0, 0);
+            this.crystalReportViewer1.Name = "crystalReportViewer1";
+            this.crystalReportViewer1.SelectionFormula = "";
+            this.crystalReportViewer1.ShowLogo = false;
+            this.crystalReportViewer1.ShowParameterPanelButton = false;
+            this.crystalReportViewer1.Size = new System.Drawing.Size(624, 428);
+            this.crystalReportViewer1.TabIndex = 1;
+            this.crystalReportViewer1.ToolPanelView = CrystalDecisions.Windows.Forms.ToolPanelViewType.None;
+            this.crystalReportViewer1.ViewTimeSelectionFormula = "";
+            // 
+            // RastreabilidadeReportForm
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.ClientSize = new System.Drawing.Size(624, 526);
+            this.Controls.Add(this.splitContainer1);
+            this.Name = "RastreabilidadeReportForm";
+            this.Text = "Rastreabilidade de Pedido";
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel1.PerformLayout();
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
+            this.toolStrip1.ResumeLayout(false);
+            this.toolStrip1.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Label label2;
+        private MaskedTextBox txtPos;
+        private MaskedTextBox txtOc;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCarregar;
+        private System.Windows.Forms.SplitContainer splitContainer2;
+        private System.Windows.Forms.ToolStrip toolStrip1;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton toolStripButton2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        private System.Windows.Forms.Label label3;
+        private IWTDotNetLib.IWTMultiColumnComboBox cmbCliente;
+    }
+}
