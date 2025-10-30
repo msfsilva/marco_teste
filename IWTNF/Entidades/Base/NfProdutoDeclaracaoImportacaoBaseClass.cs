@@ -1331,8 +1331,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.id_nf_produto_declaracao_importacao = :nf_produto_declaracao_importacao_ID_5960 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_ID_5960", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_declaracao_importacao.id_nf_produto_declaracao_importacao = :nf_produto_declaracao_importacao_ID_3276 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_ID_3276", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1350,8 +1350,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.id_nf_item = :nf_produto_declaracao_importacao_NfItem_7792 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_NfItem_7792", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_produto_declaracao_importacao.id_nf_item = :nf_produto_declaracao_importacao_NfItem_9201 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_NfItem_9201", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1369,8 +1369,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_numero_doc_importacao LIKE :nf_produto_declaracao_importacao_NumeroDocImportacao_3074 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_NumeroDocImportacao_3074", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_numero_doc_importacao LIKE :nf_produto_declaracao_importacao_NumeroDocImportacao_6479 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_NumeroDocImportacao_6479", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1388,8 +1388,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_data_registro_di = :nf_produto_declaracao_importacao_DataRegistroDi_7127 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_DataRegistroDi_7127", NpgsqlDbType.Date, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_data_registro_di = :nf_produto_declaracao_importacao_DataRegistroDi_8358 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_DataRegistroDi_8358", NpgsqlDbType.Date, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1407,8 +1407,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_local_desembaraco LIKE :nf_produto_declaracao_importacao_LocalDesembaraco_4556 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_LocalDesembaraco_4556", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_local_desembaraco LIKE :nf_produto_declaracao_importacao_LocalDesembaraco_3295 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_LocalDesembaraco_3295", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1426,8 +1426,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_desembaraco LIKE :nf_produto_declaracao_importacao_UfDesembaraco_7118 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfDesembaraco_7118", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_desembaraco LIKE :nf_produto_declaracao_importacao_UfDesembaraco_238 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfDesembaraco_238", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1445,8 +1445,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_data_desembaraco = :nf_produto_declaracao_importacao_DataDesembaraco_2074 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_DataDesembaraco_2074", NpgsqlDbType.Date, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_data_desembaraco = :nf_produto_declaracao_importacao_DataDesembaraco_5618 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_DataDesembaraco_5618", NpgsqlDbType.Date, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1464,8 +1464,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_codigo_exportador LIKE :nf_produto_declaracao_importacao_CodigoExportador_9985 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CodigoExportador_9985", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_codigo_exportador LIKE :nf_produto_declaracao_importacao_CodigoExportador_6969 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CodigoExportador_6969", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1483,8 +1483,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.entity_uid LIKE :nf_produto_declaracao_importacao_EntityUid_7764 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_EntityUid_7764", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.entity_uid LIKE :nf_produto_declaracao_importacao_EntityUid_8568 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_EntityUid_8568", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1502,8 +1502,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.version = :nf_produto_declaracao_importacao_Version_7777 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_Version_7777", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_declaracao_importacao.version = :nf_produto_declaracao_importacao_Version_4782 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_Version_4782", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1521,8 +1521,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_via_transporte = :nf_produto_declaracao_importacao_ViaTransporte_3492 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_ViaTransporte_3492", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_via_transporte = :nf_produto_declaracao_importacao_ViaTransporte_1854 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_ViaTransporte_1854", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1540,8 +1540,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_valor_afrmm = :nf_produto_declaracao_importacao_ValorAfrmm_8265 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_ValorAfrmm_8265", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_valor_afrmm = :nf_produto_declaracao_importacao_ValorAfrmm_7121 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_ValorAfrmm_7121", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1559,8 +1559,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_tipo_intermedio = :nf_produto_declaracao_importacao_TipoIntermedio_3502 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_TipoIntermedio_3502", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_tipo_intermedio = :nf_produto_declaracao_importacao_TipoIntermedio_1286 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_TipoIntermedio_1286", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1578,8 +1578,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_cnpj_adquirente LIKE :nf_produto_declaracao_importacao_CnpjAdquirente_420 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CnpjAdquirente_420", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_cnpj_adquirente LIKE :nf_produto_declaracao_importacao_CnpjAdquirente_665 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CnpjAdquirente_665", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1597,8 +1597,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_terceiro LIKE :nf_produto_declaracao_importacao_UfTerceiro_713 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfTerceiro_713", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_terceiro LIKE :nf_produto_declaracao_importacao_UfTerceiro_7802 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfTerceiro_7802", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1616,8 +1616,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_numero_doc_importacao LIKE :nf_produto_declaracao_importacao_NumeroDocImportacao_4075 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_NumeroDocImportacao_4075", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_numero_doc_importacao LIKE :nf_produto_declaracao_importacao_NumeroDocImportacao_8812 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_NumeroDocImportacao_8812", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1635,8 +1635,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_local_desembaraco LIKE :nf_produto_declaracao_importacao_LocalDesembaraco_2131 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_LocalDesembaraco_2131", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_local_desembaraco LIKE :nf_produto_declaracao_importacao_LocalDesembaraco_5731 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_LocalDesembaraco_5731", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1654,8 +1654,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_desembaraco LIKE :nf_produto_declaracao_importacao_UfDesembaraco_5559 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfDesembaraco_5559", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_desembaraco LIKE :nf_produto_declaracao_importacao_UfDesembaraco_866 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfDesembaraco_866", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1673,8 +1673,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_codigo_exportador LIKE :nf_produto_declaracao_importacao_CodigoExportador_3937 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CodigoExportador_3937", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_codigo_exportador LIKE :nf_produto_declaracao_importacao_CodigoExportador_3203 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CodigoExportador_3203", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1692,8 +1692,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.entity_uid LIKE :nf_produto_declaracao_importacao_EntityUid_4054 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_EntityUid_4054", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.entity_uid LIKE :nf_produto_declaracao_importacao_EntityUid_7086 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_EntityUid_7086", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1711,8 +1711,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_cnpj_adquirente LIKE :nf_produto_declaracao_importacao_CnpjAdquirente_3712 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CnpjAdquirente_3712", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_cnpj_adquirente LIKE :nf_produto_declaracao_importacao_CnpjAdquirente_1420 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_CnpjAdquirente_1420", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1730,8 +1730,8 @@ public static NfProdutoDeclaracaoImportacaoClass GetEntidade(long id, AcsUsuario
                       }
                       else
                       {
-                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_terceiro LIKE :nf_produto_declaracao_importacao_UfTerceiro_5478 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfTerceiro_5478", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_declaracao_importacao.npd_uf_terceiro LIKE :nf_produto_declaracao_importacao_UfTerceiro_9185 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_declaracao_importacao_UfTerceiro_9185", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
