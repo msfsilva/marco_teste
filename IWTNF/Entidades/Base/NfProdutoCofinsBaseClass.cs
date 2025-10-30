@@ -121,6 +121,20 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfProdu
             } 
         } 
 
+       protected bool _compoeTotalOriginal{get;private set;}
+       private bool _compoeTotalOriginalCommited{get; set;}
+        private bool _valueCompoeTotal;
+         [Column("npo_compoe_total")]
+        public virtual bool CompoeTotal
+         { 
+            get { return this._valueCompoeTotal; } 
+            set 
+            { 
+                if (this._valueCompoeTotal == value)return;
+                 this._valueCompoeTotal = value; 
+            } 
+        } 
+
         public NfProdutoCofinsBaseClass(AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection singleConnection)
             : base(usuarioAtual, singleConnection)
         {
@@ -131,7 +145,8 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfProdu
         protected void InitDefaults()
         {
             base.SalvarValoresAntigosHabilitado = false;
-             base.SalvarValoresAntigosHabilitado = true;
+            this.CompoeTotal = true;
+            base.SalvarValoresAntigosHabilitado = true;
          }
 
 public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection connection, Guid? operacao = null)
@@ -215,7 +230,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                         "  npo_modadlidade_tributacao = :npo_modadlidade_tributacao, " + 
                         "  npo_imposto_retido = :npo_imposto_retido, " + 
                         "  entity_uid = :entity_uid, " + 
-                        "  version = :version "+
+                        "  version = :version, " + 
+                        "  npo_compoe_total = :npo_compoe_total "+
                         "WHERE  " +
                         "  id_nf_produto_cofins = :id " +
                         "RETURNING id_nf_produto_cofins;";
@@ -232,7 +248,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                         "  npo_modadlidade_tributacao , " + 
                         "  npo_imposto_retido , " + 
                         "  entity_uid , " + 
-                        "  version  "+
+                        "  version , " + 
+                        "  npo_compoe_total  "+
                         ")  " +
                         "VALUES ( " +
                         "  :id_nf_item , " + 
@@ -241,7 +258,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                         "  :npo_modadlidade_tributacao , " + 
                         "  :npo_imposto_retido , " + 
                         "  :entity_uid , " + 
-                        "  :version  "+
+                        "  :version , " + 
+                        "  :npo_compoe_total  "+
                         ")RETURNING id_nf_produto_cofins;";
                 }
 
@@ -262,6 +280,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.EntityUid ?? DBNull.Value;
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("version", NpgsqlDbType.Integer));
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.Version ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npo_compoe_total", NpgsqlDbType.Smallint));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.CompoeTotal ?? DBNull.Value;
 
  
                  bool inserting = this.ID == -1; 
@@ -310,6 +330,7 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
  toRet.Aliquota= entidadeCopiar.Aliquota;
  toRet.ModadlidadeTributacao= entidadeCopiar.ModadlidadeTributacao;
  toRet.ImpostoRetido= entidadeCopiar.ImpostoRetido;
+ toRet.CompoeTotal= entidadeCopiar.CompoeTotal;
 
             return toRet;
             }
@@ -334,6 +355,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
        _impostoRetidoOriginalCommited = _impostoRetidoOriginal;
        _versionOriginal = Version;
        _versionOriginalCommited = _versionOriginal ;
+       _compoeTotalOriginal = CompoeTotal;
+       _compoeTotalOriginalCommited = _compoeTotalOriginal;
 
             }
             catch (Exception e)
@@ -351,6 +374,7 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
        _modadlidadeTributacaoOriginalCommited = ModadlidadeTributacao;
        _impostoRetidoOriginalCommited = ImpostoRetido;
        _versionOriginalCommited = Version;
+       _compoeTotalOriginalCommited = CompoeTotal;
 
             }
             catch (Exception e)
@@ -388,6 +412,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                _impostoRetidoOriginalCommited=_impostoRetidoOriginal;
                Version=_versionOriginal;
                _versionOriginalCommited=_versionOriginal;
+               CompoeTotal=_compoeTotalOriginal;
+               _compoeTotalOriginalCommited=_compoeTotalOriginal;
 
             }
             catch (Exception e)
@@ -449,6 +475,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
       if (dirty) return true;
       if (dirty) return true;
       dirty =  _versionOriginal != Version;
+      if (dirty) return true;
+       dirty = _compoeTotalOriginal != CompoeTotal;
 
                return dirty;
             }
@@ -512,6 +540,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
       if (dirty) return true;
       if (dirty) return true;
       dirty =  _versionOriginalCommited != Version;
+      if (dirty) return true;
+       dirty = _compoeTotalOriginalCommited != CompoeTotal;
 
                return dirty;
             }
@@ -570,6 +600,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                 return this.EntityUid;
              case "Version":
                 return this.Version;
+             case "CompoeTotal":
+                return this.CompoeTotal;
               default:
                  return new ArgumentOutOfRangeException();
            }
@@ -608,7 +640,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                command.CommandText += "nf_produto_cofins.npo_imposto_retido, " ;
                command.CommandText += "nf_produto_cofins.entity_uid, " ;
                command.CommandText += "nf_produto_cofins.version, " ;
-               command.CommandText += "nf_produto_cofins.id_nf_produto_cofins " ;
+               command.CommandText += "nf_produto_cofins.id_nf_produto_cofins, " ;
+               command.CommandText += "nf_produto_cofins.npo_compoe_total " ;
                }
                command.CommandText += " FROM  nf_produto_cofins ";
                string whereClause = "";
@@ -776,6 +809,20 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                            break;
                      }
                      break;
+                     case "npo_compoe_total":
+                     case "CompoeTotal":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_produto_cofins.npo_compoe_total " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                           orderByClause += " , UPPER(nf_produto_cofins.npo_compoe_total) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
                         default:
                            throw new Exception("Parâmetro de ordenação não encontrado: " + parametro.FieldName);
                      }
@@ -817,8 +864,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.id_nf_item = :nf_produto_cofins_NfItem_7393 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_NfItem_7393", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_produto_cofins.id_nf_item = :nf_produto_cofins_NfItem_8119 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_NfItem_8119", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -836,8 +883,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.npo_cst LIKE :nf_produto_cofins_Cst_948 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Cst_948", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_cofins.npo_cst LIKE :nf_produto_cofins_Cst_9418 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Cst_9418", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -855,8 +902,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.npo_aliquota = :nf_produto_cofins_Aliquota_9878 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Aliquota_9878", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_cofins.npo_aliquota = :nf_produto_cofins_Aliquota_7171 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Aliquota_7171", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -874,8 +921,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.npo_modadlidade_tributacao = :nf_produto_cofins_ModadlidadeTributacao_8505 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_ModadlidadeTributacao_8505", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_cofins.npo_modadlidade_tributacao = :nf_produto_cofins_ModadlidadeTributacao_8400 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_ModadlidadeTributacao_8400", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -893,8 +940,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.npo_imposto_retido = :nf_produto_cofins_ImpostoRetido_9725 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_ImpostoRetido_9725", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_cofins.npo_imposto_retido = :nf_produto_cofins_ImpostoRetido_3350 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_ImpostoRetido_3350", NpgsqlDbType.Smallint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -912,8 +959,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.entity_uid LIKE :nf_produto_cofins_EntityUid_5575 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_EntityUid_5575", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_cofins.entity_uid LIKE :nf_produto_cofins_EntityUid_48 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_EntityUid_48", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -931,8 +978,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.version = :nf_produto_cofins_Version_4328 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Version_4328", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_cofins.version = :nf_produto_cofins_Version_4420 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Version_4420", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -950,8 +997,27 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.id_nf_produto_cofins = :nf_produto_cofins_ID_7174 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_ID_7174", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_cofins.id_nf_produto_cofins = :nf_produto_cofins_ID_3153 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_ID_3153", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "CompoeTotal" || parametro.FieldName == "npo_compoe_total")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is bool)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo bool");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto_cofins.npo_compoe_total IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto_cofins.npo_compoe_total = :nf_produto_cofins_CompoeTotal_353 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_CompoeTotal_353", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -969,8 +1035,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.npo_cst LIKE :nf_produto_cofins_Cst_4723 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Cst_4723", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_cofins.npo_cst LIKE :nf_produto_cofins_Cst_1030 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_Cst_1030", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -988,8 +1054,8 @@ public static NfProdutoCofinsClass GetEntidade(long id, AcsUsuarioClass usuarioA
                       }
                       else
                       {
-                         whereClause += "  nf_produto_cofins.entity_uid LIKE :nf_produto_cofins_EntityUid_1446 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_EntityUid_1446", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_cofins.entity_uid LIKE :nf_produto_cofins_EntityUid_8544 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_cofins_EntityUid_8544", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1072,6 +1138,7 @@ if (!operacao.HasValue)
                      entidade.EntityUid = (read["entity_uid"] != DBNull.Value ? read["entity_uid"].ToString() : null);
                      entidade.Version = (int)read["version"];
                      entidade.ID = Convert.ToInt64(read["id_nf_produto_cofins"]);
+                     entidade.CompoeTotal = Convert.ToBoolean(Convert.ToInt16(read["npo_compoe_total"]));
                      entidade.loading = false;
                      entidade.SalvaValoresOriginais();
                      entidade.CarregamentoConcluido();

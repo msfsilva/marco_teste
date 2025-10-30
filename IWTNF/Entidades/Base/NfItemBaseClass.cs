@@ -25,6 +25,7 @@ namespace IWTNF.Entidades.Base
 protected const string ErroLoad = "Erro ao carregar os dados do NfItemClass";
 protected const string ErroDelete = "Erro ao excluir o NfItemClass  ";
 protected const string ErroSave = "Erro ao salvar o NfItemClass.";
+protected const string ErroCollectionNfItemReferenciadoClassNfItem = "Erro ao carregar a coleção de NfItemReferenciadoClass.";
 protected const string ErroCollectionNfItemTributoClassNfItem = "Erro ao carregar a coleção de NfItemTributoClass.";
 protected const string ErroCollectionNfItemTributoCofinsClassNfItem = "Erro ao carregar a coleção de NfItemTributoCofinsClass.";
 protected const string ErroCollectionNfItemTributoIcmsClassNfItem = "Erro ao carregar a coleção de NfItemTributoIcmsClass.";
@@ -33,17 +34,26 @@ protected const string ErroCollectionNfItemTributoIpiClassNfItem = "Erro ao carr
 protected const string ErroCollectionNfItemTributoIssClassNfItem = "Erro ao carregar a coleção de NfItemTributoIssClass.";
 protected const string ErroCollectionNfItemTributoPisClassNfItem = "Erro ao carregar a coleção de NfItemTributoPisClass.";
 protected const string ErroCollectionNfProdutoClassNfItem = "Erro ao carregar a coleção de NfProdutoClass.";
+protected const string ErroCollectionNfProdutoCbsClassNfItem = "Erro ao carregar a coleção de NfProdutoCbsClass.";
 protected const string ErroCollectionNfProdutoCofinsClassNfItem = "Erro ao carregar a coleção de NfProdutoCofinsClass.";
 protected const string ErroCollectionNfProdutoDeclaracaoImportacaoClassNfItem = "Erro ao carregar a coleção de NfProdutoDeclaracaoImportacaoClass.";
+protected const string ErroCollectionNfProdutoDevolucaoClassNfItem = "Erro ao carregar a coleção de NfProdutoDevolucaoClass.";
+protected const string ErroCollectionNfProdutoIbsClassNfItem = "Erro ao carregar a coleção de NfProdutoIbsClass.";
 protected const string ErroCollectionNfProdutoIcmsClassNfItem = "Erro ao carregar a coleção de NfProdutoIcmsClass.";
 protected const string ErroCollectionNfProdutoIimpClassNfItem = "Erro ao carregar a coleção de NfProdutoIimpClass.";
 protected const string ErroCollectionNfProdutoIpiClassNfItem = "Erro ao carregar a coleção de NfProdutoIpiClass.";
+protected const string ErroCollectionNfProdutoIsClassNfItem = "Erro ao carregar a coleção de NfProdutoIsClass.";
 protected const string ErroCollectionNfProdutoIssClassNfItem = "Erro ao carregar a coleção de NfProdutoIssClass.";
 protected const string ErroCollectionNfProdutoPisClassNfItem = "Erro ao carregar a coleção de NfProdutoPisClass.";
+protected const string ErroCollectionNfTributoCbsClassNfItem = "Erro ao carregar a coleção de NfTributoCbsClass.";
+protected const string ErroCollectionNfTributoDevolucaoClassNfItem = "Erro ao carregar a coleção de NfTributoDevolucaoClass.";
+protected const string ErroCollectionNfTributoIbsClassNfItem = "Erro ao carregar a coleção de NfTributoIbsClass.";
+protected const string ErroCollectionNfTributoIsClassNfItem = "Erro ao carregar a coleção de NfTributoIsClass.";
 protected const string ErroEntityUidObrigatorio = "O campo EntityUid é obrigatório";
 protected const string ErroEntityUidComprimento = "O campo EntityUid deve ter no máximo 36 caracteres";
 protected const string ErroNfPrincipalObrigatorio = "O campo NfPrincipal é obrigatório";
 protected const string ErroValidate = "Erro ao validar os dados do NfItemClass.";
+protected const string MensagemUtilizadoCollectionNfItemReferenciadoClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfItemReferenciadoClass:";
 protected const string MensagemUtilizadoCollectionNfItemTributoClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfItemTributoClass:";
 protected const string MensagemUtilizadoCollectionNfItemTributoCofinsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfItemTributoCofinsClass:";
 protected const string MensagemUtilizadoCollectionNfItemTributoIcmsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfItemTributoIcmsClass:";
@@ -52,13 +62,21 @@ protected const string MensagemUtilizadoCollectionNfItemTributoIpiClassNfItem = 
 protected const string MensagemUtilizadoCollectionNfItemTributoIssClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfItemTributoIssClass:";
 protected const string MensagemUtilizadoCollectionNfItemTributoPisClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfItemTributoPisClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoClass:";
+protected const string MensagemUtilizadoCollectionNfProdutoCbsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoCbsClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoCofinsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoCofinsClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoDeclaracaoImportacaoClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoDeclaracaoImportacaoClass:";
+protected const string MensagemUtilizadoCollectionNfProdutoDevolucaoClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoDevolucaoClass:";
+protected const string MensagemUtilizadoCollectionNfProdutoIbsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoIbsClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoIcmsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoIcmsClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoIimpClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoIimpClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoIpiClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoIpiClass:";
+protected const string MensagemUtilizadoCollectionNfProdutoIsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoIsClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoIssClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoIssClass:";
 protected const string MensagemUtilizadoCollectionNfProdutoPisClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfProdutoPisClass:";
+protected const string MensagemUtilizadoCollectionNfTributoCbsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfTributoCbsClass:";
+protected const string MensagemUtilizadoCollectionNfTributoDevolucaoClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfTributoDevolucaoClass:";
+protected const string MensagemUtilizadoCollectionNfTributoIbsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfTributoIbsClass:";
+protected const string MensagemUtilizadoCollectionNfTributoIsClassNfItem =  "A entidade NfItemClass está sendo utilizada nos seguintes NfTributoIsClass:";
 protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfItemClass está sendo utilizada.";
 #endregion
        protected IWTNF.Entidades.Entidades.NfPrincipalClass _nfPrincipalOriginal{get;private set;}
@@ -158,6 +176,28 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfItemC
                  this._valueAlquotaFundoCombatePobreza = value; 
             } 
         } 
+
+       private List<long> _collectionNfItemReferenciadoClassNfItemOriginal;
+       private List<Entidades.NfItemReferenciadoClass > _collectionNfItemReferenciadoClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfItemReferenciadoClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfItemReferenciadoClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfItemReferenciadoClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfItemReferenciadoClass> _valueCollectionNfItemReferenciadoClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfItemReferenciadoClass> CollectionNfItemReferenciadoClassNfItem 
+       { 
+           get { if(!_valueCollectionNfItemReferenciadoClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfItemReferenciadoClassNfItem();}
+return this._valueCollectionNfItemReferenciadoClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfItemReferenciadoClassNfItem = value; 
+               this._valueCollectionNfItemReferenciadoClassNfItemLoaded = true; 
+           } 
+       } 
 
        private List<long> _collectionNfItemTributoClassNfItemOriginal;
        private List<Entidades.NfItemTributoClass > _collectionNfItemTributoClassNfItemRemovidos;
@@ -335,6 +375,28 @@ return this._valueCollectionNfProdutoClassNfItem; }
            } 
        } 
 
+       private List<long> _collectionNfProdutoCbsClassNfItemOriginal;
+       private List<Entidades.NfProdutoCbsClass > _collectionNfProdutoCbsClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoCbsClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoCbsClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoCbsClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfProdutoCbsClass> _valueCollectionNfProdutoCbsClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfProdutoCbsClass> CollectionNfProdutoCbsClassNfItem 
+       { 
+           get { if(!_valueCollectionNfProdutoCbsClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfProdutoCbsClassNfItem();}
+return this._valueCollectionNfProdutoCbsClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfProdutoCbsClassNfItem = value; 
+               this._valueCollectionNfProdutoCbsClassNfItemLoaded = true; 
+           } 
+       } 
+
        private List<long> _collectionNfProdutoCofinsClassNfItemOriginal;
        private List<Entidades.NfProdutoCofinsClass > _collectionNfProdutoCofinsClassNfItemRemovidos;
        [UnCloneable(UnCloneableAttributeType.RetFalse)] 
@@ -376,6 +438,50 @@ return this._valueCollectionNfProdutoDeclaracaoImportacaoClassNfItem; }
            { 
                this._valueCollectionNfProdutoDeclaracaoImportacaoClassNfItem = value; 
                this._valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded = true; 
+           } 
+       } 
+
+       private List<long> _collectionNfProdutoDevolucaoClassNfItemOriginal;
+       private List<Entidades.NfProdutoDevolucaoClass > _collectionNfProdutoDevolucaoClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoDevolucaoClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoDevolucaoClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfProdutoDevolucaoClass> _valueCollectionNfProdutoDevolucaoClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfProdutoDevolucaoClass> CollectionNfProdutoDevolucaoClassNfItem 
+       { 
+           get { if(!_valueCollectionNfProdutoDevolucaoClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfProdutoDevolucaoClassNfItem();}
+return this._valueCollectionNfProdutoDevolucaoClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfProdutoDevolucaoClassNfItem = value; 
+               this._valueCollectionNfProdutoDevolucaoClassNfItemLoaded = true; 
+           } 
+       } 
+
+       private List<long> _collectionNfProdutoIbsClassNfItemOriginal;
+       private List<Entidades.NfProdutoIbsClass > _collectionNfProdutoIbsClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoIbsClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoIbsClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoIbsClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfProdutoIbsClass> _valueCollectionNfProdutoIbsClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfProdutoIbsClass> CollectionNfProdutoIbsClassNfItem 
+       { 
+           get { if(!_valueCollectionNfProdutoIbsClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfProdutoIbsClassNfItem();}
+return this._valueCollectionNfProdutoIbsClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfProdutoIbsClassNfItem = value; 
+               this._valueCollectionNfProdutoIbsClassNfItemLoaded = true; 
            } 
        } 
 
@@ -445,6 +551,28 @@ return this._valueCollectionNfProdutoIpiClassNfItem; }
            } 
        } 
 
+       private List<long> _collectionNfProdutoIsClassNfItemOriginal;
+       private List<Entidades.NfProdutoIsClass > _collectionNfProdutoIsClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoIsClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoIsClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfProdutoIsClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfProdutoIsClass> _valueCollectionNfProdutoIsClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfProdutoIsClass> CollectionNfProdutoIsClassNfItem 
+       { 
+           get { if(!_valueCollectionNfProdutoIsClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfProdutoIsClassNfItem();}
+return this._valueCollectionNfProdutoIsClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfProdutoIsClassNfItem = value; 
+               this._valueCollectionNfProdutoIsClassNfItemLoaded = true; 
+           } 
+       } 
+
        private List<long> _collectionNfProdutoIssClassNfItemOriginal;
        private List<Entidades.NfProdutoIssClass > _collectionNfProdutoIssClassNfItemRemovidos;
        [UnCloneable(UnCloneableAttributeType.RetFalse)] 
@@ -489,6 +617,94 @@ return this._valueCollectionNfProdutoPisClassNfItem; }
            } 
        } 
 
+       private List<long> _collectionNfTributoCbsClassNfItemOriginal;
+       private List<Entidades.NfTributoCbsClass > _collectionNfTributoCbsClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoCbsClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoCbsClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoCbsClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfTributoCbsClass> _valueCollectionNfTributoCbsClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfTributoCbsClass> CollectionNfTributoCbsClassNfItem 
+       { 
+           get { if(!_valueCollectionNfTributoCbsClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfTributoCbsClassNfItem();}
+return this._valueCollectionNfTributoCbsClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfTributoCbsClassNfItem = value; 
+               this._valueCollectionNfTributoCbsClassNfItemLoaded = true; 
+           } 
+       } 
+
+       private List<long> _collectionNfTributoDevolucaoClassNfItemOriginal;
+       private List<Entidades.NfTributoDevolucaoClass > _collectionNfTributoDevolucaoClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoDevolucaoClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoDevolucaoClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfTributoDevolucaoClass> _valueCollectionNfTributoDevolucaoClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfTributoDevolucaoClass> CollectionNfTributoDevolucaoClassNfItem 
+       { 
+           get { if(!_valueCollectionNfTributoDevolucaoClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfTributoDevolucaoClassNfItem();}
+return this._valueCollectionNfTributoDevolucaoClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfTributoDevolucaoClassNfItem = value; 
+               this._valueCollectionNfTributoDevolucaoClassNfItemLoaded = true; 
+           } 
+       } 
+
+       private List<long> _collectionNfTributoIbsClassNfItemOriginal;
+       private List<Entidades.NfTributoIbsClass > _collectionNfTributoIbsClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoIbsClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoIbsClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoIbsClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfTributoIbsClass> _valueCollectionNfTributoIbsClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfTributoIbsClass> CollectionNfTributoIbsClassNfItem 
+       { 
+           get { if(!_valueCollectionNfTributoIbsClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfTributoIbsClassNfItem();}
+return this._valueCollectionNfTributoIbsClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfTributoIbsClassNfItem = value; 
+               this._valueCollectionNfTributoIbsClassNfItemLoaded = true; 
+           } 
+       } 
+
+       private List<long> _collectionNfTributoIsClassNfItemOriginal;
+       private List<Entidades.NfTributoIsClass > _collectionNfTributoIsClassNfItemRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoIsClassNfItemLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoIsClassNfItemChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfTributoIsClassNfItemCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfTributoIsClass> _valueCollectionNfTributoIsClassNfItem { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfTributoIsClass> CollectionNfTributoIsClassNfItem 
+       { 
+           get { if(!_valueCollectionNfTributoIsClassNfItemLoaded && !this.DisableLoadCollection){this.LoadCollectionNfTributoIsClassNfItem();}
+return this._valueCollectionNfTributoIsClassNfItem; } 
+           set 
+           { 
+               this._valueCollectionNfTributoIsClassNfItem = value; 
+               this._valueCollectionNfTributoIsClassNfItemLoaded = true; 
+           } 
+       } 
+
         public NfItemBaseClass(AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection singleConnection)
             : base(usuarioAtual, singleConnection)
         {
@@ -508,6 +724,65 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
         {
             return (NfItemClass) GetEntity(typeof(NfItemClass),id,usuarioAtual,connection, operacao);
         }
+        private void CollectionNfItemReferenciadoClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfItemReferenciadoClassNfItemChanged = true;
+                  _valueCollectionNfItemReferenciadoClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfItemReferenciadoClassNfItemChanged = true; 
+                  _valueCollectionNfItemReferenciadoClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfItemReferenciadoClass item in e.OldItems) 
+                 { 
+                     _collectionNfItemReferenciadoClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfItemReferenciadoClassNfItemChanged = true; 
+                  _valueCollectionNfItemReferenciadoClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfItemReferenciadoClass item in _valueCollectionNfItemReferenciadoClassNfItem) 
+                 { 
+                     _collectionNfItemReferenciadoClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfItemReferenciadoClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfItemReferenciadoClass> oc;
+                _valueCollectionNfItemReferenciadoClassNfItemChanged = false;
+                 _valueCollectionNfItemReferenciadoClassNfItemCommitedChanged = false;
+                _collectionNfItemReferenciadoClassNfItemRemovidos = new List<Entidades.NfItemReferenciadoClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfItemReferenciadoClass>();
+                }
+                else{ 
+                   Entidades.NfItemReferenciadoClass search = new Entidades.NfItemReferenciadoClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfItemReferenciadoClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfItemReferenciadoClass>().ToList());
+                 }
+                 _valueCollectionNfItemReferenciadoClassNfItem = new BindingList<Entidades.NfItemReferenciadoClass>(oc); 
+                 _collectionNfItemReferenciadoClassNfItemOriginal= (from a in _valueCollectionNfItemReferenciadoClassNfItem select a.ID).ToList();
+                 _valueCollectionNfItemReferenciadoClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfItemReferenciadoClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfItemReferenciadoClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
         private void CollectionNfItemTributoClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
            if (DisableEventosRemocaoVetores) return;
@@ -980,6 +1255,65 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                 throw new Exception(ErroCollectionNfProdutoClassNfItem+"\r\n" + e.Message, e);
             }
          } 
+        private void CollectionNfProdutoCbsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfProdutoCbsClassNfItemChanged = true;
+                  _valueCollectionNfProdutoCbsClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfProdutoCbsClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoCbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoCbsClass item in e.OldItems) 
+                 { 
+                     _collectionNfProdutoCbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfProdutoCbsClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoCbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoCbsClass item in _valueCollectionNfProdutoCbsClassNfItem) 
+                 { 
+                     _collectionNfProdutoCbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfProdutoCbsClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfProdutoCbsClass> oc;
+                _valueCollectionNfProdutoCbsClassNfItemChanged = false;
+                 _valueCollectionNfProdutoCbsClassNfItemCommitedChanged = false;
+                _collectionNfProdutoCbsClassNfItemRemovidos = new List<Entidades.NfProdutoCbsClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfProdutoCbsClass>();
+                }
+                else{ 
+                   Entidades.NfProdutoCbsClass search = new Entidades.NfProdutoCbsClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfProdutoCbsClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfProdutoCbsClass>().ToList());
+                 }
+                 _valueCollectionNfProdutoCbsClassNfItem = new BindingList<Entidades.NfProdutoCbsClass>(oc); 
+                 _collectionNfProdutoCbsClassNfItemOriginal= (from a in _valueCollectionNfProdutoCbsClassNfItem select a.ID).ToList();
+                 _valueCollectionNfProdutoCbsClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfProdutoCbsClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfProdutoCbsClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
         private void CollectionNfProdutoCofinsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
            if (DisableEventosRemocaoVetores) return;
@@ -1096,6 +1430,124 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             catch (Exception e)
             {
                 throw new Exception(ErroCollectionNfProdutoDeclaracaoImportacaoClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
+        private void CollectionNfProdutoDevolucaoClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfProdutoDevolucaoClassNfItemChanged = true;
+                  _valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfProdutoDevolucaoClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoDevolucaoClass item in e.OldItems) 
+                 { 
+                     _collectionNfProdutoDevolucaoClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfProdutoDevolucaoClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoDevolucaoClass item in _valueCollectionNfProdutoDevolucaoClassNfItem) 
+                 { 
+                     _collectionNfProdutoDevolucaoClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfProdutoDevolucaoClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfProdutoDevolucaoClass> oc;
+                _valueCollectionNfProdutoDevolucaoClassNfItemChanged = false;
+                 _valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged = false;
+                _collectionNfProdutoDevolucaoClassNfItemRemovidos = new List<Entidades.NfProdutoDevolucaoClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfProdutoDevolucaoClass>();
+                }
+                else{ 
+                   Entidades.NfProdutoDevolucaoClass search = new Entidades.NfProdutoDevolucaoClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfProdutoDevolucaoClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfProdutoDevolucaoClass>().ToList());
+                 }
+                 _valueCollectionNfProdutoDevolucaoClassNfItem = new BindingList<Entidades.NfProdutoDevolucaoClass>(oc); 
+                 _collectionNfProdutoDevolucaoClassNfItemOriginal= (from a in _valueCollectionNfProdutoDevolucaoClassNfItem select a.ID).ToList();
+                 _valueCollectionNfProdutoDevolucaoClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfProdutoDevolucaoClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfProdutoDevolucaoClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
+        private void CollectionNfProdutoIbsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfProdutoIbsClassNfItemChanged = true;
+                  _valueCollectionNfProdutoIbsClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfProdutoIbsClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoIbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoIbsClass item in e.OldItems) 
+                 { 
+                     _collectionNfProdutoIbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfProdutoIbsClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoIbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoIbsClass item in _valueCollectionNfProdutoIbsClassNfItem) 
+                 { 
+                     _collectionNfProdutoIbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfProdutoIbsClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfProdutoIbsClass> oc;
+                _valueCollectionNfProdutoIbsClassNfItemChanged = false;
+                 _valueCollectionNfProdutoIbsClassNfItemCommitedChanged = false;
+                _collectionNfProdutoIbsClassNfItemRemovidos = new List<Entidades.NfProdutoIbsClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfProdutoIbsClass>();
+                }
+                else{ 
+                   Entidades.NfProdutoIbsClass search = new Entidades.NfProdutoIbsClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfProdutoIbsClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfProdutoIbsClass>().ToList());
+                 }
+                 _valueCollectionNfProdutoIbsClassNfItem = new BindingList<Entidades.NfProdutoIbsClass>(oc); 
+                 _collectionNfProdutoIbsClassNfItemOriginal= (from a in _valueCollectionNfProdutoIbsClassNfItem select a.ID).ToList();
+                 _valueCollectionNfProdutoIbsClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfProdutoIbsClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfProdutoIbsClassNfItem+"\r\n" + e.Message, e);
             }
          } 
         private void CollectionNfProdutoIcmsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -1275,6 +1727,65 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                 throw new Exception(ErroCollectionNfProdutoIpiClassNfItem+"\r\n" + e.Message, e);
             }
          } 
+        private void CollectionNfProdutoIsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfProdutoIsClassNfItemChanged = true;
+                  _valueCollectionNfProdutoIsClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfProdutoIsClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoIsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoIsClass item in e.OldItems) 
+                 { 
+                     _collectionNfProdutoIsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfProdutoIsClassNfItemChanged = true; 
+                  _valueCollectionNfProdutoIsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfProdutoIsClass item in _valueCollectionNfProdutoIsClassNfItem) 
+                 { 
+                     _collectionNfProdutoIsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfProdutoIsClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfProdutoIsClass> oc;
+                _valueCollectionNfProdutoIsClassNfItemChanged = false;
+                 _valueCollectionNfProdutoIsClassNfItemCommitedChanged = false;
+                _collectionNfProdutoIsClassNfItemRemovidos = new List<Entidades.NfProdutoIsClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfProdutoIsClass>();
+                }
+                else{ 
+                   Entidades.NfProdutoIsClass search = new Entidades.NfProdutoIsClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfProdutoIsClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfProdutoIsClass>().ToList());
+                 }
+                 _valueCollectionNfProdutoIsClassNfItem = new BindingList<Entidades.NfProdutoIsClass>(oc); 
+                 _collectionNfProdutoIsClassNfItemOriginal= (from a in _valueCollectionNfProdutoIsClassNfItem select a.ID).ToList();
+                 _valueCollectionNfProdutoIsClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfProdutoIsClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfProdutoIsClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
         private void CollectionNfProdutoIssClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
            if (DisableEventosRemocaoVetores) return;
@@ -1391,6 +1902,242 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             catch (Exception e)
             {
                 throw new Exception(ErroCollectionNfProdutoPisClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
+        private void CollectionNfTributoCbsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfTributoCbsClassNfItemChanged = true;
+                  _valueCollectionNfTributoCbsClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfTributoCbsClassNfItemChanged = true; 
+                  _valueCollectionNfTributoCbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoCbsClass item in e.OldItems) 
+                 { 
+                     _collectionNfTributoCbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfTributoCbsClassNfItemChanged = true; 
+                  _valueCollectionNfTributoCbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoCbsClass item in _valueCollectionNfTributoCbsClassNfItem) 
+                 { 
+                     _collectionNfTributoCbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfTributoCbsClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfTributoCbsClass> oc;
+                _valueCollectionNfTributoCbsClassNfItemChanged = false;
+                 _valueCollectionNfTributoCbsClassNfItemCommitedChanged = false;
+                _collectionNfTributoCbsClassNfItemRemovidos = new List<Entidades.NfTributoCbsClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfTributoCbsClass>();
+                }
+                else{ 
+                   Entidades.NfTributoCbsClass search = new Entidades.NfTributoCbsClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfTributoCbsClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfTributoCbsClass>().ToList());
+                 }
+                 _valueCollectionNfTributoCbsClassNfItem = new BindingList<Entidades.NfTributoCbsClass>(oc); 
+                 _collectionNfTributoCbsClassNfItemOriginal= (from a in _valueCollectionNfTributoCbsClassNfItem select a.ID).ToList();
+                 _valueCollectionNfTributoCbsClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfTributoCbsClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfTributoCbsClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
+        private void CollectionNfTributoDevolucaoClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfTributoDevolucaoClassNfItemChanged = true;
+                  _valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfTributoDevolucaoClassNfItemChanged = true; 
+                  _valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoDevolucaoClass item in e.OldItems) 
+                 { 
+                     _collectionNfTributoDevolucaoClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfTributoDevolucaoClassNfItemChanged = true; 
+                  _valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoDevolucaoClass item in _valueCollectionNfTributoDevolucaoClassNfItem) 
+                 { 
+                     _collectionNfTributoDevolucaoClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfTributoDevolucaoClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfTributoDevolucaoClass> oc;
+                _valueCollectionNfTributoDevolucaoClassNfItemChanged = false;
+                 _valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged = false;
+                _collectionNfTributoDevolucaoClassNfItemRemovidos = new List<Entidades.NfTributoDevolucaoClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfTributoDevolucaoClass>();
+                }
+                else{ 
+                   Entidades.NfTributoDevolucaoClass search = new Entidades.NfTributoDevolucaoClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfTributoDevolucaoClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfTributoDevolucaoClass>().ToList());
+                 }
+                 _valueCollectionNfTributoDevolucaoClassNfItem = new BindingList<Entidades.NfTributoDevolucaoClass>(oc); 
+                 _collectionNfTributoDevolucaoClassNfItemOriginal= (from a in _valueCollectionNfTributoDevolucaoClassNfItem select a.ID).ToList();
+                 _valueCollectionNfTributoDevolucaoClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfTributoDevolucaoClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfTributoDevolucaoClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
+        private void CollectionNfTributoIbsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfTributoIbsClassNfItemChanged = true;
+                  _valueCollectionNfTributoIbsClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfTributoIbsClassNfItemChanged = true; 
+                  _valueCollectionNfTributoIbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoIbsClass item in e.OldItems) 
+                 { 
+                     _collectionNfTributoIbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfTributoIbsClassNfItemChanged = true; 
+                  _valueCollectionNfTributoIbsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoIbsClass item in _valueCollectionNfTributoIbsClassNfItem) 
+                 { 
+                     _collectionNfTributoIbsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfTributoIbsClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfTributoIbsClass> oc;
+                _valueCollectionNfTributoIbsClassNfItemChanged = false;
+                 _valueCollectionNfTributoIbsClassNfItemCommitedChanged = false;
+                _collectionNfTributoIbsClassNfItemRemovidos = new List<Entidades.NfTributoIbsClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfTributoIbsClass>();
+                }
+                else{ 
+                   Entidades.NfTributoIbsClass search = new Entidades.NfTributoIbsClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfTributoIbsClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfTributoIbsClass>().ToList());
+                 }
+                 _valueCollectionNfTributoIbsClassNfItem = new BindingList<Entidades.NfTributoIbsClass>(oc); 
+                 _collectionNfTributoIbsClassNfItemOriginal= (from a in _valueCollectionNfTributoIbsClassNfItem select a.ID).ToList();
+                 _valueCollectionNfTributoIbsClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfTributoIbsClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfTributoIbsClassNfItem+"\r\n" + e.Message, e);
+            }
+         } 
+        private void CollectionNfTributoIsClassNfItemChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfTributoIsClassNfItemChanged = true;
+                  _valueCollectionNfTributoIsClassNfItemCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfTributoIsClassNfItemChanged = true; 
+                  _valueCollectionNfTributoIsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoIsClass item in e.OldItems) 
+                 { 
+                     _collectionNfTributoIsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfTributoIsClassNfItemChanged = true; 
+                  _valueCollectionNfTributoIsClassNfItemCommitedChanged = true;
+                 foreach (Entidades.NfTributoIsClass item in _valueCollectionNfTributoIsClassNfItem) 
+                 { 
+                     _collectionNfTributoIsClassNfItemRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfTributoIsClassNfItem()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfTributoIsClass> oc;
+                _valueCollectionNfTributoIsClassNfItemChanged = false;
+                 _valueCollectionNfTributoIsClassNfItemCommitedChanged = false;
+                _collectionNfTributoIsClassNfItemRemovidos = new List<Entidades.NfTributoIsClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfTributoIsClass>();
+                }
+                else{ 
+                   Entidades.NfTributoIsClass search = new Entidades.NfTributoIsClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfTributoIsClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfItem", this),                     }                       ).Cast<Entidades.NfTributoIsClass>().ToList());
+                 }
+                 _valueCollectionNfTributoIsClassNfItem = new BindingList<Entidades.NfTributoIsClass>(oc); 
+                 _collectionNfTributoIsClassNfItemOriginal= (from a in _valueCollectionNfTributoIsClassNfItem select a.ID).ToList();
+                 _valueCollectionNfTributoIsClassNfItemLoaded = true;
+                 oc.CollectionChanged += CollectionNfTributoIsClassNfItemChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfTributoIsClassNfItem+"\r\n" + e.Message, e);
             }
          } 
         public override bool ValidateData(ref IWTPostgreNpgsqlCommand command)
@@ -1545,6 +2292,15 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                 {
                     return false;
                 } 
+ if (CollectionNfItemReferenciadoClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfItemReferenciadoClassNfItem+"\r\n";
+                foreach (Entidades.NfItemReferenciadoClass tmp in CollectionNfItemReferenciadoClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
  if (CollectionNfItemTributoClassNfItem.Count > 0) 
             {
                 mensagemUtilizado = MensagemUtilizadoCollectionNfItemTributoClassNfItem+"\r\n";
@@ -1617,6 +2373,15 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                 }
                 return true;
             }
+ if (CollectionNfProdutoCbsClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoCbsClassNfItem+"\r\n";
+                foreach (Entidades.NfProdutoCbsClass tmp in CollectionNfProdutoCbsClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
  if (CollectionNfProdutoCofinsClassNfItem.Count > 0) 
             {
                 mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoCofinsClassNfItem+"\r\n";
@@ -1630,6 +2395,24 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             {
                 mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoDeclaracaoImportacaoClassNfItem+"\r\n";
                 foreach (Entidades.NfProdutoDeclaracaoImportacaoClass tmp in CollectionNfProdutoDeclaracaoImportacaoClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
+ if (CollectionNfProdutoDevolucaoClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoDevolucaoClassNfItem+"\r\n";
+                foreach (Entidades.NfProdutoDevolucaoClass tmp in CollectionNfProdutoDevolucaoClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
+ if (CollectionNfProdutoIbsClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoIbsClassNfItem+"\r\n";
+                foreach (Entidades.NfProdutoIbsClass tmp in CollectionNfProdutoIbsClassNfItem)
                 {
                     mensagemUtilizado += tmp.ToString() + "\r\n";
                 }
@@ -1662,6 +2445,15 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                 }
                 return true;
             }
+ if (CollectionNfProdutoIsClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoIsClassNfItem+"\r\n";
+                foreach (Entidades.NfProdutoIsClass tmp in CollectionNfProdutoIsClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
  if (CollectionNfProdutoIssClassNfItem.Count > 0) 
             {
                 mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoIssClassNfItem+"\r\n";
@@ -1675,6 +2467,42 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             {
                 mensagemUtilizado = MensagemUtilizadoCollectionNfProdutoPisClassNfItem+"\r\n";
                 foreach (Entidades.NfProdutoPisClass tmp in CollectionNfProdutoPisClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
+ if (CollectionNfTributoCbsClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfTributoCbsClassNfItem+"\r\n";
+                foreach (Entidades.NfTributoCbsClass tmp in CollectionNfTributoCbsClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
+ if (CollectionNfTributoDevolucaoClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfTributoDevolucaoClassNfItem+"\r\n";
+                foreach (Entidades.NfTributoDevolucaoClass tmp in CollectionNfTributoDevolucaoClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
+ if (CollectionNfTributoIbsClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfTributoIbsClassNfItem+"\r\n";
+                foreach (Entidades.NfTributoIbsClass tmp in CollectionNfTributoIbsClassNfItem)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
+ if (CollectionNfTributoIsClassNfItem.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfTributoIsClassNfItem+"\r\n";
+                foreach (Entidades.NfTributoIsClass tmp in CollectionNfTributoIsClassNfItem)
                 {
                     mensagemUtilizado += tmp.ToString() + "\r\n";
                 }
@@ -1763,6 +2591,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             try
             {
                SalvaValoresOriginais();
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                  if (_collectionNfItemReferenciadoClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfItemReferenciadoClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfItemReferenciadoClassNfItemRemovidos = new List<Entidades.NfItemReferenciadoClass>();
+                  }
+                  _collectionNfItemReferenciadoClassNfItemOriginal= (from a in _valueCollectionNfItemReferenciadoClassNfItem select a.ID).ToList();
+                  _valueCollectionNfItemReferenciadoClassNfItemChanged = false;
+                  _valueCollectionNfItemReferenciadoClassNfItemCommitedChanged = false;
+               }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
                   if (_collectionNfItemTributoClassNfItemRemovidos != null) 
@@ -1875,6 +2717,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   _valueCollectionNfProdutoClassNfItemChanged = false;
                   _valueCollectionNfProdutoClassNfItemCommitedChanged = false;
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                  if (_collectionNfProdutoCbsClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfProdutoCbsClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfProdutoCbsClassNfItemRemovidos = new List<Entidades.NfProdutoCbsClass>();
+                  }
+                  _collectionNfProdutoCbsClassNfItemOriginal= (from a in _valueCollectionNfProdutoCbsClassNfItem select a.ID).ToList();
+                  _valueCollectionNfProdutoCbsClassNfItemChanged = false;
+                  _valueCollectionNfProdutoCbsClassNfItemCommitedChanged = false;
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                   if (_collectionNfProdutoCofinsClassNfItemRemovidos != null) 
@@ -1902,6 +2758,34 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   _collectionNfProdutoDeclaracaoImportacaoClassNfItemOriginal= (from a in _valueCollectionNfProdutoDeclaracaoImportacaoClassNfItem select a.ID).ToList();
                   _valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemChanged = false;
                   _valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemCommitedChanged = false;
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                  if (_collectionNfProdutoDevolucaoClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfProdutoDevolucaoClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfProdutoDevolucaoClassNfItemRemovidos = new List<Entidades.NfProdutoDevolucaoClass>();
+                  }
+                  _collectionNfProdutoDevolucaoClassNfItemOriginal= (from a in _valueCollectionNfProdutoDevolucaoClassNfItem select a.ID).ToList();
+                  _valueCollectionNfProdutoDevolucaoClassNfItemChanged = false;
+                  _valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged = false;
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                  if (_collectionNfProdutoIbsClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfProdutoIbsClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfProdutoIbsClassNfItemRemovidos = new List<Entidades.NfProdutoIbsClass>();
+                  }
+                  _collectionNfProdutoIbsClassNfItemOriginal= (from a in _valueCollectionNfProdutoIbsClassNfItem select a.ID).ToList();
+                  _valueCollectionNfProdutoIbsClassNfItemChanged = false;
+                  _valueCollectionNfProdutoIbsClassNfItemCommitedChanged = false;
                }
                if (_valueCollectionNfProdutoIcmsClassNfItemLoaded) 
                {
@@ -1945,6 +2829,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   _valueCollectionNfProdutoIpiClassNfItemChanged = false;
                   _valueCollectionNfProdutoIpiClassNfItemCommitedChanged = false;
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                  if (_collectionNfProdutoIsClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfProdutoIsClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfProdutoIsClassNfItemRemovidos = new List<Entidades.NfProdutoIsClass>();
+                  }
+                  _collectionNfProdutoIsClassNfItemOriginal= (from a in _valueCollectionNfProdutoIsClassNfItem select a.ID).ToList();
+                  _valueCollectionNfProdutoIsClassNfItemChanged = false;
+                  _valueCollectionNfProdutoIsClassNfItemCommitedChanged = false;
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                   if (_collectionNfProdutoIssClassNfItemRemovidos != null) 
@@ -1972,6 +2870,62 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   _collectionNfProdutoPisClassNfItemOriginal= (from a in _valueCollectionNfProdutoPisClassNfItem select a.ID).ToList();
                   _valueCollectionNfProdutoPisClassNfItemChanged = false;
                   _valueCollectionNfProdutoPisClassNfItemCommitedChanged = false;
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                  if (_collectionNfTributoCbsClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfTributoCbsClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfTributoCbsClassNfItemRemovidos = new List<Entidades.NfTributoCbsClass>();
+                  }
+                  _collectionNfTributoCbsClassNfItemOriginal= (from a in _valueCollectionNfTributoCbsClassNfItem select a.ID).ToList();
+                  _valueCollectionNfTributoCbsClassNfItemChanged = false;
+                  _valueCollectionNfTributoCbsClassNfItemCommitedChanged = false;
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                  if (_collectionNfTributoDevolucaoClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfTributoDevolucaoClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfTributoDevolucaoClassNfItemRemovidos = new List<Entidades.NfTributoDevolucaoClass>();
+                  }
+                  _collectionNfTributoDevolucaoClassNfItemOriginal= (from a in _valueCollectionNfTributoDevolucaoClassNfItem select a.ID).ToList();
+                  _valueCollectionNfTributoDevolucaoClassNfItemChanged = false;
+                  _valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged = false;
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                  if (_collectionNfTributoIbsClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfTributoIbsClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfTributoIbsClassNfItemRemovidos = new List<Entidades.NfTributoIbsClass>();
+                  }
+                  _collectionNfTributoIbsClassNfItemOriginal= (from a in _valueCollectionNfTributoIbsClassNfItem select a.ID).ToList();
+                  _valueCollectionNfTributoIbsClassNfItemChanged = false;
+                  _valueCollectionNfTributoIbsClassNfItemCommitedChanged = false;
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                  if (_collectionNfTributoIsClassNfItemRemovidos != null) 
+                  {
+                     _collectionNfTributoIsClassNfItemRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfTributoIsClassNfItemRemovidos = new List<Entidades.NfTributoIsClass>();
+                  }
+                  _collectionNfTributoIsClassNfItemOriginal= (from a in _valueCollectionNfTributoIsClassNfItem select a.ID).ToList();
+                  _valueCollectionNfTributoIsClassNfItemChanged = false;
+                  _valueCollectionNfTributoIsClassNfItemCommitedChanged = false;
                }
 
             }
@@ -2002,6 +2956,15 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                _cfopPartilhaIcmsOriginalCommited=_cfopPartilhaIcmsOriginal;
                AlquotaFundoCombatePobreza=_alquotaFundoCombatePobrezaOriginal;
                _alquotaFundoCombatePobrezaOriginalCommited=_alquotaFundoCombatePobrezaOriginal;
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                  CollectionNfItemReferenciadoClassNfItem.Clear();
+                  foreach(int item in _collectionNfItemReferenciadoClassNfItemOriginal)
+                  {
+                    CollectionNfItemReferenciadoClassNfItem.Add(Entidades.NfItemReferenciadoClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfItemReferenciadoClassNfItemRemovidos.Clear();
+               }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
                   CollectionNfItemTributoClassNfItem.Clear();
@@ -2074,6 +3037,15 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   }
                   _collectionNfProdutoClassNfItemRemovidos.Clear();
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                  CollectionNfProdutoCbsClassNfItem.Clear();
+                  foreach(int item in _collectionNfProdutoCbsClassNfItemOriginal)
+                  {
+                    CollectionNfProdutoCbsClassNfItem.Add(Entidades.NfProdutoCbsClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfProdutoCbsClassNfItemRemovidos.Clear();
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                   CollectionNfProdutoCofinsClassNfItem.Clear();
@@ -2091,6 +3063,24 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                     CollectionNfProdutoDeclaracaoImportacaoClassNfItem.Add(Entidades.NfProdutoDeclaracaoImportacaoClass.GetEntidade(item, UsuarioAtual, SingleConnection));
                   }
                   _collectionNfProdutoDeclaracaoImportacaoClassNfItemRemovidos.Clear();
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                  CollectionNfProdutoDevolucaoClassNfItem.Clear();
+                  foreach(int item in _collectionNfProdutoDevolucaoClassNfItemOriginal)
+                  {
+                    CollectionNfProdutoDevolucaoClassNfItem.Add(Entidades.NfProdutoDevolucaoClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfProdutoDevolucaoClassNfItemRemovidos.Clear();
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                  CollectionNfProdutoIbsClassNfItem.Clear();
+                  foreach(int item in _collectionNfProdutoIbsClassNfItemOriginal)
+                  {
+                    CollectionNfProdutoIbsClassNfItem.Add(Entidades.NfProdutoIbsClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfProdutoIbsClassNfItemRemovidos.Clear();
                }
                if (_valueCollectionNfProdutoIcmsClassNfItemLoaded) 
                {
@@ -2119,6 +3109,15 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   }
                   _collectionNfProdutoIpiClassNfItemRemovidos.Clear();
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                  CollectionNfProdutoIsClassNfItem.Clear();
+                  foreach(int item in _collectionNfProdutoIsClassNfItemOriginal)
+                  {
+                    CollectionNfProdutoIsClassNfItem.Add(Entidades.NfProdutoIsClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfProdutoIsClassNfItemRemovidos.Clear();
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                   CollectionNfProdutoIssClassNfItem.Clear();
@@ -2136,6 +3135,42 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                     CollectionNfProdutoPisClassNfItem.Add(Entidades.NfProdutoPisClass.GetEntidade(item, UsuarioAtual, SingleConnection));
                   }
                   _collectionNfProdutoPisClassNfItemRemovidos.Clear();
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                  CollectionNfTributoCbsClassNfItem.Clear();
+                  foreach(int item in _collectionNfTributoCbsClassNfItemOriginal)
+                  {
+                    CollectionNfTributoCbsClassNfItem.Add(Entidades.NfTributoCbsClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfTributoCbsClassNfItemRemovidos.Clear();
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                  CollectionNfTributoDevolucaoClassNfItem.Clear();
+                  foreach(int item in _collectionNfTributoDevolucaoClassNfItemOriginal)
+                  {
+                    CollectionNfTributoDevolucaoClassNfItem.Add(Entidades.NfTributoDevolucaoClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfTributoDevolucaoClassNfItemRemovidos.Clear();
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                  CollectionNfTributoIbsClassNfItem.Clear();
+                  foreach(int item in _collectionNfTributoIbsClassNfItemOriginal)
+                  {
+                    CollectionNfTributoIbsClassNfItem.Add(Entidades.NfTributoIbsClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfTributoIbsClassNfItemRemovidos.Clear();
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                  CollectionNfTributoIsClassNfItem.Clear();
+                  foreach(int item in _collectionNfTributoIsClassNfItemOriginal)
+                  {
+                    CollectionNfTributoIsClassNfItem.Add(Entidades.NfTributoIsClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfTributoIsClassNfItemRemovidos.Clear();
                }
 
             }
@@ -2157,6 +3192,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             try
             {
                bool tempRet = false;
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfItemReferenciadoClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
                   if (_valueCollectionNfItemTributoClassNfItemChanged)
@@ -2213,6 +3255,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      return true;
                   }
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoCbsClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                   if (_valueCollectionNfProdutoCofinsClassNfItemChanged)
@@ -2223,6 +3272,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded) 
                {
                   if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoDevolucaoClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoIbsClassNfItemChanged)
                   {
                      return true;
                   }
@@ -2248,6 +3311,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      return true;
                   }
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoIsClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                   if (_valueCollectionNfProdutoIssClassNfItemChanged)
@@ -2261,6 +3331,39 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   {
                      return true;
                   }
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoCbsClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoDevolucaoClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoIbsClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoIsClassNfItemChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfItemReferenciadoClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
                }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
@@ -2302,6 +3405,11 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                    tempRet = CollectionNfProdutoClassNfItem.Any(item => item.IsDirty());
                    if (tempRet) return true;
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoCbsClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoCofinsClassNfItem.Any(item => item.IsDirty());
@@ -2310,6 +3418,16 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoDeclaracaoImportacaoClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoDevolucaoClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoIbsClassNfItem.Any(item => item.IsDirty());
                    if (tempRet) return true;
                }
                if (_valueCollectionNfProdutoIcmsClassNfItemLoaded) 
@@ -2327,6 +3445,11 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                    tempRet = CollectionNfProdutoIpiClassNfItem.Any(item => item.IsDirty());
                    if (tempRet) return true;
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoIsClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoIssClassNfItem.Any(item => item.IsDirty());
@@ -2335,6 +3458,26 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoPisClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoPisClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoCbsClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoDevolucaoClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoIbsClassNfItem.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoIsClassNfItem.Any(item => item.IsDirty());
                    if (tempRet) return true;
                }
                return false;
@@ -2404,6 +3547,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             try
             {
                bool tempRet = false;
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfItemReferenciadoClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
                   if (_valueCollectionNfItemTributoClassNfItemCommitedChanged)
@@ -2460,6 +3610,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      return true;
                   }
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoCbsClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                   if (_valueCollectionNfProdutoCofinsClassNfItemCommitedChanged)
@@ -2470,6 +3627,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded) 
                {
                   if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoDevolucaoClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoIbsClassNfItemCommitedChanged)
                   {
                      return true;
                   }
@@ -2495,6 +3666,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      return true;
                   }
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfProdutoIsClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                   if (_valueCollectionNfProdutoIssClassNfItemCommitedChanged)
@@ -2508,6 +3686,39 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                   {
                      return true;
                   }
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoCbsClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoDevolucaoClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoIbsClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                  if (_valueCollectionNfTributoIsClassNfItemCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfItemReferenciadoClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
                }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
@@ -2549,6 +3760,11 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                    tempRet = CollectionNfProdutoClassNfItem.Any(item => item.IsDirtyCommited());
                    if (tempRet) return true;
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoCbsClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoCofinsClassNfItem.Any(item => item.IsDirtyCommited());
@@ -2557,6 +3773,16 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoDeclaracaoImportacaoClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoDevolucaoClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoIbsClassNfItem.Any(item => item.IsDirtyCommited());
                    if (tempRet) return true;
                }
                if (_valueCollectionNfProdutoIcmsClassNfItemLoaded) 
@@ -2574,6 +3800,11 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                    tempRet = CollectionNfProdutoIpiClassNfItem.Any(item => item.IsDirtyCommited());
                    if (tempRet) return true;
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfProdutoIsClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoIssClassNfItem.Any(item => item.IsDirtyCommited());
@@ -2582,6 +3813,26 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoPisClassNfItemLoaded) 
                {
                    tempRet = CollectionNfProdutoPisClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoCbsClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoDevolucaoClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoIbsClassNfItem.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                   tempRet = CollectionNfTributoIsClassNfItem.Any(item => item.IsDirtyCommited());
                    if (tempRet) return true;
                }
                return false;
@@ -2650,6 +3901,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
             this.DisableLoadCollection = true;
             try
             {
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                  foreach(NfItemReferenciadoClass item in CollectionNfItemReferenciadoClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
                   foreach(NfItemTributoClass item in CollectionNfItemTributoClassNfItem)
@@ -2706,6 +3964,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      item.Save(ref command, propagado:true);
                   }
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoCbsClass item in CollectionNfProdutoCbsClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                   foreach(NfProdutoCofinsClass item in CollectionNfProdutoCofinsClassNfItem)
@@ -2716,6 +3981,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded) 
                {
                   foreach(NfProdutoDeclaracaoImportacaoClass item in CollectionNfProdutoDeclaracaoImportacaoClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoDevolucaoClass item in CollectionNfProdutoDevolucaoClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoIbsClass item in CollectionNfProdutoIbsClassNfItem)
                   {
                      item.Save(ref command, propagado:true);
                   }
@@ -2741,6 +4020,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      item.Save(ref command, propagado:true);
                   }
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoIsClass item in CollectionNfProdutoIsClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                   foreach(NfProdutoIssClass item in CollectionNfProdutoIssClassNfItem)
@@ -2751,6 +4037,34 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoPisClassNfItemLoaded) 
                {
                   foreach(NfProdutoPisClass item in CollectionNfProdutoPisClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                  foreach(NfTributoCbsClass item in CollectionNfTributoCbsClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                  foreach(NfTributoDevolucaoClass item in CollectionNfTributoDevolucaoClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                  foreach(NfTributoIbsClass item in CollectionNfTributoIbsClassNfItem)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                  foreach(NfTributoIsClass item in CollectionNfTributoIsClassNfItem)
                   {
                      item.Save(ref command, propagado:true);
                   }
@@ -2806,6 +4120,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
           this.SingleConnection = newConnection; 
              if (NfPrincipal!=null)
                 NfPrincipal.ChangeSingleConnection(newConnection);
+               if (_valueCollectionNfItemReferenciadoClassNfItemLoaded) 
+               {
+                  foreach(NfItemReferenciadoClass item in CollectionNfItemReferenciadoClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
                if (_valueCollectionNfItemTributoClassNfItemLoaded) 
                {
                   foreach(NfItemTributoClass item in CollectionNfItemTributoClassNfItem)
@@ -2862,6 +4183,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      item.ChangeSingleConnection(newConnection);
                   }
                }
+               if (_valueCollectionNfProdutoCbsClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoCbsClass item in CollectionNfProdutoCbsClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
                if (_valueCollectionNfProdutoCofinsClassNfItemLoaded) 
                {
                   foreach(NfProdutoCofinsClass item in CollectionNfProdutoCofinsClassNfItem)
@@ -2872,6 +4200,20 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoDeclaracaoImportacaoClassNfItemLoaded) 
                {
                   foreach(NfProdutoDeclaracaoImportacaoClass item in CollectionNfProdutoDeclaracaoImportacaoClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfProdutoDevolucaoClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoDevolucaoClass item in CollectionNfProdutoDevolucaoClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfProdutoIbsClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoIbsClass item in CollectionNfProdutoIbsClassNfItem)
                   {
                      item.ChangeSingleConnection(newConnection);
                   }
@@ -2897,6 +4239,13 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                      item.ChangeSingleConnection(newConnection);
                   }
                }
+               if (_valueCollectionNfProdutoIsClassNfItemLoaded) 
+               {
+                  foreach(NfProdutoIsClass item in CollectionNfProdutoIsClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
                if (_valueCollectionNfProdutoIssClassNfItemLoaded) 
                {
                   foreach(NfProdutoIssClass item in CollectionNfProdutoIssClassNfItem)
@@ -2907,6 +4256,34 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                if (_valueCollectionNfProdutoPisClassNfItemLoaded) 
                {
                   foreach(NfProdutoPisClass item in CollectionNfProdutoPisClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfTributoCbsClassNfItemLoaded) 
+               {
+                  foreach(NfTributoCbsClass item in CollectionNfTributoCbsClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfTributoDevolucaoClassNfItemLoaded) 
+               {
+                  foreach(NfTributoDevolucaoClass item in CollectionNfTributoDevolucaoClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfTributoIbsClassNfItemLoaded) 
+               {
+                  foreach(NfTributoIbsClass item in CollectionNfTributoIbsClassNfItem)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfTributoIsClassNfItemLoaded) 
+               {
+                  foreach(NfTributoIsClass item in CollectionNfTributoIsClassNfItem)
                   {
                      item.ChangeSingleConnection(newConnection);
                   }
@@ -3188,8 +4565,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.id_nf_item = :nf_item_ID_2344 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_ID_2344", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_item.id_nf_item = :nf_item_ID_2057 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_ID_2057", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3207,8 +4584,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.id_nf_principal = :nf_item_NfPrincipal_4146 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_NfPrincipal_4146", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_item.id_nf_principal = :nf_item_NfPrincipal_5873 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_NfPrincipal_5873", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3226,8 +4603,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_numero_item = :nf_item_NumeroItem_1143 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_NumeroItem_1143", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_item.nfi_numero_item = :nf_item_NumeroItem_9700 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_NumeroItem_9700", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3245,8 +4622,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_informacoes_add LIKE :nf_item_InformacoesAdd_7418 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_InformacoesAdd_7418", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_item.nfi_informacoes_add LIKE :nf_item_InformacoesAdd_4793 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_InformacoesAdd_4793", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3264,8 +4641,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_cfop = :nf_item_Cfop_2680 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_Cfop_2680", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_item.nfi_cfop = :nf_item_Cfop_4635 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_Cfop_4635", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3283,8 +4660,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.entity_uid LIKE :nf_item_EntityUid_5417 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_EntityUid_5417", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_item.entity_uid LIKE :nf_item_EntityUid_5302 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_EntityUid_5302", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3302,8 +4679,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.version = :nf_item_Version_1234 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_Version_1234", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_item.version = :nf_item_Version_4278 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_Version_4278", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3321,8 +4698,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_valor_total_aproximado_tributos = :nf_item_ValorTotalAproximadoTributos_5057 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_ValorTotalAproximadoTributos_5057", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_item.nfi_valor_total_aproximado_tributos = :nf_item_ValorTotalAproximadoTributos_8941 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_ValorTotalAproximadoTributos_8941", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3340,8 +4717,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_cfop_partilha_icms = :nf_item_CfopPartilhaIcms_3718 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_CfopPartilhaIcms_3718", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_item.nfi_cfop_partilha_icms = :nf_item_CfopPartilhaIcms_1061 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_CfopPartilhaIcms_1061", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3359,8 +4736,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_alquota_fundo_combate_pobreza = :nf_item_AlquotaFundoCombatePobreza_7200 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_AlquotaFundoCombatePobreza_7200", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_item.nfi_alquota_fundo_combate_pobreza = :nf_item_AlquotaFundoCombatePobreza_9151 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_AlquotaFundoCombatePobreza_9151", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3378,8 +4755,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.nfi_informacoes_add LIKE :nf_item_InformacoesAdd_2035 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_InformacoesAdd_2035", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_item.nfi_informacoes_add LIKE :nf_item_InformacoesAdd_6718 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_InformacoesAdd_6718", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3397,8 +4774,8 @@ public static NfItemClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWT
                       }
                       else
                       {
-                         whereClause += "  nf_item.entity_uid LIKE :nf_item_EntityUid_1599 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_EntityUid_1599", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_item.entity_uid LIKE :nf_item_EntityUid_4223 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_EntityUid_4223", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

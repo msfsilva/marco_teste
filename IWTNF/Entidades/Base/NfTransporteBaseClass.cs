@@ -1391,8 +1391,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.id_nf_principal = :nf_transporte_NfPrincipal_1679 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_NfPrincipal_1679", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_transporte.id_nf_principal = :nf_transporte_NfPrincipal_1501 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_NfPrincipal_1501", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1410,8 +1410,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_modalidade = :nf_transporte_Modalidade_6907 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Modalidade_6907", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_transporte.nft_modalidade = :nf_transporte_Modalidade_5699 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Modalidade_5699", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1429,8 +1429,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_razao LIKE :nf_transporte_Razao_3101 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Razao_3101", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_razao LIKE :nf_transporte_Razao_1599 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Razao_1599", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1448,8 +1448,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_ie LIKE :nf_transporte_Ie_7140 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Ie_7140", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_ie LIKE :nf_transporte_Ie_7446 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Ie_7446", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1467,8 +1467,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_endereco LIKE :nf_transporte_Endereco_60 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Endereco_60", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_endereco LIKE :nf_transporte_Endereco_6754 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Endereco_6754", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1486,8 +1486,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_sigla_uf LIKE :nf_transporte_SiglaUf_6262 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUf_6262", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_sigla_uf LIKE :nf_transporte_SiglaUf_7850 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUf_7850", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1505,8 +1505,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_municipio LIKE :nf_transporte_Municipio_2355 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Municipio_2355", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_municipio LIKE :nf_transporte_Municipio_2660 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Municipio_2660", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1524,8 +1524,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_cpf_cnpj LIKE :nf_transporte_CpfCnpj_8482 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_CpfCnpj_8482", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_cpf_cnpj LIKE :nf_transporte_CpfCnpj_5777 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_CpfCnpj_5777", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1543,8 +1543,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_volumes = :nf_transporte_Volumes_6345 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Volumes_6345", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_transporte.nft_volumes = :nf_transporte_Volumes_5911 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Volumes_5911", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1562,8 +1562,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_peso_liquido = :nf_transporte_PesoLiquido_8689 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_PesoLiquido_8689", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_transporte.nft_peso_liquido = :nf_transporte_PesoLiquido_1091 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_PesoLiquido_1091", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1581,8 +1581,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_peso_bruto = :nf_transporte_PesoBruto_2606 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_PesoBruto_2606", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_transporte.nft_peso_bruto = :nf_transporte_PesoBruto_9754 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_PesoBruto_9754", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1600,8 +1600,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_placa LIKE :nf_transporte_Placa_9367 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Placa_9367", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_placa LIKE :nf_transporte_Placa_5202 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Placa_5202", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1619,8 +1619,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_registro_antt LIKE :nf_transporte_RegistroAntt_9667 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_RegistroAntt_9667", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_registro_antt LIKE :nf_transporte_RegistroAntt_6604 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_RegistroAntt_6604", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1638,8 +1638,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_sigla_uf_veiculo LIKE :nf_transporte_SiglaUfVeiculo_619 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUfVeiculo_619", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_sigla_uf_veiculo LIKE :nf_transporte_SiglaUfVeiculo_4939 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUfVeiculo_4939", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1657,8 +1657,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.entity_uid LIKE :nf_transporte_EntityUid_698 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_EntityUid_698", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.entity_uid LIKE :nf_transporte_EntityUid_9698 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_EntityUid_9698", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1676,8 +1676,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.version = :nf_transporte_Version_813 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Version_813", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_transporte.version = :nf_transporte_Version_7600 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Version_7600", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1695,8 +1695,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_volume_especie LIKE :nf_transporte_VolumeEspecie_6890 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeEspecie_6890", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_volume_especie LIKE :nf_transporte_VolumeEspecie_9698 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeEspecie_9698", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1714,8 +1714,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_volume_marca LIKE :nf_transporte_VolumeMarca_3533 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeMarca_3533", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_transporte.nft_volume_marca LIKE :nf_transporte_VolumeMarca_6959 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeMarca_6959", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1733,8 +1733,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.id_nf_transporte = :nf_transporte_ID_1403 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_ID_1403", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_transporte.id_nf_transporte = :nf_transporte_ID_6659 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_ID_6659", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1752,8 +1752,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_razao LIKE :nf_transporte_Razao_8790 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Razao_8790", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_razao LIKE :nf_transporte_Razao_6040 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Razao_6040", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1771,8 +1771,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_ie LIKE :nf_transporte_Ie_1462 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Ie_1462", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_ie LIKE :nf_transporte_Ie_6161 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Ie_6161", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1790,8 +1790,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_endereco LIKE :nf_transporte_Endereco_3601 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Endereco_3601", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_endereco LIKE :nf_transporte_Endereco_787 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Endereco_787", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1809,8 +1809,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_sigla_uf LIKE :nf_transporte_SiglaUf_7341 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUf_7341", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_sigla_uf LIKE :nf_transporte_SiglaUf_5153 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUf_5153", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1828,8 +1828,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_municipio LIKE :nf_transporte_Municipio_6840 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Municipio_6840", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_municipio LIKE :nf_transporte_Municipio_1738 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Municipio_1738", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1847,8 +1847,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_cpf_cnpj LIKE :nf_transporte_CpfCnpj_8722 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_CpfCnpj_8722", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_cpf_cnpj LIKE :nf_transporte_CpfCnpj_9268 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_CpfCnpj_9268", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1866,8 +1866,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_placa LIKE :nf_transporte_Placa_8307 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Placa_8307", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_placa LIKE :nf_transporte_Placa_1325 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_Placa_1325", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1885,8 +1885,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_registro_antt LIKE :nf_transporte_RegistroAntt_2219 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_RegistroAntt_2219", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_registro_antt LIKE :nf_transporte_RegistroAntt_5638 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_RegistroAntt_5638", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1904,8 +1904,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_sigla_uf_veiculo LIKE :nf_transporte_SiglaUfVeiculo_5310 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUfVeiculo_5310", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_sigla_uf_veiculo LIKE :nf_transporte_SiglaUfVeiculo_9143 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_SiglaUfVeiculo_9143", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1923,8 +1923,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.entity_uid LIKE :nf_transporte_EntityUid_3491 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_EntityUid_3491", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.entity_uid LIKE :nf_transporte_EntityUid_3581 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_EntityUid_3581", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1942,8 +1942,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_volume_especie LIKE :nf_transporte_VolumeEspecie_697 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeEspecie_697", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_volume_especie LIKE :nf_transporte_VolumeEspecie_4370 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeEspecie_4370", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1961,8 +1961,8 @@ public static NfTransporteClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_transporte.nft_volume_marca LIKE :nf_transporte_VolumeMarca_1182 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeMarca_1182", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_transporte.nft_volume_marca LIKE :nf_transporte_VolumeMarca_7326 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_transporte_VolumeMarca_7326", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

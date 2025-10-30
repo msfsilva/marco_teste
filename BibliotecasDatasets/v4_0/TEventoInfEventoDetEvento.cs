@@ -51,6 +51,7 @@ namespace IWTNFCompleto.BibliotecaDatasets.v4_0
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         private System.Collections.ObjectModel.Collection<System.Xml.XmlAttribute> _anyAttribute;
         
+        [System.Xml.Serialization.XmlAnyAttributeAttribute(Order=1)]
         public System.Collections.ObjectModel.Collection<System.Xml.XmlAttribute> AnyAttribute
         {
             get

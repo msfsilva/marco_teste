@@ -445,6 +445,62 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfProdu
             } 
         } 
 
+       protected short? _indSubstOriginal{get;private set;}
+       private short? _indSubstOriginalCommited{get; set;}
+        private short? _valueIndSubst;
+         [Column("npd_ind_subst")]
+        public virtual short? IndSubst
+         { 
+            get { return this._valueIndSubst; } 
+            set 
+            { 
+                if (this._valueIndSubst == value)return;
+                 this._valueIndSubst = value; 
+            } 
+        } 
+
+       protected string _indEscalaOriginal{get;private set;}
+       private string _indEscalaOriginalCommited{get; set;}
+        private string _valueIndEscala;
+         [Column("npd_ind_escala")]
+        public virtual string IndEscala
+         { 
+            get { return this._valueIndEscala; } 
+            set 
+            { 
+                if (this._valueIndEscala == value)return;
+                 this._valueIndEscala = value; 
+            } 
+        } 
+
+       protected short? _indCredNfeOriginal{get;private set;}
+       private short? _indCredNfeOriginalCommited{get; set;}
+        private short? _valueIndCredNfe;
+         [Column("npd_ind_cred_nfe")]
+        public virtual short? IndCredNfe
+         { 
+            get { return this._valueIndCredNfe; } 
+            set 
+            { 
+                if (this._valueIndCredNfe == value)return;
+                 this._valueIndCredNfe = value; 
+            } 
+        } 
+
+       protected string _cBenefOriginal{get;private set;}
+       private string _cBenefOriginalCommited{get; set;}
+        private string _valueCBenef;
+         [Column("npd_c_benef")]
+        public virtual string CBenef
+         { 
+            get { return this._valueCBenef; } 
+            set 
+            { 
+                if (this._valueCBenef == value)return;
+                 this._valueCBenef = value; 
+            } 
+        } 
+
        private List<long> _collectionNfProdutoRastreabilidadeClassNfProdutoOriginal;
        private List<Entidades.NfProdutoRastreabilidadeClass > _collectionNfProdutoRastreabilidadeClassNfProdutoRemovidos;
        [UnCloneable(UnCloneableAttributeType.RetFalse)] 
@@ -670,7 +726,11 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                         "  nfp_medicamento_codigo_anvisa = :nfp_medicamento_codigo_anvisa, " + 
                         "  nfp_medicamento_preco_maximo_consumidor = :nfp_medicamento_preco_maximo_consumidor, " + 
                         "  nfp_percentual_mercadoria_devolvida = :nfp_percentual_mercadoria_devolvida, " + 
-                        "  nfp_valor_ipi_devolvido = :nfp_valor_ipi_devolvido "+
+                        "  nfp_valor_ipi_devolvido = :nfp_valor_ipi_devolvido, " + 
+                        "  npd_ind_subst = :npd_ind_subst, " + 
+                        "  npd_ind_escala = :npd_ind_escala, " + 
+                        "  npd_ind_cred_nfe = :npd_ind_cred_nfe, " + 
+                        "  npd_c_benef = :npd_c_benef "+
                         "WHERE  " +
                         "  id_nf_produto = :id " +
                         "RETURNING id_nf_produto;";
@@ -710,7 +770,11 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                         "  nfp_medicamento_codigo_anvisa , " + 
                         "  nfp_medicamento_preco_maximo_consumidor , " + 
                         "  nfp_percentual_mercadoria_devolvida , " + 
-                        "  nfp_valor_ipi_devolvido  "+
+                        "  nfp_valor_ipi_devolvido , " + 
+                        "  npd_ind_subst , " + 
+                        "  npd_ind_escala , " + 
+                        "  npd_ind_cred_nfe , " + 
+                        "  npd_c_benef  "+
                         ")  " +
                         "VALUES ( " +
                         "  :id_nf_item , " + 
@@ -742,7 +806,11 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                         "  :nfp_medicamento_codigo_anvisa , " + 
                         "  :nfp_medicamento_preco_maximo_consumidor , " + 
                         "  :nfp_percentual_mercadoria_devolvida , " + 
-                        "  :nfp_valor_ipi_devolvido  "+
+                        "  :nfp_valor_ipi_devolvido , " + 
+                        "  :npd_ind_subst , " + 
+                        "  :npd_ind_escala , " + 
+                        "  :npd_ind_cred_nfe , " + 
+                        "  :npd_c_benef  "+
                         ")RETURNING id_nf_produto;";
                 }
 
@@ -809,6 +877,14 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.PercentualMercadoriaDevolvida ?? DBNull.Value;
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nfp_valor_ipi_devolvido", NpgsqlDbType.Double));
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.ValorIpiDevolvido ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npd_ind_subst", NpgsqlDbType.Smallint));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.IndSubst ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npd_ind_escala", NpgsqlDbType.Char));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.IndEscala ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npd_ind_cred_nfe", NpgsqlDbType.Smallint));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.IndCredNfe ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npd_c_benef", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.CBenef ?? DBNull.Value;
 
  
                  bool inserting = this.ID == -1; 
@@ -889,6 +965,10 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
  toRet.MedicamentoPrecoMaximoConsumidor= entidadeCopiar.MedicamentoPrecoMaximoConsumidor;
  toRet.PercentualMercadoriaDevolvida= entidadeCopiar.PercentualMercadoriaDevolvida;
  toRet.ValorIpiDevolvido= entidadeCopiar.ValorIpiDevolvido;
+ toRet.IndSubst= entidadeCopiar.IndSubst;
+ toRet.IndEscala= entidadeCopiar.IndEscala;
+ toRet.IndCredNfe= entidadeCopiar.IndCredNfe;
+ toRet.CBenef= entidadeCopiar.CBenef;
 
             return toRet;
             }
@@ -959,6 +1039,14 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
        _percentualMercadoriaDevolvidaOriginalCommited = _percentualMercadoriaDevolvidaOriginal;
        _valorIpiDevolvidoOriginal = ValorIpiDevolvido;
        _valorIpiDevolvidoOriginalCommited = _valorIpiDevolvidoOriginal;
+       _indSubstOriginal = IndSubst;
+       _indSubstOriginalCommited = _indSubstOriginal;
+       _indEscalaOriginal = IndEscala;
+       _indEscalaOriginalCommited = _indEscalaOriginal;
+       _indCredNfeOriginal = IndCredNfe;
+       _indCredNfeOriginalCommited = _indCredNfeOriginal;
+       _cBenefOriginal = CBenef;
+       _cBenefOriginalCommited = _cBenefOriginal;
 
             }
             catch (Exception e)
@@ -999,6 +1087,10 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
        _medicamentoPrecoMaximoConsumidorOriginalCommited = MedicamentoPrecoMaximoConsumidor;
        _percentualMercadoriaDevolvidaOriginalCommited = PercentualMercadoriaDevolvida;
        _valorIpiDevolvidoOriginalCommited = ValorIpiDevolvido;
+       _indSubstOriginalCommited = IndSubst;
+       _indEscalaOriginalCommited = IndEscala;
+       _indCredNfeOriginalCommited = IndCredNfe;
+       _cBenefOriginalCommited = CBenef;
 
             }
             catch (Exception e)
@@ -1096,6 +1188,14 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                _percentualMercadoriaDevolvidaOriginalCommited=_percentualMercadoriaDevolvidaOriginal;
                ValorIpiDevolvido=_valorIpiDevolvidoOriginal;
                _valorIpiDevolvidoOriginalCommited=_valorIpiDevolvidoOriginal;
+               IndSubst=_indSubstOriginal;
+               _indSubstOriginalCommited=_indSubstOriginal;
+               IndEscala=_indEscalaOriginal;
+               _indEscalaOriginalCommited=_indEscalaOriginal;
+               IndCredNfe=_indCredNfeOriginal;
+               _indCredNfeOriginalCommited=_indCredNfeOriginal;
+               CBenef=_cBenefOriginal;
+               _cBenefOriginalCommited=_cBenefOriginal;
                if (_valueCollectionNfProdutoRastreabilidadeClassNfProdutoLoaded) 
                {
                   CollectionNfProdutoRastreabilidadeClassNfProduto.Clear();
@@ -1224,6 +1324,14 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
        dirty = _percentualMercadoriaDevolvidaOriginal != PercentualMercadoriaDevolvida;
       if (dirty) return true;
        dirty = _valorIpiDevolvidoOriginal != ValorIpiDevolvido;
+      if (dirty) return true;
+       dirty = _indSubstOriginal != IndSubst;
+      if (dirty) return true;
+       dirty = _indEscalaOriginal != IndEscala;
+      if (dirty) return true;
+       dirty = _indCredNfeOriginal != IndCredNfe;
+      if (dirty) return true;
+       dirty = _cBenefOriginal != CBenef;
 
                return dirty;
             }
@@ -1345,6 +1453,14 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
        dirty = _percentualMercadoriaDevolvidaOriginalCommited != PercentualMercadoriaDevolvida;
       if (dirty) return true;
        dirty = _valorIpiDevolvidoOriginalCommited != ValorIpiDevolvido;
+      if (dirty) return true;
+       dirty = _indSubstOriginalCommited != IndSubst;
+      if (dirty) return true;
+       dirty = _indEscalaOriginalCommited != IndEscala;
+      if (dirty) return true;
+       dirty = _indCredNfeOriginalCommited != IndCredNfe;
+      if (dirty) return true;
+       dirty = _cBenefOriginalCommited != CBenef;
 
                return dirty;
             }
@@ -1456,6 +1572,14 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                 return this.PercentualMercadoriaDevolvida;
              case "ValorIpiDevolvido":
                 return this.ValorIpiDevolvido;
+             case "IndSubst":
+                return this.IndSubst;
+             case "IndEscala":
+                return this.IndEscala;
+             case "IndCredNfe":
+                return this.IndCredNfe;
+             case "CBenef":
+                return this.CBenef;
               default:
                  return new ArgumentOutOfRangeException();
            }
@@ -1524,7 +1648,11 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                command.CommandText += "nf_produto.nfp_medicamento_codigo_anvisa, " ;
                command.CommandText += "nf_produto.nfp_medicamento_preco_maximo_consumidor, " ;
                command.CommandText += "nf_produto.nfp_percentual_mercadoria_devolvida, " ;
-               command.CommandText += "nf_produto.nfp_valor_ipi_devolvido " ;
+               command.CommandText += "nf_produto.nfp_valor_ipi_devolvido, " ;
+               command.CommandText += "nf_produto.npd_ind_subst, " ;
+               command.CommandText += "nf_produto.npd_ind_escala, " ;
+               command.CommandText += "nf_produto.npd_ind_cred_nfe, " ;
+               command.CommandText += "nf_produto.npd_c_benef " ;
                }
                command.CommandText += " FROM  nf_produto ";
                string whereClause = "";
@@ -2014,6 +2142,62 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                            break;
                      }
                      break;
+                     case "npd_ind_subst":
+                     case "IndSubst":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_produto.npd_ind_subst " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                           orderByClause += " , UPPER(nf_produto.npd_ind_subst) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "npd_ind_escala":
+                     case "IndEscala":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                           orderByClause += " , nf_produto.npd_ind_escala " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , UPPER(nf_produto.npd_ind_escala) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "npd_ind_cred_nfe":
+                     case "IndCredNfe":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_produto.npd_ind_cred_nfe " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                           orderByClause += " , UPPER(nf_produto.npd_ind_cred_nfe) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "npd_c_benef":
+                     case "CBenef":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                           orderByClause += " , nf_produto.npd_c_benef " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , UPPER(nf_produto.npd_c_benef) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
                         default:
                            throw new Exception("Parâmetro de ordenação não encontrado: " + parametro.FieldName);
                      }
@@ -2097,6 +2281,16 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                            whereClause += " OR UPPER(nf_produto.nfp_medicamento_codigo_anvisa) LIKE :buscaCompletaUpper ";
                            whereClause += " OR LOWER(nf_produto.nfp_medicamento_codigo_anvisa) LIKE :buscaCompletaLower ";
                         }
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("npd_ind_escala")) 
+                        {
+                           whereClause += " OR UPPER(nf_produto.npd_ind_escala) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_produto.npd_ind_escala) LIKE :buscaCompletaLower ";
+                        }
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("npd_c_benef")) 
+                        {
+                           whereClause += " OR UPPER(nf_produto.npd_c_benef) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_produto.npd_c_benef) LIKE :buscaCompletaLower ";
+                        }
                         whereClause += ") ";
                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("buscaCompletaUpper", NpgsqlDbType.Varchar, "%" + parametro.Fieldvalue.ToString().ToUpper() + "%"));
                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("buscaCompletaLower", NpgsqlDbType.Varchar, "%" + parametro.Fieldvalue.ToString().ToLower() + "%"));
@@ -2115,8 +2309,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.id_nf_item = :nf_produto_NfItem_3839 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_NfItem_3839", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_produto.id_nf_item = :nf_produto_NfItem_9166 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_NfItem_9166", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2134,8 +2328,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_codigo LIKE :nf_produto_Codigo_8533 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Codigo_8533", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_codigo LIKE :nf_produto_Codigo_700 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Codigo_700", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2153,8 +2347,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_descricao LIKE :nf_produto_Descricao_7198 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Descricao_7198", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_descricao LIKE :nf_produto_Descricao_5062 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Descricao_5062", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2172,8 +2366,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_gtin LIKE :nf_produto_Gtin_8413 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Gtin_8413", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_gtin LIKE :nf_produto_Gtin_4979 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Gtin_4979", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2191,8 +2385,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_ncm LIKE :nf_produto_Ncm_8852 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Ncm_8852", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_ncm LIKE :nf_produto_Ncm_6381 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Ncm_6381", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2210,8 +2404,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_extipi LIKE :nf_produto_Extipi_9189 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Extipi_9189", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_extipi LIKE :nf_produto_Extipi_8071 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Extipi_8071", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2229,8 +2423,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_genero LIKE :nf_produto_Genero_4702 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Genero_4702", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_genero LIKE :nf_produto_Genero_3530 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Genero_3530", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2248,8 +2442,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_unidade LIKE :nf_produto_Unidade_1650 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Unidade_1650", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_unidade LIKE :nf_produto_Unidade_9990 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Unidade_9990", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2267,8 +2461,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_unitario = :nf_produto_ValorUnitario_8932 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorUnitario_8932", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_unitario = :nf_produto_ValorUnitario_2642 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorUnitario_2642", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2286,8 +2480,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_gtim_unidade_trinutacao LIKE :nf_produto_GtimUnidadeTrinutacao_1943 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_GtimUnidadeTrinutacao_1943", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_gtim_unidade_trinutacao LIKE :nf_produto_GtimUnidadeTrinutacao_8158 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_GtimUnidadeTrinutacao_8158", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2305,8 +2499,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_unidade_tributacao LIKE :nf_produto_UnidadeTributacao_7659 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_UnidadeTributacao_7659", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_unidade_tributacao LIKE :nf_produto_UnidadeTributacao_9670 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_UnidadeTributacao_9670", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2324,8 +2518,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_unitario_trinutacao = :nf_produto_ValorUnitarioTrinutacao_7111 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorUnitarioTrinutacao_7111", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_unitario_trinutacao = :nf_produto_ValorUnitarioTrinutacao_5710 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorUnitarioTrinutacao_5710", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2343,8 +2537,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_quantidade_tributavel = :nf_produto_QuantidadeTributavel_2077 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_QuantidadeTributavel_2077", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_quantidade_tributavel = :nf_produto_QuantidadeTributavel_6961 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_QuantidadeTributavel_6961", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2362,8 +2556,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_total_tributavel = :nf_produto_ValorTotalTributavel_8698 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorTotalTributavel_8698", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_total_tributavel = :nf_produto_ValorTotalTributavel_737 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorTotalTributavel_737", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2381,8 +2575,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_frete = :nf_produto_ValorFrete_6644 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorFrete_6644", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_frete = :nf_produto_ValorFrete_8544 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorFrete_8544", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2400,8 +2594,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_seguro = :nf_produto_ValorSeguro_4912 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorSeguro_4912", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_seguro = :nf_produto_ValorSeguro_3730 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorSeguro_3730", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2419,8 +2613,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_desconto = :nf_produto_ValorDesconto_7165 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorDesconto_7165", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_desconto = :nf_produto_ValorDesconto_9063 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorDesconto_9063", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2438,8 +2632,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.entity_uid LIKE :nf_produto_EntityUid_9131 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_EntityUid_9131", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.entity_uid LIKE :nf_produto_EntityUid_8355 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_EntityUid_8355", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2457,8 +2651,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.version = :nf_produto_Version_2295 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Version_2295", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto.version = :nf_produto_Version_4735 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Version_4735", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2476,8 +2670,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_quantidade = :nf_produto_Quantidade_6735 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Quantidade_6735", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_quantidade = :nf_produto_Quantidade_4051 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Quantidade_4051", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2495,8 +2689,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_outras_despesas_acessorias = :nf_produto_OutrasDespesasAcessorias_1259 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_OutrasDespesasAcessorias_1259", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_outras_despesas_acessorias = :nf_produto_OutrasDespesasAcessorias_2963 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_OutrasDespesasAcessorias_2963", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2514,8 +2708,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.id_nf_produto = :nf_produto_ID_4834 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ID_4834", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.id_nf_produto = :nf_produto_ID_2778 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ID_2778", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2533,8 +2727,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_xped LIKE :nf_produto_Xped_5071 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Xped_5071", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_xped LIKE :nf_produto_Xped_9610 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Xped_9610", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2552,8 +2746,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_numero_item_pedido = :nf_produto_NumeroItemPedido_3611 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_NumeroItemPedido_3611", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto.nfp_numero_item_pedido = :nf_produto_NumeroItemPedido_2660 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_NumeroItemPedido_2660", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2571,8 +2765,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_cest LIKE :nf_produto_Cest_2974 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Cest_2974", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_cest LIKE :nf_produto_Cest_5360 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Cest_5360", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2590,8 +2784,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_codigo_beneficio LIKE :nf_produto_CodigoBeneficio_7491 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_CodigoBeneficio_7491", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_codigo_beneficio LIKE :nf_produto_CodigoBeneficio_9535 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_CodigoBeneficio_9535", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2609,8 +2803,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_tipo_produto_especifico = :nf_produto_TipoProdutoEspecifico_8576 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_TipoProdutoEspecifico_8576", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto.nfp_tipo_produto_especifico = :nf_produto_TipoProdutoEspecifico_8552 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_TipoProdutoEspecifico_8552", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2628,8 +2822,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_medicamento_codigo_anvisa LIKE :nf_produto_MedicamentoCodigoAnvisa_174 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_MedicamentoCodigoAnvisa_174", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto.nfp_medicamento_codigo_anvisa LIKE :nf_produto_MedicamentoCodigoAnvisa_8399 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_MedicamentoCodigoAnvisa_8399", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2647,8 +2841,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_medicamento_preco_maximo_consumidor = :nf_produto_MedicamentoPrecoMaximoConsumidor_2771 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_MedicamentoPrecoMaximoConsumidor_2771", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_medicamento_preco_maximo_consumidor = :nf_produto_MedicamentoPrecoMaximoConsumidor_4466 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_MedicamentoPrecoMaximoConsumidor_4466", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2666,8 +2860,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_percentual_mercadoria_devolvida = :nf_produto_PercentualMercadoriaDevolvida_4772 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_PercentualMercadoriaDevolvida_4772", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_percentual_mercadoria_devolvida = :nf_produto_PercentualMercadoriaDevolvida_9685 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_PercentualMercadoriaDevolvida_9685", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2685,8 +2879,84 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_valor_ipi_devolvido = :nf_produto_ValorIpiDevolvido_5235 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorIpiDevolvido_5235", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto.nfp_valor_ipi_devolvido = :nf_produto_ValorIpiDevolvido_6728 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_ValorIpiDevolvido_6728", NpgsqlDbType.Double, parametro.Fieldvalue));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "IndSubst" || parametro.FieldName == "npd_ind_subst")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is short?)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo short?");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto.npd_ind_subst IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto.npd_ind_subst = :nf_produto_IndSubst_1035 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_IndSubst_1035", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "IndEscala" || parametro.FieldName == "npd_ind_escala")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto.npd_ind_escala IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto.npd_ind_escala LIKE :nf_produto_IndEscala_6824 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_IndEscala_6824", NpgsqlDbType.Char,"%"+ parametro.Fieldvalue+"%"));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "IndCredNfe" || parametro.FieldName == "npd_ind_cred_nfe")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is short?)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo short?");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto.npd_ind_cred_nfe IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto.npd_ind_cred_nfe = :nf_produto_IndCredNfe_9089 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_IndCredNfe_9089", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "CBenef" || parametro.FieldName == "npd_c_benef")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto.npd_c_benef IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto.npd_c_benef LIKE :nf_produto_CBenef_9551 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_CBenef_9551", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2704,8 +2974,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_codigo LIKE :nf_produto_Codigo_1645 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Codigo_1645", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_codigo LIKE :nf_produto_Codigo_6067 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Codigo_6067", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2723,8 +2993,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_descricao LIKE :nf_produto_Descricao_4063 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Descricao_4063", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_descricao LIKE :nf_produto_Descricao_1918 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Descricao_1918", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2742,8 +3012,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_gtin LIKE :nf_produto_Gtin_9948 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Gtin_9948", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_gtin LIKE :nf_produto_Gtin_4052 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Gtin_4052", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2761,8 +3031,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_ncm LIKE :nf_produto_Ncm_3341 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Ncm_3341", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_ncm LIKE :nf_produto_Ncm_478 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Ncm_478", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2780,8 +3050,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_extipi LIKE :nf_produto_Extipi_3778 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Extipi_3778", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_extipi LIKE :nf_produto_Extipi_2544 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Extipi_2544", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2799,8 +3069,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_genero LIKE :nf_produto_Genero_9007 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Genero_9007", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_genero LIKE :nf_produto_Genero_2289 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Genero_2289", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2818,8 +3088,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_unidade LIKE :nf_produto_Unidade_749 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Unidade_749", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_unidade LIKE :nf_produto_Unidade_7470 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Unidade_7470", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2837,8 +3107,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_gtim_unidade_trinutacao LIKE :nf_produto_GtimUnidadeTrinutacao_6156 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_GtimUnidadeTrinutacao_6156", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_gtim_unidade_trinutacao LIKE :nf_produto_GtimUnidadeTrinutacao_6655 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_GtimUnidadeTrinutacao_6655", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2856,8 +3126,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_unidade_tributacao LIKE :nf_produto_UnidadeTributacao_4036 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_UnidadeTributacao_4036", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_unidade_tributacao LIKE :nf_produto_UnidadeTributacao_3023 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_UnidadeTributacao_3023", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2875,8 +3145,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.entity_uid LIKE :nf_produto_EntityUid_1783 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_EntityUid_1783", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.entity_uid LIKE :nf_produto_EntityUid_1394 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_EntityUid_1394", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2894,8 +3164,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_xped LIKE :nf_produto_Xped_8480 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Xped_8480", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_xped LIKE :nf_produto_Xped_5229 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Xped_5229", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2913,8 +3183,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_cest LIKE :nf_produto_Cest_9979 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Cest_9979", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_cest LIKE :nf_produto_Cest_4612 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_Cest_4612", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2932,8 +3202,8 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_codigo_beneficio LIKE :nf_produto_CodigoBeneficio_1165 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_CodigoBeneficio_1165", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_codigo_beneficio LIKE :nf_produto_CodigoBeneficio_6563 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_CodigoBeneficio_6563", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2951,8 +3221,46 @@ public static NfProdutoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, 
                       }
                       else
                       {
-                         whereClause += "  nf_produto.nfp_medicamento_codigo_anvisa LIKE :nf_produto_MedicamentoCodigoAnvisa_628 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_MedicamentoCodigoAnvisa_628", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto.nfp_medicamento_codigo_anvisa LIKE :nf_produto_MedicamentoCodigoAnvisa_6803 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_MedicamentoCodigoAnvisa_6803", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "IndEscalaExato" || parametro.FieldName == "IndEscalaExata")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto.npd_ind_escala IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto.npd_ind_escala LIKE :nf_produto_IndEscala_7191 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_IndEscala_7191", NpgsqlDbType.Char,""+ parametro.Fieldvalue+""));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "CBenefExato" || parametro.FieldName == "CBenefExata")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_produto.npd_c_benef IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_produto.npd_c_benef LIKE :nf_produto_CBenef_2474 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_CBenef_2474", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3058,6 +3366,10 @@ if (!operacao.HasValue)
                      entidade.MedicamentoPrecoMaximoConsumidor = read["nfp_medicamento_preco_maximo_consumidor"] as double?;
                      entidade.PercentualMercadoriaDevolvida = read["nfp_percentual_mercadoria_devolvida"] as double?;
                      entidade.ValorIpiDevolvido = read["nfp_valor_ipi_devolvido"] as double?;
+                     entidade.IndSubst = read["npd_ind_subst"] as short?;
+                     entidade.IndEscala = (read["npd_ind_escala"] != DBNull.Value ? read["npd_ind_escala"].ToString() : null);
+                     entidade.IndCredNfe = read["npd_ind_cred_nfe"] as short?;
+                     entidade.CBenef = (read["npd_c_benef"] != DBNull.Value ? read["npd_c_benef"].ToString() : null);
                      entidade.loading = false;
                      entidade.SalvaValoresOriginais();
                      entidade.CarregamentoConcluido();
