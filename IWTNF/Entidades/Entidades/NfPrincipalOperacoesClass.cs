@@ -289,6 +289,236 @@ namespace IWTNF.Entidades.Entidades
 
 
 
+        /// <summary>
+        /// Calcula o IBS (Grupo UB)
+        /// Padrão baseado em 'calculaPis'
+        /// </summary>
+        public static NfTributoIbsClass calculaIBS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            if (nfProduto.NfProdutoIbs != null)
+            {
+                try
+                {
+                    // Validação "Fail-Fast"
+                    if (nfProduto.NfProdutoIbs.NpOrig == null || nfProduto.NfProdutoIbs.NpbCstIbs == null)
+                    {
+                        throw new Exception(string.Format(
+                            "Erro de cálculo (calculaIBS): O item Produto={0} possui 'nf_produto_ibs' informada, mas os campos obrigatórios (NpbOrig ou NpbCstIbs) estão nulos.",
+                            nfProduto.Codigo
+                        ));
+                    }
+
+                    NfTributoIbsClass toRet = new NfTributoIbsClass(usuarioAtual, singleConnection);
+
+                    // Copia campos de origem (parâmetros do client)
+                    toRet.NtbOrig = nfProduto.NfProdutoIbs.NpbOrig;
+                    toRet.NtbCstIbs = nfProduto.NfProdutoIbs.NpbCstIbs;
+                    toRet.NtbVBcIbsCred = nfProduto.NfProdutoIbs.NpbVBcIbsCred.GetValueOrDefault(0);
+                    toRet.NtbPIbsCred = nfProduto.NfProdutoIbs.NpbPIbsCred.GetValueOrDefault(0);
+                    toRet.NtbVIbsDif = nfProduto.NfProdutoIbs.NpbVIbsDif.GetValueOrDefault(0);
+                    toRet.NtbVIbsDev = nfProduto.NfProdutoIbs.NpbVIbsDev.GetValueOrDefault(0);
+
+                    // Regra UB04-10 (inferida): vIBS = vBC * (pIBS / 100)
+                    if (nfProduto.NfProdutoIbs.NpbVBaseCalcIbs != null && nfProduto.NfProdutoIbs.NpbPIbs != null)
+                    {
+                        toRet.NtbVBcIbs = nfProduto.NfProdutoIbs.NpbVBaseCalcIbs;
+                        toRet.NtbPIbs = nfProduto.NfProdutoIbs.NpbPIbs;
+                        toRet.NtbVIbs = arredondaValor(
+                            (toRet.NtbVBcIbs.Value * (toRet.NtbPIbs.Value / 100)), Arredondar, 2
+                        );
+                    }
+
+                    // Regra UB06-10 (inferida): vIBSRet = vBCRet * (pIBSRet / 100)
+                    if (nfProduto.NfProdutoIbs.NpbVBaseCalcIbsRet != null && nfProduto.NfProdutoIbs.NpbPIbsRet != null)
+                    {
+                        toRet.NtbVBcIbsRet = nfProduto.NfProdutoIbs.NpbVBaseCalcIbsRet;
+                        toRet.NtbVIbsRet = arredondaValor(
+                            (toRet.NtbVBcIbsRet.Value * (nfProduto.NfProdutoIbs.NpbPIbsRet.Value / 100)), Arredondar, 2
+                        );
+                    }
+
+                    return toRet;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Erro ao Calcular o IBS do item " + nfProduto.Codigo + ".\r\n" + e.Message);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Calcula o CBS (Grupo UB)
+        /// Padrão baseado em 'calculaPis'
+        /// </summary>
+        public static NfTributoCbsClass calculaCBS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            if (nfProduto.NfProdutoCbs != null)
+            {
+                try
+                {
+                    // Validação "Fail-Fast"
+                    if (nfProduto.NfProdutoCbs.NpsOrig == null || nfProduto.NfProdutoCbs.NpsCstCbs == null)
+                    {
+                        throw new Exception(string.Format(
+                            "Erro de cálculo (calculaCBS): O item Produto={0} possui 'nf_produto_cbs' informada, mas os campos obrigatórios (NpsOrig ou NpsCstCbs) estão nulos.",
+                            nfProduto.Codigo
+                        ));
+                    }
+
+                    NfTributoCbsClass toRet = new NfTributoCbsClass(usuarioAtual, singleConnection);
+
+                    // Copia campos de origem
+                    toRet.NtsOrig = nfProduto.NfProdutoCbs.NpsOrig;
+                    toRet.NtsCstCbs = nfProduto.NfProdutoCbs.NpsCstCbs;
+                    toRet.NtsVBcCbsCred = nfProduto.NfProdutoCbs.NpsVBcCbsCred.GetValueOrDefault(0);
+                    toRet.NtsPCbsCred = nfProduto.NfProdutoCbs.NpsPCbsCred.GetValueOrDefault(0);
+                    toRet.NtsVCbsDif = nfProduto.NfProdutoCbs.NpsVCbsDif.GetValueOrDefault(0);
+                    toRet.NtsVCbsDev = nfProduto.NfProdutoCbs.NpsVCbsDev.GetValueOrDefault(0);
+
+                    // Regra UB14-10 (inferida): vCBS = vBC * (pCBS / 100)
+                    if (nfProduto.NfProdutoCbs.NpsVBaseCalcCbs != null && nfProduto.NfProdutoCbs.NpsPCbs != null)
+                    {
+                        toRet.NtsVBcCbs = nfProduto.NfProdutoCbs.NpsVBaseCalcCbs;
+                        toRet.NtsPCbs = nfProduto.NfProdutoCbs.NpsPCbs;
+                        toRet.NtsVCbs = arredondaValor(
+                            (toRet.NtsVBcCbs.Value * (toRet.NtsPCbs.Value / 100)), Arredondar, 2
+                        );
+                    }
+
+                    // Regra UB16-10 (inferida): vCBSRet = vBCRet * (pCBSRet / 100)
+                    if (nfProduto.NfProdutoCbs.NpsVBaseCalcCbsRet != null && nfProduto.NfProdutoCbs.NpsPCbsRet != null)
+                    {
+                        toRet.NtsVBcCbsRet = nfProduto.NfProdutoCbs.NpsVBaseCalcCbsRet;
+                        toRet.NtsVCbsRet = arredondaValor(
+                            (toRet.NtsVBcCbsRet.Value * (nfProduto.NfProdutoCbs.NpsPCbsRet.Value / 100)), Arredondar, 2
+                        );
+                    }
+
+                    return toRet;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Erro ao Calcular o CBS do item " + nfProduto.Codigo + ".\r\n" + e.Message);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Calcula o IS (Grupo UC)
+        /// Padrão baseado em 'calculaPis'
+        /// </summary>
+        public static NfTributoIsClass calculaIS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            if (nfProduto.NfProdutoIs != null)
+            {
+                try
+                {
+                    // Validação "Fail-Fast"
+                    if (nfProduto.NfProdutoIs.NplOrig == null || nfProduto.NfProdutoIs.NplCstIs == null)
+                    {
+                        throw new Exception(string.Format(
+                            "Erro de cálculo (calculaIS): O item Produto={0} possui 'nf_produto_is' informada, mas os campos obrigatórios (NplOrig ou NplCstIs) estão nulos.",
+                            nfProduto.Codigo
+                        ));
+                    }
+
+                    NfTributoIsClass toRet = new NfTributoIsClass(usuarioAtual, singleConnection);
+
+                    // Copia campos de origem
+                    toRet.NtlOrig = nfProduto.NfProdutoIs.NplOrig;
+                    toRet.NtlCstIs = nfProduto.NfProdutoIs.NplCstIs;
+                    toRet.NtlIndSomIs = nfProduto.NfProdutoIs.NplIndSomIs; // Importante para totais
+                    toRet.NtlVIsDev = nfProduto.NfProdutoIs.NplVIsDev.GetValueOrDefault(0);
+
+                    // Regra UC11-10 (inferida): vIS = vBCIS * (pIS / 100)
+                    if (nfProduto.NfProdutoIs.NplVBaseCalcIs != null && nfProduto.NfProdutoIs.NplPIs != null)
+                    {
+                        toRet.NtlVBcIs = nfProduto.NfProdutoIs.NplVBaseCalcIs;
+                        toRet.NtlPIs = nfProduto.NfProdutoIs.NplPIs;
+                        toRet.NtlVIs = arredondaValor(
+                            (toRet.NtlVBcIs.Value * (toRet.NtlPIs.Value / 100)), Arredondar, 2
+                        );
+                    }
+
+                    // Regra UC13-10 (inferida): vISRet = vBCISRet * (pISRet / 100)
+                    if (nfProduto.NfProdutoIs.NplVBaseCalcIsRet != null && nfProduto.NfProdutoIs.NplPIsRet != null)
+                    {
+                        toRet.NtlVBcIsRet = nfProduto.NfProdutoIs.NplVBaseCalcIsRet;
+                        toRet.NtlVIsRet = arredondaValor(
+                            (toRet.NtlVBcIsRet.Value * (nfProduto.NfProdutoIs.NplPIsRet.Value / 100)), Arredondar, 2
+                        );
+                    }
+
+                    return toRet;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Erro ao Calcular o IS do item " + nfProduto.Codigo + ".\r\n" + e.Message);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// Calcula o Imposto Devolvido (Grupo UA)
+        /// Padrão baseado em 'calculaPis'
+        /// </summary>
+        public static NfTributoDevolucaoClass calculaDevolucao(NfProdutoClass nfProduto, NfItemTributoIcmsClass nfItemTributoIcms, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            // Propriedade 'NpvPDev' da tabela 'nf_produto_devolucao'
+            if (nfProduto.NfProdutoDevolucao != null && nfProduto.NfProdutoDevolucao.NpvPDev != null && nfProduto.NfProdutoDevolucao.NpvPDev > 0)
+            {
+                try
+                {
+                    // Validação "Fail-Fast"
+                    if (nfProduto.NpdVprod == null)
+                    {
+                        throw new Exception(string.Format(
+                            "Erro de cálculo (calculaDevolucao): O item Produto={0} possui 'nf_produto_devolucao' com pDev > 0, mas o vProd (NpdVprod) do item é nulo, impedindo o cálculo do vIPIDev.",
+                            nfProduto.Codigo
+                        ));
+                    }
+
+                    NfTributoDevolucaoClass toRet = new NfTributoDevolucaoClass(usuarioAtual, singleConnection);
+
+                    double pDev = nfProduto.NfProdutoDevolucao.NpvPDev.Value / 100;
+
+                    // Regra UA02-10: vIPIDev = vProd * pDev
+                    toRet.NtvVIpiDev = arredondaValor(nfProduto.NpdVprod.Value * pDev, Arredondar, 2);
+
+                    // Regras UA03-10 e UA04-10 (inferência)
+                    // A NT é ambígua, assumindo vBC * pDev
+                    if (nfItemTributoIcms != null && nfItemTributoIcms.ValorBc > 0)
+                    {
+                        toRet.NtvVBcIcmsDev = nfItemTributoIcms.ValorBc; // Base original
+                        toRet.NtvVIcmsDev = arredondaValor(nfItemTributoIcms.ValorBc * pDev, Arredondar, 2);
+                    }
+
+                    // TODO: Validar regras de cálculo para ICMS-ST, PIS e COFINS devolvidos.
+
+                    return toRet;
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Erro ao Calcular a Devolução de Imposto (UA) do item " + nfProduto.Codigo + ".\r\n" + e.Message);
+                }
+            }
+            else
+            {
+                return null;
+            }
+        }
 
         public static NfItemTributoIssClass calculaIss(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection singleConnection)
         {

@@ -202,6 +202,63 @@ namespace IWTNF.Entidades.Entidades
             }
         }
 
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfProdutoCbsClass NfProdutoCbs
+        {
+            get { return this.NfItem.CollectionNfProdutoCbsClassNfItem != null && this.NfItem.CollectionNfProdutoCbsClassNfItem.Count > 0 ? this.NfItem.CollectionNfProdutoCbsClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfProdutoCbsClassNfItem == null) NfItem.CollectionNfProdutoCbsClassNfItem = new BindingList<NfProdutoCbsClass>();
+                if (NfItem.CollectionNfProdutoCbsClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfProdutoCbsClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfProdutoCbsClassNfItem[0] = value;
+                }
+            }
+        }
+
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfProdutoIbsClass NfProdutoIbs
+        {
+            get { return this.NfItem.CollectionNfProdutoIbsClassNfItem != null && this.NfItem.CollectionNfProdutoIbsClassNfItem.Count > 0 ? this.NfItem.CollectionNfProdutoIbsClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfProdutoIbsClassNfItem == null) NfItem.CollectionNfProdutoIbsClassNfItem = new BindingList<NfProdutoIbsClass>();
+                if (NfItem.CollectionNfProdutoIbsClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfProdutoIbsClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfProdutoIbsClassNfItem[0] = value;
+                }
+            }
+        }
+
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfProdutoIsClass NfProdutoIs
+        {
+            get { return this.NfItem.CollectionNfProdutoIsClassNfItem != null && this.NfItem.CollectionNfProdutoIsClassNfItem.Count > 0 ? this.NfItem.CollectionNfProdutoIsClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfProdutoIsClassNfItem == null) NfItem.CollectionNfProdutoIsClassNfItem = new BindingList<NfProdutoIsClass>();
+                if (NfItem.CollectionNfProdutoIsClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfProdutoIsClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfProdutoIsClassNfItem[0] = value;
+                }
+            }
+        }
+
         #endregion
 
         public void ExcluirRastreabilidade(NfProdutoRastreabilidadeClass rastreabilidade)
