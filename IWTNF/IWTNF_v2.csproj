@@ -1,0 +1,197 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4AD174D1-82C0-463A-9890-CA4264AEB2C5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IWTNF</RootNamespace>
+    <AssemblyName>IWTNF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\Recursos.C#.DLLs\IWTNF\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Configurations, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Recursos.C#.DLLs\Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="DBProvider, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Recursos.C#.DLLs\DBProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTDotNetLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Recursos.C#.DLLs\IWTDotNetLib.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTFunctions, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Recursos.C#.DLLs\IWTFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTPostgreNpgsql, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Recursos.C#.DLLs\IWTPostgreNpgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\Recursos.C#.DLLs\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ArredondamentoNF.cs" />
+    <Compile Include="Entidades\Base\NfPagamentoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfPrincipalAutorizacaoXmlBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoRastreabilidadeBaseClass.cs" />
+    <Compile Include="Entidades\Entidades\NfPagamentoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfPrincipalAutorizacaoXmlClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoRastreabilidadeClass.cs" />
+    <Compile Include="GeradorArquivoMagnetico.cs" />
+    <Compile Include="GeradorArquivoNFe.cs" />
+    <Compile Include="ArquivoMagnetico.cs" />
+    <Compile Include="Entidades\Base\Enuns.cs" />
+    <Compile Include="Entidades\Base\NfAtributoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfClienteBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfClienteEnderecoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfCobrancaBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfDuplicataBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfEmitenteBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfEmitenteEnderecoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfExtrasBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfFaturaBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoCofinsBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoIcmsBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoIimpBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoIpiBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoIssBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfItemTributoPisBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfNotasRelacionadasBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfPrincipalBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfPrincipalCancelamentoJustificativaBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoCofinsBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoDeclaracaoImportacaoAdicaoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoDeclaracaoImportacaoBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoIcmsBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoIimpBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoIpiBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoIssBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfProdutoPisBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfTotaisBaseClass.cs" />
+    <Compile Include="Entidades\Base\NfTransporteBaseClass.cs" />
+    <Compile Include="Entidades\Entidades\NfAtributoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfClienteClass.cs" />
+    <Compile Include="Entidades\Entidades\NfClienteEnderecoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfCobrancaClass.cs" />
+    <Compile Include="Entidades\Entidades\NfDuplicataClass.cs" />
+    <Compile Include="Entidades\Entidades\NfEmitenteClass.cs" />
+    <Compile Include="Entidades\Entidades\NfEmitenteEnderecoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfExtrasClass.cs" />
+    <Compile Include="Entidades\Entidades\NfFaturaClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoCofinsClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoIcmsClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoIimpClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoIpiClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoIssClass.cs" />
+    <Compile Include="Entidades\Entidades\NfItemTributoPisClass.cs" />
+    <Compile Include="Entidades\Entidades\NfNotasRelacionadasClass.cs" />
+    <Compile Include="Entidades\Entidades\NfPrincipalCancelamentoJustificativaClass.cs" />
+    <Compile Include="Entidades\Entidades\NfPrincipalClass.cs" />
+    <Compile Include="Entidades\Entidades\NfPrincipalOperacoesClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoCofinsClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoDeclaracaoImportacaoAdicaoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoDeclaracaoImportacaoClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoIcmsClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoIimpClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoIpiClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoIssClass.cs" />
+    <Compile Include="Entidades\Entidades\NfProdutoPisClass.cs" />
+    <Compile Include="Entidades\Entidades\NfTotaisClass.cs" />
+    <Compile Include="Entidades\Entidades\NfTransporteClass.cs" />
+    <Compile Include="IObservacaoCustomizada.cs" />
+    <Compile Include="IWTNfFunctionsClass.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

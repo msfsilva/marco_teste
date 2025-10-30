@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D08D344D-2EE4-4983-8B85-CDE8693BF9B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IWTNFCompleto.BibliotecaDatasets</RootNamespace>
+    <AssemblyName>IWTNFCompleto.BibliotecaDatasets</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\Recursos.C#.DLLs\IWTNFeCompleto\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Glob, Version=4.0.0.0, Culture=neutral, PublicKeyToken=2561fd83231d3038, processorArchitecture=MSIL">
+      <HintPath>..\packages\Glob.cs.4.0.166\lib\net40\Glob.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Mono.Options, Version=5.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Mono.Options.5.3.0.1\lib\net4-client\Mono.Options.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.IO.Abstractions, Version=7.0.0.0, Culture=neutral, PublicKeyToken=96bf224d23c43e59, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Abstractions.7.0.7\lib\net40\System.IO.Abstractions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="XmlSchemaClassGenerator, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\XmlSchemaClassGenerator-beta.2.0.322\lib\net45\XmlSchemaClassGenerator.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Eventos\Evento_Canc_PL_v101\eventoCancNFe_v1_00.cs" />
+    <Compile Include="Eventos\Evento_CCe_PL_v101\CCe_v1_00.cs" />
+    <Compile Include="Utf8StringWriter.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="v4_0\CamadaCompatibilidade.cs" />
+    <Compile Include="v4_0\CamadaCompatibilidadeEventos.cs" />
+    <Compile Include="v4_0\KeyInfoType.cs" />
+    <Compile Include="v4_0\ReferenceType.cs" />
+    <Compile Include="v4_0\ReferenceTypeDigestMethod.cs" />
+    <Compile Include="v4_0\SignatureType.cs" />
+    <Compile Include="v4_0\SignatureValueType.cs" />
+    <Compile Include="v4_0\SignedInfoType.cs" />
+    <Compile Include="v4_0\SignedInfoTypeCanonicalizationMethod.cs" />
+    <Compile Include="v4_0\SignedInfoTypeSignatureMethod.cs" />
+    <Compile Include="v4_0\TAmb.cs" />
+    <Compile Include="v4_0\TCodUfIBGE.cs" />
+    <Compile Include="v4_0\TConsReciNFe.cs" />
+    <Compile Include="v4_0\TConsSitNFe.cs" />
+    <Compile Include="v4_0\TConsSitNFeXServ.cs" />
+    <Compile Include="v4_0\TConsStatServ.cs" />
+    <Compile Include="v4_0\TConsStatServXServ.cs" />
+    <Compile Include="v4_0\TCOrgaoIBGE.cs" />
+    <Compile Include="v4_0\TEndereco.cs" />
+    <Compile Include="v4_0\TEnderEmi.cs" />
+    <Compile Include="v4_0\TEnderEmiCPais.cs" />
+    <Compile Include="v4_0\TEnderEmiXPais.cs" />
+    <Compile Include="v4_0\TEnviNFe.cs" />
+    <Compile Include="v4_0\TEnviNFeIndSinc.cs" />
+    <Compile Include="v4_0\TEvento.cs" />
+    <Compile Include="v4_0\TEventoInfEvento.cs" />
+    <Compile Include="v4_0\TEventoInfEventoDetEvento.cs" />
+    <Compile Include="v4_0\TFinNFe.cs" />
+    <Compile Include="v4_0\TInfRespTec.cs" />
+    <Compile Include="v4_0\TInutNFe.cs" />
+    <Compile Include="v4_0\TInutNFeInfInut.cs" />
+    <Compile Include="v4_0\TInutNFeInfInutXServ.cs" />
+    <Compile Include="v4_0\TIpi.cs" />
+    <Compile Include="v4_0\TIpiIPINT.cs" />
+    <Compile Include="v4_0\TIpiIPINTCST.cs" />
+    <Compile Include="v4_0\TIpiIPITrib.cs" />
+    <Compile Include="v4_0\TIpiIPITribCST.cs" />
+    <Compile Include="v4_0\TLocal.cs" />
+    <Compile Include="v4_0\TMod.cs" />
+    <Compile Include="v4_0\TNFe.cs" />
+    <Compile Include="v4_0\TNFeInfNFe.cs" />
+    <Compile Include="v4_0\TNFeInfNFeAutXML.cs" />
+    <Compile Include="v4_0\TNFeInfNFeAvulsa.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCana.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCanaDeduc.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCanaForDia.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCobr.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCobrDup.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCobrFat.cs" />
+    <Compile Include="v4_0\TNFeInfNFeCompra.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDest.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDestIndIEDest.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDet.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImposto.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSAliq.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSAliqCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSNT.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSNTCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSOutr.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSOutrCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSQtde.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSCOFINSQtdeCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoCOFINSSTIndSomaCOFINSST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoDevol.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoDevolIPI.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS00.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS00CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS00ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS02.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS02CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS10.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS10CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS10ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS10ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS10MotDesICMSST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS15.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS15CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS15MotRedAdRem.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS20.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS20CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS20IndDeduzDeson.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS20ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS20MotDesICMS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS30.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS30CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS30IndDeduzDeson.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS30ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS30MotDesICMS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS40.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS40CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS40IndDeduzDeson.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS40MotDesICMS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS51.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS51CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS51ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS53.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS53CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS60.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS60CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS61.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS61CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70IndDeduzDeson.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70MotDesICMS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS70MotDesICMSST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90CST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90IndDeduzDeson.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90MotDesICMS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMS90MotDesICMSST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSPart.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSPartCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSPartModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSPartModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN101.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN101CSOSN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN102.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN102CSOSN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN201.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN201CSOSN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN201ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN202.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN202CSOSN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN202ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN500.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN500CSOSN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN900.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN900CSOSN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN900ModBC.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSN900ModBCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSICMSSTCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSUFDest.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoICMSUFDestPICMSInter.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoII.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoISSQN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoISSQNIndIncentivo.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoISSQNIndISS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPIS.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISAliq.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISAliqCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISNT.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISNTCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISOutr.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISOutrCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISQtde.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISPISQtdeCST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetImpostoPISSTIndSomaPISST.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetObsItem.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetObsItemObsCont.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetObsItemObsFisco.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProd.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdArma.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdArmaTpArma.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdComb.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdCombCIDE.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdCombEncerrante.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdCombOrigComb.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdCombOrigCombIndImport.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdDetExport.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdDetExportExportInd.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdDI.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdDIAdi.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdDITpIntermedio.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdDITpViaTransp.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdGCred.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdIndEscala.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdIndTot.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdInfProdEmb.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdInfProdNFF.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdMed.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdRastro.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdVeicProd.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdVeicProdCondVeic.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdVeicProdTpOp.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdVeicProdTpRest.cs" />
+    <Compile Include="v4_0\TNFeInfNFeDetProdVeicProdVIN.cs" />
+    <Compile Include="v4_0\TNFeInfNFeEmit.cs" />
+    <Compile Include="v4_0\TNFeInfNFeEmitCRT.cs" />
+    <Compile Include="v4_0\TNFeInfNFeExporta.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIde.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeIdDest.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeIndFinal.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeIndIntermed.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeIndPres.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFref.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFrefRefECF.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFrefRefECFMod.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFrefRefNF.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFrefRefNFMod.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFrefRefNFP.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeNFrefRefNFPMod.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeTpEmis.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeTpImp.cs" />
+    <Compile Include="v4_0\TNFeInfNFeIdeTpNF.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfAdic.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfAdicObsCont.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfAdicObsFisco.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfAdicProcRef.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfAdicProcRefIndProc.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfAdicProcRefTpAto.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfIntermed.cs" />
+    <Compile Include="v4_0\TNFeInfNFeInfSolicNFF.cs" />
+    <Compile Include="v4_0\TNFeInfNFePag.cs" />
+    <Compile Include="v4_0\TNFeInfNFePagDetPag.cs" />
+    <Compile Include="v4_0\TNFeInfNFePagDetPagCard.cs" />
+    <Compile Include="v4_0\TNFeInfNFePagDetPagCardTpIntegra.cs" />
+    <Compile Include="v4_0\TNFeInfNFePagDetPagIndPag.cs" />
+    <Compile Include="v4_0\TNFeInfNFeSupl.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTotal.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTotalICMSTot.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTotalISSQNtot.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTotalISSQNtotCRegTrib.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTotalRetTrib.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTransp.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTranspModFrete.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTranspRetTransp.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTranspTransporta.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTranspVol.cs" />
+    <Compile Include="v4_0\TNFeInfNFeTranspVolLacres.cs" />
+    <Compile Include="v4_0\TNfeProc.cs" />
+    <Compile Include="v4_0\Torig.cs" />
+    <Compile Include="v4_0\TProcEmi.cs" />
+    <Compile Include="v4_0\TProcEvento.cs" />
+    <Compile Include="v4_0\TProcInutNFe.cs" />
+    <Compile Include="v4_0\TProtNFe.cs" />
+    <Compile Include="v4_0\TProtNFeInfProt.cs" />
+    <Compile Include="v4_0\TransformsType.cs" />
+    <Compile Include="v4_0\TransformType.cs" />
+    <Compile Include="v4_0\TRetCancNFe.cs" />
+    <Compile Include="v4_0\TRetCancNFeInfCanc.cs" />
+    <Compile Include="v4_0\TRetConsReciNFe.cs" />
+    <Compile Include="v4_0\TRetConsSitNFe.cs" />
+    <Compile Include="v4_0\TRetConsStatServ.cs" />
+    <Compile Include="v4_0\TRetEnviNFe.cs" />
+    <Compile Include="v4_0\TRetEnviNFeInfRec.cs" />
+    <Compile Include="v4_0\TRetEvento.cs" />
+    <Compile Include="v4_0\TRetEventoInfEvento.cs" />
+    <Compile Include="v4_0\TRetInutNFe.cs" />
+    <Compile Include="v4_0\TRetInutNFeInfInut.cs" />
+    <Compile Include="v4_0\TTransformURI.cs" />
+    <Compile Include="v4_0\TUf.cs" />
+    <Compile Include="v4_0\TUfEmi.cs" />
+    <Compile Include="v4_0\TVeiculo.cs" />
+    <Compile Include="v4_0\TVerConsSitNFe.cs" />
+    <Compile Include="v4_0\X509DataType.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Eventos\Evento_Canc_PL_v101\e110111_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\envEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\eventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\leiauteEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\procEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\retEnvEventoCancNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\tiposBasico_v1.03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\wrapper.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Canc_PL_v101\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\CCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\e110110_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\envCCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\leiauteCCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\procCCeNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\retEnvCCe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\tiposBasico_v1.03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\wrapper.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_CCe_PL_v101\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\e110140_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\envEPEC_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\EPEC_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\leiauteEPEC_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\procEPEC_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\retEnvEPEC_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\tiposBasico_v1.03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_EPEC_PL_v101\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Generico_PL_v101\envEvento_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Generico_PL_v101\leiauteEvento_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Generico_PL_v101\procEventoNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Generico_PL_v101\retEnvEvento_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Generico_PL_v101\tiposBasico_v1.03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_Generico_PL_v101\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\confRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\e210200_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\e210210_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\e210220_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\e210240_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\envConfRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\leiauteConfRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\procConfRecebtoNFe_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\retEnvConfRecebto_v1.00.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\tiposBasico_v1.03.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Eventos\Evento_ManifestaDest_PL_v101\xmldsig-core-schema_v1.01.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

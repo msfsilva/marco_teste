@@ -1,0 +1,158 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{489430BE-B0CC-49AF-8416-075BF9ED878B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibliotecaValidacoes</RootNamespace>
+    <AssemblyName>BibliotecaValidacoes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Configurations">
+      <HintPath>..\..\Recursos.C#.DLLs\Configurations.dll</HintPath>
+    </Reference>
+    <Reference Include="IWTFunctions">
+      <HintPath>..\..\Recursos.C#.DLLs\IWTFunctions.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="B.IndentificaoNfe\B07_20.cs" />
+    <Compile Include="B.IndentificaoNfe\B09_20.cs" />
+    <Compile Include="B.IndentificaoNfe\B09_10.cs" />
+    <Compile Include="B.IndentificaoNfe\B09_40.cs" />
+    <Compile Include="B.IndentificaoNfe\B10_10.cs" />
+    <Compile Include="B.IndentificaoNfe\B11_10.cs" />
+    <Compile Include="B.IndentificaoNfe\B11a_10.cs" />
+    <Compile Include="B.IndentificaoNfe\B25_20.cs" />
+    <Compile Include="B.IndentificaoNfe\B25a_10.cs" />
+    <Compile Include="B.IndentificaoNfe\B25b_20.cs" />
+    <Compile Include="BA.DocumentoFiscalReferenciado\BA01_10.cs" />
+    <Compile Include="C.Emitente\C18_10.cs" />
+    <Compile Include="UA.DevolucaoTributos\UA01_20.cs" />
+    <Compile Include="E.Destinatario\E02_20.cs" />
+    <Compile Include="I.ProdutosServicos\I17_10.cs" />
+    <Compile Include="N.ICMS\N12a_44.cs" />
+    <Compile Include="N.ICMS\N12a_40.cs" />
+    <Compile Include="N.ICMS\N12a_34.cs" />
+    <Compile Include="N.ICMS\N12a_20.cs" />
+    <Compile Include="N.ICMS\N12_60.cs" />
+    <Compile Include="N.ICMS\N12_44.cs" />
+    <Compile Include="N.ICMS\N12_34.cs" />
+    <Compile Include="Y.Cobranca\Y09_40.cs" />
+    <Compile Include="Y.Cobranca\Y09_50.cs" />
+    <Compile Include="YA.FormasPagamento\YA03_10_20.cs" />
+    <Compile Include="YA.FormasPagamento\YA05_10.cs" />
+    <Compile Include="YA.FormasPagamento\YA04a_10.cs" />
+    <Compile Include="YA.FormasPagamento\YA04_10.cs" />
+    <Compile Include="ZC.Cana\ZC01_10.cs" />
+    <Compile Include="ZB.Compra\ZB01_10.cs" />
+    <Compile Include="YA.FormasPagamento\YA01_20.cs" />
+    <Compile Include="YA.FormasPagamento\YA01_10.cs" />
+    <Compile Include="Y.Cobranca\Y01_10.cs" />
+    <Compile Include="X.Transporte\X25b_10.cs" />
+    <Compile Include="X.Transporte\X25a_10.cs" />
+    <Compile Include="X.Transporte\X18_10.cs" />
+    <Compile Include="X.Transporte\X22_10.cs" />
+    <Compile Include="X.Transporte\X11_10.cs" />
+    <Compile Include="X.Transporte\X03_20.cs" />
+    <Compile Include="X.Transporte\X03_10.cs" />
+    <Compile Include="X.Transporte\X02_10.cs" />
+    <Compile Include="W.Total\W16a_10.cs" />
+    <Compile Include="W.Total\W16_70.cs" />
+    <Compile Include="W.Total\W16_60.cs" />
+    <Compile Include="W.Total\W16_50.cs" />
+    <Compile Include="W.Total\W16_40.cs" />
+    <Compile Include="W.Total\W16_30.cs" />
+    <Compile Include="W.Total\W16_10.cs" />
+    <Compile Include="W.Total\W15_10.cs" />
+    <Compile Include="W.Total\W14_10.cs" />
+    <Compile Include="W.Total\W13_10.cs" />
+    <Compile Include="W.Total\W12_10.cs" />
+    <Compile Include="W.Total\W11_10.cs" />
+    <Compile Include="W.Total\W10_10.cs" />
+    <Compile Include="W.Total\W09_10.cs" />
+    <Compile Include="W.Total\W08_10.cs" />
+    <Compile Include="W.Total\W07_10.cs" />
+    <Compile Include="W.Total\W06_10.cs" />
+    <Compile Include="W.Total\W05_10.cs" />
+    <Compile Include="W.Total\W04a_10.cs" />
+    <Compile Include="W.Total\W04_10.cs" />
+    <Compile Include="W.Total\W03_10.cs" />
+    <Compile Include="T.CofinsST\T01_10.cs" />
+    <Compile Include="R.PISST\R01_10.cs" />
+    <Compile Include="P.II\P01_10.cs" />
+    <Compile Include="E.Destinatario\E18_10.cs" />
+    <Compile Include="E.Destinatario\E17_10.cs" />
+    <Compile Include="E.Destinatario\E16a_10.cs" />
+    <Compile Include="E.Destinatario\E05_20.cs" />
+    <Compile Include="E.Destinatario\E01_20.cs" />
+    <Compile Include="I.ProdutosServicos\I17b_10.cs" />
+    <Compile Include="I.ProdutosServicos\I11_20.cs" />
+    <Compile Include="I.ProdutosServicos\I11_10.cs" />
+    <Compile Include="I.ProdutosServicos\I08_150.cs" />
+    <Compile Include="I.ProdutosServicos\I08_20.cs" />
+    <Compile Include="I.ProdutosServicos\I08_10.cs" />
+    <Compile Include="I.ProdutosServicos\I05_24.cs" />
+    <Compile Include="I.ProdutosServicos\I05_10.cs" />
+    <Compile Include="I.ProdutosServicos\I12_10.cs" />
+    <Compile Include="I.ProdutosServicos\I03_10.cs" />
+    <Compile Include="IValidacao.cs" />
+    <Compile Include="N.ICMS\N17_20.cs" />
+    <Compile Include="N.ICMS\N12a_10.cs" />
+    <Compile Include="N.ICMS\N12_50.cs" />
+    <Compile Include="N.ICMS\N12_40.cs" />
+    <Compile Include="N.ICMS\N12_30.cs" />
+    <Compile Include="N.ICMS\N12_20.cs" />
+    <Compile Include="O.IPI\O01_10.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BibliotecasDatasets\BibliotecaDatasets.csproj">
+      <Project>{D08D344D-2EE4-4983-8B85-CDE8693BF9B6}</Project>
+      <Name>BibliotecaDatasets</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

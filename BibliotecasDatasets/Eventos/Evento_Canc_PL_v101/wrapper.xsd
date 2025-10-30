@@ -1,0 +1,12 @@
+﻿<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>
+  <generateClasses language='CS' namespace='IWTNFCompleto.BibliotecaDatasets.v3_10'>
+    <schema>tiposBasico_v1.03.xsd</schema>
+    <schema>xmldsig-core-schema_v1.01.xsd</schema>
+    <schema>e110111_v1.00.xsd</schema>
+    <schema>envEventoCancNFe_v1.00.xsd</schema>
+    <schema>leiauteEventoCancNFe_v1.00.xsd</schema>
+    <schema>procEventoCancNFe_v1.00.xsd</schema>
+    <schema>retEnvEventoCancNFe_v1.00.xsd</schema>
+    <schema>.\eventoCancNFe_v1.00.xsd</schema>
+  </generateClasses>
+</xsd>

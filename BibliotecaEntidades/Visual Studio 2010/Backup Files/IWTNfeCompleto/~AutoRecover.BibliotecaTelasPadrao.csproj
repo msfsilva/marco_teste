@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{7B07B96F-6D22-4BAF-B7EE-EE7EA6706F8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BibliotecaTelasPadrao</RootNamespace>
+    <AssemblyName>BibliotecaTelasPadrao</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ComplexLoginModule">
+      <HintPath>..\..\DLLs\ComplexLoginModule.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DBProvider">
+      <HintPath>..\..\DLLs\DBProvider.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="IWTPostgreNpgsql">
+      <HintPath>..\..\DLLs\IWTPostgreNpgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>..\..\DLLs\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Telas\CadFaixaInutilizacaoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadFaixaInutilizacaoForm.Designer.cs">
+      <DependentUpon>CadFaixaInutilizacaoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadFaixaInutilizacaoListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadFaixaInutilizacaoListForm.Designer.cs">
+      <DependentUpon>CadFaixaInutilizacaoListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Telas\CadNFeEmitidaCancelamentoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaCancelamentoForm.Designer.cs">
+      <DependentUpon>CadNFeEmitidaCancelamentoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaDanfeReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaDanfeReportForm.Designer.cs">
+      <DependentUpon>CadNFeEmitidaDanfeReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaForm.Designer.cs">
+      <DependentUpon>CadNFeEmitidaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Telas\CadNFeEmitidaListForm.Designer.cs">
+      <DependentUpon>CadNFeEmitidaListForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Telas\CadFaixaInutilizacaoForm.resx">
+      <DependentUpon>CadFaixaInutilizacaoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadFaixaInutilizacaoListForm.resx">
+      <DependentUpon>CadFaixaInutilizacaoListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadNFeEmitidaCancelamentoForm.resx">
+      <DependentUpon>CadNFeEmitidaCancelamentoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadNFeEmitidaDanfeReportForm.resx">
+      <DependentUpon>CadNFeEmitidaDanfeReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Telas\CadNFeEmitidaListForm.resx">
+      <DependentUpon>CadNFeEmitidaListForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\IWTDotNetLib\IWTDotNetLib\IWTDotNetLib.csproj">
+      <Project>{66E020F3-BBC2-4F41-B401-D9D304FC1FFC}</Project>
+      <Name>IWTDotNetLib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BibliotecasDatasets\BibliotecaDatasets.csproj">
+      <Project>{D08D344D-2EE4-4983-8B85-CDE8693BF9B6}</Project>
+      <Name>BibliotecaDatasets</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IWTNFCompleto\IWTNFCompleto.csproj">
+      <Project>{E3B20426-862F-4A10-A759-5F258F5B97B6}</Project>
+      <Name>IWTNFCompleto</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

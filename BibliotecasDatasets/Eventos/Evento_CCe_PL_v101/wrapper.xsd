@@ -1,0 +1,12 @@
+﻿<xsd xmlns='http://microsoft.com/dotnet/tools/xsd/'>
+  <generateClasses language='CS' namespace='IWTNFCompleto.Eventos.Evento_CCe_PL_v101'>
+    <schema>tiposBasico_v1.03.xsd</schema>
+    <schema>xmldsig-core-schema_v1.01.xsd</schema>
+    <schema>e110110_v1.00.xsd</schema>
+    <schema>envCCe_v1.00.xsd</schema>
+    <schema>leiauteCCe_v1.00.xsd</schema>
+    <schema>procCCeNFe_v1.00.xsd</schema>
+    <schema>retEnvCCe_v1.00.xsd</schema>
+    <schema>.\CCe_v1.00.xsd</schema>
+  </generateClasses>
+</xsd>
