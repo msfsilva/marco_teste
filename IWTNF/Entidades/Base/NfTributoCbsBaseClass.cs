@@ -27,6 +27,8 @@ protected const string ErroDelete = "Erro ao excluir o NfTributoCbsClass  ";
 protected const string ErroSave = "Erro ao salvar o NfTributoCbsClass.";
 protected const string ErroEntityUidObrigatorio = "O campo EntityUid é obrigatório";
 protected const string ErroEntityUidComprimento = "O campo EntityUid deve ter no máximo 36 caracteres";
+protected const string ErroCstCbsObrigatorio = "O campo CstCbs é obrigatório";
+protected const string ErroCstCbsComprimento = "O campo CstCbs deve ter no máximo 2 caracteres";
 protected const string ErroNfItemObrigatorio = "O campo NfItem é obrigatório";
 protected const string ErroValidate = "Erro ao validar os dados do NfTributoCbsClass.";
 protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfTributoCbsClass está sendo utilizada.";
@@ -143,6 +145,34 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfTribu
             } 
         } 
 
+       protected double? _vCbsCredOriginal{get;private set;}
+       private double? _vCbsCredOriginalCommited{get; set;}
+        private double? _valueVCbsCred;
+         [Column("nts_v_cbs_cred")]
+        public virtual double? VCbsCred
+         { 
+            get { return this._valueVCbsCred; } 
+            set 
+            { 
+                if (this._valueVCbsCred == value)return;
+                 this._valueVCbsCred = value; 
+            } 
+        } 
+
+       protected string _cstCbsOriginal{get;private set;}
+       private string _cstCbsOriginalCommited{get; set;}
+        private string _valueCstCbs;
+         [Column("nts_cst_cbs")]
+        public virtual string CstCbs
+         { 
+            get { return this._valueCstCbs; } 
+            set 
+            { 
+                if (this._valueCstCbs == value)return;
+                 this._valueCstCbs = value; 
+            } 
+        } 
+
         public NfTributoCbsBaseClass(AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection singleConnection)
             : base(usuarioAtual, singleConnection)
         {
@@ -153,7 +183,8 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfTribu
         protected void InitDefaults()
         {
             base.SalvarValoresAntigosHabilitado = false;
-             base.SalvarValoresAntigosHabilitado = true;
+            this.VCbsCred = 0;
+            base.SalvarValoresAntigosHabilitado = true;
          }
 
 public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection connection, Guid? operacao = null)
@@ -164,6 +195,14 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
         {
             try
             {
+                if (string.IsNullOrEmpty(CstCbs))
+                {
+                    throw new Exception(ErroCstCbsObrigatorio);
+                }
+                if (CstCbs.Length >2)
+                {
+                    throw new Exception( ErroCstCbsComprimento);
+                }
                 if ( _valueNfItem == null)
                 {
                     throw new Exception(ErroNfItemObrigatorio);
@@ -232,7 +271,9 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                         "  nts_v_cbs_dev = :nts_v_cbs_dev, " + 
                         "  nts_p_cbs = :nts_p_cbs, " + 
                         "  version = :version, " + 
-                        "  entity_uid = :entity_uid "+
+                        "  entity_uid = :entity_uid, " + 
+                        "  nts_v_cbs_cred = :nts_v_cbs_cred, " + 
+                        "  nts_cst_cbs = :nts_cst_cbs "+
                         "WHERE  " +
                         "  id_nf_tributo_cbs = :id " +
                         "RETURNING id_nf_tributo_cbs;";
@@ -252,7 +293,9 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                         "  nts_v_cbs_dev , " + 
                         "  nts_p_cbs , " + 
                         "  version , " + 
-                        "  entity_uid  "+
+                        "  entity_uid , " + 
+                        "  nts_v_cbs_cred , " + 
+                        "  nts_cst_cbs  "+
                         ")  " +
                         "VALUES ( " +
                         "  :id_nf_item , " + 
@@ -264,7 +307,9 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                         "  :nts_v_cbs_dev , " + 
                         "  :nts_p_cbs , " + 
                         "  :version , " + 
-                        "  :entity_uid  "+
+                        "  :entity_uid , " + 
+                        "  :nts_v_cbs_cred , " + 
+                        "  :nts_cst_cbs  "+
                         ")RETURNING id_nf_tributo_cbs;";
                 }
 
@@ -291,6 +336,10 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.Version ?? DBNull.Value;
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("entity_uid", NpgsqlDbType.Varchar));
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.EntityUid ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nts_v_cbs_cred", NpgsqlDbType.Double));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.VCbsCred ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nts_cst_cbs", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.CstCbs ?? DBNull.Value;
 
  
                  bool inserting = this.ID == -1; 
@@ -342,6 +391,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
  toRet.VCbsDif= entidadeCopiar.VCbsDif;
  toRet.VCbsDev= entidadeCopiar.VCbsDev;
  toRet.PCbs= entidadeCopiar.PCbs;
+ toRet.VCbsCred= entidadeCopiar.VCbsCred;
+ toRet.CstCbs= entidadeCopiar.CstCbs;
 
             return toRet;
             }
@@ -372,6 +423,10 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
        _pCbsOriginalCommited = _pCbsOriginal;
        _versionOriginal = Version;
        _versionOriginalCommited = _versionOriginal ;
+       _vCbsCredOriginal = VCbsCred;
+       _vCbsCredOriginalCommited = _vCbsCredOriginal;
+       _cstCbsOriginal = CstCbs;
+       _cstCbsOriginalCommited = _cstCbsOriginal;
 
             }
             catch (Exception e)
@@ -392,6 +447,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
        _vCbsDevOriginalCommited = VCbsDev;
        _pCbsOriginalCommited = PCbs;
        _versionOriginalCommited = Version;
+       _vCbsCredOriginalCommited = VCbsCred;
+       _cstCbsOriginalCommited = CstCbs;
 
             }
             catch (Exception e)
@@ -435,6 +492,10 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                _pCbsOriginalCommited=_pCbsOriginal;
                Version=_versionOriginal;
                _versionOriginalCommited=_versionOriginal;
+               VCbsCred=_vCbsCredOriginal;
+               _vCbsCredOriginalCommited=_vCbsCredOriginal;
+               CstCbs=_cstCbsOriginal;
+               _cstCbsOriginalCommited=_cstCbsOriginal;
 
             }
             catch (Exception e)
@@ -502,6 +563,10 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
       if (dirty) return true;
       dirty =  _versionOriginal != Version;
       if (dirty) return true;
+      if (dirty) return true;
+       dirty = _vCbsCredOriginal != VCbsCred;
+      if (dirty) return true;
+       dirty = _cstCbsOriginal != CstCbs;
 
                return dirty;
             }
@@ -571,6 +636,10 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
       if (dirty) return true;
       dirty =  _versionOriginalCommited != Version;
       if (dirty) return true;
+      if (dirty) return true;
+       dirty = _vCbsCredOriginalCommited != VCbsCred;
+      if (dirty) return true;
+       dirty = _cstCbsOriginalCommited != CstCbs;
 
                return dirty;
             }
@@ -635,6 +704,10 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                 return this.Version;
              case "EntityUid":
                 return this.EntityUid;
+             case "VCbsCred":
+                return this.VCbsCred;
+             case "CstCbs":
+                return this.CstCbs;
               default:
                  return new ArgumentOutOfRangeException();
            }
@@ -676,7 +749,9 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                command.CommandText += "nf_tributo_cbs.nts_v_cbs_dev, " ;
                command.CommandText += "nf_tributo_cbs.nts_p_cbs, " ;
                command.CommandText += "nf_tributo_cbs.version, " ;
-               command.CommandText += "nf_tributo_cbs.entity_uid " ;
+               command.CommandText += "nf_tributo_cbs.entity_uid, " ;
+               command.CommandText += "nf_tributo_cbs.nts_v_cbs_cred, " ;
+               command.CommandText += "nf_tributo_cbs.nts_cst_cbs " ;
                }
                command.CommandText += " FROM  nf_tributo_cbs ";
                string whereClause = "";
@@ -886,6 +961,34 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                            break;
                      }
                      break;
+                     case "nts_v_cbs_cred":
+                     case "VCbsCred":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_tributo_cbs.nts_v_cbs_cred " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                           orderByClause += " , UPPER(nf_tributo_cbs.nts_v_cbs_cred) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "nts_cst_cbs":
+                     case "CstCbs":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                           orderByClause += " , nf_tributo_cbs.nts_cst_cbs " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , UPPER(nf_tributo_cbs.nts_cst_cbs) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
                         default:
                            throw new Exception("Parâmetro de ordenação não encontrado: " + parametro.FieldName);
                      }
@@ -903,6 +1006,11 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                         {
                            whereClause += " OR UPPER(nf_tributo_cbs.entity_uid) LIKE :buscaCompletaUpper ";
                            whereClause += " OR LOWER(nf_tributo_cbs.entity_uid) LIKE :buscaCompletaLower ";
+                        }
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("nts_cst_cbs")) 
+                        {
+                           whereClause += " OR UPPER(nf_tributo_cbs.nts_cst_cbs) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_tributo_cbs.nts_cst_cbs) LIKE :buscaCompletaLower ";
                         }
                         whereClause += ") ";
                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("buscaCompletaUpper", NpgsqlDbType.Varchar, "%" + parametro.Fieldvalue.ToString().ToUpper() + "%"));
@@ -922,8 +1030,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.id_nf_tributo_cbs = :nf_tributo_cbs_ID_4846 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_ID_4846", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.id_nf_tributo_cbs = :nf_tributo_cbs_ID_9966 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_ID_9966", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -941,8 +1049,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.id_nf_item = :nf_tributo_cbs_NfItem_6121 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_NfItem_6121", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_tributo_cbs.id_nf_item = :nf_tributo_cbs_NfItem_5649 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_NfItem_5649", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -960,8 +1068,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_v_bc_cbs = :nf_tributo_cbs_VBcCbs_3317 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VBcCbs_3317", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_v_bc_cbs = :nf_tributo_cbs_VBcCbs_3861 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VBcCbs_3861", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -979,8 +1087,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_v_cbs = :nf_tributo_cbs_VCbs_8225 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbs_8225", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_v_cbs = :nf_tributo_cbs_VCbs_4257 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbs_4257", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -998,8 +1106,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_v_bc_cbs_ret = :nf_tributo_cbs_VBcCbsRet_2844 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VBcCbsRet_2844", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_v_bc_cbs_ret = :nf_tributo_cbs_VBcCbsRet_3849 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VBcCbsRet_3849", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1017,8 +1125,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_v_cbs_ret = :nf_tributo_cbs_VCbsRet_2276 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsRet_2276", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_v_cbs_ret = :nf_tributo_cbs_VCbsRet_8018 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsRet_8018", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1036,8 +1144,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_v_cbs_dif = :nf_tributo_cbs_VCbsDif_4283 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsDif_4283", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_v_cbs_dif = :nf_tributo_cbs_VCbsDif_2318 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsDif_2318", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1055,8 +1163,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_v_cbs_dev = :nf_tributo_cbs_VCbsDev_2228 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsDev_2228", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_v_cbs_dev = :nf_tributo_cbs_VCbsDev_2548 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsDev_2548", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1074,8 +1182,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.nts_p_cbs = :nf_tributo_cbs_PCbs_2004 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_PCbs_2004", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_tributo_cbs.nts_p_cbs = :nf_tributo_cbs_PCbs_6382 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_PCbs_6382", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1093,8 +1201,8 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.version = :nf_tributo_cbs_Version_478 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_Version_478", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_tributo_cbs.version = :nf_tributo_cbs_Version_9256 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_Version_9256", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1112,8 +1220,46 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.entity_uid LIKE :nf_tributo_cbs_EntityUid_8542 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_EntityUid_8542", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_tributo_cbs.entity_uid LIKE :nf_tributo_cbs_EntityUid_7196 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_EntityUid_7196", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "VCbsCred" || parametro.FieldName == "nts_v_cbs_cred")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is double?)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo double?");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_tributo_cbs.nts_v_cbs_cred IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_tributo_cbs.nts_v_cbs_cred = :nf_tributo_cbs_VCbsCred_3871 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_VCbsCred_3871", NpgsqlDbType.Double, parametro.Fieldvalue));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "CstCbs" || parametro.FieldName == "nts_cst_cbs")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_tributo_cbs.nts_cst_cbs IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_tributo_cbs.nts_cst_cbs LIKE :nf_tributo_cbs_CstCbs_6206 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_CstCbs_6206", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1131,8 +1277,27 @@ public static NfTributoCbsClass GetEntidade(long id, AcsUsuarioClass usuarioAtua
                       }
                       else
                       {
-                         whereClause += "  nf_tributo_cbs.entity_uid LIKE :nf_tributo_cbs_EntityUid_1673 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_EntityUid_1673", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_tributo_cbs.entity_uid LIKE :nf_tributo_cbs_EntityUid_9918 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_EntityUid_9918", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "CstCbsExato" || parametro.FieldName == "CstCbsExata")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_tributo_cbs.nts_cst_cbs IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_tributo_cbs.nts_cst_cbs LIKE :nf_tributo_cbs_CstCbs_5522 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_tributo_cbs_CstCbs_5522", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1218,6 +1383,8 @@ if (!operacao.HasValue)
                      entidade.PCbs = read["nts_p_cbs"] as double?;
                      entidade.Version = (int)read["version"];
                      entidade.EntityUid = (read["entity_uid"] != DBNull.Value ? read["entity_uid"].ToString() : null);
+                     entidade.VCbsCred = read["nts_v_cbs_cred"] as double?;
+                     entidade.CstCbs = (read["nts_cst_cbs"] != DBNull.Value ? read["nts_cst_cbs"].ToString() : null);
                      entidade.loading = false;
                      entidade.SalvaValoresOriginais();
                      entidade.CarregamentoConcluido();

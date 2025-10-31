@@ -850,8 +850,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.id_nf_produto_rastreabilidade = :nf_produto_rastreabilidade_ID_2545 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_ID_2545", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_rastreabilidade.id_nf_produto_rastreabilidade = :nf_produto_rastreabilidade_ID_3173 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_ID_3173", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -869,8 +869,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.id_nf_produto = :nf_produto_rastreabilidade_NfProduto_2895 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_NfProduto_2895", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_produto_rastreabilidade.id_nf_produto = :nf_produto_rastreabilidade_NfProduto_5796 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_NfProduto_5796", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -888,8 +888,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_numero_lote LIKE :nf_produto_rastreabilidade_NumeroLote_124 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_NumeroLote_124", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_rastreabilidade.npr_numero_lote LIKE :nf_produto_rastreabilidade_NumeroLote_35 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_NumeroLote_35", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -907,8 +907,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_quantidade = :nf_produto_rastreabilidade_Quantidade_9963 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_Quantidade_9963", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_rastreabilidade.npr_quantidade = :nf_produto_rastreabilidade_Quantidade_2255 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_Quantidade_2255", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -926,8 +926,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_data_fabricacao = :nf_produto_rastreabilidade_DataFabricacao_7946 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_DataFabricacao_7946", NpgsqlDbType.Date, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_rastreabilidade.npr_data_fabricacao = :nf_produto_rastreabilidade_DataFabricacao_9785 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_DataFabricacao_9785", NpgsqlDbType.Date, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -945,8 +945,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_data_validade = :nf_produto_rastreabilidade_DataValidade_4205 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_DataValidade_4205", NpgsqlDbType.Date, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_rastreabilidade.npr_data_validade = :nf_produto_rastreabilidade_DataValidade_7241 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_DataValidade_7241", NpgsqlDbType.Date, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -964,8 +964,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_codigo_agregacao LIKE :nf_produto_rastreabilidade_CodigoAgregacao_2614 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_CodigoAgregacao_2614", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_rastreabilidade.npr_codigo_agregacao LIKE :nf_produto_rastreabilidade_CodigoAgregacao_9171 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_CodigoAgregacao_9171", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -983,8 +983,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.entity_uid LIKE :nf_produto_rastreabilidade_EntityUid_907 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_EntityUid_907", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_rastreabilidade.entity_uid LIKE :nf_produto_rastreabilidade_EntityUid_2273 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_EntityUid_2273", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1002,8 +1002,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.version = :nf_produto_rastreabilidade_Version_3189 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_Version_3189", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_rastreabilidade.version = :nf_produto_rastreabilidade_Version_1711 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_Version_1711", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1021,8 +1021,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_numero_lote LIKE :nf_produto_rastreabilidade_NumeroLote_7278 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_NumeroLote_7278", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_rastreabilidade.npr_numero_lote LIKE :nf_produto_rastreabilidade_NumeroLote_9874 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_NumeroLote_9874", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1040,8 +1040,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.npr_codigo_agregacao LIKE :nf_produto_rastreabilidade_CodigoAgregacao_9623 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_CodigoAgregacao_9623", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_rastreabilidade.npr_codigo_agregacao LIKE :nf_produto_rastreabilidade_CodigoAgregacao_3140 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_CodigoAgregacao_3140", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1059,8 +1059,8 @@ public static NfProdutoRastreabilidadeClass GetEntidade(long id, AcsUsuarioClass
                       }
                       else
                       {
-                         whereClause += "  nf_produto_rastreabilidade.entity_uid LIKE :nf_produto_rastreabilidade_EntityUid_6550 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_EntityUid_6550", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_rastreabilidade.entity_uid LIKE :nf_produto_rastreabilidade_EntityUid_1513 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_rastreabilidade_EntityUid_1513", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

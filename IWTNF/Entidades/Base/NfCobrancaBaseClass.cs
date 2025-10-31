@@ -610,8 +610,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.id_nf_principal = :nf_cobranca_NfPrincipal_8084 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_NfPrincipal_8084", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_cobranca.id_nf_principal = :nf_cobranca_NfPrincipal_2301 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_NfPrincipal_2301", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -629,8 +629,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_802 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_802", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_650 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_650", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -648,8 +648,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.version = :nf_cobranca_Version_8646 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_Version_8646", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_cobranca.version = :nf_cobranca_Version_398 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_Version_398", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -667,8 +667,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.id_nf_cobranca = :nf_cobranca_ID_283 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_ID_283", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_cobranca.id_nf_cobranca = :nf_cobranca_ID_6723 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_ID_6723", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -686,8 +686,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_146 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_146", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_4222 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_4222", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

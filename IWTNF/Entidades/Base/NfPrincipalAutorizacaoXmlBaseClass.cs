@@ -666,8 +666,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.id_nf_principal_autorizacao_xml = :nf_principal_autorizacao_xml_ID_594 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_ID_594", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal_autorizacao_xml.id_nf_principal_autorizacao_xml = :nf_principal_autorizacao_xml_ID_4809 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_ID_4809", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -685,8 +685,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.id_nf_principal = :nf_principal_autorizacao_xml_NfPrincipal_1935 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_NfPrincipal_1935", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_principal_autorizacao_xml.id_nf_principal = :nf_principal_autorizacao_xml_NfPrincipal_1784 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_NfPrincipal_1784", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -704,8 +704,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.nax_documento LIKE :nf_principal_autorizacao_xml_Documento_3437 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_Documento_3437", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal_autorizacao_xml.nax_documento LIKE :nf_principal_autorizacao_xml_Documento_5186 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_Documento_5186", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -723,8 +723,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.entity_uid LIKE :nf_principal_autorizacao_xml_EntityUid_3797 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_EntityUid_3797", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal_autorizacao_xml.entity_uid LIKE :nf_principal_autorizacao_xml_EntityUid_239 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_EntityUid_239", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -742,8 +742,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.version = :nf_principal_autorizacao_xml_Version_7985 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_Version_7985", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal_autorizacao_xml.version = :nf_principal_autorizacao_xml_Version_2064 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_Version_2064", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -761,8 +761,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.nax_documento LIKE :nf_principal_autorizacao_xml_Documento_3297 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_Documento_3297", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal_autorizacao_xml.nax_documento LIKE :nf_principal_autorizacao_xml_Documento_6157 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_Documento_6157", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -780,8 +780,8 @@ public static NfPrincipalAutorizacaoXmlClass GetEntidade(long id, AcsUsuarioClas
                       }
                       else
                       {
-                         whereClause += "  nf_principal_autorizacao_xml.entity_uid LIKE :nf_principal_autorizacao_xml_EntityUid_3716 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_EntityUid_3716", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal_autorizacao_xml.entity_uid LIKE :nf_principal_autorizacao_xml_EntityUid_1963 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_autorizacao_xml_EntityUid_1963", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
