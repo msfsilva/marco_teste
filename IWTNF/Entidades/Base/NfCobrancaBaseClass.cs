@@ -610,8 +610,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.id_nf_principal = :nf_cobranca_NfPrincipal_1297 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_NfPrincipal_1297", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_cobranca.id_nf_principal = :nf_cobranca_NfPrincipal_4347 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_NfPrincipal_4347", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -629,8 +629,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_3702 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_3702", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_5126 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_5126", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -648,8 +648,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.version = :nf_cobranca_Version_4958 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_Version_4958", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_cobranca.version = :nf_cobranca_Version_3274 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_Version_3274", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -667,8 +667,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.id_nf_cobranca = :nf_cobranca_ID_7613 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_ID_7613", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_cobranca.id_nf_cobranca = :nf_cobranca_ID_8992 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_ID_8992", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -686,8 +686,8 @@ public static NfCobrancaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       }
                       else
                       {
-                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_8905 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_8905", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cobranca.entity_uid LIKE :nf_cobranca_EntityUid_611 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cobranca_EntityUid_611", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

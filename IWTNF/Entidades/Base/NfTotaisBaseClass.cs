@@ -2885,8 +2885,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.id_nf_principal = :nf_totais_NfPrincipal_2104 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_NfPrincipal_2104", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_totais.id_nf_principal = :nf_totais_NfPrincipal_5154 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_NfPrincipal_5154", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2904,8 +2904,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_base_calculo_icms = :nf_totais_BaseCalculoIcms_2541 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_BaseCalculoIcms_2541", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_base_calculo_icms = :nf_totais_BaseCalculoIcms_3965 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_BaseCalculoIcms_3965", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2923,8 +2923,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_icms = :nf_totais_ValorTotalIcms_2097 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcms_2097", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_icms = :nf_totais_ValorTotalIcms_413 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcms_413", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2942,8 +2942,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_base_calculo_icms_st = :nf_totais_BaseCalculoIcmsSt_4881 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_BaseCalculoIcmsSt_4881", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_base_calculo_icms_st = :nf_totais_BaseCalculoIcmsSt_6260 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_BaseCalculoIcmsSt_6260", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2961,8 +2961,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_icms_st = :nf_totais_ValorTotalIcmsSt_7629 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcmsSt_7629", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_icms_st = :nf_totais_ValorTotalIcmsSt_9333 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcmsSt_9333", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2980,8 +2980,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_produtos_servicos_icms = :nf_totais_ValorTotalProdutosServicosIcms_5044 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalProdutosServicosIcms_5044", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_produtos_servicos_icms = :nf_totais_ValorTotalProdutosServicosIcms_1979 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalProdutosServicosIcms_1979", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -2999,8 +2999,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_frete = :nf_totais_ValorTotalFrete_1479 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalFrete_1479", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_frete = :nf_totais_ValorTotalFrete_5254 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalFrete_5254", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3018,8 +3018,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_seguro = :nf_totais_ValorTotalSeguro_2740 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalSeguro_2740", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_seguro = :nf_totais_ValorTotalSeguro_1559 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalSeguro_1559", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3037,8 +3037,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_desconto = :nf_totais_ValorTotalDesconto_7485 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalDesconto_7485", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_desconto = :nf_totais_ValorTotalDesconto_79 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalDesconto_79", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3056,8 +3056,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_desconto_ii = :nf_totais_ValorTotalDescontoIi_3628 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalDescontoIi_3628", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_desconto_ii = :nf_totais_ValorTotalDescontoIi_9596 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalDescontoIi_9596", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3075,8 +3075,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_ipi = :nf_totais_ValorTotalIpi_379 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIpi_379", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_ipi = :nf_totais_ValorTotalIpi_6373 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIpi_6373", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3094,8 +3094,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_pis = :nf_totais_ValorTotalPis_6241 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalPis_6241", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_pis = :nf_totais_ValorTotalPis_9852 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalPis_9852", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3113,8 +3113,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_cofins = :nf_totais_ValorTotalCofins_1951 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalCofins_1951", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_cofins = :nf_totais_ValorTotalCofins_4355 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalCofins_4355", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3132,8 +3132,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_outras_despesas = :nf_totais_OutrasDespesas_2968 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_OutrasDespesas_2968", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_outras_despesas = :nf_totais_OutrasDespesas_9378 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_OutrasDespesas_9378", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3151,8 +3151,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_nf = :nf_totais_ValorTotalNf_8569 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalNf_8569", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_nf = :nf_totais_ValorTotalNf_9879 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalNf_9879", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3170,8 +3170,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_servicos = :nf_totais_ValorTotalServicos_6597 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalServicos_6597", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_servicos = :nf_totais_ValorTotalServicos_199 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalServicos_199", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3189,8 +3189,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_base_calculo_iss = :nf_totais_BaseCalculoIss_6695 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_BaseCalculoIss_6695", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_base_calculo_iss = :nf_totais_BaseCalculoIss_4164 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_BaseCalculoIss_4164", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3208,8 +3208,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_iss = :nf_totais_ValorTotalIss_4157 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIss_4157", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_iss = :nf_totais_ValorTotalIss_9838 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIss_9838", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3227,8 +3227,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_pis_servicos = :nf_totais_ValorTotalPisServicos_2563 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalPisServicos_2563", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_pis_servicos = :nf_totais_ValorTotalPisServicos_2556 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalPisServicos_2556", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3246,8 +3246,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_cofins_servicos = :nf_totais_ValorTotalCofinsServicos_3933 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalCofinsServicos_3933", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_cofins_servicos = :nf_totais_ValorTotalCofinsServicos_4098 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalCofinsServicos_4098", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3265,8 +3265,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_iimp = :nf_totais_ValorTotalIimp_6409 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIimp_6409", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_iimp = :nf_totais_ValorTotalIimp_7851 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIimp_7851", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3284,8 +3284,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_icms_diferido = :nf_totais_ValorTotalIcmsDiferido_7658 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcmsDiferido_7658", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_icms_diferido = :nf_totais_ValorTotalIcmsDiferido_3152 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcmsDiferido_3152", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3303,8 +3303,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.entity_uid LIKE :nf_totais_EntityUid_4888 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_EntityUid_4888", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_totais.entity_uid LIKE :nf_totais_EntityUid_5998 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_EntityUid_5998", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3322,8 +3322,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.version = :nf_totais_Version_6456 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_Version_6456", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_totais.version = :nf_totais_Version_8593 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_Version_8593", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3341,8 +3341,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_pis = :nf_totais_ValorRetidoPis_2164 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoPis_2164", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_pis = :nf_totais_ValorRetidoPis_939 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoPis_939", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3360,8 +3360,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_cofins = :nf_totais_ValorRetidoCofins_3899 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoCofins_3899", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_cofins = :nf_totais_ValorRetidoCofins_5899 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoCofins_5899", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3379,8 +3379,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_csll = :nf_totais_ValorRetidoCsll_1208 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoCsll_1208", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_csll = :nf_totais_ValorRetidoCsll_5947 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoCsll_5947", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3398,8 +3398,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_bc_irrf = :nf_totais_ValorRetidoBcIrrf_1943 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoBcIrrf_1943", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_bc_irrf = :nf_totais_ValorRetidoBcIrrf_8674 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoBcIrrf_8674", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3417,8 +3417,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_irrf = :nf_totais_ValorRetidoIrrf_3135 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoIrrf_3135", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_irrf = :nf_totais_ValorRetidoIrrf_1148 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoIrrf_1148", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3436,8 +3436,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_bc_previdencia = :nf_totais_ValorRetidoBcPrevidencia_6921 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoBcPrevidencia_6921", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_bc_previdencia = :nf_totais_ValorRetidoBcPrevidencia_1766 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoBcPrevidencia_1766", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3455,8 +3455,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_retido_previencia = :nf_totais_ValorRetidoPreviencia_6877 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoPreviencia_6877", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_retido_previencia = :nf_totais_ValorRetidoPreviencia_7324 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorRetidoPreviencia_7324", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3474,8 +3474,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.id_nf_totais = :nf_totais_ID_501 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ID_501", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.id_nf_totais = :nf_totais_ID_216 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ID_216", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3493,8 +3493,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_aproximado_tributos = :nf_totais_ValorTotalAproximadoTributos_895 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalAproximadoTributos_895", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_aproximado_tributos = :nf_totais_ValorTotalAproximadoTributos_3844 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalAproximadoTributos_3844", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3512,8 +3512,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_valor_total_icms_desonerado = :nf_totais_ValorTotalIcmsDesonerado_562 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcmsDesonerado_562", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_valor_total_icms_desonerado = :nf_totais_ValorTotalIcmsDesonerado_9083 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_ValorTotalIcmsDesonerado_9083", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3531,8 +3531,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_total_ibs = :nf_totais_TotalIbs_553 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_TotalIbs_553", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_total_ibs = :nf_totais_TotalIbs_5490 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_TotalIbs_5490", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3550,8 +3550,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_total_cbs = :nf_totais_TotalCbs_1507 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_TotalCbs_1507", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_total_cbs = :nf_totais_TotalCbs_7379 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_TotalCbs_7379", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3569,8 +3569,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_total_is = :nf_totais_TotalIs_1375 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_TotalIs_1375", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_total_is = :nf_totais_TotalIs_4353 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_TotalIs_4353", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3588,8 +3588,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_cred_pres = :nf_totais_VIbsCredPres_3530 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsCredPres_3530", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_cred_pres = :nf_totais_VIbsCredPres_3862 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsCredPres_3862", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3607,8 +3607,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_dif_uf = :nf_totais_VIbsDifUf_4784 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDifUf_4784", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_dif_uf = :nf_totais_VIbsDifUf_2925 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDifUf_2925", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3626,8 +3626,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_dev_uf = :nf_totais_VIbsDevUf_1203 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDevUf_1203", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_dev_uf = :nf_totais_VIbsDevUf_1834 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDevUf_1834", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3645,8 +3645,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_cbs_cred = :nf_totais_VCbsCred_7497 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsCred_7497", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_cbs_cred = :nf_totais_VCbsCred_9877 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsCred_9877", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3664,8 +3664,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_cbs_dif = :nf_totais_VCbsDif_5370 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsDif_5370", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_cbs_dif = :nf_totais_VCbsDif_5655 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsDif_5655", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3683,8 +3683,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_cbs_dev = :nf_totais_VCbsDev_4650 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsDev_4650", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_cbs_dev = :nf_totais_VCbsDev_4451 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsDev_4451", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3702,8 +3702,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_bc_ibscbs = :nf_totais_VBcIbscbs_2181 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VBcIbscbs_2181", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_bc_ibscbs = :nf_totais_VBcIbscbs_9940 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VBcIbscbs_9940", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3721,8 +3721,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_uf = :nf_totais_VIbsUf_5428 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsUf_5428", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_uf = :nf_totais_VIbsUf_8233 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsUf_8233", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3740,8 +3740,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_dif_mun = :nf_totais_VIbsDifMun_4110 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDifMun_4110", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_dif_mun = :nf_totais_VIbsDifMun_5417 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDifMun_5417", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3759,8 +3759,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_dev_mun = :nf_totais_VIbsDevMun_3068 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDevMun_3068", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_dev_mun = :nf_totais_VIbsDevMun_5233 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsDevMun_5233", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3778,8 +3778,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_mun = :nf_totais_VIbsMun_1513 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsMun_1513", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_mun = :nf_totais_VIbsMun_9412 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsMun_9412", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3797,8 +3797,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_cred_pres_cond_sus = :nf_totais_VIbsCredPresCondSus_1671 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsCredPresCondSus_1671", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_cred_pres_cond_sus = :nf_totais_VIbsCredPresCondSus_178 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsCredPresCondSus_178", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3816,8 +3816,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_cbs_cred_pres = :nf_totais_VCbsCredPres_3028 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsCredPres_3028", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_cbs_cred_pres = :nf_totais_VCbsCredPres_2426 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsCredPres_2426", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3835,8 +3835,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_cbs_cred_pres_cond_sus = :nf_totais_VCbsCredPresCondSus_5221 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsCredPresCondSus_5221", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_cbs_cred_pres_cond_sus = :nf_totais_VCbsCredPresCondSus_4571 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsCredPresCondSus_4571", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3854,8 +3854,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_ibs_estorno_cred = :nf_totais_VIbsEstornoCred_8344 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsEstornoCred_8344", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_ibs_estorno_cred = :nf_totais_VIbsEstornoCred_8272 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VIbsEstornoCred_8272", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3873,8 +3873,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.nfo_v_cbs_estorno_cred = :nf_totais_VCbsEstornoCred_6840 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsEstornoCred_6840", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_totais.nfo_v_cbs_estorno_cred = :nf_totais_VCbsEstornoCred_5506 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_VCbsEstornoCred_5506", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -3892,8 +3892,8 @@ public static NfTotaisClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_totais.entity_uid LIKE :nf_totais_EntityUid_7576 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_EntityUid_7576", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_totais.entity_uid LIKE :nf_totais_EntityUid_4361 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_totais_EntityUid_4361", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

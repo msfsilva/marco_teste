@@ -1162,8 +1162,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.id_nf_pagamento = :nf_pagamento_ID_6628 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_ID_6628", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_pagamento.id_nf_pagamento = :nf_pagamento_ID_5775 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_ID_5775", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1181,8 +1181,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.id_nf_principal = :nf_pagamento_NfPrincipal_942 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_NfPrincipal_942", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_pagamento.id_nf_principal = :nf_pagamento_NfPrincipal_447 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_NfPrincipal_447", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1200,8 +1200,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_tipo = :nf_pagamento_Tipo_6071 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Tipo_6071", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_pagamento.nfg_tipo = :nf_pagamento_Tipo_1015 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Tipo_1015", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1219,8 +1219,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_valor = :nf_pagamento_Valor_2827 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Valor_2827", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_pagamento.nfg_valor = :nf_pagamento_Valor_1871 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Valor_1871", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1238,8 +1238,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_cnpj_credenciadora LIKE :nf_pagamento_CnpjCredenciadora_2272 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_CnpjCredenciadora_2272", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento.nfg_cnpj_credenciadora LIKE :nf_pagamento_CnpjCredenciadora_4055 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_CnpjCredenciadora_4055", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1257,8 +1257,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_bandeira = :nf_pagamento_Bandeira_9460 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Bandeira_9460", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_pagamento.nfg_bandeira = :nf_pagamento_Bandeira_4578 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Bandeira_4578", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1276,8 +1276,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_numero_autorizacao LIKE :nf_pagamento_NumeroAutorizacao_416 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_NumeroAutorizacao_416", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento.nfg_numero_autorizacao LIKE :nf_pagamento_NumeroAutorizacao_6396 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_NumeroAutorizacao_6396", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1295,8 +1295,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_tipo_integracao = :nf_pagamento_TipoIntegracao_6157 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_TipoIntegracao_6157", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_pagamento.nfg_tipo_integracao = :nf_pagamento_TipoIntegracao_3932 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_TipoIntegracao_3932", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1314,8 +1314,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.entity_uid LIKE :nf_pagamento_EntityUid_7797 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_EntityUid_7797", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento.entity_uid LIKE :nf_pagamento_EntityUid_3686 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_EntityUid_3686", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1333,8 +1333,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.version = :nf_pagamento_Version_9543 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Version_9543", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_pagamento.version = :nf_pagamento_Version_6888 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Version_6888", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1352,8 +1352,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_troco = :nf_pagamento_Troco_6680 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Troco_6680", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_pagamento.nfg_troco = :nf_pagamento_Troco_5903 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_Troco_5903", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1371,8 +1371,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_tipo_descricao LIKE :nf_pagamento_TipoDescricao_7845 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_TipoDescricao_7845", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento.nfg_tipo_descricao LIKE :nf_pagamento_TipoDescricao_7414 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_TipoDescricao_7414", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1390,8 +1390,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_cnpj_credenciadora LIKE :nf_pagamento_CnpjCredenciadora_2243 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_CnpjCredenciadora_2243", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento.nfg_cnpj_credenciadora LIKE :nf_pagamento_CnpjCredenciadora_8427 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_CnpjCredenciadora_8427", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1409,8 +1409,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_numero_autorizacao LIKE :nf_pagamento_NumeroAutorizacao_8180 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_NumeroAutorizacao_8180", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento.nfg_numero_autorizacao LIKE :nf_pagamento_NumeroAutorizacao_2035 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_NumeroAutorizacao_2035", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1428,8 +1428,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.entity_uid LIKE :nf_pagamento_EntityUid_4098 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_EntityUid_4098", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento.entity_uid LIKE :nf_pagamento_EntityUid_1426 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_EntityUid_1426", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1447,8 +1447,8 @@ public static NfPagamentoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento.nfg_tipo_descricao LIKE :nf_pagamento_TipoDescricao_6830 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_TipoDescricao_6830", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento.nfg_tipo_descricao LIKE :nf_pagamento_TipoDescricao_3229 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_TipoDescricao_3229", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

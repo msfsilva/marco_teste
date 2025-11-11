@@ -671,8 +671,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.id_nf_pagamento_antecipado = :nf_pagamento_antecipado_ID_3216 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ID_3216", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_pagamento_antecipado.id_nf_pagamento_antecipado = :nf_pagamento_antecipado_ID_8218 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ID_8218", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -690,8 +690,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.id_nf_principal = :nf_pagamento_antecipado_NfPrincipal_2888 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_NfPrincipal_2888", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_pagamento_antecipado.id_nf_principal = :nf_pagamento_antecipado_NfPrincipal_5272 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_NfPrincipal_5272", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -709,8 +709,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref LIKE :nf_pagamento_antecipado_ChaveNfeRef_8302 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ChaveNfeRef_8302", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref LIKE :nf_pagamento_antecipado_ChaveNfeRef_3305 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ChaveNfeRef_3305", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -728,8 +728,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.version = :nf_pagamento_antecipado_Version_9575 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_Version_9575", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_pagamento_antecipado.version = :nf_pagamento_antecipado_Version_7122 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_Version_7122", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -747,8 +747,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.entity_uid LIKE :nf_pagamento_antecipado_EntityUid_3390 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_EntityUid_3390", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento_antecipado.entity_uid LIKE :nf_pagamento_antecipado_EntityUid_5055 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_EntityUid_5055", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -766,8 +766,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref LIKE :nf_pagamento_antecipado_ChaveNfeRef_9946 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ChaveNfeRef_9946", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref LIKE :nf_pagamento_antecipado_ChaveNfeRef_7789 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ChaveNfeRef_7789", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -785,8 +785,8 @@ public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass us
                       }
                       else
                       {
-                         whereClause += "  nf_pagamento_antecipado.entity_uid LIKE :nf_pagamento_antecipado_EntityUid_4715 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_EntityUid_4715", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento_antecipado.entity_uid LIKE :nf_pagamento_antecipado_EntityUid_7388 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_EntityUid_7388", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
