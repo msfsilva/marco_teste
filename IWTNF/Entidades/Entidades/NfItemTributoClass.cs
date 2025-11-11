@@ -190,6 +190,83 @@ namespace IWTNF.Entidades.Entidades
             }
         }
 
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfTributoIbsClass NfItemTributoIbs
+        {
+            get { return this.NfItem.CollectionNfTributoIbsClassNfItem != null && this.NfItem.CollectionNfTributoIbsClassNfItem.Count > 0 ? this.NfItem.CollectionNfTributoIbsClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfTributoIbsClassNfItem == null) NfItem.CollectionNfTributoIbsClassNfItem = new BindingList<NfTributoIbsClass>();
+                if (NfItem.CollectionNfTributoIbsClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfTributoIbsClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfTributoIbsClassNfItem[0] = value;
+                }
+            }
+        }
+
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfTributoCbsClass NfItemTributoCbs
+        {
+            get { return this.NfItem.CollectionNfTributoCbsClassNfItem != null && this.NfItem.CollectionNfTributoCbsClassNfItem.Count > 0 ? this.NfItem.CollectionNfTributoCbsClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfTributoCbsClassNfItem == null) NfItem.CollectionNfTributoCbsClassNfItem = new BindingList<NfTributoCbsClass>();
+                if (NfItem.CollectionNfTributoCbsClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfTributoCbsClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfTributoCbsClassNfItem[0] = value;
+                }
+            }
+        }
+
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfTributoIsClass NfItemTributoIs
+        {
+            get { return this.NfItem.CollectionNfTributoIsClassNfItem != null && this.NfItem.CollectionNfTributoIsClassNfItem.Count > 0 ? this.NfItem.CollectionNfTributoIsClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfTributoIsClassNfItem == null) NfItem.CollectionNfTributoIsClassNfItem = new BindingList<NfTributoIsClass>();
+                if (NfItem.CollectionNfTributoIsClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfTributoIsClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfTributoIsClassNfItem[0] = value;
+                }
+            }
+        }
+
+        public NfTributoDevolucaoClass NfItemfTributoDevolucao
+        {
+            get { return this.NfItem.CollectionNfTributoDevolucaoClassNfItem != null && this.NfItem.CollectionNfTributoDevolucaoClassNfItem.Count > 0 ? this.NfItem.CollectionNfTributoDevolucaoClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfTributoDevolucaoClassNfItem == null) NfItem.CollectionNfTributoDevolucaoClassNfItem = new BindingList<NfTributoDevolucaoClass>();
+                if (NfItem.CollectionNfTributoDevolucaoClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfTributoDevolucaoClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfTributoDevolucaoClassNfItem[0] = value;
+                }
+            }
+        }
+
+        
+
         #endregion
 
         public void LimparId()

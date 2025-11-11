@@ -104,6 +104,37 @@ namespace IWTNF.Entidades.Entidades
                         item.NfItemTributo.NfItemTributoPis.NfItem = item;
                     }
 
+                    /* =================================================================== */
+                    /* INÍCIO REFORMA TRIBUTÁRIA (FRENTE 3A)                               */
+                    /* =================================================================== */
+
+                    item.NfItemTributo.NfItemTributoIbs = NfPrincipalClass.calculaIBS(item.NfProduto, Arredondar, usuarioAtual, singleConnection);
+                    // ... (if ... set item) ...
+
+                    item.NfItemTributo.NfItemTributoCbs = NfPrincipalClass.calculaCBS(item.NfProduto, Arredondar, usuarioAtual, singleConnection);
+                    // ... (if ... set item) ...
+
+                    item.NfItemTributo.NfItemTributoIs = NfPrincipalClass.calculaIS(item.NfProduto, Arredondar, usuarioAtual, singleConnection);
+                    // ... (if ... set item) ...
+
+                    // Chamada Atualizada (passando os tributos antigos)
+                    item.NfItemTributo.NfItemfTributoDevolucao = NfPrincipalClass.calculaDevolucao(
+                        item.NfProduto,
+                        item.NfItemTributo.NfItemTributoIpi,
+                        item.NfItemTributo.NfItemTributoIcms,
+                        item.NfItemTributo.NfItemTributoPis,
+                        item.NfItemTributo.NfItemTributoCofins,
+                        Arredondar, usuarioAtual, singleConnection);
+
+                    if (item.NfItemTributo.NfItemfTributoDevolucao != null)
+                    {
+                        item.NfItemTributo.NfItemfTributoDevolucao.NfItem = item;
+                    }
+
+                    /* =================================================================== */
+                    /* FIM REFORMA TRIBUTÁRIA (FRENTE 3A)                                  */
+                    /* =================================================================== */
+
                 }
                 //totais
 
@@ -698,6 +729,75 @@ namespace IWTNF.Entidades.Entidades
             toRet.VIsRet = 0;
 
             // 7. Retorna a entidade de tributo calculada
+            return toRet;
+        }
+
+        /// <summary>
+        /// Calcula o Imposto Devolvido (Grupo UA) - REFATORADO (FRENTE 3A)
+        /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
+        /// Lê de NfProdutoDevolucao (Parâmetro pDev) e dos tributos antigos (R$)
+        /// Retorna NfTributoDevolucaoClass (Calculado)
+        /// </summary>
+        public static NfTributoDevolucaoClass calculaDevolucao(
+            NfProdutoClass nfProduto,
+            NfItemTributoIpiClass nfIpi,       // (Inclusão para regra UA03)
+            NfItemTributoIcmsClass nfIcms,
+            NfItemTributoPisClass nfPis,       // (Inclusão para regra UA08)
+            NfItemTributoCofinsClass nfCofins, // (Inclusão para regra UA09)
+            ArredondamentoNF Arredondar,
+            AcsUsuarioClass usuarioAtual,
+            IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            // 1. Validação "Fail-Fast" (ADR-004)
+            // Verifica se o grupo de devolução foi informado e se o percentual é válido
+            if (nfProduto.NfProdutoDevolucao == null || nfProduto.NfProdutoDevolucao.PDev.GetValueOrDefault(0) <= 0)
+            {
+                return null;
+            }
+
+            var pDevol = nfProduto.NfProdutoDevolucao; // Parâmetro de entrada (npv_p_dev)
+            double pDev = pDevol.PDev.Value / 100;     // (Parâmetro) UA02
+
+            // 2. Criação da entidade de "Tributo" (Calculado) (ADR-005)
+            var toRet = new NfTributoDevolucaoClass(usuarioAtual, singleConnection);
+
+            // 3. Cálculo IPI Devolvido (UA03)
+            // Regra: vIPIDev = vIPI * (pDev / 100)
+            if (nfIpi != null && nfIpi.ValorIpi > 0)
+            {
+                toRet.VIpiDev = arredondaValor(nfIpi.ValorIpi * pDev, Arredondar, 2);
+            }
+
+            // 4. Cálculo ICMS Devolvido (UA04, UA05)
+            // Regra: vICMSDev = vICMS * (pDev / 100)
+            if (nfIcms != null && nfIcms.ValorIcms > 0)
+            {
+                toRet.VBcIcmsDev = nfIcms.ValorBc; // Informa a BC Original (UA04)
+                toRet.VIcmsDev = arredondaValor(nfIcms.ValorIcms * pDev, Arredondar, 2); // (UA05)
+            }
+
+            // 5. Cálculo ICMS-ST Devolvido (UA06, UA07)
+            // Regra: vICMSSTDev = vICMSST * (pDev / 100)
+            if (nfIcms != null && nfIcms.ValorIcmsSt > 0)
+            {
+                toRet.VBcIcmsStDev = nfIcms.ValorBcSt; // Informa a BC ST Original (UA06)
+                toRet.VIcmsStDev = arredondaValor(nfIcms.ValorIcmsSt * pDev, Arredondar, 2); // (UA07)
+            }
+
+            // 6. Cálculo PIS Devolvido (UA08)
+            // Regra: vPISDev = vPIS * (pDev / 100)
+            if (nfPis != null && nfPis.ValorPis > 0)
+            {
+                toRet.VPisDev = arredondaValor(nfPis.ValorPis * pDev, Arredondar, 2);
+            }
+
+            // 7. Cálculo COFINS Devolvido (UA09)
+            // Regra: vCOFINSDev = vCOFINS * (pDev / 100)
+            if (nfCofins != null && nfCofins.ValorCofins > 0)
+            {
+                toRet.VCofinsDev = arredondaValor(nfCofins.ValorCofins * pDev, Arredondar, 2);
+            }
+
             return toRet;
         }
 
