@@ -288,6 +288,7 @@ namespace IWTNF.Entidades.Entidades
         }
 
 
+
         /// <summary>
         /// Calcula o IBS (Grupo UB) - REFATORADO (FRENTE 3A)
         /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
@@ -318,16 +319,23 @@ namespace IWTNF.Entidades.Entidades
              * RAMO 1: Tributação Regular (gIBSCBS - UB15) e Crédito (gCredPresOper - UB120)
              * ============================================================================= */
 
-            // 3. Base de Cálculo Principal (vBC - UB16)
-            // Segue o padrão ADR-002 (calculaIcms/calculaPis)
-            // A BC do IBS/CBS (IVA) incide sobre o valor da operação (vProd + vFrete + vSeg + vOutro - vDesc).
-            // O ValorTotalTributavel (vProd) já deve conter esta lógica de formação de preço.
-            // O DDL (Alterações BD NFe.sql) confirma que a BC é informada (npb_v_base_calc_ibs).
-
-            // CORREÇÃO: Diferente do ICMS/IPI, a BC do IBS/CBS é informada pelo cliente (ADR-005)
-            // A BC principal (vBC - UB16) é a 'npb_v_base_calc_ibs'
+            // 3. Base de Cálculo Principal (vBC - UB16) - PENDÊNCIA 3 (Híbrida)
             double vBC = pIbs.VBaseCalcIbs.GetValueOrDefault(0);
-            toRet.VBcIbs = arredondaValor(vBC, Arredondar, 2); // ntb_v_bc_ibs
+
+            if (vBC == 0)
+            {
+                // Cenário 2: Cliente não informou, nós calculamos.
+                // Segue o padrão ADR-002 (calculaIcms)
+                vBC = nfProduto.ValorTotalTributavel;
+                vBC += nfProduto.OutrasDespesasAcessorias;
+
+                // Nota: O padrão (calculaIcms) também somaria Frete/Seguro se o flag global
+                // 'somarValorFreteBcIcms' estivesse disponível, mas ele não é passado
+                // para este método estático, então seguimos o padrão mais básico.
+            }
+            // Se vBC > 0, usamos o Cenário 1 (valor informado pelo cliente).
+
+            toRet.VBcIbs = arredondaValor(vBC, Arredondar, 2); // ntb_v_bc_ibs (UB16)
 
             // 4. Cálculo: Alíquotas e Redução (gRed - UB26, UB45)
             double pIbsUf = pIbs.PIbsUf.GetValueOrDefault(0);     // (Parâmetro) npb_p_ibs_uf (UB18)
@@ -339,7 +347,7 @@ namespace IWTNF.Entidades.Entidades
 
             if (pRedAliq > 0)
             {
-                // A NT (UB28) indica redução na Alíquota, não na BC (diferente do ICMS)
+                // A NT (UB28) indica redução na Alíquota, não na BC
                 double fatorReducao = (1 - (pRedAliq / 100));
                 pIbsUfEfetiva = pIbsUf * fatorReducao;
                 pIbsMunEfetiva = pIbsMun * fatorReducao;
@@ -370,7 +378,7 @@ namespace IWTNF.Entidades.Entidades
 
             if (vDifTotal > 0 && vIbsTotalBruto > 0)
             {
-                // O DDL foi simplificado (1 campo vDif). Abatemos o vDif total proporcionalmente.
+                // Rateia o vDifTotal proporcionalmente
                 vIbsUfLiquido = vIbsUfBruto - arredondaValor(vDifTotal * (vIbsUfBruto / vIbsTotalBruto), Arredondar, 2);
                 vIbsMunLiquido = vIbsMunBruto - arredondaValor(vDifTotal * (vIbsMunBruto / vIbsTotalBruto), Arredondar, 2);
             }
@@ -383,36 +391,41 @@ namespace IWTNF.Entidades.Entidades
             toRet.VIbs = vIbsLiquido; // ntb_v_ibs
 
             // 8. Cálculo: Crédito Presumido (gCredPresOper - UB120)
-            double vBCCredPres = pIbs.VBcCredPres.GetValueOrDefault(0); // (Parâmetro) npb_v_bc_cred_pres (UB121)
-            double pCredPres = pIbs.PCredPres.GetValueOrDefault(0);     // (Parâmetro) npb_p_cred_pres (UB124)
-            string cCredPres = pIbs.CCredPres;                          // (Parâmetro) npb_c_cred_pres (UB122)
+            double pCredPres = pIbs.PCredPres.GetValueOrDefault(0);     // (Parâmetro) Alíquota
+            string cCredPres = pIbs.CCredPres;                         // (Parâmetro) Código
 
-            double vCredPresCalculado = 0;
-            if (vBCCredPres > 0 && pCredPres > 0)
+            // PENDÊNCIA 4 (Híbrida)
+            double vBCCredPres = pIbs.VBcCredPres.GetValueOrDefault(0); // (Parâmetro) UB121
+            if (vBCCredPres == 0 && pCredPres > 0)
             {
-                vCredPresCalculado = arredondaValor((vBCCredPres * (pCredPres / 100)), Arredondar, 2);
+                // Cenário 2: Cliente não informou. Assumimos que a BC do crédito
+                // é a mesma BC principal do imposto (calculada/informada no Passo 3).
+                vBCCredPres = toRet.VBcIbs.Value;
             }
+            // Se vBCCredPres > 0, usamos o Cenário 1 (valor informado pelo cliente).
 
-            // O XML (UB123) tem um <choice> entre vCredPres (UB125) e vCredPresCondSus (UB126)
-            // A DDL (ntb_v_cred_pres, ntb_v_cred_pres_cond_sus) suporta ambos.
-            // A regra de qual preencher depende da Tabela cCredPres (Anexo IV da NT)
+            // Cálculo do valor do crédito
+            double vCredPresCalculado = arredondaValor((vBCCredPres * (pCredPres / 100)), Arredondar, 2);
+
+            // PENDÊNCIA 1 (Regra do CSV 'ind_DeduzCredPres')
+            // Apenas cCredPres "4", "7" e "11" são dedução imediata.
             bool isCondSus = (cCredPres != "4" && cCredPres != "7" && cCredPres != "11");
 
             if (isCondSus)
             {
                 toRet.VCredPres = 0;
-                toRet.VCredPresCondSus = vCredPresCalculado; // (Calculado) ntb_v_cred_pres_cond_sus (UB126)
+                toRet.VCredPresCondSus = vCredPresCalculado; // ntb_v_cred_pres_cond_sus (UB126)
             }
             else
             {
-                toRet.VCredPres = vCredPresCalculado; // (Calculado) ntb_v_cred_pres (UB125)
+                toRet.VCredPres = vCredPresCalculado; // ntb_v_cred_pres (UB125)
                 toRet.VCredPresCondSus = 0;
             }
 
             // 9. Cálculo: vIBS Total (UB54a) - Abatendo Crédito Presumido
-            // "vIBS ... o vCredPres deve ser abatido desse valor."
+            // Regra UB54a: "...o vCredPres deve ser abatido desse valor."
             vIbsLiquido = vIbsLiquido - toRet.VCredPres.Value - toRet.VCredPresCondSus.Value;
-            toRet.VIbs = arredondaValor(vIbsLiquido, Arredondar, 2); // (Calculado) ntb_v_ibs
+            toRet.VIbs = arredondaValor(vIbsLiquido, Arredondar, 2); // (Calculado) ntb_v_ibs (final)
 
 
             /* =============================================================================
@@ -438,21 +451,253 @@ namespace IWTNF.Entidades.Entidades
             toRet.VTribIbsMunGov = arredondaValor((toRet.VBcIbs.Value * (pAliqGovMun / 100)), Arredondar, 2); // (Calculado) ntb_v_trib_ibs_mun_gov (UB82e)
 
             /* =============================================================================
-             * RAMOS 4, 5, 6: (Transf, Ajuste, Estorno, ZFM)
+             * RAMOS 4, 5, 6: (Transf, Ajuste, Estorno, ZFM) - PENDÊNCIA 2 (DDL Corrigido)
              * ============================================================================= */
 
-            // O DDL (Alterações BD NFe.sql) está INCOMPLETO para estes ramos.
-            // Ele viola o ADR-005: Faltam os campos de *parâmetro* (R$) em 'nf_produto_ibs' 
-            // para preencher os campos *calculados* (R$) em 'nf_tributo_ibs'.
+            // Estes campos são "copiados" dos parâmetros informados pelo cliente (ADR-005)
+            // Assumindo que o DDL foi corrigido e as entidades regeneradas.
 
-            // Ex: 'ntb_v_ibs_ajuste' (UB114) existe, mas 'npb_v_ibs_ajuste' (parâmetro) não existe no DDL.
+            toRet.VIbsTransfCred = arredondaValor(pIbs.VIbsTransfCred.GetValueOrDefault(0), Arredondar, 2);    // ntb_v_ibs_transf_cred (UB107)
+            toRet.VIbsAjuste = arredondaValor(pIbs.VIbsAjuste.GetValueOrDefault(0), Arredondar, 2);              // ntb_v_ibs_ajuste (UB114)
+            toRet.VIbsEstornoCred = arredondaValor(pIbs.VIbsEstornoCred.GetValueOrDefault(0), Arredondar, 2);   // ntb_v_ibs_estorno_cred (UB117)
+            toRet.VCredPresIbszfm = arredondaValor(pIbs.VCredPresIbszfm.GetValueOrDefault(0), Arredondar, 2);   // ntb_v_cred_pres_ibszfm (UB134)
 
-            // Assumindo que o DDL está correto e estes campos são 'write-only' (preenchidos em outra regra futura):
-            toRet.VIbsTransfCred = 0;   // ntb_v_ibs_transf_cred (UB107)
-            toRet.VIbsAjuste = 0;       // ntb_v_ibs_ajuste (UB114)
-            toRet.VIbsEstornoCred = 0;  // ntb_v_ibs_estorno_cred (UB117)
-            toRet.VCredPresIbszfm = 0;  // ntb_v_cred_pres_ibszfm (UB134)
+            // 10. Retorna a entidade de tributo calculada
+            return toRet;
+        }
 
+
+
+        /// <summary>
+        /// Calcula o CBS (Grupo UB) - REFATORADO (FRENTE 3A)
+        /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
+        /// Lê de NfProdutoCbsClass (Parâmetros) e retorna NfTributoCbsClass (Calculado)
+        /// </summary>
+        public static NfTributoCbsClass calculaCBS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            // 1. Validação "Fail-Fast" (ADR-004)
+            if (nfProduto.NfProdutoCbs == null)
+                return null;
+
+            var pCbs = nfProduto.NfProdutoCbs; // Alias para "Produto" (Parâmetros de entrada)
+
+            if (string.IsNullOrEmpty(pCbs.CstCbs))
+            {
+                // Validação mínima para garantir que o objeto foi intencionalmente preenchido
+                throw new Exception(string.Format(
+                    "Erro de cálculo (calculaCBS): O item Produto={0} possui 'nf_produto_cbs' informada, mas o campo obrigatório (CstCbs - UB13) está nulo.",
+                    nfProduto.Codigo
+                ));
+            }
+
+            // 2. Criação da entidade de "Tributo" (Calculado) (ADR-005)
+            var toRet = new NfTributoCbsClass(usuarioAtual, singleConnection);
+            toRet.CstCbs = pCbs.CstCbs; // nts_cst_cbs (Cópia do parâmetro)
+
+            /* =============================================================================
+             * RAMO 1: Tributação Regular (gIBSCBS - UB15) e Crédito (gCredPresOper - UB127)
+             * ============================================================================= */
+
+            // 3. Base de Cálculo Principal (vBC - UB16) - PENDÊNCIA 3 (Híbrida)
+            double vBC = pCbs.VBaseCalcCbs.GetValueOrDefault(0);
+
+            if (vBC == 0)
+            {
+                // Cenário 2: Cliente não informou, nós calculamos.
+                // Segue o padrão ADR-002 (calculaIcms)
+                vBC = nfProduto.ValorTotalTributavel;
+                vBC += nfProduto.OutrasDespesasAcessorias;
+            }
+            // Se vBC > 0, usamos o Cenário 1 (valor informado pelo cliente).
+
+            toRet.VBcCbs = arredondaValor(vBC, Arredondar, 2); // nts_v_bc_cbs (UB16)
+
+            // 4. Cálculo: Alíquotas e Redução (gRed - UB64)
+            double pCbsAliq = pCbs.PCbs.GetValueOrDefault(0);       // (Parâmetro) nps_p_cbs (UB56)
+            double pRedAliq = pCbs.PRedAliq.GetValueOrDefault(0);   // (Parâmetro) nps_p_red_aliq (UB64)
+
+            double pCbsEfetiva = pCbsAliq;
+
+            if (pRedAliq > 0)
+            {
+                // A NT (UB64) indica redução na Alíquota
+                double fatorReducao = (1 - (pRedAliq / 100));
+                pCbsEfetiva = pCbsAliq * fatorReducao;
+            }
+
+            // Salva a Alíquota Efetiva (Calculado)
+            toRet.PAliqEfet = arredondaValor(pCbsEfetiva, Arredondar, 4); // nts_p_aliq_efet (UB64)
+
+            // 5. Cálculo: Valor Bruto (Antes do Diferimento)
+            double vCbsBruto = arredondaValor((toRet.VBcCbs.Value * (pCbsEfetiva / 100)), Arredondar, 2);
+
+            // 6. Cálculo: Diferimento (gDif - UB59)
+            double pDif = pCbs.PDif.GetValueOrDefault(0); // (Parâmetro) nps_p_dif (UB59)
+            double vDifTotal = 0;
+            if (pDif > 0)
+            {
+                // O valor do diferimento (vDif) é calculado sobre o imposto bruto
+                vDifTotal = arredondaValor((vCbsBruto * (pDif / 100)), Arredondar, 2);
+            }
+            toRet.VCbsDif = vDifTotal; // (Calculado) nts_v_cbs_dif (UB59)
+
+            // 7. Cálculo: Valor Líquido (vCBS - UB67)
+            // (Abatendo o Diferimento)
+            double vCbsLiquido = vCbsBruto - vDifTotal;
+
+            toRet.VCbs = vCbsLiquido; // nts_v_cbs (Valor ANTES do Crédito Presumido)
+
+            // 8. Cálculo: Crédito Presumido (gCredPresOper - UB127)
+            double pCredPres = pCbs.PCredPres.GetValueOrDefault(0);     // (Parâmetro) Alíquota (UB128)
+            string cCredPres = pCbs.CCredPres;                         // (Parâmetro) Código (UB122)
+
+            // PENDÊNCIA 4 (Híbrida)
+            double vBCCredPres = pCbs.VBcCredPres.GetValueOrDefault(0); // (Parâmetro) UB121
+            if (vBCCredPres == 0 && pCredPres > 0)
+            {
+                // Cenário 2: Cliente não informou. Assumimos que a BC do crédito
+                // é a mesma BC principal do imposto (calculada/informada no Passo 3).
+                vBCCredPres = toRet.VBcCbs.Value;
+            }
+            // Se vBCCredPres > 0, usamos o Cenário 1 (valor informado pelo cliente).
+
+            // Cálculo do valor do crédito
+            double vCredPresCalculado = arredondaValor((vBCCredPres * (pCredPres / 100)), Arredondar, 2);
+
+            // PENDÊNCIA 1 (Regra do CSV 'ind_DeduzCredPres')
+            // Apenas cCredPres "4", "7" e "11" são dedução imediata.
+            bool isCondSus = (cCredPres != "4" && cCredPres != "7" && cCredPres != "11");
+
+            if (isCondSus)
+            {
+                toRet.VCredPres = 0;
+                toRet.VCredPresCondSus = vCredPresCalculado; // nts_v_cred_pres_cond_sus (UB130)
+            }
+            else
+            {
+                toRet.VCredPres = vCredPresCalculado; // nts_v_cred_pres (UB129)
+                toRet.VCredPresCondSus = 0;
+            }
+
+            // 9. Cálculo: vCBS Total (UB67) - Abatendo Crédito Presumido
+            // A regra do vIBS (UB54a) sobre abater o crédito se aplica analogamente à CBS.
+            vCbsLiquido = vCbsLiquido - toRet.VCredPres.Value - toRet.VCredPresCondSus.Value;
+            toRet.VCbs = arredondaValor(vCbsLiquido, Arredondar, 2); // (Calculado) nts_v_cbs (final)
+
+
+            /* =============================================================================
+             * RAMO 2: Tributação Regular (Informativa) (gTribRegular - UB68)
+             * ============================================================================= */
+
+            double pAliqRegCbs = pCbs.PAliqEfetRegCbs.GetValueOrDefault(0);   // (Parâmetro) nps_p_aliq_efet_reg_cbs (UB72c)
+            toRet.VTribRegCbs = arredondaValor((toRet.VBcCbs.Value * (pAliqRegCbs / 100)), Arredondar, 2);   // (Calculado) nts_v_trib_reg_cbs (UB72d)
+
+            /* =============================================================================
+             * RAMO 3: Compras Governamentais (Informativo) (gTribCompraGov - UB82a)
+             * ============================================================================= */
+
+            double pAliqGovCbs = pCbs.PAliqCbsGov.GetValueOrDefault(0);   // (Parâmetro) nps_p_aliq_cbs_gov (UB82f)
+            toRet.VTribCbsGov = arredondaValor((toRet.VBcCbs.Value * (pAliqGovCbs / 100)), Arredondar, 2);   // (Calculado) nts_v_trib_cbs_gov (UB82g)
+
+            /* =============================================================================
+             * RAMOS 4, 5, 6: (Transf, Ajuste, Estorno) - PENDÊNCIA 2 (DDL Corrigido)
+             * ============================================================================= */
+
+            // Estes campos são "copiados" dos parâmetros informados pelo cliente (ADR-005)
+            // Assumindo que o DDL foi corrigido e as entidades regeneradas.
+
+            toRet.VCbsTransfCred = arredondaValor(pCbs.VCbsTransfCred.GetValueOrDefault(0), Arredondar, 2);    // nts_v_cbs_transf_cred (UB108)
+            toRet.VCbsAjuste = arredondaValor(pCbs.VCbsAjuste.GetValueOrDefault(0), Arredondar, 2);              // nts_v_cbs_ajuste (UB115)
+            toRet.VCbsEstornoCred = arredondaValor(pCbs.VCbsEstornoCred.GetValueOrDefault(0), Arredondar, 2);   // nts_v_cbs_estorno_cred (UB118)
+
+            // 10. Retorna a entidade de tributo calculada
+            return toRet;
+        }
+
+
+        /// <summary>
+        /// Calcula o IS (Grupo UB01) - REFATORADO (FRENTE 3A)
+        /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
+        /// Lê de NfProdutoIsClass (Parâmetros) e retorna NfTributoIsClass (Calculado)
+        /// </summary>
+        public static NfTributoIsClass calculaIS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+        {
+            // 1. Validação "Fail-Fast" (ADR-004)
+            if (nfProduto.NfProdutoIs == null)
+                return null;
+
+            var pIs = nfProduto.NfProdutoIs; // Alias para "Produto" (Parâmetros de entrada)
+
+            if (string.IsNullOrEmpty(pIs.CstIs))
+            {
+                // Validação mínima para garantir que o objeto foi intencionalmente preenchido
+                throw new Exception(string.Format(
+                    "Erro de cálculo (calculaIS): O item Produto={0} possui 'nf_produto_is' informada, mas o campo obrigatório (CstIs - UB02) está nulo.",
+                    nfProduto.Codigo
+                ));
+            }
+
+            // 2. Criação da entidade de "Tributo" (Calculado) (ADR-005)
+            var toRet = new NfTributoIsClass(usuarioAtual, singleConnection);
+            toRet.CstIs = pIs.CstIs; // ntl_cst_is (Cópia do parâmetro)
+
+            /* =============================================================================
+             * CÁLCULO DO IMPOSTO (vIS - UB11)
+             * ============================================================================= */
+
+            // 3. Base de Cálculo Principal (vBCIS - UB05) - PENDÊNCIA 3 (Híbrida)
+            double vBC = pIs.VBaseCalcIs.GetValueOrDefault(0);
+
+            if (vBC == 0)
+            {
+                // Cenário 2: Cliente não informou, nós calculamos.
+                // Segue o padrão ADR-002 (calculaIcms)
+                vBC = nfProduto.ValorTotalTributavel;
+                vBC += nfProduto.OutrasDespesasAcessorias;
+            }
+            // Se vBC > 0, usamos o Cenário 1 (valor informado pelo cliente).
+
+            toRet.VBcIs = arredondaValor(vBC, Arredondar, 2); // ntl_v_bc_is (UB05)
+
+            // 4. Cálculo do Valor (vIS - UB11)
+            // O IS pode ser (A) Percentual (ad valorem) ou (B) Específico (ad rem)
+            // O DDL (npl_p_is vs npl_p_is_espec / npl_q_trib) reflete isso.
+
+            double vIS = 0;
+            double pIS_Percentual = pIs.PIs.GetValueOrDefault(0);         // (Parâmetro) npl_p_is (UB06)
+            double pIS_Especifico = pIs.PIsEspec.GetValueOrDefault(0);   // (Parâmetro) npl_p_is_espec (UB07) - (Valor R$ ad-rem)
+            double qTrib = pIs.QTrib.GetValueOrDefault(0);               // (Parâmetro) npl_q_trib (UB10)
+
+            if (pIS_Percentual > 0)
+            {
+                // Método 1: Percentual (ad valorem)
+                vIS = arredondaValor((toRet.VBcIs.Value * (pIS_Percentual / 100)), Arredondar, 2);
+                toRet.PIs = pIS_Percentual; // Salva a alíquota (percentual) usada
+            }
+            else if (pIS_Especifico > 0 && qTrib > 0)
+            {
+                // Método 2: Específico (ad rem)
+                // (Segue padrão do calculaPis - Modalidade Quantidade)
+                vIS = arredondaValor((qTrib * pIS_Especifico), Arredondar, 2);
+                toRet.PIs = pIS_Especifico; // Salva a alíquota (R$ ad-rem) usada
+            }
+
+            toRet.VIs = vIS; // (Calculado) ntl_v_is (UB11)
+
+            // 5. Cópia de Campos de Parâmetro (ADR-005)
+            // O DDL (npl_v_is_dev) define a devolução como um PARÂMETRO R$
+            toRet.VIsDev = arredondaValor(pIs.VIsDev.GetValueOrDefault(0), Arredondar, 2); // ntl_v_is_dev
+
+            // 6. Remoção de Lógica Zumbi (Campos "Retidos")
+            // O DDL 'Alterações BD NFe.sql' removeu os parâmetros de IS Retido 
+            // (npl_v_base_calc_is_ret, npl_p_is_ret) e o .md (UB01-UB11) não os prevê.
+            // O código antigo (linhas 461-470) estava incorreto.
+            // Os campos 'ntl_v_bc_is_ret' e 'ntl_v_is_ret' no DDL 'nf_tributo_is'
+            // são "zumbis" da Frente 1 e não devem ser calculados.
+            toRet.VBcIsRet = 0;
+            toRet.VIsRet = 0;
+
+            // 7. Retorna a entidade de tributo calculada
             return toRet;
         }
 

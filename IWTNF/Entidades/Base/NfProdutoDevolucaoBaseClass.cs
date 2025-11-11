@@ -646,8 +646,8 @@ public static NfProdutoDevolucaoClass GetEntidade(long id, AcsUsuarioClass usuar
                       }
                       else
                       {
-                         whereClause += "  nf_produto_devolucao.id_nf_produto_devolucao = :nf_produto_devolucao_ID_4630 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_ID_4630", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_devolucao.id_nf_produto_devolucao = :nf_produto_devolucao_ID_4373 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_ID_4373", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -665,8 +665,8 @@ public static NfProdutoDevolucaoClass GetEntidade(long id, AcsUsuarioClass usuar
                       }
                       else
                       {
-                         whereClause += "  nf_produto_devolucao.id_nf_item = :nf_produto_devolucao_NfItem_8324 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_NfItem_8324", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_produto_devolucao.id_nf_item = :nf_produto_devolucao_NfItem_5723 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_NfItem_5723", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -684,8 +684,8 @@ public static NfProdutoDevolucaoClass GetEntidade(long id, AcsUsuarioClass usuar
                       }
                       else
                       {
-                         whereClause += "  nf_produto_devolucao.npv_p_dev = :nf_produto_devolucao_PDev_1467 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_PDev_1467", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_produto_devolucao.npv_p_dev = :nf_produto_devolucao_PDev_1654 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_PDev_1654", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -703,8 +703,8 @@ public static NfProdutoDevolucaoClass GetEntidade(long id, AcsUsuarioClass usuar
                       }
                       else
                       {
-                         whereClause += "  nf_produto_devolucao.version = :nf_produto_devolucao_Version_2972 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_Version_2972", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_produto_devolucao.version = :nf_produto_devolucao_Version_2666 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_Version_2666", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -722,8 +722,8 @@ public static NfProdutoDevolucaoClass GetEntidade(long id, AcsUsuarioClass usuar
                       }
                       else
                       {
-                         whereClause += "  nf_produto_devolucao.entity_uid LIKE :nf_produto_devolucao_EntityUid_2818 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_EntityUid_2818", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_produto_devolucao.entity_uid LIKE :nf_produto_devolucao_EntityUid_1742 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_EntityUid_1742", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -741,8 +741,8 @@ public static NfProdutoDevolucaoClass GetEntidade(long id, AcsUsuarioClass usuar
                       }
                       else
                       {
-                         whereClause += "  nf_produto_devolucao.entity_uid LIKE :nf_produto_devolucao_EntityUid_7965 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_EntityUid_7965", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_produto_devolucao.entity_uid LIKE :nf_produto_devolucao_EntityUid_8639 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_produto_devolucao_EntityUid_8639", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
