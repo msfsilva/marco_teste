@@ -37,6 +37,7 @@ protected const string ErroCollectionNfFaturaClassNfPrincipal = "Erro ao carrega
 protected const string ErroCollectionNfItemClassNfPrincipal = "Erro ao carregar a coleção de NfItemClass.";
 protected const string ErroCollectionNfNotasRelacionadasClassNfPrincipal = "Erro ao carregar a coleção de NfNotasRelacionadasClass.";
 protected const string ErroCollectionNfPagamentoClassNfPrincipal = "Erro ao carregar a coleção de NfPagamentoClass.";
+protected const string ErroCollectionNfPagamentoAntecipadoClassNfPrincipal = "Erro ao carregar a coleção de NfPagamentoAntecipadoClass.";
 protected const string ErroCollectionNfPrincipalClassNfPrincipalSubstituida = "Erro ao carregar a coleção de NfPrincipalClass.";
 protected const string ErroCollectionNfPrincipalAutorizacaoXmlClassNfPrincipal = "Erro ao carregar a coleção de NfPrincipalAutorizacaoXmlClass.";
 protected const string ErroCollectionNfPrincipalCancelamentoJustificativaClassNfPrincipal = "Erro ao carregar a coleção de NfPrincipalCancelamentoJustificativaClass.";
@@ -67,6 +68,7 @@ protected const string MensagemUtilizadoCollectionNfFaturaClassNfPrincipal =  "A
 protected const string MensagemUtilizadoCollectionNfItemClassNfPrincipal =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfItemClass:";
 protected const string MensagemUtilizadoCollectionNfNotasRelacionadasClassNfPrincipal =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfNotasRelacionadasClass:";
 protected const string MensagemUtilizadoCollectionNfPagamentoClassNfPrincipal =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfPagamentoClass:";
+protected const string MensagemUtilizadoCollectionNfPagamentoAntecipadoClassNfPrincipal =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfPagamentoAntecipadoClass:";
 protected const string MensagemUtilizadoCollectionNfPrincipalClassNfPrincipalSubstituida =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfPrincipalClass:";
 protected const string MensagemUtilizadoCollectionNfPrincipalAutorizacaoXmlClassNfPrincipal =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfPrincipalAutorizacaoXmlClass:";
 protected const string MensagemUtilizadoCollectionNfPrincipalCancelamentoJustificativaClassNfPrincipal =  "A entidade NfPrincipalClass está sendo utilizada nos seguintes NfPrincipalCancelamentoJustificativaClass:";
@@ -722,45 +724,87 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfPrinc
             } 
         } 
 
-       protected string _cClassTribOriginal{get;private set;}
-       private string _cClassTribOriginalCommited{get; set;}
-        private string _valueCClassTrib;
-         [Column("npr_c_class_trib")]
-        public virtual string CClassTrib
+       protected string _cMunFgIbsOriginal{get;private set;}
+       private string _cMunFgIbsOriginalCommited{get; set;}
+        private string _valueCMunFgIbs;
+         [Column("npr_c_mun_fg_ibs")]
+        public virtual string CMunFgIbs
          { 
-            get { return this._valueCClassTrib; } 
+            get { return this._valueCMunFgIbs; } 
             set 
             { 
-                if (this._valueCClassTrib == value)return;
-                 this._valueCClassTrib = value; 
+                if (this._valueCMunFgIbs == value)return;
+                 this._valueCMunFgIbs = value; 
             } 
         } 
 
-       protected short? _finDebOriginal{get;private set;}
-       private short? _finDebOriginalCommited{get; set;}
-        private short? _valueFinDeb;
-         [Column("npr_fin_deb")]
-        public virtual short? FinDeb
+       protected string _tpNfDebitoOriginal{get;private set;}
+       private string _tpNfDebitoOriginalCommited{get; set;}
+        private string _valueTpNfDebito;
+         [Column("npr_tp_nf_debito")]
+        public virtual string TpNfDebito
          { 
-            get { return this._valueFinDeb; } 
+            get { return this._valueTpNfDebito; } 
             set 
             { 
-                if (this._valueFinDeb == value)return;
-                 this._valueFinDeb = value; 
+                if (this._valueTpNfDebito == value)return;
+                 this._valueTpNfDebito = value; 
             } 
         } 
 
-       protected short? _finCredOriginal{get;private set;}
-       private short? _finCredOriginalCommited{get; set;}
-        private short? _valueFinCred;
-         [Column("npr_fin_cred")]
-        public virtual short? FinCred
+       protected string _tpNfCreditoOriginal{get;private set;}
+       private string _tpNfCreditoOriginalCommited{get; set;}
+        private string _valueTpNfCredito;
+         [Column("npr_tp_nf_credito")]
+        public virtual string TpNfCredito
          { 
-            get { return this._valueFinCred; } 
+            get { return this._valueTpNfCredito; } 
             set 
             { 
-                if (this._valueFinCred == value)return;
-                 this._valueFinCred = value; 
+                if (this._valueTpNfCredito == value)return;
+                 this._valueTpNfCredito = value; 
+            } 
+        } 
+
+       protected short? _tpEnteGovOriginal{get;private set;}
+       private short? _tpEnteGovOriginalCommited{get; set;}
+        private short? _valueTpEnteGov;
+         [Column("npr_tp_ente_gov")]
+        public virtual short? TpEnteGov
+         { 
+            get { return this._valueTpEnteGov; } 
+            set 
+            { 
+                if (this._valueTpEnteGov == value)return;
+                 this._valueTpEnteGov = value; 
+            } 
+        } 
+
+       protected double? _pRedutorOriginal{get;private set;}
+       private double? _pRedutorOriginalCommited{get; set;}
+        private double? _valuePRedutor;
+         [Column("npr_p_redutor")]
+        public virtual double? PRedutor
+         { 
+            get { return this._valuePRedutor; } 
+            set 
+            { 
+                if (this._valuePRedutor == value)return;
+                 this._valuePRedutor = value; 
+            } 
+        } 
+
+       protected short? _tpOperGovOriginal{get;private set;}
+       private short? _tpOperGovOriginalCommited{get; set;}
+        private short? _valueTpOperGov;
+         [Column("npr_tp_oper_gov")]
+        public virtual short? TpOperGov
+         { 
+            get { return this._valueTpOperGov; } 
+            set 
+            { 
+                if (this._valueTpOperGov == value)return;
+                 this._valueTpOperGov = value; 
             } 
         } 
 
@@ -1028,6 +1072,28 @@ return this._valueCollectionNfPagamentoClassNfPrincipal; }
            } 
        } 
 
+       private List<long> _collectionNfPagamentoAntecipadoClassNfPrincipalOriginal;
+       private List<Entidades.NfPagamentoAntecipadoClass > _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos;
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetFalse)] 
+       protected bool _valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged { get; private set;} 
+       [UnCloneable(UnCloneableAttributeType.RetNull)] 
+       protected BindingList<Entidades.NfPagamentoAntecipadoClass> _valueCollectionNfPagamentoAntecipadoClassNfPrincipal { get; set;} 
+       [UnCloneable(UnCloneableAttributeType.RetPadrao)] 
+       public BindingList<Entidades.NfPagamentoAntecipadoClass> CollectionNfPagamentoAntecipadoClassNfPrincipal 
+       { 
+           get { if(!_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded && !this.DisableLoadCollection){this.LoadCollectionNfPagamentoAntecipadoClassNfPrincipal();}
+return this._valueCollectionNfPagamentoAntecipadoClassNfPrincipal; } 
+           set 
+           { 
+               this._valueCollectionNfPagamentoAntecipadoClassNfPrincipal = value; 
+               this._valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded = true; 
+           } 
+       } 
+
        private List<long> _collectionNfPrincipalClassNfPrincipalSubstituidaOriginal;
        private List<Entidades.NfPrincipalClass > _collectionNfPrincipalClassNfPrincipalSubstituidaRemovidos;
        [UnCloneable(UnCloneableAttributeType.RetFalse)] 
@@ -1161,6 +1227,7 @@ return this._valueCollectionNfTransporteClassNfPrincipal; }
            this.PresencaComprador = (PresencaComprador)9;
            this.ImpressaoDanfeLiberada = false;
            this.ImpressaoDanfeContingencia = false;
+           this.PRedutor = 0;
             base.SalvarValoresAntigosHabilitado = true;
          }
 
@@ -1876,6 +1943,65 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                 throw new Exception(ErroCollectionNfPagamentoClassNfPrincipal+"\r\n" + e.Message, e);
             }
          } 
+        private void CollectionNfPagamentoAntecipadoClassNfPrincipalChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+           if (DisableEventosRemocaoVetores) return;
+           switch (e.Action) 
+           { 
+             case NotifyCollectionChangedAction.Add: 
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged = true;
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged = true;
+                 break; 
+             case NotifyCollectionChangedAction.Remove: 
+             case NotifyCollectionChangedAction.Replace: 
+             case NotifyCollectionChangedAction.Move: 
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged = true; 
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged = true;
+                 foreach (Entidades.NfPagamentoAntecipadoClass item in e.OldItems) 
+                 { 
+                     _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos.Add(item); 
+                 } 
+                 break; 
+             case NotifyCollectionChangedAction.Reset: 
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged = true; 
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged = true;
+                 foreach (Entidades.NfPagamentoAntecipadoClass item in _valueCollectionNfPagamentoAntecipadoClassNfPrincipal) 
+                 { 
+                     _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos.Add(item); 
+                 } 
+                 break; 
+             default: 
+                 throw new ArgumentOutOfRangeException(); 
+           } 
+         }
+         protected void LoadCollectionNfPagamentoAntecipadoClassNfPrincipal()
+         {
+            try
+            {
+                 ObservableCollection<Entidades.NfPagamentoAntecipadoClass> oc;
+                _valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged = false;
+                 _valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged = false;
+                _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos = new List<Entidades.NfPagamentoAntecipadoClass>();
+                if (this.ID == -1) 
+                {
+                     oc = new ObservableCollection<Entidades.NfPagamentoAntecipadoClass>();
+                }
+                else{ 
+                   Entidades.NfPagamentoAntecipadoClass search = new Entidades.NfPagamentoAntecipadoClass(this.UsuarioAtual, SingleConnection);
+                   search.BufferSecundario = this.BufferSecundario; 
+                    oc = 
+                      new ObservableCollection<Entidades.NfPagamentoAntecipadoClass>(                        search.Search(new List<SearchParameterClass>() {                            new SearchParameterClass("NfPrincipal", this),                     }                       ).Cast<Entidades.NfPagamentoAntecipadoClass>().ToList());
+                 }
+                 _valueCollectionNfPagamentoAntecipadoClassNfPrincipal = new BindingList<Entidades.NfPagamentoAntecipadoClass>(oc); 
+                 _collectionNfPagamentoAntecipadoClassNfPrincipalOriginal= (from a in _valueCollectionNfPagamentoAntecipadoClassNfPrincipal select a.ID).ToList();
+                 _valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded = true;
+                 oc.CollectionChanged += CollectionNfPagamentoAntecipadoClassNfPrincipalChangedEvent; 
+            }
+            catch (Exception e)
+            {
+                throw new Exception(ErroCollectionNfPagamentoAntecipadoClassNfPrincipal+"\r\n" + e.Message, e);
+            }
+         } 
         private void CollectionNfPrincipalClassNfPrincipalSubstituidaChangedEvent(object sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
         {
            if (DisableEventosRemocaoVetores) return;
@@ -2308,9 +2434,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                         "  nfp_impressao_danfe_liberada = :nfp_impressao_danfe_liberada, " + 
                         "  nfp_impressao_danfe_contingencia = :nfp_impressao_danfe_contingencia, " + 
                         "  nfp_estoque_movimentado = :nfp_estoque_movimentado, " + 
-                        "  npr_c_class_trib = :npr_c_class_trib, " + 
-                        "  npr_fin_deb = :npr_fin_deb, " + 
-                        "  npr_fin_cred = :npr_fin_cred "+
+                        "  npr_c_mun_fg_ibs = :npr_c_mun_fg_ibs, " + 
+                        "  npr_tp_nf_debito = :npr_tp_nf_debito, " + 
+                        "  npr_tp_nf_credito = :npr_tp_nf_credito, " + 
+                        "  npr_tp_ente_gov = :npr_tp_ente_gov, " + 
+                        "  npr_p_redutor = :npr_p_redutor, " + 
+                        "  npr_tp_oper_gov = :npr_tp_oper_gov "+
                         "WHERE  " +
                         "  id_nf_principal = :id " +
                         "RETURNING id_nf_principal;";
@@ -2359,9 +2488,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                         "  nfp_impressao_danfe_liberada , " + 
                         "  nfp_impressao_danfe_contingencia , " + 
                         "  nfp_estoque_movimentado , " + 
-                        "  npr_c_class_trib , " + 
-                        "  npr_fin_deb , " + 
-                        "  npr_fin_cred  "+
+                        "  npr_c_mun_fg_ibs , " + 
+                        "  npr_tp_nf_debito , " + 
+                        "  npr_tp_nf_credito , " + 
+                        "  npr_tp_ente_gov , " + 
+                        "  npr_p_redutor , " + 
+                        "  npr_tp_oper_gov  "+
                         ")  " +
                         "VALUES ( " +
                         "  :nfp_numero , " + 
@@ -2402,9 +2534,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                         "  :nfp_impressao_danfe_liberada , " + 
                         "  :nfp_impressao_danfe_contingencia , " + 
                         "  :nfp_estoque_movimentado , " + 
-                        "  :npr_c_class_trib , " + 
-                        "  :npr_fin_deb , " + 
-                        "  :npr_fin_cred  "+
+                        "  :npr_c_mun_fg_ibs , " + 
+                        "  :npr_tp_nf_debito , " + 
+                        "  :npr_tp_nf_credito , " + 
+                        "  :npr_tp_ente_gov , " + 
+                        "  :npr_p_redutor , " + 
+                        "  :npr_tp_oper_gov  "+
                         ")RETURNING id_nf_principal;";
                 }
 
@@ -2487,12 +2622,18 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.ImpressaoDanfeContingencia ?? DBNull.Value;
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nfp_estoque_movimentado", NpgsqlDbType.Smallint));
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.EstoqueMovimentado ?? DBNull.Value;
-                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_c_class_trib", NpgsqlDbType.Varchar));
-                command.Parameters[command.Parameters.Count - 1].Value = (object)this.CClassTrib ?? DBNull.Value;
-                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_fin_deb", NpgsqlDbType.Smallint));
-                command.Parameters[command.Parameters.Count - 1].Value = (object)this.FinDeb ?? DBNull.Value;
-                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_fin_cred", NpgsqlDbType.Smallint));
-                command.Parameters[command.Parameters.Count - 1].Value = (object)this.FinCred ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_c_mun_fg_ibs", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.CMunFgIbs ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_tp_nf_debito", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.TpNfDebito ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_tp_nf_credito", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.TpNfCredito ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_tp_ente_gov", NpgsqlDbType.Smallint));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.TpEnteGov ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_p_redutor", NpgsqlDbType.Double));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.PRedutor ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npr_tp_oper_gov", NpgsqlDbType.Smallint));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.TpOperGov ?? DBNull.Value;
 
  
                  bool inserting = this.ID == -1; 
@@ -2627,6 +2768,15 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                 }
                 return true;
             }
+ if (CollectionNfPagamentoAntecipadoClassNfPrincipal.Count > 0) 
+            {
+                mensagemUtilizado = MensagemUtilizadoCollectionNfPagamentoAntecipadoClassNfPrincipal+"\r\n";
+                foreach (Entidades.NfPagamentoAntecipadoClass tmp in CollectionNfPagamentoAntecipadoClassNfPrincipal)
+                {
+                    mensagemUtilizado += tmp.ToString() + "\r\n";
+                }
+                return true;
+            }
  if (CollectionNfPrincipalClassNfPrincipalSubstituida.Count > 0) 
             {
                 mensagemUtilizado = MensagemUtilizadoCollectionNfPrincipalClassNfPrincipalSubstituida+"\r\n";
@@ -2725,9 +2875,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
  toRet.ImpressaoDanfeLiberada= entidadeCopiar.ImpressaoDanfeLiberada;
  toRet.ImpressaoDanfeContingencia= entidadeCopiar.ImpressaoDanfeContingencia;
  toRet.EstoqueMovimentado= entidadeCopiar.EstoqueMovimentado;
- toRet.CClassTrib= entidadeCopiar.CClassTrib;
- toRet.FinDeb= entidadeCopiar.FinDeb;
- toRet.FinCred= entidadeCopiar.FinCred;
+ toRet.CMunFgIbs= entidadeCopiar.CMunFgIbs;
+ toRet.TpNfDebito= entidadeCopiar.TpNfDebito;
+ toRet.TpNfCredito= entidadeCopiar.TpNfCredito;
+ toRet.TpEnteGov= entidadeCopiar.TpEnteGov;
+ toRet.PRedutor= entidadeCopiar.PRedutor;
+ toRet.TpOperGov= entidadeCopiar.TpOperGov;
 
             return toRet;
             }
@@ -2814,12 +2967,18 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
        _impressaoDanfeContingenciaOriginalCommited = _impressaoDanfeContingenciaOriginal;
        _estoqueMovimentadoOriginal = EstoqueMovimentado;
        _estoqueMovimentadoOriginalCommited = _estoqueMovimentadoOriginal;
-       _cClassTribOriginal = CClassTrib;
-       _cClassTribOriginalCommited = _cClassTribOriginal;
-       _finDebOriginal = FinDeb;
-       _finDebOriginalCommited = _finDebOriginal;
-       _finCredOriginal = FinCred;
-       _finCredOriginalCommited = _finCredOriginal;
+       _cMunFgIbsOriginal = CMunFgIbs;
+       _cMunFgIbsOriginalCommited = _cMunFgIbsOriginal;
+       _tpNfDebitoOriginal = TpNfDebito;
+       _tpNfDebitoOriginalCommited = _tpNfDebitoOriginal;
+       _tpNfCreditoOriginal = TpNfCredito;
+       _tpNfCreditoOriginalCommited = _tpNfCreditoOriginal;
+       _tpEnteGovOriginal = TpEnteGov;
+       _tpEnteGovOriginalCommited = _tpEnteGovOriginal;
+       _pRedutorOriginal = PRedutor;
+       _pRedutorOriginalCommited = _pRedutorOriginal;
+       _tpOperGovOriginal = TpOperGov;
+       _tpOperGovOriginalCommited = _tpOperGovOriginal;
 
             }
             catch (Exception e)
@@ -2868,9 +3027,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
        _impressaoDanfeLiberadaOriginalCommited = ImpressaoDanfeLiberada;
        _impressaoDanfeContingenciaOriginalCommited = ImpressaoDanfeContingencia;
        _estoqueMovimentadoOriginalCommited = EstoqueMovimentado;
-       _cClassTribOriginalCommited = CClassTrib;
-       _finDebOriginalCommited = FinDeb;
-       _finCredOriginalCommited = FinCred;
+       _cMunFgIbsOriginalCommited = CMunFgIbs;
+       _tpNfDebitoOriginalCommited = TpNfDebito;
+       _tpNfCreditoOriginalCommited = TpNfCredito;
+       _tpEnteGovOriginalCommited = TpEnteGov;
+       _pRedutorOriginalCommited = PRedutor;
+       _tpOperGovOriginalCommited = TpOperGov;
 
             }
             catch (Exception e)
@@ -3051,6 +3213,20 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                   _valueCollectionNfPagamentoClassNfPrincipalChanged = false;
                   _valueCollectionNfPagamentoClassNfPrincipalCommitedChanged = false;
                }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                  if (_collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos != null) 
+                  {
+                     _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos.Clear();
+                  }
+                  else 
+                  {
+                      _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos = new List<Entidades.NfPagamentoAntecipadoClass>();
+                  }
+                  _collectionNfPagamentoAntecipadoClassNfPrincipalOriginal= (from a in _valueCollectionNfPagamentoAntecipadoClassNfPrincipal select a.ID).ToList();
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged = false;
+                  _valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged = false;
+               }
                if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaLoaded) 
                {
                   if (_collectionNfPrincipalClassNfPrincipalSubstituidaRemovidos != null) 
@@ -3208,12 +3384,18 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                _impressaoDanfeContingenciaOriginalCommited=_impressaoDanfeContingenciaOriginal;
                EstoqueMovimentado=_estoqueMovimentadoOriginal;
                _estoqueMovimentadoOriginalCommited=_estoqueMovimentadoOriginal;
-               CClassTrib=_cClassTribOriginal;
-               _cClassTribOriginalCommited=_cClassTribOriginal;
-               FinDeb=_finDebOriginal;
-               _finDebOriginalCommited=_finDebOriginal;
-               FinCred=_finCredOriginal;
-               _finCredOriginalCommited=_finCredOriginal;
+               CMunFgIbs=_cMunFgIbsOriginal;
+               _cMunFgIbsOriginalCommited=_cMunFgIbsOriginal;
+               TpNfDebito=_tpNfDebitoOriginal;
+               _tpNfDebitoOriginalCommited=_tpNfDebitoOriginal;
+               TpNfCredito=_tpNfCreditoOriginal;
+               _tpNfCreditoOriginalCommited=_tpNfCreditoOriginal;
+               TpEnteGov=_tpEnteGovOriginal;
+               _tpEnteGovOriginalCommited=_tpEnteGovOriginal;
+               PRedutor=_pRedutorOriginal;
+               _pRedutorOriginalCommited=_pRedutorOriginal;
+               TpOperGov=_tpOperGovOriginal;
+               _tpOperGovOriginalCommited=_tpOperGovOriginal;
                if (_valueCollectionNfAtributoClassNfPrincipalLoaded) 
                {
                   CollectionNfAtributoClassNfPrincipal.Clear();
@@ -3321,6 +3503,15 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                     CollectionNfPagamentoClassNfPrincipal.Add(Entidades.NfPagamentoClass.GetEntidade(item, UsuarioAtual, SingleConnection));
                   }
                   _collectionNfPagamentoClassNfPrincipalRemovidos.Clear();
+               }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                  CollectionNfPagamentoAntecipadoClassNfPrincipal.Clear();
+                  foreach(int item in _collectionNfPagamentoAntecipadoClassNfPrincipalOriginal)
+                  {
+                    CollectionNfPagamentoAntecipadoClassNfPrincipal.Add(Entidades.NfPagamentoAntecipadoClass.GetEntidade(item, UsuarioAtual, SingleConnection));
+                  }
+                  _collectionNfPagamentoAntecipadoClassNfPrincipalRemovidos.Clear();
                }
                if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaLoaded) 
                {
@@ -3471,6 +3662,13 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                      return true;
                   }
                }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                  if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaLoaded) 
                {
                   if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaChanged)
@@ -3564,6 +3762,11 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                if (_valueCollectionNfPagamentoClassNfPrincipalLoaded) 
                {
                    tempRet = CollectionNfPagamentoClassNfPrincipal.Any(item => item.IsDirty());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                   tempRet = CollectionNfPagamentoAntecipadoClassNfPrincipal.Any(item => item.IsDirty());
                    if (tempRet) return true;
                }
                if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaLoaded) 
@@ -3695,11 +3898,17 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
       if (dirty) return true;
        dirty = _estoqueMovimentadoOriginal != EstoqueMovimentado;
       if (dirty) return true;
-       dirty = _cClassTribOriginal != CClassTrib;
+       dirty = _cMunFgIbsOriginal != CMunFgIbs;
       if (dirty) return true;
-       dirty = _finDebOriginal != FinDeb;
+       dirty = _tpNfDebitoOriginal != TpNfDebito;
       if (dirty) return true;
-       dirty = _finCredOriginal != FinCred;
+       dirty = _tpNfCreditoOriginal != TpNfCredito;
+      if (dirty) return true;
+       dirty = _tpEnteGovOriginal != TpEnteGov;
+      if (dirty) return true;
+       dirty = _pRedutorOriginal != PRedutor;
+      if (dirty) return true;
+       dirty = _tpOperGovOriginal != TpOperGov;
 
                return dirty;
             }
@@ -3806,6 +4015,13 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                      return true;
                   }
                }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                  if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalCommitedChanged)
+                  {
+                     return true;
+                  }
+               }
                if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaLoaded) 
                {
                   if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaCommitedChanged)
@@ -3899,6 +4115,11 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                if (_valueCollectionNfPagamentoClassNfPrincipalLoaded) 
                {
                    tempRet = CollectionNfPagamentoClassNfPrincipal.Any(item => item.IsDirtyCommited());
+                   if (tempRet) return true;
+               }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                   tempRet = CollectionNfPagamentoAntecipadoClassNfPrincipal.Any(item => item.IsDirtyCommited());
                    if (tempRet) return true;
                }
                if (_valueCollectionNfPrincipalClassNfPrincipalSubstituidaLoaded) 
@@ -4030,11 +4251,17 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
       if (dirty) return true;
        dirty = _estoqueMovimentadoOriginalCommited != EstoqueMovimentado;
       if (dirty) return true;
-       dirty = _cClassTribOriginalCommited != CClassTrib;
+       dirty = _cMunFgIbsOriginalCommited != CMunFgIbs;
       if (dirty) return true;
-       dirty = _finDebOriginalCommited != FinDeb;
+       dirty = _tpNfDebitoOriginalCommited != TpNfDebito;
       if (dirty) return true;
-       dirty = _finCredOriginalCommited != FinCred;
+       dirty = _tpNfCreditoOriginalCommited != TpNfCredito;
+      if (dirty) return true;
+       dirty = _tpEnteGovOriginalCommited != TpEnteGov;
+      if (dirty) return true;
+       dirty = _pRedutorOriginalCommited != PRedutor;
+      if (dirty) return true;
+       dirty = _tpOperGovOriginalCommited != TpOperGov;
 
                return dirty;
             }
@@ -4136,6 +4363,13 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                if (_valueCollectionNfPagamentoClassNfPrincipalLoaded) 
                {
                   foreach(NfPagamentoClass item in CollectionNfPagamentoClassNfPrincipal)
+                  {
+                     item.Save(ref command, propagado:true);
+                  }
+               }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                  foreach(NfPagamentoAntecipadoClass item in CollectionNfPagamentoAntecipadoClassNfPrincipal)
                   {
                      item.Save(ref command, propagado:true);
                   }
@@ -4274,12 +4508,18 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                 return this.ImpressaoDanfeContingencia;
              case "EstoqueMovimentado":
                 return this.EstoqueMovimentado;
-             case "CClassTrib":
-                return this.CClassTrib;
-             case "FinDeb":
-                return this.FinDeb;
-             case "FinCred":
-                return this.FinCred;
+             case "CMunFgIbs":
+                return this.CMunFgIbs;
+             case "TpNfDebito":
+                return this.TpNfDebito;
+             case "TpNfCredito":
+                return this.TpNfCredito;
+             case "TpEnteGov":
+                return this.TpEnteGov;
+             case "PRedutor":
+                return this.PRedutor;
+             case "TpOperGov":
+                return this.TpOperGov;
               default:
                  return new ArgumentOutOfRangeException();
            }
@@ -4370,6 +4610,13 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                if (_valueCollectionNfPagamentoClassNfPrincipalLoaded) 
                {
                   foreach(NfPagamentoClass item in CollectionNfPagamentoClassNfPrincipal)
+                  {
+                     item.ChangeSingleConnection(newConnection);
+                  }
+               }
+               if (_valueCollectionNfPagamentoAntecipadoClassNfPrincipalLoaded) 
+               {
+                  foreach(NfPagamentoAntecipadoClass item in CollectionNfPagamentoAntecipadoClassNfPrincipal)
                   {
                      item.ChangeSingleConnection(newConnection);
                   }
@@ -4469,9 +4716,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                command.CommandText += "nf_principal.nfp_impressao_danfe_liberada, " ;
                command.CommandText += "nf_principal.nfp_impressao_danfe_contingencia, " ;
                command.CommandText += "nf_principal.nfp_estoque_movimentado, " ;
-               command.CommandText += "nf_principal.npr_c_class_trib, " ;
-               command.CommandText += "nf_principal.npr_fin_deb, " ;
-               command.CommandText += "nf_principal.npr_fin_cred " ;
+               command.CommandText += "nf_principal.npr_c_mun_fg_ibs, " ;
+               command.CommandText += "nf_principal.npr_tp_nf_debito, " ;
+               command.CommandText += "nf_principal.npr_tp_nf_credito, " ;
+               command.CommandText += "nf_principal.npr_tp_ente_gov, " ;
+               command.CommandText += "nf_principal.npr_p_redutor, " ;
+               command.CommandText += "nf_principal.npr_tp_oper_gov " ;
                }
                command.CommandText += " FROM  nf_principal ";
                string whereClause = "";
@@ -5083,45 +5333,87 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                            break;
                      }
                      break;
-                     case "npr_c_class_trib":
-                     case "CClassTrib":
+                     case "npr_c_mun_fg_ibs":
+                     case "CMunFgIbs":
                      switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
-                           orderByClause += " , nf_principal.npr_c_class_trib " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , nf_principal.npr_c_mun_fg_ibs " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
                         case TipoOrdenacao.Automatica:
-                           orderByClause += " , UPPER(nf_principal.npr_c_class_trib) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , UPPER(nf_principal.npr_c_mun_fg_ibs) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
-                     case "npr_fin_deb":
-                     case "FinDeb":
+                     case "npr_tp_nf_debito":
+                     case "TpNfDebito":
                      switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
-                        case TipoOrdenacao.Automatica:
-                           orderByClause += " , nf_principal.npr_fin_deb " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , nf_principal.npr_tp_nf_debito " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
-                           orderByClause += " , UPPER(nf_principal.npr_fin_deb) " + parametro.Ordenacao.ToString().ToUpper(); 
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , UPPER(nf_principal.npr_tp_nf_debito) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
-                     case "npr_fin_cred":
-                     case "FinCred":
+                     case "npr_tp_nf_credito":
+                     case "TpNfCredito":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                           orderByClause += " , nf_principal.npr_tp_nf_credito " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , UPPER(nf_principal.npr_tp_nf_credito) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "npr_tp_ente_gov":
+                     case "TpEnteGov":
                      switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
                         case TipoOrdenacao.Automatica:
-                           orderByClause += " , nf_principal.npr_fin_cred " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , nf_principal.npr_tp_ente_gov " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
-                           orderByClause += " , UPPER(nf_principal.npr_fin_cred) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , UPPER(nf_principal.npr_tp_ente_gov) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "npr_p_redutor":
+                     case "PRedutor":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_principal.npr_p_redutor " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                           orderByClause += " , UPPER(nf_principal.npr_p_redutor) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                     }
+                     break;
+                     case "npr_tp_oper_gov":
+                     case "TpOperGov":
+                     switch (parametro.TipoOrdenacao)
+                     {
+                        case TipoOrdenacao.Numerica:
+                        case TipoOrdenacao.Data:
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_principal.npr_tp_oper_gov " + parametro.Ordenacao.ToString().ToUpper(); 
+                           break;
+                        case TipoOrdenacao.String:
+                           orderByClause += " , UPPER(nf_principal.npr_tp_oper_gov) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
@@ -5188,10 +5480,20 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                            whereClause += " OR UPPER(nf_principal.nfp_texto_qr_code) LIKE :buscaCompletaUpper ";
                            whereClause += " OR LOWER(nf_principal.nfp_texto_qr_code) LIKE :buscaCompletaLower ";
                         }
-                        if (!CamposNaoIncluirBuscaCompleta.Contains("npr_c_class_trib")) 
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("npr_c_mun_fg_ibs")) 
                         {
-                           whereClause += " OR UPPER(nf_principal.npr_c_class_trib) LIKE :buscaCompletaUpper ";
-                           whereClause += " OR LOWER(nf_principal.npr_c_class_trib) LIKE :buscaCompletaLower ";
+                           whereClause += " OR UPPER(nf_principal.npr_c_mun_fg_ibs) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_principal.npr_c_mun_fg_ibs) LIKE :buscaCompletaLower ";
+                        }
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("npr_tp_nf_debito")) 
+                        {
+                           whereClause += " OR UPPER(nf_principal.npr_tp_nf_debito) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_principal.npr_tp_nf_debito) LIKE :buscaCompletaLower ";
+                        }
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("npr_tp_nf_credito")) 
+                        {
+                           whereClause += " OR UPPER(nf_principal.npr_tp_nf_credito) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_principal.npr_tp_nf_credito) LIKE :buscaCompletaLower ";
                         }
                         whereClause += ") ";
                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("buscaCompletaUpper", NpgsqlDbType.Varchar, "%" + parametro.Fieldvalue.ToString().ToUpper() + "%"));
@@ -5211,8 +5513,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.id_nf_principal = :nf_principal_ID_6030 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ID_6030", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.id_nf_principal = :nf_principal_ID_1962 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ID_1962", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5230,8 +5532,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_numero = :nf_principal_Numero_9195 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Numero_9195", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_numero = :nf_principal_Numero_942 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Numero_942", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5249,8 +5551,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_natureza_operacao LIKE :nf_principal_NaturezaOperacao_1332 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_NaturezaOperacao_1332", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_natureza_operacao LIKE :nf_principal_NaturezaOperacao_3000 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_NaturezaOperacao_3000", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5268,8 +5570,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_serie = :nf_principal_Serie_7863 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Serie_7863", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_serie = :nf_principal_Serie_7891 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Serie_7891", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5287,8 +5589,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_forma_pagamento = :nf_principal_FormaPagamento_2564 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FormaPagamento_2564", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_forma_pagamento = :nf_principal_FormaPagamento_1526 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FormaPagamento_1526", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5306,8 +5608,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_modelo_doc_fiscal LIKE :nf_principal_ModeloDocFiscal_2763 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ModeloDocFiscal_2763", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_modelo_doc_fiscal LIKE :nf_principal_ModeloDocFiscal_9902 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ModeloDocFiscal_9902", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5325,8 +5627,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_data_emissao = :nf_principal_DataEmissao_2459 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_DataEmissao_2459", NpgsqlDbType.Timestamp, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.nfp_data_emissao = :nf_principal_DataEmissao_2156 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_DataEmissao_2156", NpgsqlDbType.Timestamp, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5344,8 +5646,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_data_saida_entrada = :nf_principal_DataSaidaEntrada_6758 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_DataSaidaEntrada_6758", NpgsqlDbType.Timestamp, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.nfp_data_saida_entrada = :nf_principal_DataSaidaEntrada_4585 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_DataSaidaEntrada_4585", NpgsqlDbType.Timestamp, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5363,8 +5665,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_tipo = :nf_principal_Tipo_5674 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Tipo_5674", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_tipo = :nf_principal_Tipo_1259 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Tipo_1259", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5382,8 +5684,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_cod_municipio_fato_gerador = :nf_principal_CodMunicipioFatoGerador_1135 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_CodMunicipioFatoGerador_1135", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_cod_municipio_fato_gerador = :nf_principal_CodMunicipioFatoGerador_3681 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_CodMunicipioFatoGerador_3681", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5401,8 +5703,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_formato_impressao = :nf_principal_FormatoImpressao_9022 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FormatoImpressao_9022", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_formato_impressao = :nf_principal_FormatoImpressao_6512 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FormatoImpressao_6512", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5420,8 +5722,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_forma_emissao = :nf_principal_FormaEmissao_5656 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FormaEmissao_5656", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_forma_emissao = :nf_principal_FormaEmissao_8861 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FormaEmissao_8861", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5439,8 +5741,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_identificacao_ambiente = :nf_principal_IdentificacaoAmbiente_4834 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_IdentificacaoAmbiente_4834", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_identificacao_ambiente = :nf_principal_IdentificacaoAmbiente_2958 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_IdentificacaoAmbiente_2958", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5458,8 +5760,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_finalidade_emissao = :nf_principal_FinalidadeEmissao_558 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FinalidadeEmissao_558", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_finalidade_emissao = :nf_principal_FinalidadeEmissao_9773 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FinalidadeEmissao_9773", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5477,8 +5779,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_processo_emissao = :nf_principal_ProcessoEmissao_5452 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ProcessoEmissao_5452", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_processo_emissao = :nf_principal_ProcessoEmissao_1790 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ProcessoEmissao_1790", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5496,8 +5798,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_versao_processo_emissao LIKE :nf_principal_VersaoProcessoEmissao_9251 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_VersaoProcessoEmissao_9251", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_versao_processo_emissao LIKE :nf_principal_VersaoProcessoEmissao_9088 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_VersaoProcessoEmissao_9088", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5515,8 +5817,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_tipo_emitente LIKE :nf_principal_TipoEmitente_9225 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TipoEmitente_9225", NpgsqlDbType.Char,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_tipo_emitente LIKE :nf_principal_TipoEmitente_3691 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TipoEmitente_3691", NpgsqlDbType.Char,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5534,8 +5836,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_situacao LIKE :nf_principal_Situacao_2670 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Situacao_2670", NpgsqlDbType.Char,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_situacao LIKE :nf_principal_Situacao_1962 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Situacao_1962", NpgsqlDbType.Char,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5553,8 +5855,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_observacoes LIKE :nf_principal_Observacoes_7264 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Observacoes_7264", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_observacoes LIKE :nf_principal_Observacoes_1144 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Observacoes_1144", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5572,8 +5874,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.entity_uid LIKE :nf_principal_EntityUid_2815 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EntityUid_2815", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.entity_uid LIKE :nf_principal_EntityUid_9862 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EntityUid_9862", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5591,8 +5893,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.version = :nf_principal_Version_6622 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Version_6622", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.version = :nf_principal_Version_8690 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Version_8690", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5610,8 +5912,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_observacoes_fisco LIKE :nf_principal_ObservacoesFisco_3718 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ObservacoesFisco_3718", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_observacoes_fisco LIKE :nf_principal_ObservacoesFisco_1580 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ObservacoesFisco_1580", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5629,8 +5931,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_enviar_nfe_receita = :nf_principal_EnviarNfeReceita_9556 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EnviarNfeReceita_9556", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_enviar_nfe_receita = :nf_principal_EnviarNfeReceita_4959 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EnviarNfeReceita_4959", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5648,8 +5950,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_homologacao = :nf_principal_Homologacao_6089 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Homologacao_6089", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_homologacao = :nf_principal_Homologacao_8065 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Homologacao_8065", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5667,8 +5969,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.impressa = :nf_principal_Impressa_9015 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Impressa_9015", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.impressa = :nf_principal_Impressa_6738 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Impressa_6738", NpgsqlDbType.Smallint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5686,8 +5988,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_enviar_nfse_londrina = :nf_principal_EnviarNfseLondrina_9623 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EnviarNfseLondrina_9623", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_enviar_nfse_londrina = :nf_principal_EnviarNfseLondrina_640 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EnviarNfseLondrina_640", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5705,8 +6007,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_tributada_emissor = :nf_principal_TributadaEmissor_3579 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TributadaEmissor_3579", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_tributada_emissor = :nf_principal_TributadaEmissor_6443 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TributadaEmissor_6443", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5724,8 +6026,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_bc_iss_retido = :nf_principal_BcIssRetido_8594 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_BcIssRetido_8594", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.nfp_bc_iss_retido = :nf_principal_BcIssRetido_2805 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_BcIssRetido_2805", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5743,8 +6045,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_valor_iss_retido = :nf_principal_ValorIssRetido_4564 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ValorIssRetido_4564", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.nfp_valor_iss_retido = :nf_principal_ValorIssRetido_5911 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ValorIssRetido_5911", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5762,8 +6064,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_rps_numero = :nf_principal_RpsNumero_6625 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsNumero_6625", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_rps_numero = :nf_principal_RpsNumero_7063 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsNumero_7063", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5781,8 +6083,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_rps_serie LIKE :nf_principal_RpsSerie_6650 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsSerie_6650", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_rps_serie LIKE :nf_principal_RpsSerie_3600 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsSerie_3600", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5800,8 +6102,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_rps_data = :nf_principal_RpsData_1702 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsData_1702", NpgsqlDbType.Date, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.nfp_rps_data = :nf_principal_RpsData_3293 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsData_3293", NpgsqlDbType.Date, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5819,8 +6121,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_consumidor_final = :nf_principal_ConsumidorFinal_1678 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ConsumidorFinal_1678", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_consumidor_final = :nf_principal_ConsumidorFinal_307 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ConsumidorFinal_307", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5838,8 +6140,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_presenca_comprador = :nf_principal_PresencaComprador_9346 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_PresencaComprador_9346", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_presenca_comprador = :nf_principal_PresencaComprador_4759 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_PresencaComprador_4759", NpgsqlDbType.Smallint,  Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5857,8 +6159,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.id_nf_principal_substituida = :nf_principal_NfPrincipalSubstituida_7260 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_NfPrincipalSubstituida_7260", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_principal.id_nf_principal_substituida = :nf_principal_NfPrincipalSubstituida_3467 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_NfPrincipalSubstituida_3467", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5876,8 +6178,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_texto_qr_code LIKE :nf_principal_TextoQrCode_8746 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TextoQrCode_8746", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.nfp_texto_qr_code LIKE :nf_principal_TextoQrCode_3037 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TextoQrCode_3037", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5895,8 +6197,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_impressao_danfe_liberada = :nf_principal_ImpressaoDanfeLiberada_4719 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ImpressaoDanfeLiberada_4719", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_impressao_danfe_liberada = :nf_principal_ImpressaoDanfeLiberada_1967 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ImpressaoDanfeLiberada_1967", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5914,8 +6216,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_impressao_danfe_contingencia = :nf_principal_ImpressaoDanfeContingencia_9191 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ImpressaoDanfeContingencia_9191", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal.nfp_impressao_danfe_contingencia = :nf_principal_ImpressaoDanfeContingencia_1025 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ImpressaoDanfeContingencia_1025", NpgsqlDbType.Smallint, Convert.ToInt16(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -5933,13 +6235,13 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_estoque_movimentado = :nf_principal_EstoqueMovimentado_2331 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EstoqueMovimentado_2331", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.nfp_estoque_movimentado = :nf_principal_EstoqueMovimentado_7306 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EstoqueMovimentado_7306", NpgsqlDbType.Smallint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "CClassTrib" || parametro.FieldName == "npr_c_class_trib")
+                     if (parametro.FieldName == "CMunFgIbs" || parametro.FieldName == "npr_c_mun_fg_ibs")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
                       {
@@ -5948,17 +6250,55 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_principal.npr_c_class_trib IS NULL" ;
+                         whereClause += "  nf_principal.npr_c_mun_fg_ibs IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_principal.npr_c_class_trib LIKE :nf_principal_CClassTrib_9611 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_CClassTrib_9611", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal.npr_c_mun_fg_ibs LIKE :nf_principal_CMunFgIbs_6660 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_CMunFgIbs_6660", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "FinDeb" || parametro.FieldName == "npr_fin_deb")
+                     if (parametro.FieldName == "TpNfDebito" || parametro.FieldName == "npr_tp_nf_debito")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_debito IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_debito LIKE :nf_principal_TpNfDebito_1793 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TpNfDebito_1793", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "TpNfCredito" || parametro.FieldName == "npr_tp_nf_credito")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_credito IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_credito LIKE :nf_principal_TpNfCredito_5566 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TpNfCredito_5566", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "TpEnteGov" || parametro.FieldName == "npr_tp_ente_gov")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is short?)))
                       {
@@ -5967,17 +6307,36 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_principal.npr_fin_deb IS NULL" ;
+                         whereClause += "  nf_principal.npr_tp_ente_gov IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_principal.npr_fin_deb = :nf_principal_FinDeb_8364 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FinDeb_8364", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.npr_tp_ente_gov = :nf_principal_TpEnteGov_6184 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TpEnteGov_6184", NpgsqlDbType.Smallint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "FinCred" || parametro.FieldName == "npr_fin_cred")
+                     if (parametro.FieldName == "PRedutor" || parametro.FieldName == "npr_p_redutor")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is double?)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo double?");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_principal.npr_p_redutor IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_principal.npr_p_redutor = :nf_principal_PRedutor_8369 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_PRedutor_8369", NpgsqlDbType.Double, parametro.Fieldvalue));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "TpOperGov" || parametro.FieldName == "npr_tp_oper_gov")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is short?)))
                       {
@@ -5986,12 +6345,12 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_principal.npr_fin_cred IS NULL" ;
+                         whereClause += "  nf_principal.npr_tp_oper_gov IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_principal.npr_fin_cred = :nf_principal_FinCred_311 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_FinCred_311", NpgsqlDbType.Smallint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal.npr_tp_oper_gov = :nf_principal_TpOperGov_7715 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TpOperGov_7715", NpgsqlDbType.Smallint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6009,8 +6368,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_natureza_operacao LIKE :nf_principal_NaturezaOperacao_6232 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_NaturezaOperacao_6232", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_natureza_operacao LIKE :nf_principal_NaturezaOperacao_6311 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_NaturezaOperacao_6311", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6028,8 +6387,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_modelo_doc_fiscal LIKE :nf_principal_ModeloDocFiscal_2275 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ModeloDocFiscal_2275", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_modelo_doc_fiscal LIKE :nf_principal_ModeloDocFiscal_5939 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ModeloDocFiscal_5939", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6047,8 +6406,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_versao_processo_emissao LIKE :nf_principal_VersaoProcessoEmissao_6149 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_VersaoProcessoEmissao_6149", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_versao_processo_emissao LIKE :nf_principal_VersaoProcessoEmissao_9161 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_VersaoProcessoEmissao_9161", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6066,8 +6425,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_tipo_emitente LIKE :nf_principal_TipoEmitente_7506 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TipoEmitente_7506", NpgsqlDbType.Char,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_tipo_emitente LIKE :nf_principal_TipoEmitente_8681 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TipoEmitente_8681", NpgsqlDbType.Char,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6085,8 +6444,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_situacao LIKE :nf_principal_Situacao_879 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Situacao_879", NpgsqlDbType.Char,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_situacao LIKE :nf_principal_Situacao_785 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Situacao_785", NpgsqlDbType.Char,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6104,8 +6463,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_observacoes LIKE :nf_principal_Observacoes_6460 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Observacoes_6460", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_observacoes LIKE :nf_principal_Observacoes_7860 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_Observacoes_7860", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6123,8 +6482,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.entity_uid LIKE :nf_principal_EntityUid_9763 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EntityUid_9763", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.entity_uid LIKE :nf_principal_EntityUid_8374 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_EntityUid_8374", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6142,8 +6501,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_observacoes_fisco LIKE :nf_principal_ObservacoesFisco_4665 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ObservacoesFisco_4665", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_observacoes_fisco LIKE :nf_principal_ObservacoesFisco_865 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_ObservacoesFisco_865", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6161,8 +6520,8 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_rps_serie LIKE :nf_principal_RpsSerie_3166 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsSerie_3166", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_rps_serie LIKE :nf_principal_RpsSerie_6469 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_RpsSerie_6469", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6180,13 +6539,13 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       }
                       else
                       {
-                         whereClause += "  nf_principal.nfp_texto_qr_code LIKE :nf_principal_TextoQrCode_995 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TextoQrCode_995", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.nfp_texto_qr_code LIKE :nf_principal_TextoQrCode_4102 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TextoQrCode_4102", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "CClassTribExato" || parametro.FieldName == "CClassTribExata")
+                     if (parametro.FieldName == "CMunFgIbsExato" || parametro.FieldName == "CMunFgIbsExata")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
                       {
@@ -6195,12 +6554,50 @@ public static NfPrincipalClass GetEntidade(long id, AcsUsuarioClass usuarioAtual
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_principal.npr_c_class_trib IS NULL" ;
+                         whereClause += "  nf_principal.npr_c_mun_fg_ibs IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_principal.npr_c_class_trib LIKE :nf_principal_CClassTrib_7342 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_CClassTrib_7342", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal.npr_c_mun_fg_ibs LIKE :nf_principal_CMunFgIbs_383 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_CMunFgIbs_383", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "TpNfDebitoExato" || parametro.FieldName == "TpNfDebitoExata")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_debito IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_debito LIKE :nf_principal_TpNfDebito_5981 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TpNfDebito_5981", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                      }
+                      whereClause += " ) " ;
+                        continue;
+                     }
+                     if (parametro.FieldName == "TpNfCreditoExato" || parametro.FieldName == "TpNfCreditoExata")
+                     {
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      {
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                      }
+                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
+                      if (parametro.Fieldvalue == null)
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_credito IS NULL" ;
+                      }
+                      else
+                      {
+                         whereClause += "  nf_principal.npr_tp_nf_credito LIKE :nf_principal_TpNfCredito_4934 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_TpNfCredito_4934", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -6314,9 +6711,12 @@ if (!operacao.HasValue)
                      entidade.ImpressaoDanfeLiberada = Convert.ToBoolean(Convert.ToInt16(read["nfp_impressao_danfe_liberada"]));
                      entidade.ImpressaoDanfeContingencia = Convert.ToBoolean(Convert.ToInt16(read["nfp_impressao_danfe_contingencia"]));
                      entidade.EstoqueMovimentado = read["nfp_estoque_movimentado"] as short?;
-                     entidade.CClassTrib = (read["npr_c_class_trib"] != DBNull.Value ? read["npr_c_class_trib"].ToString() : null);
-                     entidade.FinDeb = read["npr_fin_deb"] as short?;
-                     entidade.FinCred = read["npr_fin_cred"] as short?;
+                     entidade.CMunFgIbs = (read["npr_c_mun_fg_ibs"] != DBNull.Value ? read["npr_c_mun_fg_ibs"].ToString() : null);
+                     entidade.TpNfDebito = (read["npr_tp_nf_debito"] != DBNull.Value ? read["npr_tp_nf_debito"].ToString() : null);
+                     entidade.TpNfCredito = (read["npr_tp_nf_credito"] != DBNull.Value ? read["npr_tp_nf_credito"].ToString() : null);
+                     entidade.TpEnteGov = read["npr_tp_ente_gov"] as short?;
+                     entidade.PRedutor = read["npr_p_redutor"] as double?;
+                     entidade.TpOperGov = read["npr_tp_oper_gov"] as short?;
                      entidade.loading = false;
                      entidade.SalvaValoresOriginais();
                      entidade.CarregamentoConcluido();

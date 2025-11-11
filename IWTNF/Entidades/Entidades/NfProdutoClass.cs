@@ -259,6 +259,25 @@ namespace IWTNF.Entidades.Entidades
             }
         }
 
+        [UnCloneable(UnCloneableAttributeType.RetPadrao)]
+        public NfProdutoDevolucaoClass NfProdutoDevolucao
+        {
+            get { return this.NfItem.CollectionNfProdutoDevolucaoClassNfItem != null && this.NfItem.CollectionNfProdutoDevolucaoClassNfItem.Count > 0 ? this.NfItem.CollectionNfProdutoDevolucaoClassNfItem[0] : null; }
+            set
+            {
+                if (this.NfItem.CollectionNfProdutoDevolucaoClassNfItem == null) NfItem.CollectionNfProdutoDevolucaoClassNfItem = new BindingList<NfProdutoDevolucaoClass>();
+                if (NfItem.CollectionNfProdutoDevolucaoClassNfItem.Count == 0)
+                {
+                    if (value != null)
+                        NfItem.CollectionNfProdutoDevolucaoClassNfItem.Add(value);
+                }
+                else
+                {
+                    NfItem.CollectionNfProdutoDevolucaoClassNfItem[0] = value;
+                }
+            }
+        }
+
         #endregion
 
         public void ExcluirRastreabilidade(NfProdutoRastreabilidadeClass rastreabilidade)

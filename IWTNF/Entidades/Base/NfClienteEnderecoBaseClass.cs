@@ -1201,8 +1201,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_logradouro LIKE :nf_cliente_endereco_Logradouro_6760 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Logradouro_6760", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_logradouro LIKE :nf_cliente_endereco_Logradouro_7708 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Logradouro_7708", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1220,8 +1220,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_numero LIKE :nf_cliente_endereco_Numero_2743 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Numero_2743", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_numero LIKE :nf_cliente_endereco_Numero_6755 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Numero_6755", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1239,8 +1239,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_complemento LIKE :nf_cliente_endereco_Complemento_1873 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Complemento_1873", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_complemento LIKE :nf_cliente_endereco_Complemento_3120 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Complemento_3120", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1258,8 +1258,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_bairro LIKE :nf_cliente_endereco_Bairro_6405 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Bairro_6405", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_bairro LIKE :nf_cliente_endereco_Bairro_3463 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Bairro_3463", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1277,8 +1277,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_cod_municipio = :nf_cliente_endereco_CodMunicipio_2024 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_CodMunicipio_2024", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_cliente_endereco.nce_cod_municipio = :nf_cliente_endereco_CodMunicipio_6668 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_CodMunicipio_6668", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1296,8 +1296,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_nome_municipio LIKE :nf_cliente_endereco_NomeMunicipio_7065 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomeMunicipio_7065", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_nome_municipio LIKE :nf_cliente_endereco_NomeMunicipio_925 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomeMunicipio_925", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1315,8 +1315,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_sigla_uf LIKE :nf_cliente_endereco_SiglaUf_861 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_SiglaUf_861", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_sigla_uf LIKE :nf_cliente_endereco_SiglaUf_1589 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_SiglaUf_1589", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1334,8 +1334,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_cep LIKE :nf_cliente_endereco_Cep_2543 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Cep_2543", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_cep LIKE :nf_cliente_endereco_Cep_7740 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Cep_7740", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1353,8 +1353,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_cod_pais = :nf_cliente_endereco_CodPais_1506 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_CodPais_1506", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_cliente_endereco.nce_cod_pais = :nf_cliente_endereco_CodPais_4092 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_CodPais_4092", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1372,8 +1372,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_nome_pais LIKE :nf_cliente_endereco_NomePais_8874 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomePais_8874", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_nome_pais LIKE :nf_cliente_endereco_NomePais_6170 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomePais_6170", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1391,8 +1391,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_telefone LIKE :nf_cliente_endereco_Telefone_1018 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Telefone_1018", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.nce_telefone LIKE :nf_cliente_endereco_Telefone_9206 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Telefone_9206", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1410,8 +1410,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.id_nf_principal = :nf_cliente_endereco_NfPrincipal_6426 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NfPrincipal_6426", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_cliente_endereco.id_nf_principal = :nf_cliente_endereco_NfPrincipal_1718 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NfPrincipal_1718", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1429,8 +1429,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.entity_uid LIKE :nf_cliente_endereco_EntityUid_2747 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_EntityUid_2747", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_cliente_endereco.entity_uid LIKE :nf_cliente_endereco_EntityUid_8446 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_EntityUid_8446", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1448,8 +1448,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.version = :nf_cliente_endereco_Version_9602 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Version_9602", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_cliente_endereco.version = :nf_cliente_endereco_Version_7220 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Version_7220", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1467,8 +1467,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.id_nf_cliente_endereco = :nf_cliente_endereco_ID_7689 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_ID_7689", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_cliente_endereco.id_nf_cliente_endereco = :nf_cliente_endereco_ID_2072 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_ID_2072", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1486,8 +1486,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_logradouro LIKE :nf_cliente_endereco_Logradouro_8294 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Logradouro_8294", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_logradouro LIKE :nf_cliente_endereco_Logradouro_3881 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Logradouro_3881", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1505,8 +1505,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_numero LIKE :nf_cliente_endereco_Numero_1396 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Numero_1396", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_numero LIKE :nf_cliente_endereco_Numero_101 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Numero_101", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1524,8 +1524,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_complemento LIKE :nf_cliente_endereco_Complemento_9874 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Complemento_9874", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_complemento LIKE :nf_cliente_endereco_Complemento_1969 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Complemento_1969", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1543,8 +1543,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_bairro LIKE :nf_cliente_endereco_Bairro_8790 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Bairro_8790", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_bairro LIKE :nf_cliente_endereco_Bairro_440 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Bairro_440", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1562,8 +1562,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_nome_municipio LIKE :nf_cliente_endereco_NomeMunicipio_4805 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomeMunicipio_4805", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_nome_municipio LIKE :nf_cliente_endereco_NomeMunicipio_7814 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomeMunicipio_7814", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1581,8 +1581,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_sigla_uf LIKE :nf_cliente_endereco_SiglaUf_5195 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_SiglaUf_5195", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_sigla_uf LIKE :nf_cliente_endereco_SiglaUf_9984 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_SiglaUf_9984", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1600,8 +1600,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_cep LIKE :nf_cliente_endereco_Cep_3077 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Cep_3077", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_cep LIKE :nf_cliente_endereco_Cep_8212 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Cep_8212", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1619,8 +1619,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_nome_pais LIKE :nf_cliente_endereco_NomePais_3155 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomePais_3155", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_nome_pais LIKE :nf_cliente_endereco_NomePais_4909 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_NomePais_4909", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1638,8 +1638,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.nce_telefone LIKE :nf_cliente_endereco_Telefone_7609 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Telefone_7609", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.nce_telefone LIKE :nf_cliente_endereco_Telefone_4607 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_Telefone_4607", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -1657,8 +1657,8 @@ public static NfClienteEnderecoClass GetEntidade(long id, AcsUsuarioClass usuari
                       }
                       else
                       {
-                         whereClause += "  nf_cliente_endereco.entity_uid LIKE :nf_cliente_endereco_EntityUid_1848 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_EntityUid_1848", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_cliente_endereco.entity_uid LIKE :nf_cliente_endereco_EntityUid_6681 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_cliente_endereco_EntityUid_6681", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

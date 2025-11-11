@@ -776,8 +776,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.id_nf_principal_cancelamento_justificativa = :nf_principal_cancelamento_justificativa_ID_317 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_ID_317", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_principal_cancelamento_justificativa.id_nf_principal_cancelamento_justificativa = :nf_principal_cancelamento_justificativa_ID_8439 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_ID_8439", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -795,8 +795,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.id_nf_principal = :nf_principal_cancelamento_justificativa_NfPrincipal_5156 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_NfPrincipal_5156", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_principal_cancelamento_justificativa.id_nf_principal = :nf_principal_cancelamento_justificativa_NfPrincipal_3062 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_NfPrincipal_3062", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -814,8 +814,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.ncj_justificativa LIKE :nf_principal_cancelamento_justificativa_Justificativa_4553 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Justificativa_4553", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal_cancelamento_justificativa.ncj_justificativa LIKE :nf_principal_cancelamento_justificativa_Justificativa_9476 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Justificativa_9476", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -833,8 +833,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.id_acs_usuario = :nf_principal_cancelamento_justificativa_AcsUsuario_6498 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_AcsUsuario_6498", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_principal_cancelamento_justificativa.id_acs_usuario = :nf_principal_cancelamento_justificativa_AcsUsuario_1858 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_AcsUsuario_1858", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -852,8 +852,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.ncj_data = :nf_principal_cancelamento_justificativa_Data_2897 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Data_2897", NpgsqlDbType.Timestamp, parametro.Fieldvalue));
+                         whereClause += "  nf_principal_cancelamento_justificativa.ncj_data = :nf_principal_cancelamento_justificativa_Data_2017 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Data_2017", NpgsqlDbType.Timestamp, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -871,8 +871,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.version = :nf_principal_cancelamento_justificativa_Version_3451 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Version_3451", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_principal_cancelamento_justificativa.version = :nf_principal_cancelamento_justificativa_Version_6956 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Version_6956", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -890,8 +890,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.entity_uid LIKE :nf_principal_cancelamento_justificativa_EntityUid_487 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_EntityUid_487", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_principal_cancelamento_justificativa.entity_uid LIKE :nf_principal_cancelamento_justificativa_EntityUid_4593 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_EntityUid_4593", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -909,8 +909,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.ncj_justificativa LIKE :nf_principal_cancelamento_justificativa_Justificativa_8067 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Justificativa_8067", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal_cancelamento_justificativa.ncj_justificativa LIKE :nf_principal_cancelamento_justificativa_Justificativa_3805 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_Justificativa_3805", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -928,8 +928,8 @@ public static NfPrincipalCancelamentoJustificativaClass GetEntidade(long id, Acs
                       }
                       else
                       {
-                         whereClause += "  nf_principal_cancelamento_justificativa.entity_uid LIKE :nf_principal_cancelamento_justificativa_EntityUid_7295 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_EntityUid_7295", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_principal_cancelamento_justificativa.entity_uid LIKE :nf_principal_cancelamento_justificativa_EntityUid_9471 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_principal_cancelamento_justificativa_EntityUid_9471", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

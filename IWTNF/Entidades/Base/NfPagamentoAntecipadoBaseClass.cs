@@ -17,52 +17,22 @@ using IWTDotNetLib.ComplexLoginModule.Entidades.Entidades;
 namespace IWTNF.Entidades.Base 
 { 
     [Serializable()]
-     [Table("nf_atributo","nfa")]
-     public class NfAtributoBaseClass:AbstractEntity 
+     [Table("nf_pagamento_antecipado","npa")]
+     public class NfPagamentoAntecipadoBaseClass:AbstractEntity 
     { 
        protected bool NaoCarregarIdNegativo { get; set; }
  #region Constantes
-protected const string ErroLoad = "Erro ao carregar os dados do NfAtributoClass";
-protected const string ErroDelete = "Erro ao excluir o NfAtributoClass  ";
-protected const string ErroSave = "Erro ao salvar o NfAtributoClass.";
-protected const string ErroVersaoLayoutObrigatorio = "O campo VersaoLayout é obrigatório";
-protected const string ErroVersaoLayoutComprimento = "O campo VersaoLayout deve ter no máximo 255 caracteres";
-protected const string ErroIdNfeObrigatorio = "O campo IdNfe é obrigatório";
-protected const string ErroIdNfeComprimento = "O campo IdNfe deve ter no máximo 255 caracteres";
+protected const string ErroLoad = "Erro ao carregar os dados do NfPagamentoAntecipadoClass";
+protected const string ErroDelete = "Erro ao excluir o NfPagamentoAntecipadoClass  ";
+protected const string ErroSave = "Erro ao salvar o NfPagamentoAntecipadoClass.";
+protected const string ErroChaveNfeRefObrigatorio = "O campo ChaveNfeRef é obrigatório";
+protected const string ErroChaveNfeRefComprimento = "O campo ChaveNfeRef deve ter no máximo 44 caracteres";
 protected const string ErroEntityUidObrigatorio = "O campo EntityUid é obrigatório";
 protected const string ErroEntityUidComprimento = "O campo EntityUid deve ter no máximo 36 caracteres";
 protected const string ErroNfPrincipalObrigatorio = "O campo NfPrincipal é obrigatório";
-protected const string ErroValidate = "Erro ao validar os dados do NfAtributoClass.";
-protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfAtributoClass está sendo utilizada.";
+protected const string ErroValidate = "Erro ao validar os dados do NfPagamentoAntecipadoClass.";
+protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfPagamentoAntecipadoClass está sendo utilizada.";
 #endregion
-       protected string _versaoLayoutOriginal{get;private set;}
-       private string _versaoLayoutOriginalCommited{get; set;}
-        private string _valueVersaoLayout;
-         [Column("nfa_versao_layout")]
-        public virtual string VersaoLayout
-         { 
-            get { return this._valueVersaoLayout; } 
-            set 
-            { 
-                if (this._valueVersaoLayout == value)return;
-                 this._valueVersaoLayout = value; 
-            } 
-        } 
-
-       protected string _idNfeOriginal{get;private set;}
-       private string _idNfeOriginalCommited{get; set;}
-        private string _valueIdNfe;
-         [Column("nfa_id_nfe")]
-        public virtual string IdNfe
-         { 
-            get { return this._valueIdNfe; } 
-            set 
-            { 
-                if (this._valueIdNfe == value)return;
-                 this._valueIdNfe = value; 
-            } 
-        } 
-
        protected IWTNF.Entidades.Entidades.NfPrincipalClass _nfPrincipalOriginal{get;private set;}
        private IWTNF.Entidades.Entidades.NfPrincipalClass _nfPrincipalOriginalCommited {get; set;}
        private IWTNF.Entidades.Entidades.NfPrincipalClass _valueNfPrincipal;
@@ -77,7 +47,21 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfAtrib
            } 
        } 
 
-        public NfAtributoBaseClass(AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection singleConnection)
+       protected string _chaveNfeRefOriginal{get;private set;}
+       private string _chaveNfeRefOriginalCommited{get; set;}
+        private string _valueChaveNfeRef;
+         [Column("npa_chave_nfe_ref")]
+        public virtual string ChaveNfeRef
+         { 
+            get { return this._valueChaveNfeRef; } 
+            set 
+            { 
+                if (this._valueChaveNfeRef == value)return;
+                 this._valueChaveNfeRef = value; 
+            } 
+        } 
+
+        public NfPagamentoAntecipadoBaseClass(AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection singleConnection)
             : base(usuarioAtual, singleConnection)
         {
            ControleRevisaoHabilitado = false;
@@ -90,29 +74,21 @@ protected const string ErroUtilizado =  "Erro ao verificar se a entidade NfAtrib
              base.SalvarValoresAntigosHabilitado = true;
          }
 
-public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection connection, Guid? operacao = null)
+public static NfPagamentoAntecipadoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsqlConnection connection, Guid? operacao = null)
         {
-            return (NfAtributoClass) GetEntity(typeof(NfAtributoClass),id,usuarioAtual,connection, operacao);
+            return (NfPagamentoAntecipadoClass) GetEntity(typeof(NfPagamentoAntecipadoClass),id,usuarioAtual,connection, operacao);
         }
         public override bool ValidateData(ref IWTPostgreNpgsqlCommand command)
         {
             try
             {
-                if (string.IsNullOrEmpty(VersaoLayout))
+                if (string.IsNullOrEmpty(ChaveNfeRef))
                 {
-                    throw new Exception(ErroVersaoLayoutObrigatorio);
+                    throw new Exception(ErroChaveNfeRefObrigatorio);
                 }
-                if (VersaoLayout.Length >255)
+                if (ChaveNfeRef.Length >44)
                 {
-                    throw new Exception( ErroVersaoLayoutComprimento);
-                }
-                if (string.IsNullOrEmpty(IdNfe))
-                {
-                    throw new Exception(ErroIdNfeObrigatorio);
-                }
-                if (IdNfe.Length >255)
-                {
-                    throw new Exception( ErroIdNfeComprimento);
+                    throw new Exception( ErroChaveNfeRefComprimento);
                 }
                 if ( _valueNfPrincipal == null)
                 {
@@ -141,9 +117,9 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                 AcoesExtrasAntesDelete(ref command);
                 command.CommandText =
                     "DELETE FROM  " +
-                    "  public.nf_atributo  " +
+                    "  public.nf_pagamento_antecipado  " +
                     "WHERE " +
-                    "  id_nf_atributo = :id";
+                    "  id_nf_pagamento_antecipado = :id";
                 command.Parameters.Clear();
 
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("id", NpgsqlDbType.Integer));
@@ -171,51 +147,46 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                 {
                     command.CommandText =
                         "UPDATE  " +
-                        "  public.nf_atributo   " +
+                        "  public.nf_pagamento_antecipado   " +
                         "SET  " + 
-                        "  nfa_versao_layout = :nfa_versao_layout, " + 
-                        "  nfa_id_nfe = :nfa_id_nfe, " + 
                         "  id_nf_principal = :id_nf_principal, " + 
-                        "  entity_uid = :entity_uid, " + 
-                        "  version = :version "+
+                        "  npa_chave_nfe_ref = :npa_chave_nfe_ref, " + 
+                        "  version = :version, " + 
+                        "  entity_uid = :entity_uid "+
                         "WHERE  " +
-                        "  id_nf_atributo = :id " +
-                        "RETURNING id_nf_atributo;";
+                        "  id_nf_pagamento_antecipado = :id " +
+                        "RETURNING id_nf_pagamento_antecipado;";
                 }
                 else
                 {
                     command.CommandText =
                         "INSERT INTO " +
-                        "public.nf_atributo " +
+                        "public.nf_pagamento_antecipado " +
                         "( " +
-                        "  nfa_versao_layout , " + 
-                        "  nfa_id_nfe , " + 
                         "  id_nf_principal , " + 
-                        "  entity_uid , " + 
-                        "  version  "+
+                        "  npa_chave_nfe_ref , " + 
+                        "  version , " + 
+                        "  entity_uid  "+
                         ")  " +
                         "VALUES ( " +
-                        "  :nfa_versao_layout , " + 
-                        "  :nfa_id_nfe , " + 
                         "  :id_nf_principal , " + 
-                        "  :entity_uid , " + 
-                        "  :version  "+
-                        ")RETURNING id_nf_atributo;";
+                        "  :npa_chave_nfe_ref , " + 
+                        "  :version , " + 
+                        "  :entity_uid  "+
+                        ")RETURNING id_nf_pagamento_antecipado;";
                 }
 
                 command.Parameters.Clear();
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("id", NpgsqlDbType.Integer));
                 command.Parameters[command.Parameters.Count - 1].Value = this.ID;
-                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nfa_versao_layout", NpgsqlDbType.Varchar));
-                command.Parameters[command.Parameters.Count - 1].Value = (object)this.VersaoLayout ?? DBNull.Value;
-                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nfa_id_nfe", NpgsqlDbType.Varchar));
-                command.Parameters[command.Parameters.Count - 1].Value = (object)this.IdNfe ?? DBNull.Value;
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("id_nf_principal", NpgsqlDbType.Integer));
                 command.Parameters[command.Parameters.Count - 1].Value =  this.NfPrincipal==null ? (object) DBNull.Value : this.NfPrincipal.ID;
-                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("entity_uid", NpgsqlDbType.Varchar));
-                command.Parameters[command.Parameters.Count - 1].Value = (object)this.EntityUid ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("npa_chave_nfe_ref", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.ChaveNfeRef ?? DBNull.Value;
                 command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("version", NpgsqlDbType.Integer));
                 command.Parameters[command.Parameters.Count - 1].Value = (object)this.Version ?? DBNull.Value;
+                command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("entity_uid", NpgsqlDbType.Varchar));
+                command.Parameters[command.Parameters.Count - 1].Value = (object)this.EntityUid ?? DBNull.Value;
 
  
                  bool inserting = this.ID == -1; 
@@ -254,14 +225,13 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
         {
            throw new NotImplementedException();
         }
-        public static NfAtributoClass CopiarEntidade(NfAtributoClass entidadeCopiar, AcsUsuarioClass usuario, IWTPostgreNpgsqlConnection conn)
+        public static NfPagamentoAntecipadoClass CopiarEntidade(NfPagamentoAntecipadoClass entidadeCopiar, AcsUsuarioClass usuario, IWTPostgreNpgsqlConnection conn)
         {
             try
             {
-               NfAtributoClass toRet = new NfAtributoClass(usuario,conn);
- toRet.VersaoLayout= entidadeCopiar.VersaoLayout;
- toRet.IdNfe= entidadeCopiar.IdNfe;
+               NfPagamentoAntecipadoClass toRet = new NfPagamentoAntecipadoClass(usuario,conn);
  toRet.NfPrincipal= entidadeCopiar.NfPrincipal;
+ toRet.ChaveNfeRef= entidadeCopiar.ChaveNfeRef;
 
             return toRet;
             }
@@ -274,12 +244,10 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
         {
             try
             {
-       _versaoLayoutOriginal = VersaoLayout;
-       _versaoLayoutOriginalCommited = _versaoLayoutOriginal;
-       _idNfeOriginal = IdNfe;
-       _idNfeOriginalCommited = _idNfeOriginal;
        _nfPrincipalOriginal = NfPrincipal;
        _nfPrincipalOriginalCommited = _nfPrincipalOriginal;
+       _chaveNfeRefOriginal = ChaveNfeRef;
+       _chaveNfeRefOriginalCommited = _chaveNfeRefOriginal;
        _versionOriginal = Version;
        _versionOriginalCommited = _versionOriginal ;
 
@@ -293,9 +261,8 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
         {
             try
             {
-       _versaoLayoutOriginalCommited = VersaoLayout;
-       _idNfeOriginalCommited = IdNfe;
        _nfPrincipalOriginalCommited = NfPrincipal;
+       _chaveNfeRefOriginalCommited = ChaveNfeRef;
        _versionOriginalCommited = Version;
 
             }
@@ -322,12 +289,10 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
             DisableEventosRemocaoVetores = true;
             try
             {
-               VersaoLayout=_versaoLayoutOriginal;
-               _versaoLayoutOriginalCommited=_versaoLayoutOriginal;
-               IdNfe=_idNfeOriginal;
-               _idNfeOriginalCommited=_idNfeOriginal;
                NfPrincipal=_nfPrincipalOriginal;
                _nfPrincipalOriginalCommited=_nfPrincipalOriginal;
+               ChaveNfeRef=_chaveNfeRefOriginal;
+               _chaveNfeRefOriginalCommited=_chaveNfeRefOriginal;
                Version=_versionOriginal;
                _versionOriginalCommited=_versionOriginal;
 
@@ -372,10 +337,6 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
             {
             bool dirty = false;
       if (dirty) return true;
-       dirty = _versaoLayoutOriginal != VersaoLayout;
-      if (dirty) return true;
-       dirty = _idNfeOriginal != IdNfe;
-      if (dirty) return true;
        if (_nfPrincipalOriginal!=null)
        {
           dirty = !_nfPrincipalOriginal.Equals(NfPrincipal);
@@ -385,8 +346,10 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
             dirty = NfPrincipal != null;
        }
       if (dirty) return true;
+       dirty = _chaveNfeRefOriginal != ChaveNfeRef;
       if (dirty) return true;
       dirty =  _versionOriginal != Version;
+      if (dirty) return true;
 
                return dirty;
             }
@@ -431,10 +394,6 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
             {
             bool dirty = false;
       if (dirty) return true;
-       dirty = _versaoLayoutOriginalCommited != VersaoLayout;
-      if (dirty) return true;
-       dirty = _idNfeOriginalCommited != IdNfe;
-      if (dirty) return true;
        if (_nfPrincipalOriginalCommited!=null)
        {
           dirty = !_nfPrincipalOriginalCommited.Equals(NfPrincipal);
@@ -444,8 +403,10 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
             dirty = NfPrincipal != null;
        }
       if (dirty) return true;
+       dirty = _chaveNfeRefOriginalCommited != ChaveNfeRef;
       if (dirty) return true;
       dirty =  _versionOriginalCommited != Version;
+      if (dirty) return true;
 
                return dirty;
             }
@@ -490,16 +451,14 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                 return this.UltimaRevisaoData;
              case "UltimaRevisaoUsuario":
                 return this.UltimaRevisaoUsuario;
-             case "VersaoLayout":
-                return this.VersaoLayout;
-             case "IdNfe":
-                return this.IdNfe;
              case "NfPrincipal":
                 return this.NfPrincipal;
-             case "EntityUid":
-                return this.EntityUid;
+             case "ChaveNfeRef":
+                return this.ChaveNfeRef;
              case "Version":
                 return this.Version;
+             case "EntityUid":
+                return this.EntityUid;
               default:
                  return new ArgumentOutOfRangeException();
            }
@@ -527,18 +486,17 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                command.CommandText = "SELECT "  ;
                if (somenteCount)
                {
-                  command.CommandText += " COUNT(nf_atributo.id_nf_atributo) " ;
+                  command.CommandText += " COUNT(nf_pagamento_antecipado.id_nf_pagamento_antecipado) " ;
                }
                else
                {
-               command.CommandText += "nf_atributo.nfa_versao_layout, " ;
-               command.CommandText += "nf_atributo.nfa_id_nfe, " ;
-               command.CommandText += "nf_atributo.id_nf_principal, " ;
-               command.CommandText += "nf_atributo.entity_uid, " ;
-               command.CommandText += "nf_atributo.version, " ;
-               command.CommandText += "nf_atributo.id_nf_atributo " ;
+               command.CommandText += "nf_pagamento_antecipado.id_nf_pagamento_antecipado, " ;
+               command.CommandText += "nf_pagamento_antecipado.id_nf_principal, " ;
+               command.CommandText += "nf_pagamento_antecipado.npa_chave_nfe_ref, " ;
+               command.CommandText += "nf_pagamento_antecipado.version, " ;
+               command.CommandText += "nf_pagamento_antecipado.entity_uid " ;
                }
-               command.CommandText += " FROM  nf_atributo ";
+               command.CommandText += " FROM  nf_pagamento_antecipado ";
                string whereClause = "";
                string orderByClause = "";
                command.Parameters.Clear();
@@ -574,18 +532,18 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                      }
                      if (parametro.FieldName == "UltimaRevisaoData")
                      {
-                        orderByClause += " , nfa_ultima_revisao_data " + parametro.Ordenacao.ToString();
+                        orderByClause += " , npa_ultima_revisao_data " + parametro.Ordenacao.ToString();
                         continue;
                      }
                      if (parametro.FieldName == "UltimaRevisao")
                      {
-                        orderByClause += " , UPPER(nfa_ultima_revisao) " + parametro.Ordenacao.ToString();
+                        orderByClause += " , UPPER(npa_ultima_revisao) " + parametro.Ordenacao.ToString();
                         continue;
                      }
                      if (parametro.FieldName == "UltimaRevisaoUsuario")
                      {
                         orderByClause += " , usu_rev_auto.aus_login " + parametro.Ordenacao.ToString();
-                        command.CommandText += " LEFT JOIN acs_usuario usu_rev_auto ON usu_rev_auto.id_acs_usuario = nf_atributo.id_acs_usuario_ultima_revisao ";
+                        command.CommandText += " LEFT JOIN acs_usuario usu_rev_auto ON usu_rev_auto.id_acs_usuario = nf_pagamento_antecipado.id_acs_usuario_ultima_revisao ";
                         continue;
                      }
                      if (parametro.FieldName.Contains("_"))
@@ -602,37 +560,23 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                      }
                      switch(parametro.FieldName)
                      {
-                     case "nfa_versao_layout":
-                     case "VersaoLayout":
+                     case "id_nf_pagamento_antecipado":
+                     case "ID":
                      switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
-                           orderByClause += " , nf_atributo.nfa_versao_layout " + parametro.Ordenacao.ToString().ToUpper(); 
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , nf_pagamento_antecipado.id_nf_pagamento_antecipado " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
-                        case TipoOrdenacao.Automatica:
-                           orderByClause += " , UPPER(nf_atributo.nfa_versao_layout) " + parametro.Ordenacao.ToString().ToUpper(); 
-                           break;
-                     }
-                     break;
-                     case "nfa_id_nfe":
-                     case "IdNfe":
-                     switch (parametro.TipoOrdenacao)
-                     {
-                        case TipoOrdenacao.Numerica:
-                        case TipoOrdenacao.Data:
-                           orderByClause += " , nf_atributo.nfa_id_nfe " + parametro.Ordenacao.ToString().ToUpper(); 
-                           break;
-                        case TipoOrdenacao.String:
-                        case TipoOrdenacao.Automatica:
-                           orderByClause += " , UPPER(nf_atributo.nfa_id_nfe) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , UPPER(nf_pagamento_antecipado.id_nf_pagamento_antecipado) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
                      case "id_nf_principal":
                      case "NfPrincipal":
-                     command.CommandText += " LEFT JOIN nf_principal as nf_principal_NfPrincipal ON nf_principal_NfPrincipal.id_nf_principal = nf_atributo.id_nf_principal ";                     switch (parametro.TipoOrdenacao)
+                     command.CommandText += " LEFT JOIN nf_principal as nf_principal_NfPrincipal ON nf_principal_NfPrincipal.id_nf_principal = nf_pagamento_antecipado.id_nf_principal ";                     switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
@@ -644,17 +588,17 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                            break;
                      }
                      break;
-                     case "entity_uid":
-                     case "EntityUid":
+                     case "npa_chave_nfe_ref":
+                     case "ChaveNfeRef":
                      switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
-                           orderByClause += " , nf_atributo.entity_uid " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , nf_pagamento_antecipado.npa_chave_nfe_ref " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
                         case TipoOrdenacao.Automatica:
-                           orderByClause += " , UPPER(nf_atributo.entity_uid) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , UPPER(nf_pagamento_antecipado.npa_chave_nfe_ref) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
@@ -665,24 +609,24 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
                         case TipoOrdenacao.Automatica:
-                           orderByClause += " , nf_atributo.version " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , nf_pagamento_antecipado.version " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
-                           orderByClause += " , UPPER(nf_atributo.version) " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , UPPER(nf_pagamento_antecipado.version) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
-                     case "id_nf_atributo":
-                     case "ID":
+                     case "entity_uid":
+                     case "EntityUid":
                      switch (parametro.TipoOrdenacao)
                      {
                         case TipoOrdenacao.Numerica:
                         case TipoOrdenacao.Data:
-                        case TipoOrdenacao.Automatica:
-                           orderByClause += " , nf_atributo.id_nf_atributo " + parametro.Ordenacao.ToString().ToUpper(); 
+                           orderByClause += " , nf_pagamento_antecipado.entity_uid " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                         case TipoOrdenacao.String:
-                           orderByClause += " , UPPER(nf_atributo.id_nf_atributo) " + parametro.Ordenacao.ToString().ToUpper(); 
+                        case TipoOrdenacao.Automatica:
+                           orderByClause += " , UPPER(nf_pagamento_antecipado.entity_uid) " + parametro.Ordenacao.ToString().ToUpper(); 
                            break;
                      }
                      break;
@@ -699,60 +643,36 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                      if (parametro.FieldName == "BuscaCompleta")
                      {
                         whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(FALSE ";
-                        if (!CamposNaoIncluirBuscaCompleta.Contains("nfa_versao_layout")) 
+                        if (!CamposNaoIncluirBuscaCompleta.Contains("npa_chave_nfe_ref")) 
                         {
-                           whereClause += " OR UPPER(nf_atributo.nfa_versao_layout) LIKE :buscaCompletaUpper ";
-                           whereClause += " OR LOWER(nf_atributo.nfa_versao_layout) LIKE :buscaCompletaLower ";
-                        }
-                        if (!CamposNaoIncluirBuscaCompleta.Contains("nfa_id_nfe")) 
-                        {
-                           whereClause += " OR UPPER(nf_atributo.nfa_id_nfe) LIKE :buscaCompletaUpper ";
-                           whereClause += " OR LOWER(nf_atributo.nfa_id_nfe) LIKE :buscaCompletaLower ";
+                           whereClause += " OR UPPER(nf_pagamento_antecipado.npa_chave_nfe_ref) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_pagamento_antecipado.npa_chave_nfe_ref) LIKE :buscaCompletaLower ";
                         }
                         if (!CamposNaoIncluirBuscaCompleta.Contains("entity_uid")) 
                         {
-                           whereClause += " OR UPPER(nf_atributo.entity_uid) LIKE :buscaCompletaUpper ";
-                           whereClause += " OR LOWER(nf_atributo.entity_uid) LIKE :buscaCompletaLower ";
+                           whereClause += " OR UPPER(nf_pagamento_antecipado.entity_uid) LIKE :buscaCompletaUpper ";
+                           whereClause += " OR LOWER(nf_pagamento_antecipado.entity_uid) LIKE :buscaCompletaLower ";
                         }
                         whereClause += ") ";
                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("buscaCompletaUpper", NpgsqlDbType.Varchar, "%" + parametro.Fieldvalue.ToString().ToUpper() + "%"));
                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("buscaCompletaLower", NpgsqlDbType.Varchar, "%" + parametro.Fieldvalue.ToString().ToLower() + "%"));
                         continue;
                      }
-                     if (parametro.FieldName == "VersaoLayout" || parametro.FieldName == "nfa_versao_layout")
+                     if (parametro.FieldName == "ID" || parametro.FieldName == "id_nf_pagamento_antecipado")
                      {
-                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
+                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is long)))
                       {
-                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
+                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo long");
                       }
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.nfa_versao_layout IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.id_nf_pagamento_antecipado IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.nfa_versao_layout LIKE :nf_atributo_VersaoLayout_5756 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_VersaoLayout_5756", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
-                      }
-                      whereClause += " ) " ;
-                        continue;
-                     }
-                     if (parametro.FieldName == "IdNfe" || parametro.FieldName == "nfa_id_nfe")
-                     {
-                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
-                      {
-                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo string");
-                      }
-                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
-                      if (parametro.Fieldvalue == null)
-                      {
-                         whereClause += "  nf_atributo.nfa_id_nfe IS NULL" ;
-                      }
-                      else
-                      {
-                         whereClause += "  nf_atributo.nfa_id_nfe LIKE :nf_atributo_IdNfe_5795 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_IdNfe_5795", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento_antecipado.id_nf_pagamento_antecipado = :nf_pagamento_antecipado_ID_3216 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ID_3216", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -766,17 +686,17 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.id_nf_principal IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.id_nf_principal IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.id_nf_principal = :nf_atributo_NfPrincipal_6433 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_NfPrincipal_6433", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_pagamento_antecipado.id_nf_principal = :nf_pagamento_antecipado_NfPrincipal_2888 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_NfPrincipal_2888", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "EntityUid" || parametro.FieldName == "entity_uid")
+                     if (parametro.FieldName == "ChaveNfeRef" || parametro.FieldName == "npa_chave_nfe_ref")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
                       {
@@ -785,12 +705,12 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.entity_uid IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.entity_uid LIKE :nf_atributo_EntityUid_7295 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_EntityUid_7295", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref LIKE :nf_pagamento_antecipado_ChaveNfeRef_8302 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ChaveNfeRef_8302", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -804,36 +724,17 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.version IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.version IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.version = :nf_atributo_Version_6707 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_Version_6707", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_pagamento_antecipado.version = :nf_pagamento_antecipado_Version_9575 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_Version_9575", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "ID" || parametro.FieldName == "id_nf_atributo")
-                     {
-                      if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is long)))
-                      {
-                         throw new ExcecaoTratada("O parâmetro " + parametro.FieldName + " fornecido não é do tipo long");
-                      }
-                      whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
-                      if (parametro.Fieldvalue == null)
-                      {
-                         whereClause += "  nf_atributo.id_nf_atributo IS NULL" ;
-                      }
-                      else
-                      {
-                         whereClause += "  nf_atributo.id_nf_atributo = :nf_atributo_ID_17 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_ID_17", NpgsqlDbType.Bigint, parametro.Fieldvalue));
-                      }
-                      whereClause += " ) " ;
-                        continue;
-                     }
-                     if (parametro.FieldName == "VersaoLayoutExato" || parametro.FieldName == "VersaoLayoutExata")
+                     if (parametro.FieldName == "EntityUid" || parametro.FieldName == "entity_uid")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
                       {
@@ -842,17 +743,17 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.nfa_versao_layout IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.entity_uid IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.nfa_versao_layout LIKE :nf_atributo_VersaoLayout_2692 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_VersaoLayout_2692", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento_antecipado.entity_uid LIKE :nf_pagamento_antecipado_EntityUid_3390 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_EntityUid_3390", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
                      }
-                     if (parametro.FieldName == "IdNfeExato" || parametro.FieldName == "IdNfeExata")
+                     if (parametro.FieldName == "ChaveNfeRefExato" || parametro.FieldName == "ChaveNfeRefExata")
                      {
                       if (parametro.Fieldvalue != null && (!(parametro.Fieldvalue is string)))
                       {
@@ -861,12 +762,12 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.nfa_id_nfe IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.nfa_id_nfe LIKE :nf_atributo_IdNfe_2219 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_IdNfe_2219", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento_antecipado.npa_chave_nfe_ref LIKE :nf_pagamento_antecipado_ChaveNfeRef_9946 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_ChaveNfeRef_9946", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -880,12 +781,12 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       whereClause += " " + (utilizarOr ? "  OR " : " AND ") + "(" ;
                       if (parametro.Fieldvalue == null)
                       {
-                         whereClause += "  nf_atributo.entity_uid IS NULL" ;
+                         whereClause += "  nf_pagamento_antecipado.entity_uid IS NULL" ;
                       }
                       else
                       {
-                         whereClause += "  nf_atributo.entity_uid LIKE :nf_atributo_EntityUid_5739 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_atributo_EntityUid_5739", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_pagamento_antecipado.entity_uid LIKE :nf_pagamento_antecipado_EntityUid_4715 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_pagamento_antecipado_EntityUid_4715", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -939,22 +840,21 @@ public static NfAtributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtual,
                       break; 
                   } 
                   qtdRegistros++;
-                  NfAtributoClass entidade = null;
+                  NfPagamentoAntecipadoClass entidade = null;
 if (!operacao.HasValue)
 {
     operacao = Guid.NewGuid();
 }
                   if (utilizarBuffer) 
                   {
-                     entidade = (NfAtributoClass)BufferAbstractEntity.GetEntidadeSemCarregamento(typeof(NfAtributoClass), Convert.ToInt32(read["id_nf_atributo"]), UsuarioAtual, command.Connection, this.BufferSecundario, operacao.Value);
+                     entidade = (NfPagamentoAntecipadoClass)BufferAbstractEntity.GetEntidadeSemCarregamento(typeof(NfPagamentoAntecipadoClass), Convert.ToInt32(read["id_nf_pagamento_antecipado"]), UsuarioAtual, command.Connection, this.BufferSecundario, operacao.Value);
                   }
                   if (entidade == null)
                   {
-                     entidade = new NfAtributoClass(UsuarioAtual, SingleConnection);
+                     entidade = new NfPagamentoAntecipadoClass(UsuarioAtual, SingleConnection);
                      entidade.BufferSecundario = this.BufferSecundario;
                      entidade.loading = true;
-                     entidade.VersaoLayout = (read["nfa_versao_layout"] != DBNull.Value ? read["nfa_versao_layout"].ToString() : null);
-                     entidade.IdNfe = (read["nfa_id_nfe"] != DBNull.Value ? read["nfa_id_nfe"].ToString() : null);
+                     entidade.ID = Convert.ToInt64(read["id_nf_pagamento_antecipado"]);
                      if (read["id_nf_principal"] != DBNull.Value)
                      {
                         entidade.NfPrincipal = (IWTNF.Entidades.Entidades.NfPrincipalClass)IWTNF.Entidades.Entidades.NfPrincipalClass.GetEntidade(Convert.ToInt32(read["id_nf_principal"]),UsuarioAtual, SingleConnection, operacao.Value);
@@ -963,13 +863,13 @@ if (!operacao.HasValue)
                      {
                         entidade.NfPrincipal = null ;
                      }
-                     entidade.EntityUid = (read["entity_uid"] != DBNull.Value ? read["entity_uid"].ToString() : null);
+                     entidade.ChaveNfeRef = (read["npa_chave_nfe_ref"] != DBNull.Value ? read["npa_chave_nfe_ref"].ToString() : null);
                      entidade.Version = (int)read["version"];
-                     entidade.ID = Convert.ToInt64(read["id_nf_atributo"]);
+                     entidade.EntityUid = (read["entity_uid"] != DBNull.Value ? read["entity_uid"].ToString() : null);
                      entidade.loading = false;
                      entidade.SalvaValoresOriginais();
                      entidade.CarregamentoConcluido();
-                     entidade = (NfAtributoClass) BufferAbstractEntity.SetEntidadeBuffer(entidade); 
+                     entidade = (NfPagamentoAntecipadoClass) BufferAbstractEntity.SetEntidadeBuffer(entidade); 
                   }
                   toRet.Add(entidade);
 

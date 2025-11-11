@@ -600,8 +600,8 @@ public static NfItemTributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtu
                       }
                       else
                       {
-                         whereClause += "  nf_item_tributo.id_nf_item = :nf_item_tributo_NfItem_2824 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_NfItem_2824", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_item_tributo.id_nf_item = :nf_item_tributo_NfItem_3772 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_NfItem_3772", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -619,8 +619,8 @@ public static NfItemTributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtu
                       }
                       else
                       {
-                         whereClause += "  nf_item_tributo.entity_uid LIKE :nf_item_tributo_EntityUid_6289 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_EntityUid_6289", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_item_tributo.entity_uid LIKE :nf_item_tributo_EntityUid_302 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_EntityUid_302", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -638,8 +638,8 @@ public static NfItemTributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtu
                       }
                       else
                       {
-                         whereClause += "  nf_item_tributo.version = :nf_item_tributo_Version_9342 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_Version_9342", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_item_tributo.version = :nf_item_tributo_Version_591 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_Version_591", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -657,8 +657,8 @@ public static NfItemTributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtu
                       }
                       else
                       {
-                         whereClause += "  nf_item_tributo.id_nf_item_tributo = :nf_item_tributo_ID_14 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_ID_14", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_item_tributo.id_nf_item_tributo = :nf_item_tributo_ID_7069 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_ID_7069", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -676,8 +676,8 @@ public static NfItemTributoClass GetEntidade(long id, AcsUsuarioClass usuarioAtu
                       }
                       else
                       {
-                         whereClause += "  nf_item_tributo.entity_uid LIKE :nf_item_tributo_EntityUid_739 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_EntityUid_739", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_item_tributo.entity_uid LIKE :nf_item_tributo_EntityUid_5382 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_item_tributo_EntityUid_5382", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
