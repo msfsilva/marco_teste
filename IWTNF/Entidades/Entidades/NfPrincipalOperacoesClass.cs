@@ -64,8 +64,6 @@ namespace IWTNF.Entidades.Entidades
                     };
 
 
-                    
-
                     item.NfItemTributo.NfItemTributoIimp = NfPrincipalClass.calculaIimp(item.NfProduto, Arredondar, usuarioAtual, singleConnection);
                     if (item.NfItemTributo.NfItemTributoIimp != null)
                     {
@@ -118,7 +116,7 @@ namespace IWTNF.Entidades.Entidades
                     // ... (if ... set item) ...
 
                     // Chamada Atualizada (passando os tributos antigos)
-                    item.NfItemTributo.NfItemfTributoDevolucao = NfPrincipalClass.calculaDevolucao(
+                    item.NfItemTributo.NfItemTributoDevolucao = NfPrincipalClass.calculaDevolucao(
                         item.NfProduto,
                         item.NfItemTributo.NfItemTributoIpi,
                         item.NfItemTributo.NfItemTributoIcms,
@@ -126,9 +124,9 @@ namespace IWTNF.Entidades.Entidades
                         item.NfItemTributo.NfItemTributoCofins,
                         Arredondar, usuarioAtual, singleConnection);
 
-                    if (item.NfItemTributo.NfItemfTributoDevolucao != null)
+                    if (item.NfItemTributo.NfItemTributoDevolucao != null)
                     {
-                        item.NfItemTributo.NfItemfTributoDevolucao.NfItem = item;
+                        item.NfItemTributo.NfItemTributoDevolucao.NfItem = item;
                     }
 
                     /* =================================================================== */
@@ -136,10 +134,13 @@ namespace IWTNF.Entidades.Entidades
                     /* =================================================================== */
 
                 }
-                //totais
+                /* =================================================================== */
+                /* INÍCIO TOTALIZAÇÃO (FRENTE 3B)                                      */
+                /* =================================================================== */
 
                 //ICMS
-                if (item.NfItemTributo.NfItemTributoIcms != null)
+                // (FRENTE 3B) - Implementa ADR-001 (compoe_total)
+                if (item.NfItemTributo.NfItemTributoIcms != null && item.NfProduto.NfProdutoIcms.CompoeTotal)
                 {
                     totais.BaseCalculoIcms += item.NfItemTributo.NfItemTributoIcms.ValorBc;
                     totais.BaseCalculoIcmsSt += item.NfItemTributo.NfItemTributoIcms.ValorBcSt;
@@ -150,7 +151,7 @@ namespace IWTNF.Entidades.Entidades
                     totais.ValorTotalIcmsSt += item.NfItemTributo.NfItemTributoIcms.ValorIcmsSt;
 
                     totais.ValorTotalIcmsDiferido += item.NfItemTributo.NfItemTributoIcms.IcmsDiferido;
-                    
+
 
                     if (item.ValorTotalAproximadoTributos.HasValue)
                     {
@@ -177,7 +178,8 @@ namespace IWTNF.Entidades.Entidades
                 }
 
                 //IPI
-                if (item.NfItemTributo.NfItemTributoIpi != null)
+                // (FRENTE 3B) - Implementa ADR-001 (compoe_total)
+                if (item.NfItemTributo.NfItemTributoIpi != null && item.NfProduto.NfProdutoIpi.CompoeTotal)
                 {
                     double teste = Math.Round(item.NfItemTributo.NfItemTributoIpi.ValorIpi, 2, MidpointRounding.AwayFromZero);
                     totais.ValorTotalIpi += teste;
@@ -185,6 +187,7 @@ namespace IWTNF.Entidades.Entidades
                 }
 
                 //ISS
+                // (Sem flag 'compoe_total' no DDL da Reforma)
                 if (item.NfItemTributo.NfItemTributoIss != null)
                 {
                     totais.ValorTotalServicos += item.NfProduto.ValorTotalTributavel;
@@ -193,7 +196,8 @@ namespace IWTNF.Entidades.Entidades
                 }
 
                 //PIS
-                if (item.NfItemTributo.NfItemTributoPis != null)
+                // (FRENTE 3B) - Implementa ADR-001 (compoe_total)
+                if (item.NfItemTributo.NfItemTributoPis != null && item.NfProduto.NfProdutoPis.CompoeTotal)
                 {
                     if (item.NfItemTributo.NfItemTributoPis.ImpostoRetido == 0)
                     {
@@ -207,7 +211,8 @@ namespace IWTNF.Entidades.Entidades
                 totais.ValorTotalPisServicos += 0;
 
                 //COFINS
-                if (item.NfItemTributo.NfItemTributoCofins != null)
+                // (FRENTE 3B) - Implementa ADR-001 (compoe_total)
+                if (item.NfItemTributo.NfItemTributoCofins != null && item.NfProduto.NfProdutoCofins.CompoeTotal)
                 {
                     if (item.NfItemTributo.NfItemTributoCofins.ImpostoRetido == 0)
                     {
@@ -221,12 +226,92 @@ namespace IWTNF.Entidades.Entidades
                 totais.ValorTotalCofinsServicos += 0;
 
                 //IIMP
+                // (Sem flag 'compoe_total' no DDL da Reforma)
                 if (item.NfItemTributo.NfItemTributoIimp != null)
                 {
                     totais.ValorTotalIimp += item.NfItemTributo.NfItemTributoIimp.ValorIimp;
                 }
 
+                /* =================================================================== */
+                /* INÍCIO TOTALIZAÇÃO REFORMA TRIBUTÁRIA (FRENTE 3B)                   */
+                /* =================================================================== */
 
+                // IS (Imposto Seletivo) - (W31)
+                if (item.NfItemTributo.NfItemTributoIs != null && item.NfProduto.NfProdutoIs.CompoeTotal)
+                {
+                    var tIS = item.NfItemTributo.NfItemTributoIs;
+                    totais.TotalIs += tIS.VIs.GetValueOrDefault(0); // (nfo_total_is)
+                }
+
+                // IBS (Imposto sobre Bens e Serviços) - (W36)
+                if (item.NfItemTributo.NfItemTributoIbs != null && item.NfProduto.NfProdutoIbs.CompoeTotal)
+                {
+                    var tIBS = item.NfItemTributo.NfItemTributoIbs;
+
+                    // Base de Cálculo (W35) - É uma BC única para IBS e CBS
+                    totais.VBcIbscbs += tIBS.VBcIbs.GetValueOrDefault(0);
+
+                    // Totais de Imposto (W41, W46, W47)
+                    totais.VIbsUf += tIBS.VIbsUf.GetValueOrDefault(0);
+                    totais.VIbsMun += tIBS.VIbsMun.GetValueOrDefault(0);
+                    totais.TotalIbs += tIBS.VIbs.GetValueOrDefault(0); // (nfo_total_ibs)
+
+                    // Totais de Diferimento (W38, W43) - CORRIGIDO (Não há mais paliativo)
+                    totais.VIbsDifUf += tIBS.VIbsDifUf.GetValueOrDefault(0);   // nfo_v_ibs_dif_uf
+                    totais.VIbsDifMun += tIBS.VIbsDifMun.GetValueOrDefault(0); // nfo_v_ibs_dif_mun
+
+                    // Totais de Devolução (W39, W44) - CORREÇÃO (BLOCO 1)
+                    totais.VIbsDevUf += tIBS.VIbsDevUf.GetValueOrDefault(0);   // nfo_v_ibs_dev_uf
+                    totais.VIbsDevMun += tIBS.VIbsDevMun.GetValueOrDefault(0); // nfo_v_ibs_dev_mun
+
+                    // Crédito Presumido (W48, W49)
+                    totais.VIbsCredPres += tIBS.VCredPres.GetValueOrDefault(0);
+                    totais.VIbsCredPresCondSus += tIBS.VCredPresCondSus.GetValueOrDefault(0);
+
+                    // Estorno (W59f)
+                    totais.VIbsEstornoCred += tIBS.VIbsEstornoCred.GetValueOrDefault(0);
+                }
+
+                // CBS (Contribuição sobre Bens e Serviços) - (W50)
+                if (item.NfItemTributo.NfItemTributoCbs != null && item.NfProduto.NfProdutoCbs.CompoeTotal)
+                {
+                    var tCBS = item.NfItemTributo.NfItemTributoCbs;
+
+                    // Base de Cálculo (W35) - NÃO SOMAR, já somada no bloco IBS.
+
+                    // Totais de Imposto (W56)
+                    totais.TotalCbs += tCBS.VCbs.GetValueOrDefault(0); // (nfo_total_cbs)
+
+                    // Totais de Diferimento (W53)
+                    totais.VCbsDif += tCBS.VCbsDif.GetValueOrDefault(0);
+
+                    // Totais de Devolução (W54) - Campo 'nfo_v_cbs_dev' removido do DDL
+
+                    // Crédito Presumido (W56a, W56b)
+                    totais.VCbsCredPres += tCBS.VCredPres.GetValueOrDefault(0);
+                    totais.VCbsCredPresCondSus += tCBS.VCredPresCondSus.GetValueOrDefault(0);
+
+                    // Estorno (W59g)
+                    totais.VCbsEstornoCred += tCBS.VCbsEstornoCred.GetValueOrDefault(0);
+                }
+
+                // Totalização Devolução Impostos Antigos (Grupo UA) - CORREÇÃO (BLOCO 2)
+                if (item.NfItemTributo.NfItemTributoDevolucao != null)
+                {
+                    var tDev = item.NfItemTributo.NfItemTributoDevolucao;
+                    totais.VIpiDevolvido += tDev.VIpiDev.GetValueOrDefault(0);       // nfo_v_ipi_devolvido (W14a)
+                    totais.VIcmsDevolvido += tDev.VIcmsDev.GetValueOrDefault(0);     // nfo_v_icms_devolvido
+                    totais.VIcmsStDevolvido += tDev.VIcmsStDev.GetValueOrDefault(0); // nfo_v_icms_st_devolvido
+                    totais.VPisDevolvido += tDev.VPisDev.GetValueOrDefault(0);       // nfo_v_pis_devolvido
+                    totais.VCofinsDevolvido += tDev.VCofinsDev.GetValueOrDefault(0); // nfo_v_cofins_devolvido
+                }
+
+                /* =================================================================== */
+                /* FIM TOTALIZAÇÃO REFORMA TRIBUTÁRIA                                  */
+                /* =================================================================== */
+
+
+                // Outros Totais
                 totais.ValorTotalDesconto += item.NfProduto.ValorDesconto;
                 totais.OutrasDespesas += item.NfProduto.OutrasDespesasAcessorias;
                 totais.ValorTotalDescontoIi += 0;
@@ -234,19 +319,31 @@ namespace IWTNF.Entidades.Entidades
                 totais.ValorTotalSeguro += item.NfProduto.ValorSeguro;
 
             }
-            totais.ValorTotalNf +=
-                totais.ValorTotalProdutosServicosIcms
-                - totais.ValorTotalDesconto
-                - totais.ValorTotalIcmsDesonerado
-                + totais.ValorTotalIcmsSt
-                + totais.ValorTotalFrete
-                + totais.ValorTotalSeguro
-                + totais.OutrasDespesas
-                + totais.ValorTotalIimp
-                + totais.ValorTotalIpi
-                + (totais.ValorTotalServicos.HasValue ? totais.ValorTotalServicos.Value : 0);
 
+            // CÁLCULO FINAL DO VALOR TOTAL DA NF (W16/W60) - (FRENTE 3B)
+            // (Os impostos são "por fora", exceto ICMS desonerado e descontos)
+            totais.ValorTotalNf =
+                totais.ValorTotalProdutosServicosIcms // vProd (W07)
+                - totais.ValorTotalDesconto             // vDesc (W10)
+                - totais.ValorTotalIcmsDesonerado       // vICMSDeson (W04a)
+                + totais.ValorTotalIcmsSt               // vST (W08)
+                + totais.ValorTotalFrete                // vFrete (W11)
+                + totais.ValorTotalSeguro               // vSeg (W12)
+                + totais.OutrasDespesas                 // vOutro (W13)
+                + totais.ValorTotalIimp                 // vII (W15)
+                + totais.ValorTotalIpi                  // vIPI (W14)
+                + (totais.ValorTotalServicos.HasValue ? totais.ValorTotalServicos.Value : 0) // vServ (W06)
+                + totais.TotalIbs.GetValueOrDefault(0)  // (Adição W47)
+                + totais.TotalCbs.GetValueOrDefault(0)  // (Adição W56)
+                + totais.TotalIs.GetValueOrDefault(0);  // (Adição W33)
 
+            // CORREÇÃO (BLOCO 2) - Subtrai devoluções de impostos antigos
+            totais.ValorTotalNf -= totais.VIpiDevolvido.GetValueOrDefault(0); // (W14a)
+                                                                              // (A NT não é clara se os outros vDev (ICMS, PIS, COFINS) abatem o vNF,
+                                                                              // mas o vIPIDevol (W14a) é explícito em abater)
+
+            // Arredondamento final
+            totais.ValorTotalNf = arredondaValor(totais.ValorTotalNf, Arredondar, 2);
             if (totais.ValorTotalIcmsDiferido > 0)
             {
 
@@ -319,7 +416,6 @@ namespace IWTNF.Entidades.Entidades
         }
 
 
-
         /// <summary>
         /// Calcula o IBS (Grupo UB) - REFATORADO (FRENTE 3A)
         /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
@@ -359,18 +455,14 @@ namespace IWTNF.Entidades.Entidades
                 // Segue o padrão ADR-002 (calculaIcms)
                 vBC = nfProduto.ValorTotalTributavel;
                 vBC += nfProduto.OutrasDespesasAcessorias;
-
-                // Nota: O padrão (calculaIcms) também somaria Frete/Seguro se o flag global
-                // 'somarValorFreteBcIcms' estivesse disponível, mas ele não é passado
-                // para este método estático, então seguimos o padrão mais básico.
             }
             // Se vBC > 0, usamos o Cenário 1 (valor informado pelo cliente).
 
             toRet.VBcIbs = arredondaValor(vBC, Arredondar, 2); // ntb_v_bc_ibs (UB16)
 
             // 4. Cálculo: Alíquotas e Redução (gRed - UB26, UB45)
-            double pIbsUf = pIbs.PIbsUf.GetValueOrDefault(0);     // (Parâmetro) npb_p_ibs_uf (UB18)
-            double pIbsMun = pIbs.PIbsMun.GetValueOrDefault(0);   // (Parâmetro) npb_p_ibs_mun (UB37)
+            double pIbsUf = pIbs.PIbsUf.GetValueOrDefault(0); // (Parâmetro) npb_p_ibs_uf (UB18)
+            double pIbsMun = pIbs.PIbsMun.GetValueOrDefault(0); // (Parâmetro) npb_p_ibs_mun (UB37)
             double pRedAliq = pIbs.PRedAliq.GetValueOrDefault(0); // (Parâmetro) npb_p_red_aliq (UB27/UB45)
 
             double pIbsUfEfetiva = pIbsUf;
@@ -392,29 +484,37 @@ namespace IWTNF.Entidades.Entidades
             double vIbsMunBruto = arredondaValor((toRet.VBcIbs.Value * (pIbsMunEfetiva / 100)), Arredondar, 2);
             double vIbsTotalBruto = vIbsUfBruto + vIbsMunBruto;
 
-            // 6. Cálculo: Diferimento (gDif - UB21, UB40)
+            // 6. Cálculo: Diferimento (gDif - UB21, UB40) - CORRIGIDO
             double pDif = pIbs.PDif.GetValueOrDefault(0); // (Parâmetro) npb_p_dif (UB22/UB40)
             double vDifTotal = 0;
+            double vDifUf = 0;
+            double vDifMun = 0;
+
             if (pDif > 0)
             {
                 // O valor do diferimento (vDif) é calculado sobre o imposto bruto
                 vDifTotal = arredondaValor((vIbsTotalBruto * (pDif / 100)), Arredondar, 2);
             }
-            toRet.VIbsDif = vDifTotal; // (Calculado) ntb_v_ibs_dif (UB23/UB40)
 
-            // 7. Cálculo: Valores Líquidos (vIBSUF - UB35, vIBSMun - UB54)
-            // (Abatendo o Diferimento)
             double vIbsUfLiquido = vIbsUfBruto;
             double vIbsMunLiquido = vIbsMunBruto;
 
             if (vDifTotal > 0 && vIbsTotalBruto > 0)
             {
-                // Rateia o vDifTotal proporcionalmente
-                vIbsUfLiquido = vIbsUfBruto - arredondaValor(vDifTotal * (vIbsUfBruto / vIbsTotalBruto), Arredondar, 2);
-                vIbsMunLiquido = vIbsMunBruto - arredondaValor(vDifTotal * (vIbsMunBruto / vIbsTotalBruto), Arredondar, 2);
+                // Rateia o vDifTotal proporcionalmente.
+                vDifUf = arredondaValor(vDifTotal * (vIbsUfBruto / vIbsTotalBruto), Arredondar, 2);
+                vDifMun = vDifTotal - vDifUf; // Garante que a soma feche
+
+                vIbsUfLiquido = vIbsUfBruto - vDifUf;
+                vIbsMunLiquido = vIbsMunBruto - vDifMun;
             }
 
-            toRet.VIbsUf = vIbsUfLiquido;   // (Calculado) ntb_v_ibs_uf (UB35)
+            // Salva nos campos de cálculo corretos (DDL Corrigido)
+            toRet.VIbsDifUf = vDifUf; // (Calculado) ntb_v_ibs_dif_uf (UB23)
+            toRet.VIbsDifMun = vDifMun; // (Calculado) ntb_v_ibs_dif_mun (UB40)
+
+            // 7. Cálculo: Valores Líquidos (vIBSUF - UB35, vIBSMun - UB54)
+            toRet.VIbsUf = vIbsUfLiquido; // (Calculado) ntb_v_ibs_uf (UB35)
             toRet.VIbsMun = vIbsMunLiquido; // (Calculado) ntb_v_ibs_mun (UB54)
 
             // vIBS (UB54a) é a soma dos valores líquidos, ANTES de abater o vCredPres
@@ -422,8 +522,8 @@ namespace IWTNF.Entidades.Entidades
             toRet.VIbs = vIbsLiquido; // ntb_v_ibs
 
             // 8. Cálculo: Crédito Presumido (gCredPresOper - UB120)
-            double pCredPres = pIbs.PCredPres.GetValueOrDefault(0);     // (Parâmetro) Alíquota
-            string cCredPres = pIbs.CCredPres;                         // (Parâmetro) Código
+            double pCredPres = pIbs.PCredPres.GetValueOrDefault(0); // (Parâmetro) Alíquota
+            string cCredPres = pIbs.CCredPres; // (Parâmetro) Código
 
             // PENDÊNCIA 4 (Híbrida)
             double vBCCredPres = pIbs.VBcCredPres.GetValueOrDefault(0); // (Parâmetro) UB121
@@ -454,7 +554,7 @@ namespace IWTNF.Entidades.Entidades
             }
 
             // 9. Cálculo: vIBS Total (UB54a) - Abatendo Crédito Presumido
-            // Regra UB54a: "...o vCredPres deve ser abatido desse valor."
+            // Regra UB54a: "...o vCredPres deve ser abatido desse valor." 
             vIbsLiquido = vIbsLiquido - toRet.VCredPres.Value - toRet.VCredPresCondSus.Value;
             toRet.VIbs = arredondaValor(vIbsLiquido, Arredondar, 2); // (Calculado) ntb_v_ibs (final)
 
@@ -464,10 +564,10 @@ namespace IWTNF.Entidades.Entidades
              * ============================================================================= */
 
             // Calcula os valores que *seriam* devidos (informativo)
-            double pAliqRegUf = pIbs.PAliqEfetRegIbsUf.GetValueOrDefault(0);   // (Parâmetro) npb_p_aliq_efet_reg_ibs_uf (UB71)
+            double pAliqRegUf = pIbs.PAliqEfetRegIbsUf.GetValueOrDefault(0); // (Parâmetro) npb_p_aliq_efet_reg_ibs_uf (UB71)
             double pAliqRegMun = pIbs.PAliqEfetRegIbsMun.GetValueOrDefault(0); // (Parâmetro) npb_p_aliq_efet_reg_ibs_mun (UB72a)
 
-            toRet.VTribRegIbsUf = arredondaValor((toRet.VBcIbs.Value * (pAliqRegUf / 100)), Arredondar, 2);   // (Calculado) ntb_v_trib_reg_ibs_uf (UB72)
+            toRet.VTribRegIbsUf = arredondaValor((toRet.VBcIbs.Value * (pAliqRegUf / 100)), Arredondar, 2); // (Calculado) ntb_v_trib_reg_ibs_uf (UB72)
             toRet.VTribRegIbsMun = arredondaValor((toRet.VBcIbs.Value * (pAliqRegMun / 100)), Arredondar, 2); // (Calculado) ntb_v_trib_reg_ibs_mun (UB72b)
 
             /* =============================================================================
@@ -475,10 +575,10 @@ namespace IWTNF.Entidades.Entidades
              * ============================================================================= */
 
             // Calcula os valores *cheios* (informativo)
-            double pAliqGovUf = pIbs.PAliqIbsUfGov.GetValueOrDefault(0);   // (Parâmetro) npb_p_aliq_ibs_uf_gov (UB82b)
+            double pAliqGovUf = pIbs.PAliqIbsUfGov.GetValueOrDefault(0); // (Parâmetro) npb_p_aliq_ibs_uf_gov (UB82b)
             double pAliqGovMun = pIbs.PAliqIbsMunGov.GetValueOrDefault(0); // (Parâmetro) npb_p_aliq_ibs_mun_gov (UB82d)
 
-            toRet.VTribIbsUfGov = arredondaValor((toRet.VBcIbs.Value * (pAliqGovUf / 100)), Arredondar, 2);   // (Calculado) ntb_v_trib_ibs_uf_gov (UB82c)
+            toRet.VTribIbsUfGov = arredondaValor((toRet.VBcIbs.Value * (pAliqGovUf / 100)), Arredondar, 2); // (Calculado) ntb_v_trib_ibs_uf_gov (UB82c)
             toRet.VTribIbsMunGov = arredondaValor((toRet.VBcIbs.Value * (pAliqGovMun / 100)), Arredondar, 2); // (Calculado) ntb_v_trib_ibs_mun_gov (UB82e)
 
             /* =============================================================================
@@ -488,23 +588,30 @@ namespace IWTNF.Entidades.Entidades
             // Estes campos são "copiados" dos parâmetros informados pelo cliente (ADR-005)
             // Assumindo que o DDL foi corrigido e as entidades regeneradas.
 
-            toRet.VIbsTransfCred = arredondaValor(pIbs.VIbsTransfCred.GetValueOrDefault(0), Arredondar, 2);    // ntb_v_ibs_transf_cred (UB107)
-            toRet.VIbsAjuste = arredondaValor(pIbs.VIbsAjuste.GetValueOrDefault(0), Arredondar, 2);              // ntb_v_ibs_ajuste (UB114)
-            toRet.VIbsEstornoCred = arredondaValor(pIbs.VIbsEstornoCred.GetValueOrDefault(0), Arredondar, 2);   // ntb_v_ibs_estorno_cred (UB117)
-            toRet.VCredPresIbszfm = arredondaValor(pIbs.VCredPresIbszfm.GetValueOrDefault(0), Arredondar, 2);   // ntb_v_cred_pres_ibszfm (UB134)
+            toRet.VIbsTransfCred = arredondaValor(pIbs.VIbsTransfCred.GetValueOrDefault(0), Arredondar, 2); // ntb_v_ibs_transf_cred (UB107)
+            toRet.VIbsAjuste = arredondaValor(pIbs.VIbsAjuste.GetValueOrDefault(0), Arredondar, 2); // ntb_v_ibs_ajuste (UB114)
+            toRet.VIbsEstornoCred = arredondaValor(pIbs.VIbsEstornoCred.GetValueOrDefault(0), Arredondar, 2); // ntb_v_ibs_estorno_cred (UB117)
+            toRet.VCredPresIbszfm = arredondaValor(pIbs.VCredPresIbszfm.GetValueOrDefault(0), Arredondar, 2); // ntb_v_cred_pres_ibszfm (UB134)
+
+            /* =============================================================================
+             * RAMO 7: Devolução (Cashback) (gDevTrib - UB24, UB43) - BLOCO 1 (Corrigido)
+             * ============================================================================= */
+
+            // Copia os parâmetros de devolução (R$) informados pelo cliente (ADR-005)
+            toRet.VIbsDevUf = arredondaValor(pIbs.VIbsDevUf.GetValueOrDefault(0), Arredondar, 2); // ntb_v_ibs_dev_uf (UB24)
+            toRet.VIbsDevMun = arredondaValor(pIbs.VIbsDevMun.GetValueOrDefault(0), Arredondar, 2); // ntb_v_ibs_dev_mun (UB43)
 
             // 10. Retorna a entidade de tributo calculada
             return toRet;
         }
 
 
-
         /// <summary>
-        /// Calcula o CBS (Grupo UB) - REFATORADO (FRENTE 3A)
-        /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
-        /// Lê de NfProdutoCbsClass (Parâmetros) e retorna NfTributoCbsClass (Calculado)
-        /// </summary>
-        public static NfTributoCbsClass calculaCBS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
+    /// Calcula o CBS (Grupo UB) - REFATORADO (FRENTE 3A)
+    /// Padrão ADR-002 (calculaPis) e ADR-005 (Produto vs Tributo)
+    /// Lê de NfProdutoCbsClass (Parâmetros) e retorna NfTributoCbsClass (Calculado)
+    /// </summary>
+    public static NfTributoCbsClass calculaCBS(NfProdutoClass nfProduto, ArredondamentoNF Arredondar, AcsUsuarioClass usuarioAtual, IWTPostgreNpgsql.IWTPostgreNpgsqlConnection singleConnection)
         {
             // 1. Validação "Fail-Fast" (ADR-004)
             if (nfProduto.NfProdutoCbs == null)

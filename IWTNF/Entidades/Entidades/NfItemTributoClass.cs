@@ -247,7 +247,7 @@ namespace IWTNF.Entidades.Entidades
             }
         }
 
-        public NfTributoDevolucaoClass NfItemfTributoDevolucao
+        public NfTributoDevolucaoClass NfItemTributoDevolucao
         {
             get { return this.NfItem.CollectionNfTributoDevolucaoClassNfItem != null && this.NfItem.CollectionNfTributoDevolucaoClassNfItem.Count > 0 ? this.NfItem.CollectionNfTributoDevolucaoClassNfItem[0] : null; }
             set

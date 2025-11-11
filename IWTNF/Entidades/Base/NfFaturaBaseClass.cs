@@ -799,8 +799,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.id_nf_principal = :nf_fatura_NfPrincipal_8135 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_NfPrincipal_8135", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_fatura.id_nf_principal = :nf_fatura_NfPrincipal_6465 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_NfPrincipal_6465", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -818,8 +818,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.nff_numero LIKE :nf_fatura_Numero_6043 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Numero_6043", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_fatura.nff_numero LIKE :nf_fatura_Numero_1037 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Numero_1037", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -837,8 +837,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.nff_valor_original = :nf_fatura_ValorOriginal_5929 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_ValorOriginal_5929", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_fatura.nff_valor_original = :nf_fatura_ValorOriginal_9438 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_ValorOriginal_9438", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -856,8 +856,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.nff_desconto = :nf_fatura_Desconto_8010 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Desconto_8010", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_fatura.nff_desconto = :nf_fatura_Desconto_6935 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Desconto_6935", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -875,8 +875,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.nff_valor_liquido = :nf_fatura_ValorLiquido_5559 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_ValorLiquido_5559", NpgsqlDbType.Double, parametro.Fieldvalue));
+                         whereClause += "  nf_fatura.nff_valor_liquido = :nf_fatura_ValorLiquido_4094 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_ValorLiquido_4094", NpgsqlDbType.Double, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -894,8 +894,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.entity_uid LIKE :nf_fatura_EntityUid_5314 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_EntityUid_5314", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_fatura.entity_uid LIKE :nf_fatura_EntityUid_9347 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_EntityUid_9347", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -913,8 +913,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.version = :nf_fatura_Version_5776 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Version_5776", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_fatura.version = :nf_fatura_Version_4686 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Version_4686", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -932,8 +932,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.id_nf_fatura = :nf_fatura_ID_983 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_ID_983", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_fatura.id_nf_fatura = :nf_fatura_ID_2401 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_ID_2401", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -951,8 +951,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.nff_numero LIKE :nf_fatura_Numero_2203 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Numero_2203", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_fatura.nff_numero LIKE :nf_fatura_Numero_5758 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_Numero_5758", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -970,8 +970,8 @@ public static NfFaturaClass GetEntidade(long id, AcsUsuarioClass usuarioAtual, I
                       }
                       else
                       {
-                         whereClause += "  nf_fatura.entity_uid LIKE :nf_fatura_EntityUid_4474 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_EntityUid_4474", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_fatura.entity_uid LIKE :nf_fatura_EntityUid_8503 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_fatura_EntityUid_8503", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;

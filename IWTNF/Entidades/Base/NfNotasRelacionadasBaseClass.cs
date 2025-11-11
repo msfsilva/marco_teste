@@ -671,8 +671,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.id_nf_notas_relacionadas = :nf_notas_relacionadas_ID_8658 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_ID_8658", NpgsqlDbType.Bigint, parametro.Fieldvalue));
+                         whereClause += "  nf_notas_relacionadas.id_nf_notas_relacionadas = :nf_notas_relacionadas_ID_3609 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_ID_3609", NpgsqlDbType.Bigint, parametro.Fieldvalue));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -690,8 +690,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.id_nf_principal = :nf_notas_relacionadas_NfPrincipal_1684 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_NfPrincipal_1684", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
+                         whereClause += "  nf_notas_relacionadas.id_nf_principal = :nf_notas_relacionadas_NfPrincipal_398 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_NfPrincipal_398", NpgsqlDbType.Integer, ((AbstractEntity)parametro.Fieldvalue).ID));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -709,8 +709,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.nfn_chave LIKE :nf_notas_relacionadas_Chave_4875 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_Chave_4875", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_notas_relacionadas.nfn_chave LIKE :nf_notas_relacionadas_Chave_3958 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_Chave_3958", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -728,8 +728,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.version = :nf_notas_relacionadas_Version_1300 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_Version_1300", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
+                         whereClause += "  nf_notas_relacionadas.version = :nf_notas_relacionadas_Version_1180 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_Version_1180", NpgsqlDbType.Integer, Convert.ToInt32(parametro.Fieldvalue)));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -747,8 +747,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.entity_uid LIKE :nf_notas_relacionadas_EntityUid_2075 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_EntityUid_2075", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
+                         whereClause += "  nf_notas_relacionadas.entity_uid LIKE :nf_notas_relacionadas_EntityUid_7205 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_EntityUid_7205", NpgsqlDbType.Varchar,"%"+ parametro.Fieldvalue+"%"));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -766,8 +766,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.nfn_chave LIKE :nf_notas_relacionadas_Chave_9326 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_Chave_9326", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_notas_relacionadas.nfn_chave LIKE :nf_notas_relacionadas_Chave_5556 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_Chave_5556", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
@@ -785,8 +785,8 @@ public static NfNotasRelacionadasClass GetEntidade(long id, AcsUsuarioClass usua
                       }
                       else
                       {
-                         whereClause += "  nf_notas_relacionadas.entity_uid LIKE :nf_notas_relacionadas_EntityUid_5331 " ;
-                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_EntityUid_5331", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
+                         whereClause += "  nf_notas_relacionadas.entity_uid LIKE :nf_notas_relacionadas_EntityUid_6001 " ;
+                         command.Parameters.Add(new IWTPostgreNpgsqlCommandParameter("nf_notas_relacionadas_EntityUid_6001", NpgsqlDbType.Varchar,""+ parametro.Fieldvalue+""));
                       }
                       whereClause += " ) " ;
                         continue;
